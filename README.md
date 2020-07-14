@@ -2,7 +2,7 @@
 
 A university project, build with Java 13, to manage restaurant reviews.
 
-![EatAdvisor](doc/EatAdvisroLogo.png)
+![EatAdvisor](media/EatAdvisroLogo.png)
 
 The project consists of two applications: 
 - EatAdvisotRistoratori: with which restaurateurs will be able to manage their restaurants.

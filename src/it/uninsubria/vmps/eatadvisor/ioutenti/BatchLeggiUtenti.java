@@ -6,9 +6,9 @@ import java.util.ArrayList;
 public class BatchLeggiUtenti {
 
     public static void main(String[] args) throws IOException {
-        File f = new File("data/Utenti.dati");
+        File f = new File(IOUtenti.FILE_UTENTI);
         if (!f.exists()) {
-            System.err.println("File Utenti.dati non trovato");
+            System.err.println("File " + IOUtenti.FILE_UTENTI + " non trovato");
             System.exit(-1);
         }
 

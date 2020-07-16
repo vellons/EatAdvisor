@@ -5,17 +5,19 @@ import java.io.Serializable;
 public class Utente implements Serializable {
 
     private static final long serialVersionUID = 8328061987053697424L;
-    public int id;
-    public String email;
-    public String nickname;
-    public String hashPassword;
-    public String nome;
-    public String cognome;
-    public String comune;
-    public String siglaProvincia;
+    private int id;
+    private String tipo; // CLIE/RIST
+    private String email;
+    private String nickname;
+    private String hashPassword;
+    private String nome;
+    private String cognome;
+    private String comune;
+    private String siglaProvincia;
 
     public Utente() {
         this.id = -1;
+        this.tipo = "NULL";
         this.email = "";
         this.nickname = "";
         this.hashPassword = "";
@@ -25,9 +27,10 @@ public class Utente implements Serializable {
         this.siglaProvincia = "";
     }
 
-    public Utente(int id, String email, String nickname, String plaintextPassword, String nome, String cognome,
-                  String comune, String siglaProvincia) {
+    public Utente(int id, String tipo, String email, String nickname, String plaintextPassword, String nome,
+                  String cognome, String comune, String siglaProvincia) {
         this.id = id;
+        this.tipo = tipo;
         this.email = email;
         this.nickname = nickname;
         this.nome = nome;
@@ -43,6 +46,14 @@ public class Utente implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getTipo() {
+        return this.tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getEmail() {
@@ -103,6 +114,7 @@ public class Utente implements Serializable {
 
     @Override
     public String toString() {
-        return "Utente<" + id + ">: email=" + email + ", nickname=" + nickname + ", password=" + hashPassword;
+        return "Utente<" + id + ", " + tipo + ">: email=" + email + ", nickname=" + nickname
+                + ", password=" + hashPassword;
     }
 }

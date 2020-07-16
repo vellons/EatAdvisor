@@ -16,8 +16,9 @@ public class BatchCreaUtenti {
         for (int i = 1; i <= TEST_USER; i++) {
             Utente utente = new Utente();
             utente.setId(i);
-            utente.setEmail("utente" + i + "@test.it");
-            utente.setNickname("utenti" + i);
+            utente.setTipo("CLIE");
+            utente.setEmail("cliente" + i + "@eat.it");
+            utente.setNickname("cliente" + i);
             utente.setPasswordAndHash("Password" + i + "!");
             utente.setNome("Nome" + i);
             utente.setCognome("Cognome" + i);
@@ -27,7 +28,7 @@ public class BatchCreaUtenti {
             System.out.println(utente.toString());
         }
 
-        File f = new File("data/Utenti.dati");
+        File f = new File(IOUtenti.FILE_UTENTI);
         if (f.exists()) {
             f.delete();
             f.createNewFile();

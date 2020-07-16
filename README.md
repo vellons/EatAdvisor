@@ -9,7 +9,7 @@ The project consists of two applications:
 - EatAdvisorClienti: with which customers will be able to consult the restaurants within the platform and leave reviews.
 
 
-![EatAdvisor structure](doc/ProjectStructure.png)
+![EatAdvisor structure](media/ProjectStructure.png)
 
 
 ## Colors

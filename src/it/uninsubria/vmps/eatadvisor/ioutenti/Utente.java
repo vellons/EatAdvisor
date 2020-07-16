@@ -6,7 +6,7 @@ public class Utente implements Serializable {
 
     private static final long serialVersionUID = 8328061987053697424L;
     private int id;
-    private String tipo; // CLIE/RIST
+    private String tipo; // CLIE/RIST/NULL
     private String email;
     private String nickname;
     private String hashPassword;

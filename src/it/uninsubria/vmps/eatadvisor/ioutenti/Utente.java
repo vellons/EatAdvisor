@@ -115,6 +115,6 @@ public class Utente implements Serializable {
     @Override
     public String toString() {
         return "Utente<" + id + ", " + tipo + ">: email=" + email + ", nickname=" + nickname
-                + ", password=" + hashPassword;
+                + ", cognome=" + cognome + ", nome=" + nome + ", pass=" + hashPassword;
     }
 }

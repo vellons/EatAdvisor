@@ -11,7 +11,7 @@ public class Sha1 {
      * @param input String to hash
      * @return String hashed
      */
-    public static String sha1 (String input) {
+    public static String sha1(String input) {
         input = "Eat-C1A0-" + input + "-EatAdvisor"; // Avoid rainbow tables attacks
         StringBuilder sha1 = new StringBuilder();
         try {

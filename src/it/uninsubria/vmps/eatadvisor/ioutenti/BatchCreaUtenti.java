@@ -14,6 +14,7 @@ public class BatchCreaUtenti {
     public static void main(String[] args) throws IOException {
         ArrayList<Utente> utenti = new ArrayList<>();
 
+        // Creo utenti clienti "utenti"
         for (int i = 1; i <= TEST_CLIE; i++) {
             Utente utente = new Utente();
             utente.setId(i);
@@ -29,6 +30,7 @@ public class BatchCreaUtenti {
             System.out.println(utente.toString());
         }
 
+        // Creo utenti "ristoratori"
         for (int i = 1; i <= TEST_RIST; i++) {
             Utente utente = new Utente();
             utente.setId(TEST_CLIE + i);
@@ -44,12 +46,12 @@ public class BatchCreaUtenti {
             System.out.println(utente.toString());
         }
 
+        // Sovrascrivo nuovi utenti
         File f = new File(IOUtenti.FILE_UTENTI);
         if (f.exists()) {
             f.delete();
             f.createNewFile();
         }
-
         ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(f));
         out.writeObject(utenti);
         out.close();

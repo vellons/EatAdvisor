@@ -17,6 +17,7 @@ public class IOUtenti {
     }
 
     public void prelevaDaFile() throws Exception {
+        // Prendo tutti gli utenti salvati nel fili e li carico all'interno di ArrayList<Utente>
         File f = new File(FILE_UTENTI);
         if (!f.exists()) {
             throw new Exception("IOUTENTI: File " + FILE_UTENTI + " non trovato");
@@ -31,7 +32,8 @@ public class IOUtenti {
         }
     }
 
-    private void aggiornaUtentiSuFile() throws IOException {
+    private void aggiornaSuFile() throws Exception {
+        // Sovrascrive gli utenti esistenti con quelli all'interno di ArrayList<Utente>
         File f = new File(FILE_UTENTI);
         if (f.exists()) {
             f.delete();
@@ -45,20 +47,29 @@ public class IOUtenti {
     }
 
     public Utente creaNuovoUtente(String tipo, String email, String nickname, String plaintextPassword,
-                                String nome, String cognome, String comune, String siglaProvincia) throws Exception {
-        prelevaDaFile(); // Mi assicuro di averre nell'ArrayList tutti gli utenti
-        // TODO: controllare unicità email e nickname
+                                  String nome, String cognome, String comune, String siglaProvincia) throws Exception {
+        prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
+        filtraPerEmail(email); // Controllo se la email è già stata utilizzata
+        if (utenti.size() > 0) {
+            throw new Exception("Email già utilizzata.");
+        }
+        prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
+        filtraPerNickname(nickname); // Controllo se la email è già stata utilizzata
+        if (utenti.size() > 0) {
+            throw new Exception("Nickname già utilizzato.");
+        }
+        prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
         int idSuccessivo = utenti.size() + 1;
         Utente nuovo = new Utente(idSuccessivo, tipo, email, nickname, plaintextPassword, nome, cognome,
                 comune, siglaProvincia);
         utenti.add(nuovo); // Aggiorno nuovo utente alla lista
-        aggiornaUtentiSuFile();
+        aggiornaSuFile();
         System.out.println("Creazione utente avvenuta con successo");
         return nuovo;
     }
 
     public Utente aggiornaUtenteById(int id, String nome, String cognome, String comune, String siglaProvincia) throws Exception {
-        prelevaDaFile(); // Mi assicuro di averre nell'ArrayList tutti gli utenti
+        prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
         Utente utenteDaAggiornare = new Utente();
         boolean aggiornato = false;
         for (int i = 0; i < utenti.size(); i++) { // Scorro la lista degli utenti
@@ -75,12 +86,36 @@ public class IOUtenti {
         if (!aggiornato) {
             throw new Exception("IOUTENTI: utente da aggiornare non trovato");
         }
-        aggiornaUtentiSuFile();
+        aggiornaSuFile();
         System.out.println("Aggiornamento utente avvenuta con successo");
         return utenteDaAggiornare;
     }
 
-    // TODO: creare metodo modifica password
+    public Utente aggiornaPasswordById(int id, String oldPassword, String newPassword) throws Exception {
+        prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
+        Utente utenteDaAggiornare = new Utente();
+        boolean aggiornato = false;
+        for (int i = 0; i < utenti.size(); i++) { // Scorro la lista degli utenti
+            if (utenti.get(i).getId() == id) { // Ho trovato l'utente
+                utenteDaAggiornare = utenti.get(i);
+                if (Sha1.sha1(oldPassword).equals(utenteDaAggiornare.getHashPassword())) {
+                    utenteDaAggiornare.setPasswordAndHash(newPassword); // Imposto nuova password
+                    utenti.set(i, utenteDaAggiornare); // Aggiorno l'utente sulla lista
+                    aggiornato = true;
+                }
+                else {
+                    throw new Exception("La vecchia password non corrisponde");
+                }
+            }
+        }
+        if (!aggiornato) {
+            throw new Exception("IOUTENTI: utente da aggiornare non trovato");
+        }
+        aggiornaSuFile();
+        System.out.println("Aggiornamento password utente avvenuta con successo");
+        return utenteDaAggiornare;
+    }
+
 
     public void filtraPerId(int filter) {
         utenti.removeIf(utente -> utente.getId() != filter);

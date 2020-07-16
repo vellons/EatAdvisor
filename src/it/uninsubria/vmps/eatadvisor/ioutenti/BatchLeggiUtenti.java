@@ -1,33 +1,35 @@
 package it.uninsubria.vmps.eatadvisor.ioutenti;
 
-import java.io.*;
-import java.util.ArrayList;
-
 public class BatchLeggiUtenti {
 
-    public static void main(String[] args) throws IOException {
-        File f = new File(IOUtenti.FILE_UTENTI);
-        if (!f.exists()) {
-            System.err.println("File " + IOUtenti.FILE_UTENTI + " non trovato");
-            System.exit(-1);
-        }
-
-        ArrayList<Utente> utenti = new ArrayList<>();
-
-        ObjectInputStream in = new ObjectInputStream(new FileInputStream(f));
+    public static void main(String[] args) {
+        IOUtenti ioUtenti = null;
         try {
-            utenti = (ArrayList) in.readObject();
-            in.close();
-        } catch (ClassNotFoundException e) {
-            System.err.println("Error during deserialization");
-            e.printStackTrace();
-            in.close();
+            ioUtenti = new IOUtenti();
+        } catch (Exception e) {
+            System.err.println("Si sono verificati problemi durante la lettura del file");
+            System.err.print(e.toString());
             System.exit(-1);
         }
 
-        for (Utente u : utenti) {
+        int totaleUtenti = ioUtenti.utenti.size();
+
+        // To test filters
+        //ioUtenti.getUtentiDaFile();
+        //ioUtenti.filtraPerId(3);
+        //ioUtenti.filtraPerEmail("cliente3@eat.it");
+        //ioUtenti.filtraPerPassword("Password3!");
+        //ioUtenti.filtraPerNickname("cliente3");
+        //ioUtenti.filtraPerNome("Nome3");
+        //ioUtenti.filtraPerCognome("Cognome3");
+        //ioUtenti.filtraPerTipo("CLIE");
+        //ioUtenti.filtraPerComune("Verbania");
+        //ioUtenti.filtraPerSiglaProvincia("VB");
+
+        for (Utente u : ioUtenti.utenti) {
             System.out.println(u.toString());
         }
-        System.out.println("Sono presenti " + utenti.size() + " utenti.");
+
+        System.out.println("Filtrati " + ioUtenti.utenti.size() + " utenti su un totale di " + totaleUtenti + ".");
     }
 }

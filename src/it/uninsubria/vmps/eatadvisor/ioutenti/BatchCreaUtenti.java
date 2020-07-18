@@ -16,32 +16,34 @@ public class BatchCreaUtenti {
 
         // Creo utenti clienti "utenti"
         for (int i = 1; i <= TEST_CLIE; i++) {
-            Utente utente = new Utente();
-            utente.setId(i);
-            utente.setTipo("CLIE");
-            utente.setEmail("cliente" + i + "@eat.it");
-            utente.setNickname("cliente" + i);
-            utente.setPasswordAndHash("Password" + i + "!");
-            utente.setNome("Nome" + i);
-            utente.setCognome("Cognome" + i);
-            utente.setComune("Verbania");
-            utente.setSiglaProvincia("VB");
+            Utente utente = new Utente(
+                    i,
+                    "CLIE",
+                    "cliente" + i + "@eat.it",
+                    "cliente" + i,
+                    "Password" + i + "!",
+                    "Nome" + i,
+                    "Cognome" + i,
+                    "Verbania",
+                    "VB"
+            );
             utenti.add(utente);
             System.out.println(utente.toString());
         }
 
         // Creo utenti "ristoratori"
         for (int i = 1; i <= TEST_RIST; i++) {
-            Utente utente = new Utente();
-            utente.setId(TEST_CLIE + i);
-            utente.setTipo("RIST");
-            utente.setEmail("ristoratore" + i + "@eat.it");
-            utente.setNickname("ristoratore" + i);
-            utente.setPasswordAndHash("Password" + i + "!");
-            utente.setNome("Nome" + i);
-            utente.setCognome("Cognome" + i);
-            utente.setComune("Verbania");
-            utente.setSiglaProvincia("VB");
+            Utente utente = new Utente(
+                    TEST_CLIE + i,
+                    "RIST",
+                    "ristoratore" + i + "@eat.it",
+                    "ristoratore" + i,
+                    "Password" + i + "!",
+                    "Nome" + i,
+                    "Cognome" + i,
+                    "Verbania",
+                    "VB"
+            );
             utenti.add(utente);
             System.out.println(utente.toString());
         }

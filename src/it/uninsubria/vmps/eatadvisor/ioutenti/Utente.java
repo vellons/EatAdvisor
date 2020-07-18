@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Utente implements Serializable {
 
-    private static final long serialVersionUID = 8328061987053697424L;
+    private static final long serialVersionUID = -489957051202126151L;
     private int id;
     private String tipo; // CLIE/RIST/NULL
     private String email;
@@ -14,18 +14,6 @@ public class Utente implements Serializable {
     private String cognome;
     private String comune;
     private String siglaProvincia;
-
-    public Utente() {
-        this.id = -1;
-        this.tipo = "NULL";
-        this.email = "";
-        this.nickname = "";
-        this.hashPassword = "";
-        this.nome = "";
-        this.cognome = "";
-        this.comune = "";
-        this.siglaProvincia = "";
-    }
 
     public Utente(int id, String tipo, String email, String nickname, String plaintextPassword, String nome,
                   String cognome, String comune, String siglaProvincia) {

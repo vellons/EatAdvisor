@@ -64,13 +64,14 @@ public class IOUtenti {
                 comune, siglaProvincia);
         utenti.add(nuovo); // Aggiorno nuovo utente alla lista
         aggiornaSuFile();
-        System.out.println("Creazione utente avvenuta con successo");
+        System.out.println("Creazione utente avvenuta con successo. Assegnato Id: " + nuovo.getId());
         return nuovo;
     }
 
-    public Utente aggiornaUtenteById(int id, String nome, String cognome, String comune, String siglaProvincia) throws Exception {
+    public Utente aggiornaUtenteById(int id, String nome, String cognome, String comune, String siglaProvincia)
+            throws Exception {
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
-        Utente utenteDaAggiornare = new Utente();
+        Utente utenteDaAggiornare = null;
         boolean aggiornato = false;
         for (int i = 0; i < utenti.size(); i++) { // Scorro la lista degli utenti
             if (utenti.get(i).getId() == id) {
@@ -87,13 +88,13 @@ public class IOUtenti {
             throw new Exception("IOUTENTI: utente da aggiornare non trovato");
         }
         aggiornaSuFile();
-        System.out.println("Aggiornamento utente avvenuta con successo");
+        System.out.println("Aggiornamento eseguito per l'utente con Id: " + utenteDaAggiornare.getId());
         return utenteDaAggiornare;
     }
 
     public Utente aggiornaPasswordById(int id, String oldPassword, String newPassword) throws Exception {
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
-        Utente utenteDaAggiornare = new Utente();
+        Utente utenteDaAggiornare = null;
         boolean aggiornato = false;
         for (int i = 0; i < utenti.size(); i++) { // Scorro la lista degli utenti
             if (utenti.get(i).getId() == id) { // Ho trovato l'utente
@@ -112,7 +113,7 @@ public class IOUtenti {
             throw new Exception("IOUTENTI: utente da aggiornare non trovato");
         }
         aggiornaSuFile();
-        System.out.println("Aggiornamento password utente avvenuta con successo");
+        System.out.println("Aggiornamento password completato per utente con Id: " + utenteDaAggiornare.getId());
         return utenteDaAggiornare;
     }
 

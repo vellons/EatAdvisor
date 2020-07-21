@@ -57,6 +57,6 @@ public class BatchCreaUtenti {
         ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(f));
         out.writeObject(utenti);
         out.close();
-        System.out.println("File ricreato con " + TEST_RIST + " test ristoratori e " + TEST_CLIE + " test clienti.");
+        System.err.println("File " + IOUtenti.FILE_UTENTI + " ricreato con " + TEST_RIST + " test ristoratori e " + TEST_CLIE + " test clienti.");
     }
 }

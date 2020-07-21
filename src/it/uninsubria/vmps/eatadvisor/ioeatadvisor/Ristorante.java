@@ -14,7 +14,7 @@ public class Ristorante implements Serializable {
     private String numeroTelefono;
     private String sitoWeb;
     private String urlImmagine;
-    ArrayList<Recensione> recensioni;
+    private ArrayList<Recensione> recensioni;
 
     public Ristorante(int id, int proprietarioId, String tipologia, String nomeRistorante, Indirizzo indirizzo,
                       String numeroTelefono, String sitoWeb, String urlImmagine) {

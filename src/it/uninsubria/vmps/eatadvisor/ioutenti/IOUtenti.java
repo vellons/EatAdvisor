@@ -17,10 +17,10 @@ public class IOUtenti {
     }
 
     public void prelevaDaFile() throws Exception {
-        // Prendo tutti gli utenti salvati nel fili e li carico all'interno di ArrayList<Utente>
+        // Prendo tutti gli utenti salvati nel file e li carico all'interno di ArrayList<Utente>
         File f = new File(FILE_UTENTI);
         if (!f.exists()) {
-            throw new Exception("IOUTENTI: File " + FILE_UTENTI + " non trovato");
+            throw new Exception("IOUTENTI: File " + FILE_UTENTI + " non trovato.");
         }
 
         ObjectInputStream in = new ObjectInputStream(new FileInputStream(f));
@@ -28,12 +28,12 @@ public class IOUtenti {
             this.utenti = (ArrayList) in.readObject();
             in.close();
         } catch (ClassNotFoundException e) {
-            throw new Exception("IOUTENTI: File " + FILE_UTENTI + " corrotto, serializzazione non riuscita");
+            throw new Exception("IOUTENTI: File " + FILE_UTENTI + " corrotto, serializzazione non riuscita.");
         }
     }
 
     private void aggiornaSuFile() throws Exception {
-        // Sovrascrive gli utenti esistenti con quelli all'interno di ArrayList<Utente>
+        // Sovrascrive gli utenti esistenti nel file con quelli all'interno di ArrayList<Utente>
         File f = new File(FILE_UTENTI);
         if (f.exists()) {
             f.delete();
@@ -62,9 +62,9 @@ public class IOUtenti {
         int idSuccessivo = utenti.size() + 1;
         Utente nuovo = new Utente(idSuccessivo, tipo, email, nickname, plaintextPassword, nome, cognome,
                 comune, siglaProvincia);
-        utenti.add(nuovo); // Aggiorno nuovo utente alla lista
+        utenti.add(nuovo); // Aggiungo nuovo utente alla lista
         aggiornaSuFile();
-        System.out.println("Creazione utente avvenuta con successo. Assegnato Id: " + nuovo.getId());
+        System.out.println("Creazione utente avvenuta con successo. Assegnato Id: " + nuovo.getId() + ".");
         return nuovo;
     }
 
@@ -85,10 +85,10 @@ public class IOUtenti {
             }
         }
         if (!aggiornato) {
-            throw new Exception("IOUTENTI: utente da aggiornare non trovato");
+            throw new Exception("IOUTENTI: utente da aggiornare non trovato.");
         }
         aggiornaSuFile();
-        System.out.println("Aggiornamento eseguito per l'utente con Id: " + utenteDaAggiornare.getId());
+        System.out.println("Aggiornamento eseguito per l'utente con Id: " + utenteDaAggiornare.getId() + ".");
         return utenteDaAggiornare;
     }
 
@@ -105,15 +105,15 @@ public class IOUtenti {
                     aggiornato = true;
                 }
                 else {
-                    throw new Exception("La vecchia password non corrisponde");
+                    throw new Exception("La vecchia password non corrisponde.");
                 }
             }
         }
         if (!aggiornato) {
-            throw new Exception("IOUTENTI: utente da aggiornare non trovato");
+            throw new Exception("IOUTENTI: utente da aggiornare non trovato.");
         }
         aggiornaSuFile();
-        System.out.println("Aggiornamento password completato per utente con Id: " + utenteDaAggiornare.getId());
+        System.out.println("Aggiornamento password completato per utente con Id: " + utenteDaAggiornare.getId() + ".");
         return utenteDaAggiornare;
     }
 

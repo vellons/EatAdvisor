@@ -17,7 +17,7 @@ public class Ristorante implements Serializable {
     ArrayList<Recensione> recensioni;
 
     public Ristorante(int id, int proprietarioId, String tipologia, String nomeRistorante, Indirizzo indirizzo,
-                      String numeroTelefono, String sitoWeb, String urlImmagine, ArrayList<Recensione> recensioni) {
+                      String numeroTelefono, String sitoWeb, String urlImmagine) {
         this.id = id;
         this.proprietarioId = proprietarioId;
         this.tipologia = tipologia;
@@ -26,7 +26,7 @@ public class Ristorante implements Serializable {
         this.numeroTelefono = numeroTelefono;
         this.sitoWeb = sitoWeb;
         this.urlImmagine = urlImmagine;
-        this.recensioni = recensioni;
+        this.recensioni = new ArrayList<Recensione>();
     }
 
     public int getId() {
@@ -106,7 +106,8 @@ public class Ristorante implements Serializable {
         for (Recensione r : recensioni) {
             media += r.getValutazione();
         }
-        return media / recensioni.size();
+        if (recensioni.size() > 0) return media / recensioni.size();
+        else return 0;
     }
 
     public void aggiungiRecensione(Recensione recensione) {

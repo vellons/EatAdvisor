@@ -1,7 +1,5 @@
 package it.uninsubria.vmps.eatadvisor.ioeatadvisor;
 
-import it.uninsubria.vmps.eatadvisor.ioutenti.Utente;
-
 import java.io.*;
 import java.util.ArrayList;
 

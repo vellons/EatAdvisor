@@ -16,7 +16,7 @@ public class BatchLeggiUtenti {
         int totaleUtenti = ioUtenti.getListaUtenti().size();
 
         // Blocco di codice per applicare i filtri
-        //ioUtenti.filtraPerId(3);
+        //ioUtenti.filtraPerId(6);
         //ioUtenti.filtraPerEmail("cliente3@eat.it");
         //ioUtenti.filtraPerPassword("Password3!");
         //ioUtenti.filtraPerNickname("cliente3");

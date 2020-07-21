@@ -8,19 +8,19 @@ import java.util.ArrayList;
 
 public class BatchCreaUtenti {
 
-    final private static int TEST_CLIE = 7;
     final private static int TEST_RIST = 3;
+    final private static int TEST_CLIE = 7;
 
     public static void main(String[] args) throws IOException {
         ArrayList<Utente> utenti = new ArrayList<>();
 
-        // Creo utenti clienti "utenti"
-        for (int i = 1; i <= TEST_CLIE; i++) {
+        // Creo utenti "ristoratori"
+        for (int i = 1; i <= TEST_RIST; i++) {
             Utente utente = new Utente(
                     i,
-                    "CLIE",
-                    "cliente" + i + "@eat.it",
-                    "cliente" + i,
+                    "RIST",
+                    "ristoratore" + i + "@eat.it",
+                    "ristoratore" + i,
                     "Password" + i + "!",
                     "Nome" + i,
                     "Cognome" + i,
@@ -31,13 +31,13 @@ public class BatchCreaUtenti {
             System.out.println(utente.toString());
         }
 
-        // Creo utenti "ristoratori"
-        for (int i = 1; i <= TEST_RIST; i++) {
+        // Creo utenti clienti "utenti"
+        for (int i = 1; i <= TEST_CLIE; i++) {
             Utente utente = new Utente(
-                    TEST_CLIE + i,
-                    "RIST",
-                    "ristoratore" + i + "@eat.it",
-                    "ristoratore" + i,
+                    TEST_RIST + i,
+                    "CLIE",
+                    "cliente" + i + "@eat.it",
+                    "cliente" + i,
                     "Password" + i + "!",
                     "Nome" + i,
                     "Cognome" + i,
@@ -57,6 +57,6 @@ public class BatchCreaUtenti {
         ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(f));
         out.writeObject(utenti);
         out.close();
-        System.out.println("File ricreato con " + TEST_CLIE + " test clienti e " + TEST_RIST + " test ristoratori.");
+        System.out.println("File ricreato con " + TEST_RIST + " test ristoratori e " + TEST_CLIE + " test clienti.");
     }
 }

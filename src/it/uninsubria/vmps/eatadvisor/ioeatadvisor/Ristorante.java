@@ -13,10 +13,11 @@ public class Ristorante implements Serializable {
     private Indirizzo indirizzo;
     private String numeroTelefono;
     private String sitoWeb;
+    private String urlImmagine;
     ArrayList<Recensione> recensioni;
 
     public Ristorante(int id, int proprietarioId, String tipologia, String nomeRistorante, Indirizzo indirizzo,
-                      String numeroTelefono, String sitoWeb, ArrayList<Recensione> recensioni) {
+                      String numeroTelefono, String sitoWeb, String urlImmagine, ArrayList<Recensione> recensioni) {
         this.id = id;
         this.proprietarioId = proprietarioId;
         this.tipologia = tipologia;
@@ -24,6 +25,7 @@ public class Ristorante implements Serializable {
         this.indirizzo = indirizzo;
         this.numeroTelefono = numeroTelefono;
         this.sitoWeb = sitoWeb;
+        this.urlImmagine = urlImmagine;
         this.recensioni = recensioni;
     }
 
@@ -83,6 +85,14 @@ public class Ristorante implements Serializable {
         this.sitoWeb = sitoWeb;
     }
 
+    public String getUrlImmagine() {
+        return this.urlImmagine;
+    }
+
+    public void setUrlImmagine(String urlImmagine) {
+        this.urlImmagine = urlImmagine;
+    }
+
     public ArrayList<Recensione> getRecensioni() {
         return this.recensioni;
     }
@@ -100,7 +110,7 @@ public class Ristorante implements Serializable {
     }
 
     public void aggiungiRecensione(Recensione recensione) {
-        if (recensione.getValutazione() >= 1 || recensione.getValutazione() <= 5)
+        if (recensione.getValutazione() >= 1 && recensione.getValutazione() <= 5)
             this.recensioni.add(recensione);
     }
 

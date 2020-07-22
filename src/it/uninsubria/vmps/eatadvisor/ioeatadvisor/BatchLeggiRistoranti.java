@@ -1,6 +1,5 @@
 package it.uninsubria.vmps.eatadvisor.ioeatadvisor;
 
-
 public class BatchLeggiRistoranti {
 
     public static void main(String[] args) {
@@ -17,9 +16,15 @@ public class BatchLeggiRistoranti {
         int totaleRistoranti = ioEatAdvisor.getListaRistoranti().size();
 
         // Blocco di codice per applicare i filtri
-        //ioUtenti.prelevaDaFile(); // Rilegge dal file, i filtri non sono più validi
+        //ioEatAdvisor.prelevaDaFile(); // Rilegge dal file, i filtri non sono più validi
+        //ioEatAdvisor.filtraPerTipo("ITALIANO");
+        //ioEatAdvisor.filtraPerNomeRistorante("PiZzA BuOnA");
+        //ioEatAdvisor.filtraPerCitta("Verb");
+        //ioEatAdvisor.filtraPerSiglaProvincia("VB");
+        //ioEatAdvisor.filtraPerCap("28922");
+        //ioEatAdvisor.filtraPerMediaRecensioniMaggioreOUguale(4);
 
-        // Blocco di codice per stampare gli utenti
+        // Blocco di codice per stampare i ristoranti
         for (Ristorante r : ioEatAdvisor.getListaRistoranti()) {
             System.out.println(r.toString());
         }
@@ -28,7 +33,7 @@ public class BatchLeggiRistoranti {
 
 
         // Blocco di codice per creare un ristorante
-        try {
+        /*try {
             ioEatAdvisor.creaNuovoRistorante(1, "ITALIANO", "Pizza Buona 4",
                     new Indirizzo("Via le dita dal Naso", "4", "Verbania", "VB", "28922"),
                     "3333333334", "https://pizzabuona.it",
@@ -38,10 +43,34 @@ public class BatchLeggiRistoranti {
             System.err.println(e.getMessage());
             e.printStackTrace();
             System.exit(-1);
-        }
+        }*/
 
 
-        // TODO: Blocco di codice per modificare un ristorante
+        // Blocco di codice per modificare un ristorante
+        /*try {
+            Ristorante daAggiornare = ioEatAdvisor.getRistoranteById(4);
+            Ristorante aggiornato = ioEatAdvisor.aggiornaRistoranteById(4, "ITALIANO",
+                    "Pizza MOLTO Buona 4", daAggiornare.getIndirizzo(),
+                    daAggiornare.getNumeroTelefono(), daAggiornare.getSitoWeb(), daAggiornare.getUrlImmagine());
+            System.out.println(aggiornato);
+        } catch (Exception e) {
+            System.err.println("Si sono verificati problemi durante l'aggiornamento del ristorante.");
+            System.err.println(e.getMessage());
+            e.printStackTrace();
+            System.exit(-1);
+        }*/
 
+
+        // Blocco di codice per aggiungere una recensione
+        /*try {
+            Ristorante aggiornato = ioEatAdvisor.aggiungiRecensioneByIdRistorante(4,
+                    new Recensione(1, 4, "Bello ma ho dato 4. Test"));
+            System.out.println(aggiornato);
+        } catch (Exception e) {
+            System.err.println("Si sono verificati problemi durante l'aggiunta della recensione.");
+            System.err.println(e.getMessage());
+            e.printStackTrace();
+            System.exit(-1);
+        }*/
     }
 }

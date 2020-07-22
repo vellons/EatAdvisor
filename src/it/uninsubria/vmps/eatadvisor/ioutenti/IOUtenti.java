@@ -128,10 +128,6 @@ public class IOUtenti {
     }
 
 
-    public void filtraPerId(int filter) {
-        utenti.removeIf(utente -> utente.getId() != filter);
-    }
-
     public void filtraPerTipo(String filter) {
         utenti.removeIf(utente -> !utente.getTipo().equals(filter));
     }
@@ -149,11 +145,11 @@ public class IOUtenti {
     }
 
     public void filtraPerNome(String filter) {
-        utenti.removeIf(utente -> !utente.getNome().equalsIgnoreCase(filter));
+        utenti.removeIf(utente -> !utente.getNome().toLowerCase().contains(filter.toLowerCase()));
     }
 
     public void filtraPerCognome(String filter) {
-        utenti.removeIf(utente -> !utente.getCognome().equalsIgnoreCase(filter));
+        utenti.removeIf(utente -> !utente.getCognome().toLowerCase().contains(filter.toLowerCase()));
     }
 
     public void filtraPerComune(String filter) {

@@ -16,6 +16,16 @@ public class IOEatAdvisor {
         return ristoranti;
     }
 
+    public Ristorante getRistoranteById(int id) throws Exception {
+        prelevaDaFile();
+        for (int i = 0; i < ristoranti.size(); i++) { // Scorro la lista dei ristoranti
+            if (ristoranti.get(i).getId() == id) {
+                return ristoranti.get(i);
+            }
+        }
+        throw new Exception("IOEATADVISOR: ristorante non trovato.");
+    }
+
     public void prelevaDaFile() throws Exception {
         // Prendo tutti i ristoranti salvati nel file e li carico all'interno di ArrayList<Ristorante>
         File f = new File(FILE_EAT_ADVISOR);
@@ -47,7 +57,7 @@ public class IOEatAdvisor {
     }
 
     public Ristorante creaNuovoRistorante(int proprietarioId, String tipologia, String nomeRistorante, Indirizzo indirizzo,
-                                      String numeroTelefono, String sitoWeb, String urlImmagine) throws Exception {
+                                          String numeroTelefono, String sitoWeb, String urlImmagine) throws Exception {
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti i ristoranti
         int idSuccessivo = ristoranti.size() + 1;
         Ristorante nuovo = new Ristorante(idSuccessivo, proprietarioId, tipologia, nomeRistorante, indirizzo,
@@ -59,7 +69,75 @@ public class IOEatAdvisor {
         return nuovo;
     }
 
-    // TODO: modifica ristorante
+    public Ristorante aggiornaRistoranteById(int id, String tipologia, String nomeRistorante,
+                                             Indirizzo indirizzo, String numeroTelefono, String sitoWeb,
+                                             String urlImmagine) throws Exception {
+        prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti i ristoranti
+        Ristorante ristoranteDaAggiornare = null;
+        boolean aggiornato = false;
+        for (int i = 0; i < ristoranti.size(); i++) { // Scorro la lista dei ristoranti
+            if (ristoranti.get(i).getId() == id) {
+                ristoranteDaAggiornare = ristoranti.get(i);
+                ristoranteDaAggiornare.setTipologia(tipologia);
+                ristoranteDaAggiornare.setNomeRistorante(nomeRistorante);
+                ristoranteDaAggiornare.setIndirizzo(indirizzo);
+                ristoranteDaAggiornare.setNumeroTelefono(numeroTelefono);
+                ristoranteDaAggiornare.setSitoWeb(sitoWeb);
+                ristoranteDaAggiornare.setUrlImmagine(urlImmagine);
+                ristoranti.set(i, ristoranteDaAggiornare); // Aggiorno il ristorante sulla lista
+                aggiornato = true;
+            }
+        }
+        if (!aggiornato) {
+            throw new Exception("IOEATADVISOR: ristorante da aggiornare non trovato.");
+        }
+        aggiornaSuFile();
+        System.out.println("Aggiornamento eseguito per il ristorante con Id: " + ristoranteDaAggiornare.getId() + ".");
+        return ristoranteDaAggiornare;
+    }
 
-    // TODO: filtri ristorante
+    public Ristorante aggiungiRecensioneByIdRistorante(int id, Recensione recensione) throws Exception {
+        prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti i ristoranti
+        Ristorante ristoranteDaAggiornare = null;
+        boolean aggiornato = false;
+        for (int i = 0; i < ristoranti.size(); i++) { // Scorro la lista dei ristoranti
+            if (ristoranti.get(i).getId() == id) {
+                ristoranteDaAggiornare = ristoranti.get(i);
+                ristoranteDaAggiornare.aggiungiRecensione(recensione);
+                ristoranti.set(i, ristoranteDaAggiornare); // Aggiorno il ristorante sulla lista
+                aggiornato = true;
+            }
+        }
+        if (!aggiornato) {
+            throw new Exception("IOEATADVISOR: ristorante su cui aggiungere la recensione non trovato.");
+        }
+        aggiornaSuFile();
+        System.out.println("Recensione aggiunta per il ristorante con Id: " + ristoranteDaAggiornare.getId() + ".");
+        return ristoranteDaAggiornare;
+    }
+
+
+    public void filtraPerTipo(String filter) {
+        ristoranti.removeIf(rist -> !rist.getTipologia().equals(filter));
+    }
+
+    public void filtraPerNomeRistorante(String filter) {
+        ristoranti.removeIf(rist -> !rist.getNomeRistorante().toLowerCase().contains(filter.toLowerCase()));
+    }
+
+    public void filtraPerCitta(String filter) {
+        ristoranti.removeIf(rist -> !rist.getIndirizzo().getCitta().toLowerCase().contains(filter.toLowerCase()));
+    }
+
+    public void filtraPerSiglaProvincia(String filter) {
+        ristoranti.removeIf(rist -> !rist.getIndirizzo().getSiglaProvincia().equalsIgnoreCase(filter));
+    }
+
+    public void filtraPerCap(String filter) {
+        ristoranti.removeIf(rist -> !rist.getIndirizzo().getCap().equalsIgnoreCase(filter));
+    }
+
+    public void filtraPerMediaRecensioniMaggioreOUguale(double filter) {
+        ristoranti.removeIf(rist -> rist.getRecensioniValutazioneMedia() < filter);
+    }
 }

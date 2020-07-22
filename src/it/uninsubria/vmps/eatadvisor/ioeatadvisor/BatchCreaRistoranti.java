@@ -39,6 +39,7 @@ public class BatchCreaRistoranti {
         ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(f));
         out.writeObject(ristoranti);
         out.close();
-        System.out.println("File " + IOEatAdvisor.FILE_EAT_ADVISOR + " ricreato con " + TEST_RISTORANTI + " test ristoranti.");
+        System.err.println("File " + IOEatAdvisor.FILE_EAT_ADVISOR + " ricreato con " +
+                TEST_RISTORANTI + " test ristoranti.");
     }
 }

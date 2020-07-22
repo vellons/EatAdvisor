@@ -1,5 +1,6 @@
 package it.uninsubria.vmps.eatadvisor.ioutenti;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 
@@ -51,7 +52,8 @@ public class IOUtenti {
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
         filtraPerEmail(email); // Controllo se la email è già stata utilizzata
         if (utenti.size() > 0) {
-            throw new Exception("Email già utilizzata.");
+            //throw new Exception("Email già utilizzata.");
+            JOptionPane.showMessageDialog(null,"Email già utilizzata.", "Errore: " , JOptionPane.INFORMATION_MESSAGE);
         }
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
         filtraPerNickname(nickname); // Controllo se la email è già stata utilizzata

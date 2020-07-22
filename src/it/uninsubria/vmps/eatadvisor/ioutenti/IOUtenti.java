@@ -16,6 +16,16 @@ public class IOUtenti {
         return utenti;
     }
 
+    public Utente getUtenteById(int id) throws Exception {
+        prelevaDaFile();
+        for (int i = 0; i < utenti.size(); i++) { // Scorro la lista degli utenti
+            if (utenti.get(i).getId() == id) {
+                return utenti.get(i);
+            }
+        }
+        throw new Exception("IOUTENTI: ristorante non trovato.");
+    }
+
     public void prelevaDaFile() throws Exception {
         // Prendo tutti gli utenti salvati nel file e li carico all'interno di ArrayList<Utente>
         File f = new File(FILE_UTENTI);

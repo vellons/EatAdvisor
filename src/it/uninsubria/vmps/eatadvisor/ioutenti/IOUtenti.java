@@ -53,12 +53,14 @@ public class IOUtenti {
         filtraPerEmail(email); // Controllo se la email è già stata utilizzata
         if (utenti.size() > 0) {
             //throw new Exception("Email già utilizzata.");
-            JOptionPane.showMessageDialog(null,"Email già utilizzata.", "Errore: " , JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Attenzione, questa email non può essere utilizzata.",
+                    "Errore ", JOptionPane.PLAIN_MESSAGE);
         }
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
         filtraPerNickname(nickname); // Controllo se la email è già stata utilizzata
         if (utenti.size() > 0) {
-            throw new Exception("Nickname già utilizzato.");
+            JOptionPane.showMessageDialog(null, "Attenzione, questo nickname non può essere utilizzato.",
+                    "Errore ", JOptionPane.PLAIN_MESSAGE);
         }
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
         int idSuccessivo = utenti.size() + 1;
@@ -105,8 +107,7 @@ public class IOUtenti {
                     utenteDaAggiornare.setPasswordAndHash(newPassword); // Imposto nuova password
                     utenti.set(i, utenteDaAggiornare); // Aggiorno l'utente sulla lista
                     aggiornato = true;
-                }
-                else {
+                } else {
                     throw new Exception("La vecchia password non corrisponde.");
                 }
             }

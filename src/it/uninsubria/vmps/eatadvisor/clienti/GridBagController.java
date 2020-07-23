@@ -17,8 +17,9 @@ public class GridBagController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        //deleteLabelError();
         if (checkAllInputs()){ // Mi assicuro che tutti i TextField siano completi
-           //System.out.println("Dati inseriti.");
             try {
                 addNewUser.creaNuovoUtente("",
                         String.valueOf(this.gble.getTfEmail()),
@@ -42,8 +43,7 @@ public class GridBagController implements ActionListener {
         allFieldsValid &= checkInput(this.gble.getTfEmail(), this.gble.getlEmailError());
         allFieldsValid &= checkInput(this.gble.getTfPsw(), this.gble.getlPswError());
 
-        return allFieldsValid; // Restituisco
-
+        return allFieldsValid; // Restituisco il risultato booleano proveniente da CheckInput
     }
 
     protected static void updateErrorLabel( JLabel ErrorLabel, String labelTExt, boolean vis) {
@@ -53,12 +53,14 @@ public class GridBagController implements ActionListener {
 
     private static boolean checkInput(JComponent input, JLabel ErrorLabel) { // Funzione per la verifica del textfield
         boolean res = true;
-        if (input instanceof JTextField) { // Se l'oggetto input è un textfield, verifico se è stato omesso
-            JTextField tmp = (JTextField) input;
-            if (tmp.getText().equals("")) {
-                updateErrorLabel(ErrorLabel, "Inserire i dati richiesti", true);
-                res = false;
-            }
+        JTextField tmp = (JTextField) input;
+        if (tmp.getText().equals("")) { // Se il campo e vuoto, visualizzo una scritta
+            updateErrorLabel(ErrorLabel, "Inserire un dato valido", true);
+            res = false;
+        }
+        else{
+            updateErrorLabel(ErrorLabel, "", false);
+            res = true;
         }
         return res;
     }

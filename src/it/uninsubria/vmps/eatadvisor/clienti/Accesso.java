@@ -7,6 +7,9 @@ public class Accesso extends JFrame {
 
     private static String OS = System.getProperty("os.name").toLowerCase(); //Salvo nella variabile il nome del sistema operativo
 
+    private JTextField userText;
+    private JTextField passText;
+
     public Accesso(String str) throws Exception {
         super(str);
         initUI();
@@ -28,7 +31,8 @@ public class Accesso extends JFrame {
         label.setBounds(40, 70, 80, 25);
         label.setFont(new Font("Arial", Font.PLAIN, 12));
         panel.add(label);
-        JTextField userText = new JTextField(20);
+
+        userText = new JTextField(20);
         userText.setBounds(150, 70, 165, 30);
         panel.add(userText);
 
@@ -37,12 +41,11 @@ public class Accesso extends JFrame {
         label2.setBounds(40, 120, 80, 25);
         label2.setFont(new Font("Arial", Font.PLAIN, 12));
         panel.add(label2);
-        JTextField passText = new JTextField(20);
+
+        passText = new JTextField(20);
         passText.setBounds(150, 120, 165, 30);
         panel.add(passText);
 
-        AccessoListener aL = new AccessoListener(userText.getText(), passText.getText());
-        SignUpListener rL = new SignUpListener();
 
         JButton button = new JButton("Accedi");
 
@@ -60,7 +63,9 @@ public class Accesso extends JFrame {
         button2.setBackground(new Color(0xC71E23));
         button2.setOpaque(true);
 
-        button.addActionListener(aL);
+        SignUpListener rL = new SignUpListener();
+
+        button.addActionListener(new AccessoListener(this));
         button2.addActionListener(rL);
 
     }
@@ -95,6 +100,12 @@ public class Accesso extends JFrame {
 
     public static boolean isMac() {
         return (OS.indexOf("mac") >= 0);
+    }
+    public String getUserText(){
+        return String.valueOf(this.userText.getText());
+    }
+    public String getPassText(){
+        return String.valueOf(this.passText.getText());
     }
 }
 

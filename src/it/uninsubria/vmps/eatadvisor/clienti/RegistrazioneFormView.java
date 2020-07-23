@@ -35,14 +35,13 @@ public class RegistrazioneFormView extends JPanel {
 
     private JButton submitButton;
 
-    //GETTERS E SETTERS
-    public JComponent getTfName() {
-        return this.tfName;
-    }
+    //GETTERS
 
-    public JComponent getTfLastName() {
-        return this.tfLastName;
-    }
+    // TODO: I metodi getters per i textfield restituiscono un qualcosa di tipo String
+
+    public String getTfName() { return String.valueOf(this.tfName.getText()); }
+
+    public String getTfLastName() { return String.valueOf(this.tfLastName.getText()); }
 
     public JLabel getlNameError() {
         return this.lNameError;
@@ -52,41 +51,31 @@ public class RegistrazioneFormView extends JPanel {
         return this.lLastNameError;
     }
 
-    public JComponent getTfComune() {
-        return this.tfComune;
-    }
+    public String getTfComune() { return String.valueOf(this.tfComune.getText()); }
 
     public JLabel getlComuneError() {
         return this.lComuneError;
     }
 
-    public JComponent getTfSigla() {
-        return this.tfSigla;
-    }
+    public String getTfSigla() { return String.valueOf(this.tfSigla.getText());}
 
     public JLabel getlSiglaError() {
         return this.lSiglaError;
     }
 
-    public JComponent getTfNickname() {
-        return this.tfNickname;
-    }
+    public String getTfNickname() { return String.valueOf(this.tfNickname.getText());}
 
     public JLabel getlNicknameError() {
         return this.lNicknameError;
     }
 
-    public JComponent getTfEmail() {
-        return this.tfEmail;
-    }
+    public String getTfEmail() { return String.valueOf(this.tfEmail.getText());}
 
     public JLabel getlEmailError() {
         return this.lEmailError;
     }
 
-    public JComponent getTfPsw() {
-        return this.tfPsw;
-    }
+    public String getTfPsw() { return String.valueOf(this.tfPsw.getText()); }
 
     public JLabel getlPswError() {
         return this.lPswError;

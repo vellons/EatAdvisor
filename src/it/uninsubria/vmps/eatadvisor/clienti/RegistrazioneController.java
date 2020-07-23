@@ -21,11 +21,9 @@ public class RegistrazioneController implements ActionListener {
         //deleteLabelError();
         if (checkAllInputs()) { // Mi assicuro che tutti i TextField siano completi
             try {
-                addNewUser.creaNuovoUtente("CLIE",
-                        String.valueOf(this.gble.getTfEmail()),
-                        String.valueOf(this.gble.getTfNickname()), String.valueOf(this.gble.getTfPsw()),
-                        String.valueOf(this.gble.getTfName()), String.valueOf(this.gble.getTfLastName()),
-                        String.valueOf(this.gble.getTfComune()), String.valueOf(this.gble.getTfSigla()));
+                addNewUser.creaNuovoUtente("CLIE", this.gble.getTfEmail(), this.gble.getTfNickname(),
+                        this.gble.getTfPsw(), this.gble.getTfName(), this.gble.getTfLastName(),
+                        this.gble.getTfComune(), this.gble.getTfSigla());
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
@@ -51,10 +49,11 @@ public class RegistrazioneController implements ActionListener {
         ErrorLabel.setVisible(vis);    // Abilito la label qualora l'utente non avesse inserito nessun dato
     }
 
-    private static boolean checkInput(JComponent input, JLabel ErrorLabel) { // Funzione per la verifica del textfield
+    private static boolean checkInput(String input, JLabel ErrorLabel) { // Funzione per la verifica del textfield
         boolean res = true;
-        JTextField tmp = (JTextField) input;
-        if (tmp.getText().equals("")) { // Se il campo e vuoto, visualizzo una scritta
+        String tmp ="";
+        tmp += input;
+        if (tmp.equals("")) { // Se il campo e vuoto, visualizzo una scritta
             updateErrorLabel(ErrorLabel, "Inserire un dato valido", true);
             res = false;
         } else {

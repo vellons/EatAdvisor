@@ -23,7 +23,7 @@ public class IOUtenti {
                 return utenti.get(i);
             }
         }
-        throw new Exception("IOUTENTI: ristorante non trovato.");
+        throw new Exception("IOUTENTI: utente non trovato.");
     }
 
     public void prelevaDaFile() throws Exception {

@@ -3,7 +3,7 @@ package it.uninsubria.vmps.eatadvisor.clienti;
 import javax.swing.*;
 import java.awt.*;
 
-public class GridBagLayoutFormView extends JPanel {
+public class RegistrazioneFormView extends JPanel {
 
     private JLabel lName;
     private JTextField tfName;
@@ -48,7 +48,9 @@ public class GridBagLayoutFormView extends JPanel {
         return this.lNameError;
     }
 
-    public JLabel getlLastNameError() { return this.lLastNameError; }
+    public JLabel getlLastNameError() {
+        return this.lLastNameError;
+    }
 
     public JComponent getTfComune() {
         return this.tfComune;
@@ -62,23 +64,37 @@ public class GridBagLayoutFormView extends JPanel {
         return this.tfSigla;
     }
 
-    public JLabel getlSiglaError() { return this.lSiglaError; }
+    public JLabel getlSiglaError() {
+        return this.lSiglaError;
+    }
 
-    public JComponent getTfNickname() { return this.tfNickname; }
+    public JComponent getTfNickname() {
+        return this.tfNickname;
+    }
 
-    public JLabel getlNicknameError() { return this.lNicknameError; }
+    public JLabel getlNicknameError() {
+        return this.lNicknameError;
+    }
 
-    public JComponent getTfEmail() { return this.tfEmail; }
+    public JComponent getTfEmail() {
+        return this.tfEmail;
+    }
 
-    public JLabel getlEmailError() { return this.lEmailError; }
+    public JLabel getlEmailError() {
+        return this.lEmailError;
+    }
 
-    public JComponent getTfPsw() { return this.tfPsw; }
+    public JComponent getTfPsw() {
+        return this.tfPsw;
+    }
 
-    public JLabel getlPswError() { return this.lPswError; }
+    public JLabel getlPswError() {
+        return this.lPswError;
+    }
 
     // Costruttore
 
-    public GridBagLayoutFormView () throws Exception {
+    public RegistrazioneFormView() throws Exception {
         this.build();
     }
 
@@ -147,7 +163,7 @@ public class GridBagLayoutFormView extends JPanel {
         this.add(this.lComune, gbc);
 
         // Col 1
-        this.tfComune= new JTextField(10);
+        this.tfComune = new JTextField(10);
         gbc.gridx = 1;
         gbc.gridy = 4;
         gbc.anchor = GridBagConstraints.LINE_START;
@@ -272,7 +288,7 @@ public class GridBagLayoutFormView extends JPanel {
         gbc.anchor = GridBagConstraints.LINE_START;
         gbc.insets = new Insets(25, 0, 0, 10);
         this.add(this.submitButton, gbc);
-        this.submitButton.addActionListener(new GridBagController(this));
+        this.submitButton.addActionListener(new RegistrazioneController(this));
     }
 
   /*  public static void main(final String[] args) {

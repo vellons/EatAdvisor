@@ -6,12 +6,12 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GridBagController implements ActionListener {
+public class RegistrazioneController implements ActionListener {
 
-    private GridBagLayoutFormView gble;
+    private RegistrazioneFormView gble;
     private IOUtenti addNewUser = new IOUtenti();
 
-    public GridBagController(GridBagLayoutFormView gble) throws Exception {
+    public RegistrazioneController(RegistrazioneFormView gble) throws Exception {
         this.gble = gble;
     }
 
@@ -19,9 +19,9 @@ public class GridBagController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         //deleteLabelError();
-        if (checkAllInputs()){ // Mi assicuro che tutti i TextField siano completi
+        if (checkAllInputs()) { // Mi assicuro che tutti i TextField siano completi
             try {
-                addNewUser.creaNuovoUtente("",
+                addNewUser.creaNuovoUtente("CLIE",
                         String.valueOf(this.gble.getTfEmail()),
                         String.valueOf(this.gble.getTfNickname()), String.valueOf(this.gble.getTfPsw()),
                         String.valueOf(this.gble.getTfName()), String.valueOf(this.gble.getTfLastName()),
@@ -46,7 +46,7 @@ public class GridBagController implements ActionListener {
         return allFieldsValid; // Restituisco il risultato booleano proveniente da CheckInput
     }
 
-    protected static void updateErrorLabel( JLabel ErrorLabel, String labelTExt, boolean vis) {
+    protected static void updateErrorLabel(JLabel ErrorLabel, String labelTExt, boolean vis) {
         ErrorLabel.setText(labelTExt); // Inserisco la scritta "Inserire i dati richiesti" a destra del text Field
         ErrorLabel.setVisible(vis);    // Abilito la label qualora l'utente non avesse inserito nessun dato
     }
@@ -57,8 +57,7 @@ public class GridBagController implements ActionListener {
         if (tmp.getText().equals("")) { // Se il campo e vuoto, visualizzo una scritta
             updateErrorLabel(ErrorLabel, "Inserire un dato valido", true);
             res = false;
-        }
-        else{
+        } else {
             updateErrorLabel(ErrorLabel, "", false);
             res = true;
         }

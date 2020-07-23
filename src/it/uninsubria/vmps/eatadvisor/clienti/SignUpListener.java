@@ -4,14 +4,15 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class signUpListener implements ActionListener {
+public class SignUpListener implements ActionListener {
     private JFrame frame;
+
     @Override
     public void actionPerformed(ActionEvent e) {
         frame = new JFrame();
-        GridBagLayoutFormView myPanel;
+        RegistrazioneFormView myPanel;
         try {
-            myPanel = new GridBagLayoutFormView();
+            myPanel = new RegistrazioneFormView();
             frame.setSize(700, 400);
             frame.setResizable(false);
             frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -22,7 +23,6 @@ public class signUpListener implements ActionListener {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
 
     }
 }

@@ -1,8 +1,6 @@
 package it.uninsubria.vmps.eatadvisor.clienti;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.plaf.basic.BasicRadioButtonUI;
 import java.awt.*;
 
 public class Accesso extends JFrame {
@@ -43,8 +41,8 @@ public class Accesso extends JFrame {
         passText.setBounds(150, 120, 165, 30);
         panel.add(passText);
 
-        accessoListener aL = new accessoListener(userText.getText(), passText.getText());
-        signUpListener rL = new signUpListener();
+        AccessoListener aL = new AccessoListener(userText.getText(), passText.getText());
+        SignUpListener rL = new SignUpListener();
 
         JButton button = new JButton("Accedi");
 
@@ -68,7 +66,7 @@ public class Accesso extends JFrame {
     }
 
     private void initUI() {
-        ImageIcon webIcon = new ImageIcon("jetbrains://idea/navigate/reference?project=EatAdvisor&path=media/EatAdvisroLogo.png");
+        ImageIcon webIcon = new ImageIcon("media/EatAdvisroIcon.png");
         setIconImage(webIcon.getImage());
         setSize(450, 300); //dimensione della finestra
         setLocationRelativeTo(null);

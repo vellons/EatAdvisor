@@ -47,6 +47,7 @@
                   <focusPainted value="true"/>
                   <foreground color="-1"/>
                   <hideActionText value="false"/>
+                  <opaque value="true"/>
                   <text value="Accedi"/>
                 </properties>
               </component>
@@ -61,6 +62,7 @@
                   <borderPainted value="false"/>
                   <focusPainted value="true"/>
                   <foreground color="-1"/>
+                  <opaque value="true"/>
                   <text value="Iscriviti"/>
                 </properties>
               </component>
@@ -76,6 +78,7 @@
                   <contentAreaFilled value="true"/>
                   <focusPainted value="true"/>
                   <foreground color="-1"/>
+                  <opaque value="true"/>
                   <text value="Procedi senza accedere"/>
                 </properties>
               </component>

@@ -51,7 +51,7 @@ public class RegistrazioneController implements ActionListener {
 
     private static boolean checkInput(String input, JLabel ErrorLabel) { // Funzione per la verifica del textfield
         boolean res = true;
-        String tmp ="";
+        String tmp = "";
         tmp += input;
         if (tmp.equals("")) { // Se il campo e vuoto, visualizzo una scritta
             updateErrorLabel(ErrorLabel, "Inserire un dato valido", true);

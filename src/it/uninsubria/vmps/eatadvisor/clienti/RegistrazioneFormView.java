@@ -39,9 +39,13 @@ public class RegistrazioneFormView extends JPanel {
 
     // TODO: I metodi getters per i textfield restituiscono un qualcosa di tipo String
 
-    public String getTfName() { return String.valueOf(this.tfName.getText()); }
+    public String getTfName() {
+        return String.valueOf(this.tfName.getText());
+    }
 
-    public String getTfLastName() { return String.valueOf(this.tfLastName.getText()); }
+    public String getTfLastName() {
+        return String.valueOf(this.tfLastName.getText());
+    }
 
     public JLabel getlNameError() {
         return this.lNameError;
@@ -51,31 +55,41 @@ public class RegistrazioneFormView extends JPanel {
         return this.lLastNameError;
     }
 
-    public String getTfComune() { return String.valueOf(this.tfComune.getText()); }
+    public String getTfComune() {
+        return String.valueOf(this.tfComune.getText());
+    }
 
     public JLabel getlComuneError() {
         return this.lComuneError;
     }
 
-    public String getTfSigla() { return String.valueOf(this.tfSigla.getText());}
+    public String getTfSigla() {
+        return String.valueOf(this.tfSigla.getText());
+    }
 
     public JLabel getlSiglaError() {
         return this.lSiglaError;
     }
 
-    public String getTfNickname() { return String.valueOf(this.tfNickname.getText());}
+    public String getTfNickname() {
+        return String.valueOf(this.tfNickname.getText());
+    }
 
     public JLabel getlNicknameError() {
         return this.lNicknameError;
     }
 
-    public String getTfEmail() { return String.valueOf(this.tfEmail.getText());}
+    public String getTfEmail() {
+        return String.valueOf(this.tfEmail.getText());
+    }
 
     public JLabel getlEmailError() {
         return this.lEmailError;
     }
 
-    public String getTfPsw() { return String.valueOf(this.tfPsw.getText()); }
+    public String getTfPsw() {
+        return String.valueOf(this.tfPsw.getText());
+    }
 
     public JLabel getlPswError() {
         return this.lPswError;
@@ -279,20 +293,4 @@ public class RegistrazioneFormView extends JPanel {
         this.add(this.submitButton, gbc);
         this.submitButton.addActionListener(new RegistrazioneController(this));
     }
-
-  /*  public static void main(final String[] args) {
-
-        JFrame frame = new JFrame();
-        GridBagLayoutFormView myPanel = new GridBagLayoutFormView();
-
-
-        frame.setSize(700, 400);
-        frame.setResizable(false);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        frame.setTitle("Registrazione cliente");
-        frame.getContentPane().add(myPanel);
-        frame.setVisible(true);
-
-    }*/
 }

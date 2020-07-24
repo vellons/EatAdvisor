@@ -23,7 +23,7 @@ public class AccessoListener implements ActionListener {
         try {
             verifyUser.prelevaDaFile();
         } catch (Exception exception) {
-             System.err.println("IOUTENTI: File " + IOUtenti.FILE_UTENTI + " non trovato.");
+            System.err.println("IOUTENTI: File " + IOUtenti.FILE_UTENTI + " non trovato.");
         }
         System.out.println(verifyUser.getListaUtenti());
         System.out.println("Nickname: " + aC.getUserText());

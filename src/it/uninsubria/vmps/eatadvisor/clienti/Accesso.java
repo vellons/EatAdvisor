@@ -101,10 +101,12 @@ public class Accesso extends JFrame {
     public static boolean isMac() {
         return (OS.indexOf("mac") >= 0);
     }
-    public String getUserText(){
+
+    public String getUserText() {
         return String.valueOf(this.userText.getText());
     }
-    public String getPassText(){
+
+    public String getPassText() {
         return String.valueOf(this.passText.getText());
     }
 }

@@ -23,6 +23,5 @@ class SignUpListener implements ActionListener {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
     }
 }

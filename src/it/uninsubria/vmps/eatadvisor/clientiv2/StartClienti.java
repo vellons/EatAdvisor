@@ -1,8 +1,8 @@
 package it.uninsubria.vmps.eatadvisor.clientiv2;
 
+import it.uninsubria.vmps.eatadvisor.clienti.clienti;
 import it.uninsubria.vmps.eatadvisor.global.Global;
 import it.uninsubria.vmps.eatadvisor.ioutenti.IOUtenti;
-import it.uninsubria.vmps.eatadvisor.ioutenti.Utente;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -36,9 +36,9 @@ public class StartClienti {
                     //System.out.println("Password: " + String.valueOf(tfPassword.getPassword()));
                     ioUtenti.filtraPerNickname(tfNickname.getText());
                     ioUtenti.filtraPerPassword(String.valueOf(tfPassword.getPassword()));
-                    System.out.println(ioUtenti.getListaUtenti());
                     if (ioUtenti.getListaUtenti().size() == 1) {
                         Global.utenteLoggato = ioUtenti.getListaUtenti().get(0); // prendo l'unico utente nella lista
+                        System.out.println(Global.utenteLoggato);
                     } else {
                         JOptionPane.showMessageDialog(null, "Username e/o password errati",
                                 "Attenzione", JOptionPane.PLAIN_MESSAGE);
@@ -46,7 +46,24 @@ public class StartClienti {
                 } catch (Exception exception) {
                     System.err.println("IOUTENTI: File " + IOUtenti.FILE_UTENTI + " non trovato.");
                 }
+            }
+        });
 
+        btnIscriviti.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    JFrame registrazioneFrame = new JFrame("EatAdvisor Clienti - Registrazione");
+                    registrazioneFrame.setContentPane(new RegistrazioneCliente().panelRegistrazioneCliente);
+                    clienti.initUI(registrazioneFrame);
+                    registrazioneFrame.setSize(500, 450);
+                    registrazioneFrame.setLocationRelativeTo(null);
+                    registrazioneFrame.pack();
+                    registrazioneFrame.setVisible(true);
+                    registrazioneFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
             }
         });
     }

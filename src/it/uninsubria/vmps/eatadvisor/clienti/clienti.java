@@ -15,6 +15,12 @@ public class clienti {
         JFrame mainFrame = new JFrame("EatAdvisor Clienti - Login");
         mainFrame.setContentPane(new StartClienti().panelStartClienti);
         initUI(mainFrame);
+
+        JMenuBar myBar = new JMenuBar();
+        mainFrame.setJMenuBar(myBar);
+        //setMenuAccount(myBar); // TODO: mostrare solo se l'utente è loggato
+        setMenuInfo(myBar);
+
         mainFrame.pack();
         mainFrame.setVisible(true);
     }
@@ -23,15 +29,12 @@ public class clienti {
         ImageIcon imageIcon = new ImageIcon("media/EatAdvisroIcon.png");
         Image image = imageIcon.getImage();
         frame.setIconImage(image);
+        frame.setSize(500, 300);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Definisce il comportamento della finestra
         if (System.getProperty("os.name").toLowerCase().contains("mac")) {
             System.setProperty("apple.laf.useScreenMenuBar", "true"); // Posiziona il menu bar in stile macOS
         }
-        JMenuBar myBar = new JMenuBar();
-        frame.setJMenuBar(myBar);
-        //setMenuAccount(myBar); // TODO: mostrare solo se l'utente è loggato
-        setMenuInfo(myBar);
     }
 
     private static void setMenuAccount(JMenuBar myMenuBar) { // Creazione del JMenu account

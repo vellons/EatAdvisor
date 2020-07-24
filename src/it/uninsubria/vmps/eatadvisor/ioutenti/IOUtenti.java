@@ -68,8 +68,6 @@ public class IOUtenti {
         filtraPerNickname(nickname); // Controllo se il nickname è già stato utilizzato
         if (utenti.size() > 0) {
             throw new Exception("Nickanme già utilizzato.");
-            //JOptionPane.showMessageDialog(null, "Attenzione, questo nickname non può essere utilizzato.",
-            //        "Errore ", JOptionPane.PLAIN_MESSAGE);
         }
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
         int idSuccessivo = utenti.size() + 1;

@@ -62,15 +62,14 @@ public class IOUtenti {
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
         filtraPerEmail(email); // Controllo se la email è già stata utilizzata
         if (utenti.size() > 0) {
-            //throw new Exception("Email già utilizzata.");
-            JOptionPane.showMessageDialog(null, "Attenzione, questa email non può essere utilizzata.",
-                    "Errore ", JOptionPane.PLAIN_MESSAGE);
+            throw new Exception("Email già utilizzata.");
         }
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
-        filtraPerNickname(nickname); // Controllo se la email è già stata utilizzata
+        filtraPerNickname(nickname); // Controllo se il nickname è già stato utilizzato
         if (utenti.size() > 0) {
-            JOptionPane.showMessageDialog(null, "Attenzione, questo nickname non può essere utilizzato.",
-                    "Errore ", JOptionPane.PLAIN_MESSAGE);
+            throw new Exception("Nickanme già utilizzato.");
+            //JOptionPane.showMessageDialog(null, "Attenzione, questo nickname non può essere utilizzato.",
+            //        "Errore ", JOptionPane.PLAIN_MESSAGE);
         }
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
         int idSuccessivo = utenti.size() + 1;

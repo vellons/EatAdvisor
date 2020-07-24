@@ -36,9 +36,6 @@ public class RegistrazioneFormView extends JPanel {
     private JButton submitButton;
 
     //GETTERS
-
-    // TODO: I metodi getters per i textfield restituiscono un qualcosa di tipo String
-
     public String getTfName() {
         return String.valueOf(this.tfName.getText());
     }
@@ -96,7 +93,6 @@ public class RegistrazioneFormView extends JPanel {
     }
 
     // Costruttore
-
     public RegistrazioneFormView() throws Exception {
         this.build();
     }

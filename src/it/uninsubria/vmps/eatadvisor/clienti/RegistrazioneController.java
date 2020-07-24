@@ -5,11 +5,12 @@ import it.uninsubria.vmps.eatadvisor.ioutenti.IOUtenti;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class RegistrazioneController implements ActionListener {
 
     private RegistrazioneFormView gble;
-    private IOUtenti addNewUser = new IOUtenti();
+    private IOUtenti ioUtenti = new IOUtenti();
 
     public RegistrazioneController(RegistrazioneFormView gble) throws Exception {
         this.gble = gble;
@@ -17,15 +18,20 @@ public class RegistrazioneController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
-        //deleteLabelError();
         if (checkAllInputs()) { // Mi assicuro che tutti i TextField siano completi
             try {
-                addNewUser.creaNuovoUtente("CLIE", this.gble.getTfEmail(), this.gble.getTfNickname(),
+                ioUtenti.creaNuovoUtente("CLIE", this.gble.getTfEmail(), this.gble.getTfNickname(),
                         this.gble.getTfPsw(), this.gble.getTfName(), this.gble.getTfLastName(),
                         this.gble.getTfComune(), this.gble.getTfSigla());
             } catch (Exception exception) {
-                exception.printStackTrace();
+                if (Objects.equals(exception.getMessage(), "Email già utilizzata.")) {
+                    JOptionPane.showMessageDialog(null, "Questa email è già stata utilizzata",
+                            "Attenzione", JOptionPane.PLAIN_MESSAGE);
+                }
+                if (Objects.equals(exception.getMessage(), "Nickanme già utilizzato.")) {
+                    JOptionPane.showMessageDialog(null, "Questo nickname è già stato utilizzato",
+                            "Attenzione", JOptionPane.PLAIN_MESSAGE);
+                }
             }
         }
     }

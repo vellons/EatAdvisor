@@ -20,6 +20,7 @@ public class RegistrazioneController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (checkAllInputs()) { // Mi assicuro che tutti i TextField siano completi
             try {
+                ioUtenti = new IOUtenti();
                 ioUtenti.creaNuovoUtente("CLIE", this.gble.getTfEmail(), this.gble.getTfNickname(),
                         this.gble.getTfPsw(), this.gble.getTfName(), this.gble.getTfLastName(),
                         this.gble.getTfComune(), this.gble.getTfSigla());

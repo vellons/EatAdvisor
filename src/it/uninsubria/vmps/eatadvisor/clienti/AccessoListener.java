@@ -3,6 +3,7 @@ package it.uninsubria.vmps.eatadvisor.clienti;
 import it.uninsubria.vmps.eatadvisor.ioutenti.IOUtenti;
 import it.uninsubria.vmps.eatadvisor.ioutenti.Utente;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -35,8 +36,10 @@ public class AccessoListener implements ActionListener {
             utenteLoggato = verifyUser.getListaUtenti().get(0); // prendo l'unico utente nella lista
             System.out.println(utenteLoggato);
         } else {
-            System.out.println("Username o password sbagliati");
+            //System.out.println("Username o password sbagliati");
             // TODO: mostrare attraverso una label il messaggio di errore
+            JOptionPane.showMessageDialog(null, "Username e/o password errati",
+                    "Attenzione", JOptionPane.PLAIN_MESSAGE);
         }
     }
 }

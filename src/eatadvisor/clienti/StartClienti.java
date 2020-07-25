@@ -37,7 +37,7 @@ public class StartClienti {
                     if (ioUtenti.getListaUtenti().size() == 1) {
                         Global.utenteLoggato = ioUtenti.getListaUtenti().get(0); // prendo l'unico utente nella lista
                         //System.out.println(Global.utenteLoggato);
-                        JOptionPane.showMessageDialog(null, "Benvenuto/a " + tfNickname.getText(),
+                        JOptionPane.showMessageDialog(null, "Benvenuto/a " + Global.utenteLoggato.getNickname(),
                                 "Accesso eseguito", JOptionPane.PLAIN_MESSAGE);
                     } else {
                         JOptionPane.showMessageDialog(null, "Username e/o password errati",

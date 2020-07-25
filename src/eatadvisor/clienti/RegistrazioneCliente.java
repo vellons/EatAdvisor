@@ -41,8 +41,6 @@ public class RegistrazioneCliente {
                 if (!getTfEmail().matches(EMAIL_REGEX)) {
                     JOptionPane.showMessageDialog(null, "L'email inserita non è valida." +
                             "\nRiprovare", "Attenzione", JOptionPane.ERROR_MESSAGE);
-                    tfEmail.setText("");
-                    tfEmail.setVisible(true);
                 } else {
                     if (checkAllInputs()) {
                         try {
@@ -143,7 +141,7 @@ public class RegistrazioneCliente {
 
     private void createUIComponents() throws IOException {
         panelLogo = new JPanel();
-        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogo.png"));
+        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoClienti.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
     }

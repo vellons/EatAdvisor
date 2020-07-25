@@ -1,6 +1,4 @@
-package it.uninsubria.vmps.eatadvisor.clienti;
-
-import it.uninsubria.vmps.eatadvisor.clientiv2.StartClienti;
+package eatadvisor.clienti;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,10 +6,6 @@ import java.awt.*;
 public class clienti {
 
     public static void main(String[] args) throws Exception {
-        //Accesso myFrame = new Accesso("Accedi");
-        //myFrame.setVisible(true);
-        //ClientiLogin cli = new ClientiLogin();
-        //cli.setVisible(true);
         JFrame mainFrame = new JFrame("EatAdvisor Clienti - Login");
         mainFrame.setContentPane(new StartClienti().panelStartClienti);
         initUI(mainFrame);

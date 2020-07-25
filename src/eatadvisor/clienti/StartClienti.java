@@ -1,8 +1,7 @@
-package it.uninsubria.vmps.eatadvisor.clientiv2;
+package eatadvisor.clienti;
 
-import it.uninsubria.vmps.eatadvisor.clienti.clienti;
-import it.uninsubria.vmps.eatadvisor.global.Global;
-import it.uninsubria.vmps.eatadvisor.ioutenti.IOUtenti;
+import eatadvisor.global.Global;
+import eatadvisor.ioutenti.IOUtenti;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -43,7 +42,6 @@ public class StartClienti {
                     } else {
                         JOptionPane.showMessageDialog(null, "Username e/o password errati",
                                 "Attenzione", JOptionPane.PLAIN_MESSAGE);
-                        tfNickname.setText("");
                     }
                 } catch (Exception exception) {
                     System.err.println("IOUTENTI: File " + IOUtenti.FILE_UTENTI + " non trovato.");

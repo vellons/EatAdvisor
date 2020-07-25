@@ -1,4 +1,4 @@
-package it.uninsubria.vmps.eatadvisor.ioeatadvisor;
+package eatadvisor.ioeatadvisor;
 
 import java.io.*;
 import java.util.ArrayList;

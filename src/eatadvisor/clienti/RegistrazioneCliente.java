@@ -1,6 +1,6 @@
-package it.uninsubria.vmps.eatadvisor.clientiv2;
+package eatadvisor.clienti;
 
-import it.uninsubria.vmps.eatadvisor.ioutenti.IOUtenti;
+import eatadvisor.ioutenti.IOUtenti;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -38,14 +38,12 @@ public class RegistrazioneCliente {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
-                boolean verificaEmail;
-                if (!getTfEmail().matches(EMAIL_REGEX)){
-                    JOptionPane.showMessageDialog(null, "L'email inserito non è valido." +
-                            "\nRiprovare", "Attenzione", JOptionPane.YES_OPTION);
+                if (!getTfEmail().matches(EMAIL_REGEX)) {
+                    JOptionPane.showMessageDialog(null, "L'email inserita non è valida." +
+                            "\nRiprovare", "Attenzione", JOptionPane.ERROR_MESSAGE);
                     tfEmail.setText("");
                     tfEmail.setVisible(true);
-                }
-                else{
+                } else {
                     if (checkAllInputs()) {
                         try {
                             ioUtenti = new IOUtenti();
@@ -53,12 +51,11 @@ public class RegistrazioneCliente {
                                     getTfPassword(), getTfNome(), getTfCognome(),
                                     getTfComune(), getTfSiglaProvincia());
                             JOptionPane.showMessageDialog(null, "Account creato! Adesso effettua " +
-                                    "l'accesso", "Evviva", JOptionPane.CLOSED_OPTION);
+                                    "l'accesso", "Evviva", JOptionPane.PLAIN_MESSAGE);
                         } catch (Exception exception) {
                             if (Objects.equals(exception.getMessage(), "Email già utilizzata.")) {
                                 JOptionPane.showMessageDialog(null, "Questa email è già stata utilizzata",
                                         "Attenzione", JOptionPane.PLAIN_MESSAGE);
-
                                 tfEmail.setText("");
                                 tfEmail.setVisible(true);
                             }
@@ -69,10 +66,8 @@ public class RegistrazioneCliente {
                                 tfNickname.setVisible(true);
                             }
                         }
-
-                    }
-                    else{
-                        //lblErrors.setFont(new Font("Default",Font.BOLD, 14 ));
+                    } else {
+                        lblErrors.setFont(new Font("Default", Font.BOLD, 14));
                         lblErrors.setForeground(Color.RED);
                         lblErrors.setVisible(true);
                     }
@@ -80,6 +75,7 @@ public class RegistrazioneCliente {
             }
         });
     }
+
     // Metodi GETTERS
     public String getTfNickname() {
         return tfNickname.getText();

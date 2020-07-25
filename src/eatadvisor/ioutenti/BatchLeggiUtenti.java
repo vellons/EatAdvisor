@@ -1,4 +1,4 @@
-package it.uninsubria.vmps.eatadvisor.ioutenti;
+package eatadvisor.ioutenti;
 
 public class BatchLeggiUtenti {
 

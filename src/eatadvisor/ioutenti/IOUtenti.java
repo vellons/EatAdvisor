@@ -1,6 +1,5 @@
-package it.uninsubria.vmps.eatadvisor.ioutenti;
+package eatadvisor.ioutenti;
 
-import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 

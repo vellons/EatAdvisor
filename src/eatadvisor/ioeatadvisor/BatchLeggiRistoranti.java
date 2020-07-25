@@ -1,4 +1,4 @@
-package it.uninsubria.vmps.eatadvisor.ioeatadvisor;
+package eatadvisor.ioeatadvisor;
 
 public class BatchLeggiRistoranti {
 

@@ -1,4 +1,4 @@
-package it.uninsubria.vmps.eatadvisor.ristoratori;
+package eatadvisor.ristoratori;
 
 public class ristoratori {
 

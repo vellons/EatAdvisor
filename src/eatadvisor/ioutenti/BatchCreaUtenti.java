@@ -1,4 +1,4 @@
-package it.uninsubria.vmps.eatadvisor.ioutenti;
+package eatadvisor.ioutenti;
 
 import java.io.File;
 import java.io.FileOutputStream;

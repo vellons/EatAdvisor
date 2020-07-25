@@ -5,8 +5,7 @@ import it.uninsubria.vmps.eatadvisor.ioutenti.IOUtenti;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -38,36 +37,50 @@ public class RegistrazioneCliente {
         btnIscriviti.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (checkAllInputs()) {
-                    try {
-                        ioUtenti = new IOUtenti();
-                        ioUtenti.creaNuovoUtente("CLIE", getTfEmail(), getTfNickname(),
-                                getTfPassword(), getTfNome(), getTfCognome(),
-                                getTfComune(), getTfSiglaProvincia());
-                        JOptionPane.showMessageDialog(null, "Account creato! Adesso effettua " +
-                                "l'accesso", "Evviva", JOptionPane.PLAIN_MESSAGE);
-
-                    } catch (Exception exception) {
-                        if (Objects.equals(exception.getMessage(), "Email già utilizzata.")) {
-                            JOptionPane.showMessageDialog(null, "Questa email è già stata utilizzata",
-                                    "Attenzione", JOptionPane.PLAIN_MESSAGE);
-                        }
-                        if (Objects.equals(exception.getMessage(), "Nickanme già utilizzato.")) {
-                            JOptionPane.showMessageDialog(null, "Questo nickname è già stato utilizzato",
-                                    "Attenzione", JOptionPane.PLAIN_MESSAGE);
-                        }
-                    }
-
+                String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+                boolean verificaEmail;
+                if (!getTfEmail().matches(EMAIL_REGEX)){
+                    JOptionPane.showMessageDialog(null, "L'email inserito non è valido." +
+                            "\nRiprovare", "Attenzione", JOptionPane.YES_OPTION);
+                    tfEmail.setText("");
+                    tfEmail.setVisible(true);
                 }
                 else{
-                    //lblErrors.setFont(new Font("Default",Font.BOLD, 14 ));
-                    lblErrors.setForeground(Color.RED);
-                    lblErrors.setVisible(true);
+                    if (checkAllInputs()) {
+                        try {
+                            ioUtenti = new IOUtenti();
+                            ioUtenti.creaNuovoUtente("CLIE", getTfEmail(), getTfNickname(),
+                                    getTfPassword(), getTfNome(), getTfCognome(),
+                                    getTfComune(), getTfSiglaProvincia());
+                            JOptionPane.showMessageDialog(null, "Account creato! Adesso effettua " +
+                                    "l'accesso", "Evviva", JOptionPane.CLOSED_OPTION);
+                        } catch (Exception exception) {
+                            if (Objects.equals(exception.getMessage(), "Email già utilizzata.")) {
+                                JOptionPane.showMessageDialog(null, "Questa email è già stata utilizzata",
+                                        "Attenzione", JOptionPane.PLAIN_MESSAGE);
+
+                                tfEmail.setText("");
+                                tfEmail.setVisible(true);
+                            }
+                            if (Objects.equals(exception.getMessage(), "Nickanme già utilizzato.")) {
+                                JOptionPane.showMessageDialog(null, "Questo nickname è già stato utilizzato",
+                                        "Attenzione", JOptionPane.PLAIN_MESSAGE);
+                                tfNickname.setText("");
+                                tfNickname.setVisible(true);
+                            }
+                        }
+
+                    }
+                    else{
+                        //lblErrors.setFont(new Font("Default",Font.BOLD, 14 ));
+                        lblErrors.setForeground(Color.RED);
+                        lblErrors.setVisible(true);
+                    }
                 }
             }
         });
     }
-
+    // Metodi GETTERS
     public String getTfNickname() {
         return tfNickname.getText();
     }

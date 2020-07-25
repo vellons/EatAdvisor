@@ -24,7 +24,6 @@ public class StartClienti {
     private JLabel lblNickname;
     private JPanel panelLogo;
 
-
     public StartClienti() throws Exception {
         btnAccedi.addActionListener(new ActionListener() {
             @Override
@@ -38,10 +37,13 @@ public class StartClienti {
                     ioUtenti.filtraPerPassword(String.valueOf(tfPassword.getPassword()));
                     if (ioUtenti.getListaUtenti().size() == 1) {
                         Global.utenteLoggato = ioUtenti.getListaUtenti().get(0); // prendo l'unico utente nella lista
-                        System.out.println(Global.utenteLoggato);
+                        //System.out.println(Global.utenteLoggato);
+                        JOptionPane.showMessageDialog(null, "Benvenuto/a " + tfNickname.getText(),
+                                "Accesso eseguito", JOptionPane.PLAIN_MESSAGE);
                     } else {
                         JOptionPane.showMessageDialog(null, "Username e/o password errati",
                                 "Attenzione", JOptionPane.PLAIN_MESSAGE);
+                        tfNickname.setText("");
                     }
                 } catch (Exception exception) {
                     System.err.println("IOUTENTI: File " + IOUtenti.FILE_UTENTI + " non trovato.");

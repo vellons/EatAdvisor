@@ -117,21 +117,11 @@ public class RegistrazioneCliente {
         return allFieldsValid; // Restituisco il risultato booleano proveniente da CheckInput
     }
 
-    /*protected static void updateErrorLabel(JTextField ErrorField, String ErrorTextField, boolean vis) {
-        ErrorField.setText(ErrorTextField); // Inserisco la scritta "Inserire i dati richiesti" a destra del text Field
-        ErrorField.setFont(new Font("Arial", Font.BOLD, 14));
-        ErrorField.setForeground(Color.RED);
-        ErrorField.setVisible(vis);    // Abilito la label qualora l'utente non avesse inserito nessun dato
-    }*/
-
     private boolean checkInput(String input, JTextField textField) { // Funzione per la verifica del textfield
         boolean res;
         String tmp = "";
         tmp += input;
         if (tmp.equals("")) { // Se il campo e vuoto, visualizzo una scritta
-            //lblErrors.setForeground(Color.RED);
-            //lblErrors.setVisible(true);
-            //updateErrorLabel(textField, "Inserire un dato valido", true);
             res = false;
         } else {
             res = true;

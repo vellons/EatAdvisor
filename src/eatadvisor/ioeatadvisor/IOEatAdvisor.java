@@ -140,8 +140,8 @@ public class IOEatAdvisor {
     public void filtraPerMediaRecensioniMaggioreOUguale(double filter) {
         ristoranti.removeIf(rist -> rist.getRecensioniValutazioneMedia() < filter);
     }
-    public void filtraProprietarioId(int filter) {
+
+    public void filtraPerProprietarioId(int filter) {
         ristoranti.removeIf(rist -> rist.getProprietarioId() != filter);
     }
-
 }

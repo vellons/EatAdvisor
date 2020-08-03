@@ -1,7 +1,6 @@
 package eatadvisor.ristoratori;
 
 import eatadvisor.global.Global;
-import eatadvisor.ioeatadvisor.IOEatAdvisor;
 import eatadvisor.ioutenti.IOUtenti;
 
 import javax.imageio.ImageIO;
@@ -15,7 +14,6 @@ import java.io.IOException;
 
 public class StartRistoratore {
     private IOUtenti ioUtenti = null;
-    private IOEatAdvisor ioEatAdvisor = null;
     public JPanel panelStartRistoratore;
     private JButton btnAccedi;
     private JButton btnIscriviti;
@@ -34,7 +32,7 @@ public class StartRistoratore {
                     ioUtenti = new IOUtenti();
                     System.out.println("Email: " + tfEmail.getText());
                     //System.out.println("Password: " + String.valueOf(tfPassword.getPassword()));
-                    ioUtenti.filtraPerNickname(tfEmail.getText());
+                    ioUtenti.filtraPerEmail(tfEmail.getText());
                     ioUtenti.filtraPerPassword(String.valueOf(tfPassword.getPassword()));
                     if (ioUtenti.getListaUtenti().size() == 1) {
                         Global.utenteLoggato = ioUtenti.getListaUtenti().get(0); // prendo l'unico utente nella lista

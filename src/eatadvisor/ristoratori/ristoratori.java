@@ -17,8 +17,8 @@ public class ristoratori {
 
         mainFrame.pack();
         mainFrame.setVisible(true);
-
     }
+
     public static void initUI(JFrame frame) {
         ImageIcon imageIcon = new ImageIcon("media/EatAdvisroIcon.png");
         Image image = imageIcon.getImage();

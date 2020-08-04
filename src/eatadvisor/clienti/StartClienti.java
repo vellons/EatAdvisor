@@ -32,6 +32,7 @@ public class StartClienti {
                     ioUtenti = new IOUtenti();
                     System.out.println("Nickname: " + tfNickname.getText());
                     //System.out.println("Password: " + String.valueOf(tfPassword.getPassword()));
+                    ioUtenti.filtraPerTipo("CLIE");
                     ioUtenti.filtraPerNickname(tfNickname.getText());
                     ioUtenti.filtraPerPassword(String.valueOf(tfPassword.getPassword()));
                     if (ioUtenti.getListaUtenti().size() == 1) {

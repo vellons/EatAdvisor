@@ -1,7 +1,5 @@
 package eatadvisor.clienti;
 
-import com.apple.eawt.Application;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -30,9 +28,6 @@ public class clienti {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Definisce il comportamento della finestra
         if (System.getProperty("os.name").toLowerCase().contains("mac")) {
             System.setProperty("apple.laf.useScreenMenuBar", "true"); // Posiziona il menu bar in stile macOS
-            Application application = Application.getApplication();  // Visualizzazione icona nella dock di Mac
-            Image iconImage = Toolkit.getDefaultToolkit().getImage("media/EatAdvisroIcon.png");
-            application.setDockIconImage(iconImage);
         }
     }
 

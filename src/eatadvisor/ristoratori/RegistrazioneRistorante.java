@@ -1,7 +1,7 @@
-/*package eatadvisor.ristoratori;
+package eatadvisor.ristoratori;
 
 import eatadvisor.ioeatadvisor.IOEatAdvisor;
-import eatadvisor.ioutenti.IOUtenti;
+import eatadvisor.ioeatadvisor.Indirizzo;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -14,42 +14,48 @@ import java.util.Objects;
 
 public class RegistrazioneRistorante {
     private IOEatAdvisor ioEatAdvisor = null;
-    String[] tipologia = { "Italiano", "Etnico", "Fusion"};
+    String[] tipologia = new String []{ "Italiano", "Etnico", "Fusion"};
     public JPanel panelRegistrazioneRistorante;
     private JLabel lblErrors;
     private JLabel lblTipologia;
     private JLabel lblNomeRistorante;
     private JTextField tfNomeRistorante;
-    private JLabel lblIndirizzo;
-    private JTextField tfIndirizzo;
+    private JLabel lblVia;
+    private JTextField tfVia;
     private JLabel lblTelefono;
     private JTextField tfTelefono;
     private JLabel lblSitoWeb;
     private JTextField tfSitoWeb;
     private JLabel lblUrlImmagine;
     private JTextField tfUrlImmagine;
-    private JComboBox cboxTipologia;
+    public JComboBox<String> cboxTipologia = new JComboBox<String>(tipologia);
     private JPanel panelLogo;
     private JButton btnIscriviti;
+    private JTextField tfCivico;
+    private JTextField tfCitta;
+    private JTextField tfProvincia;
+    private JTextField tfCap;
+    private JLabel lblCivico;
+    private JLabel lblCitta;
+    private JLabel lblProvincia;
+    private JLabel lblCap;
+    private Indirizzo indirizzo=new Indirizzo(getTfVia(),getTfCivico(),getTfCitta(),getTfProvincia(),getTfCap());
+
+
 
     public RegistrazioneRistorante() throws Exception {
 
         btnIscriviti.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (!getTfEmail().matches(EMAIL_REGEX)) {
-                    JOptionPane.showMessageDialog(null, "L'email inserita non è valida." +
-                            "\nRiprovare", "Attenzione", JOptionPane.ERROR_MESSAGE);
-                } else {
                     if (checkAllInputs()) {
                         try {
                             ioEatAdvisor = new IOEatAdvisor();
-                            ioUtenti.creaNuovoUtente("CLIE", getTfEmail(), getTfNickname(),
-                                    getTfPassword(), getTfNome(), getTfCognome(),
-                                    getTfComune(), getTfSiglaProvincia());
+                            ioEatAdvisor.creaNuovoRistorante(1,cboxTipologia.getSelectedItem().toString(), getTfNomeRistorante(),
+                                    indirizzo, getTfTelefono(), getTfSito(), getTfImmagine());
                             JOptionPane.showMessageDialog(null, "Account creato! Adesso effettua " +
                                     "l'accesso", "Evviva", JOptionPane.PLAIN_MESSAGE);
-                        } catch (Exception exception) {
+                        } catch (Exception exception) {/*
                             if (Objects.equals(exception.getMessage(), "Email già utilizzata.")) {
                                 JOptionPane.showMessageDialog(null, "Questa email è già stata utilizzata",
                                         "Attenzione", JOptionPane.PLAIN_MESSAGE);
@@ -62,30 +68,41 @@ public class RegistrazioneRistorante {
                                 tfNickname.setText("");
                                 tfNickname.setVisible(true);
                             }
-                        }
+                        */}
                     } else {
                         lblErrors.setFont(new Font("Default", Font.BOLD, 14));
                         lblErrors.setForeground(Color.RED);
                         lblErrors.setVisible(true);
                     }
-                }
+
             }
         });
     }
 
     // Metodi GETTERS
-    /*public String getTfNickname() {
-        return tfNickname.getText();
-    }*/
-
-/*
 
     public String getTfNomeRistorante() {
         return tfNomeRistorante.getText();
     }
 
-    public String getTfIndirizzo() {
-        return tfIndirizzo.getText();
+    public String getTfVia() {
+        return tfVia.getText();
+    }
+
+    public String getTfCivico() {
+        return tfCivico.getText();
+    }
+
+    public String getTfCitta() {
+        return tfCitta.getText();
+    }
+
+    public String getTfProvincia() {
+        return tfProvincia.getText();
+    }
+
+    public String getTfCap() {
+        return tfCap.getText();
     }
 
     public String getTfTelefono() {
@@ -106,7 +123,11 @@ public class RegistrazioneRistorante {
 
       //  allFieldsValid &= checkInput(getTfNome(), tfNome); // Per ogni TextField, verifico se è diverso da vuoto
         allFieldsValid &= checkInput(getTfNomeRistorante(), tfNomeRistorante);
-        allFieldsValid &= checkInput(getTfIndirizzo(), tfIndirizzo);
+        allFieldsValid &= checkInput(getTfVia(), tfVia);
+        allFieldsValid &= checkInput(getTfCivico(), tfCivico);
+        allFieldsValid &= checkInput(getTfCitta(), tfCitta);
+        allFieldsValid &= checkInput(getTfProvincia(), tfProvincia);
+        allFieldsValid &= checkInput(getTfCap(), tfCap);
         allFieldsValid &= checkInput(getTfTelefono(), tfTelefono);
         allFieldsValid &= checkInput(getTfSito(), tfSitoWeb);
         allFieldsValid &= checkInput(getTfImmagine(), tfUrlImmagine);
@@ -132,4 +153,6 @@ public class RegistrazioneRistorante {
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
     }
-}*/
+
+
+}

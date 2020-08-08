@@ -9,6 +9,7 @@
       <background color="-723724"/>
       <enabled value="false"/>
       <foreground color="-723724"/>
+      <opaque value="true"/>
       <preferredSize width="765" height="150"/>
     </properties>
     <border type="line">
@@ -72,6 +73,7 @@
           <focusable value="false"/>
           <foreground color="-1"/>
           <label value="Dettaglio"/>
+          <opaque value="true"/>
           <text value="Dettaglio"/>
         </properties>
       </component>

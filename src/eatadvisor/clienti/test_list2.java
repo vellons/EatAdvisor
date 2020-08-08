@@ -30,7 +30,7 @@ public class test_list2 extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent evt) {
         try {
-            this.panel.add(new RistorantePerLista().panelRistorantePerLista);
+            this.panel.add(new RistorantePerLista("Ristorante1", "Via le dita dal Naso, 2, Verbania, 28922").panelRistorantePerLista);
         } catch (Exception exception) {
             exception.printStackTrace();
         }

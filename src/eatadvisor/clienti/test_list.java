@@ -52,7 +52,8 @@ public class test_list {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     JPanel panel = new JPanel();
-                    panel.add(new JLabel("Hello"));
+                    //panel.add(new JLabel("Hello"));
+                    panel.add(new RistorantePerLista("Ristorante1", "Via le dita dal Naso, 2, Verbania, 28922").panelRistorantePerLista);
                     panel.setBorder(new MatteBorder(0, 0, 1, 0, Color.GRAY));
                     GridBagConstraints gbc = new GridBagConstraints();
                     gbc.gridwidth = GridBagConstraints.REMAINDER;

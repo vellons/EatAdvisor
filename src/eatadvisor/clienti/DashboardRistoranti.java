@@ -10,14 +10,14 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class ElencoRistoranti extends JFrame {
-    public JPanel panelElencoRistoranti;
+public class DashboardRistoranti extends JFrame {
+    public JPanel panelDashboardRistoranti;
     private JButton btnButton;
     private JPanel panelLogo;
-    private JPanel jPanelList;
+    private JPanel panelListaRistoranti;
 
 
-    public ElencoRistoranti() throws Exception {
+    public DashboardRistoranti() throws Exception {
 
         btnButton.addActionListener(new ActionListener() {
             @Override
@@ -30,7 +30,7 @@ public class ElencoRistoranti extends JFrame {
                 gbc.gridwidth = GridBagConstraints.REMAINDER;
                 gbc.weightx = 1;
                 gbc.fill = GridBagConstraints.HORIZONTAL;
-                jPanelList.add(panel, gbc, 0);
+                panelListaRistoranti.add(panel, gbc, 0);
 
                 validate();
                 repaint();
@@ -44,14 +44,8 @@ public class ElencoRistoranti extends JFrame {
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
 
-        jPanelList = new JPanel(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridwidth = GridBagConstraints.REMAINDER;
-        gbc.weightx = 1;
-        gbc.weighty = 1;
-        jPanelList.add(new JPanel(), gbc);
+        panelListaRistoranti = new JPanel();
+        panelListaRistoranti.add(new ListaRistorantiPanel());
 
-        //jPanelList.add(new JScrollPane(jPanelList));
     }
-
 }

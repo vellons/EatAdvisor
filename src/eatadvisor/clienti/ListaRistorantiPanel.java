@@ -42,11 +42,10 @@ public class ListaRistorantiPanel extends JPanel {
         });
 
         add(add, BorderLayout.SOUTH);
-
     }
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(200, 200);
+        return new Dimension(800, 500);
     }
 }

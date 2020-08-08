@@ -7,8 +7,7 @@ public class clienti {
 
     public static void main(String[] args) throws Exception {
         JFrame mainFrame = new JFrame("EatAdvisor Clienti - Login");
-        //mainFrame.setContentPane(new StartClienti().panelStartClienti);
-        mainFrame.setContentPane(new DashboardRistoranti().panelDashboardRistoranti);
+        mainFrame.setContentPane(new StartClienti().panelStartClienti);
         initUI(mainFrame);
 
         JMenuBar myBar = new JMenuBar();

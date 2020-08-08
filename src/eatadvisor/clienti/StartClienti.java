@@ -5,6 +5,7 @@ import eatadvisor.ioutenti.IOUtenti;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -22,6 +23,8 @@ public class StartClienti {
     private JLabel lblPassword;
     private JLabel lblNickname;
     private JPanel panelLogo;
+
+    static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0];
 
     public StartClienti() throws Exception {
         btnAccedi.addActionListener(new ActionListener() {
@@ -53,6 +56,7 @@ public class StartClienti {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
+
                     JFrame registrazioneFrame = new JFrame("EatAdvisor Clienti - Registrazione");
                     registrazioneFrame.setContentPane(new RegistrazioneCliente().panelRegistrazioneCliente);
                     clienti.initUI(registrazioneFrame);
@@ -61,6 +65,25 @@ public class StartClienti {
                     registrazioneFrame.pack();
                     registrazioneFrame.setVisible(true);
                     registrazioneFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+        });
+
+        btnNoLogin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    JFrame listaRistoranti = new JFrame("EatAdvisor Clienti - Lista ristoranti");
+                    listaRistoranti.setContentPane(new DashboardRistoranti().panelDashboardRistoranti);
+                    clienti.initUI(listaRistoranti);
+                    listaRistoranti.setLocationRelativeTo(null);
+                    listaRistoranti.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                    listaRistoranti.pack();
+                    listaRistoranti.setVisible(true);
+                    listaRistoranti.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
+                    device.setFullScreenWindow(listaRistoranti);
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }

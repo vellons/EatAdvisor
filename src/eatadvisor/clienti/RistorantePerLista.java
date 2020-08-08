@@ -10,6 +10,8 @@ public class RistorantePerLista extends JPanel {
     private JLabel lblIndirizzo;
     private JLabel lblStelle;
     private JLabel lblValutazioni;
+    private JButton btnDettaglio;
+    private JPanel panelRistImage;
 
 
     public RistorantePerLista(Ristorante ristorante) {

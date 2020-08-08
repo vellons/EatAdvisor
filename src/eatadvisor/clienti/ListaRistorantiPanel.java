@@ -31,7 +31,6 @@ public class ListaRistorantiPanel extends JPanel {
         IOEatAdvisor ioEatAdvisor = new IOEatAdvisor();
         for (Ristorante rist : ioEatAdvisor.getListaRistoranti()) {
             aggiungiRistorante(rist);
-            aggiungiRistorante(rist);
         }
     }
 

@@ -1,5 +1,7 @@
 package eatadvisor.clienti;
 
+import eatadvisor.global.Global;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,16 +12,12 @@ public class clienti {
         mainFrame.setContentPane(new StartClienti().panelStartClienti);
         initUI(mainFrame);
 
-        JMenuBar myBar = new JMenuBar();
-        mainFrame.setJMenuBar(myBar);
-        //setMenuAccount(myBar); // TODO: mostrare solo se l'utente è loggato
-        setMenuInfo(myBar);
-
         mainFrame.pack();
         mainFrame.setVisible(true);
     }
 
     public static void initUI(JFrame frame) {
+        // Queste impostazioni vengo applicate al frame passato
         ImageIcon imageIcon = new ImageIcon("media/EatAdvisroIcon.png");
         Image image = imageIcon.getImage();
         frame.setIconImage(image);
@@ -29,16 +27,21 @@ public class clienti {
         if (System.getProperty("os.name").toLowerCase().contains("mac")) {
             System.setProperty("apple.laf.useScreenMenuBar", "true"); // Posiziona il menu bar in stile macOS
         }
+
+        JMenuBar myBar = new JMenuBar();
+        frame.setJMenuBar(myBar);
+        if (Global.utenteLoggato != null) {
+            setMenuAccount(myBar);
+        }
+        setMenuInfo(myBar);
     }
 
     private static void setMenuAccount(JMenuBar myMenuBar) { // Creazione del JMenu account
         JMenu f = new JMenu("Account");
-        JMenuItem f1 = new JMenuItem("Login");
+        JMenuItem f1 = new JMenuItem("Modifica account");
         JMenuItem f2 = new JMenuItem("Logout");
-        JMenuItem f3 = new JMenuItem("Modifica account");
         f.add(f1);
         f.add(f2);
-        f.add(f3);
         myMenuBar.add(f);
     }
 

@@ -31,17 +31,19 @@ public class StartClienti {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Global.utenteLoggato = null;
+                    Global.utenteLoggato = null; // Logout utente
                     ioUtenti = new IOUtenti();
                     System.out.println("Nickname: " + tfNickname.getText());
                     //System.out.println("Password: " + String.valueOf(tfPassword.getPassword()));
+                    ioUtenti.filtraPerTipo("CLIE");
                     ioUtenti.filtraPerNickname(tfNickname.getText());
                     ioUtenti.filtraPerPassword(String.valueOf(tfPassword.getPassword()));
                     if (ioUtenti.getListaUtenti().size() == 1) {
                         Global.utenteLoggato = ioUtenti.getListaUtenti().get(0); // prendo l'unico utente nella lista
-                        //System.out.println(Global.utenteLoggato);
-                        JOptionPane.showMessageDialog(null, "Benvenuto/a " + Global.utenteLoggato.getNickname(),
-                                "Accesso eseguito", JOptionPane.PLAIN_MESSAGE);
+                        System.out.println(Global.utenteLoggato);
+                        //JOptionPane.showMessageDialog(null, "Benvenuto/a " + Global.utenteLoggato.getNickname(),
+                        //        "Accesso eseguito", JOptionPane.PLAIN_MESSAGE);
+                        openDashBoardClienti();
                     } else {
                         JOptionPane.showMessageDialog(null, "Username e/o password errati",
                                 "Attenzione", JOptionPane.PLAIN_MESSAGE);
@@ -56,11 +58,10 @@ public class StartClienti {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-
+                    Global.utenteLoggato = null; // Logout utente
                     JFrame registrazioneFrame = new JFrame("EatAdvisor Clienti - Registrazione");
                     registrazioneFrame.setContentPane(new RegistrazioneCliente().panelRegistrazioneCliente);
                     clienti.initUI(registrazioneFrame);
-                    registrazioneFrame.setSize(500, 450);
                     registrazioneFrame.setLocationRelativeTo(null);
                     registrazioneFrame.pack();
                     registrazioneFrame.setVisible(true);
@@ -74,19 +75,8 @@ public class StartClienti {
         btnNoLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    JFrame listaRistoranti = new JFrame("EatAdvisor Clienti - Lista ristoranti");
-                    listaRistoranti.setContentPane(new DashboardRistoranti().panelDashboardRistoranti);
-                    clienti.initUI(listaRistoranti);
-                    listaRistoranti.setLocationRelativeTo(null);
-                    listaRistoranti.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                    listaRistoranti.pack();
-                    listaRistoranti.setVisible(true);
-                    listaRistoranti.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
-                    device.setFullScreenWindow(listaRistoranti);
-                } catch (Exception exception) {
-                    exception.printStackTrace();
-                }
+                Global.utenteLoggato = null; // Logout utente
+                openDashBoardClienti();
             }
         });
     }
@@ -96,5 +86,20 @@ public class StartClienti {
         BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoClienti.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
+    }
+
+    private void openDashBoardClienti() {
+        try {
+            JFrame listaRistoranti = new JFrame("EatAdvisor Clienti - Lista ristoranti");
+            listaRistoranti.setContentPane(new DashboardRistoranti().panelDashboardRistoranti);
+            clienti.initUI(listaRistoranti);
+            listaRistoranti.setLocationRelativeTo(null);
+            listaRistoranti.pack();
+            listaRistoranti.setVisible(true);
+            listaRistoranti.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
+            device.setFullScreenWindow(listaRistoranti); // Imposto la pagina a tutto schermo
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
     }
 }

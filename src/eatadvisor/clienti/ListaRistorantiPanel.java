@@ -1,51 +1,63 @@
 package eatadvisor.clienti;
 
+import eatadvisor.ioeatadvisor.IOEatAdvisor;
+import eatadvisor.ioeatadvisor.Ristorante;
+
+import javax.print.attribute.standard.JobStateReason;
 import javax.swing.*;
-import javax.swing.border.MatteBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
+import static javax.swing.BorderFactory.createEmptyBorder;
 
 public class ListaRistorantiPanel extends JPanel {
 
     public JPanel mainList;
 
-    public ListaRistorantiPanel() {
+    public ListaRistorantiPanel() throws Exception {
         setLayout(new BorderLayout());
+        setBackground(Color.decode("#ff0000"));
+        setForeground(Color.decode("#ff0000"));
 
+        // Inizializzazione panel
         mainList = new JPanel(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridwidth = GridBagConstraints.REMAINDER;
-        gbc.weightx = 1;
-        gbc.weighty = 1;
-        mainList.add(new JPanel(), gbc);
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.gridwidth = GridBagConstraints.REMAINDER;
+        gridBagConstraints.weightx = 1;
+        gridBagConstraints.weighty = 1;
+        mainList.add(new JPanel(), gridBagConstraints);
+        JScrollPane jScrollPane = new JScrollPane(mainList);
+        jScrollPane.setBorder(createEmptyBorder());
+        add(jScrollPane);
+        validate();
+        repaint();
 
-        add(new JScrollPane(mainList));
-
-        JButton add = new JButton("Add");
-        add.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JPanel panel = new JPanel();
-                //panel.add(new JLabel("Hello"));
-                panel.add(new RistorantePerLista("Ristorante1", "Via le dita dal Naso, 2, Verbania, 28922").panelRistorantePerLista);
-                panel.setBorder(new MatteBorder(0, 0, 1, 0, Color.GRAY));
-                GridBagConstraints gbc = new GridBagConstraints();
-                gbc.gridwidth = GridBagConstraints.REMAINDER;
-                gbc.weightx = 1;
-                gbc.fill = GridBagConstraints.HORIZONTAL;
-                mainList.add(panel, gbc, 0);
-
-                validate();
-                repaint();
-            }
-        });
-
-        add(add, BorderLayout.SOUTH);
+        // Caricamento ristoranti
+        IOEatAdvisor ioEatAdvisor = new IOEatAdvisor();
+        for (Ristorante r : ioEatAdvisor.getListaRistoranti()) {
+            aggiungiRistorante(r.getId(), r.getNomeRistorante(), r.getIndirizzo().toString());
+        }
     }
 
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(800, 500);
+    }
+
+    private void resetMainList() {
+        mainList.removeAll();
+        revalidate();
+        repaint();
+    }
+
+    private void aggiungiRistorante(int id, String nome, String indirizzo) {
+        JPanel panel = new JPanel();
+        panel.add(new RistorantePerLista(nome, indirizzo).panelRistorantePerLista);
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        gbc.weightx = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        mainList.add(panel, gbc, 0);
+        validate();
+        repaint();
     }
 }

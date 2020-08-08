@@ -18,6 +18,6 @@ The project consists of two applications:
 - Accent: #c71e23
 - Border: #9b9b9b
 - Stars: #ffca18
-- Text primary: #ffffff
+- Text primary: #000000
 - Text secondary: #8f8f8f
 - Font: Arial

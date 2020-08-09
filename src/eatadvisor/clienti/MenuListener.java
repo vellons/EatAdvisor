@@ -7,11 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MenuListener implements ActionListener {
-    /**
-     * Invoked when an action occurs.
-     *
-     * @param e the event to be processed
-     */
+    public static JFrame mofidyAccount = new JFrame("Il mio account - cliente");
     @Override
     public void actionPerformed(ActionEvent e) {
         String scelta = ((JMenuItem) e.getSource()).getText();
@@ -24,9 +20,19 @@ public class MenuListener implements ActionListener {
                 System.exit(0);
             }
         }
-
         else if (scelta.equals("Modifica account")){
+            //System.out.println("Funzione ancora non disponibile");
+            try {
 
+                mofidyAccount.setContentPane(new AccountCliente().panelAccountCliente);
+                clienti.initUI(mofidyAccount);
+                mofidyAccount.setLocationRelativeTo(null);
+                mofidyAccount.pack();
+                mofidyAccount.setVisible(true);
+                mofidyAccount.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
         }
 
 

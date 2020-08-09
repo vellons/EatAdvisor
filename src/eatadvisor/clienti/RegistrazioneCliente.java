@@ -48,8 +48,14 @@ public class RegistrazioneCliente {
                             ioUtenti.creaNuovoUtente("CLIE", getTfEmail(), getTfNickname(),
                                     getTfPassword(), getTfNome(), getTfCognome(),
                                     getTfComune(), getTfSiglaProvincia());
-                            JOptionPane.showMessageDialog(null, "Account creato! Adesso effettua " +
-                                    "l'accesso", "Evviva", JOptionPane.PLAIN_MESSAGE);
+                            if (JOptionPane.showOptionDialog(null, "Confermi di voler creare un account?",
+                                    "Conferma iscrizione", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
+                                    null, null, null)== JOptionPane.YES_OPTION){
+                                clienti.closePreviousWindow(StartClienti.registrazioneFrame);
+                                JOptionPane.showMessageDialog(null, "Account creato con successo, ora effettua il" +
+                                                " login.", "Evviva", JOptionPane.PLAIN_MESSAGE);
+                            }
+
                         } catch (Exception exception) {
                             if (Objects.equals(exception.getMessage(), "Email già utilizzata.")) {
                                 JOptionPane.showMessageDialog(null, "Questa email è già stata utilizzata",

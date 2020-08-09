@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Method;
 
 public class StartClienti {
     private IOUtenti ioUtenti = null;
@@ -23,6 +24,9 @@ public class StartClienti {
     private JLabel lblPassword;
     private JLabel lblNickname;
     private JPanel panelLogo;
+
+    public static JFrame registrazioneFrame = new JFrame("EatAdvisor Clienti - Registrazione");
+
 
     static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0];
 
@@ -59,7 +63,6 @@ public class StartClienti {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Global.utenteLoggato = null; // Logout utente
-                    JFrame registrazioneFrame = new JFrame("EatAdvisor Clienti - Registrazione");
                     registrazioneFrame.setContentPane(new RegistrazioneCliente().panelRegistrazioneCliente);
                     clienti.initUI(registrazioneFrame);
                     registrazioneFrame.setLocationRelativeTo(null);
@@ -90,6 +93,7 @@ public class StartClienti {
 
     private void openDashBoardClienti() {
         try {
+            clienti.closePreviousWindow(clienti.mainFrame);
             JFrame listaRistoranti = new JFrame("EatAdvisor Clienti - Lista ristoranti");
             listaRistoranti.setContentPane(new DashboardRistoranti().panelDashboardRistoranti);
             clienti.initUI(listaRistoranti);
@@ -97,9 +101,10 @@ public class StartClienti {
             listaRistoranti.pack();
             listaRistoranti.setVisible(true);
             listaRistoranti.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
-            device.setFullScreenWindow(listaRistoranti); // Imposto la pagina a tutto schermo
+            //device.setFullScreenWindow(listaRistoranti); // Imposto la pagina a tutto schermo
         } catch (Exception exception) {
             exception.printStackTrace();
         }
     }
+
 }

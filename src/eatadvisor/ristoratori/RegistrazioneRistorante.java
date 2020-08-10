@@ -10,11 +10,10 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
 
 public class RegistrazioneRistorante {
     private IOEatAdvisor ioEatAdvisor = null;
-    String[] tipologia = new String []{ "Italiano", "Etnico", "Fusion"};
+    String[] tipologia = new String[]{"Italiano", "Etnico", "Fusion"};
     public JPanel panelRegistrazioneRistorante;
     private JLabel lblErrors;
     private JLabel lblTipologia;
@@ -28,7 +27,7 @@ public class RegistrazioneRistorante {
     private JTextField tfSitoWeb;
     private JLabel lblUrlImmagine;
     private JTextField tfUrlImmagine;
-    public JComboBox<String> cboxTipologia = new JComboBox<String>(tipologia);
+    public JComboBox<String> cboxTipologia;
     private JPanel panelLogo;
     private JButton btnIscriviti;
     private JTextField tfCivico;
@@ -39,8 +38,7 @@ public class RegistrazioneRistorante {
     private JLabel lblCitta;
     private JLabel lblProvincia;
     private JLabel lblCap;
-    private Indirizzo indirizzo=new Indirizzo(getTfVia(),getTfCivico(),getTfCitta(),getTfProvincia(),getTfCap());
-
+    private Indirizzo indirizzo;
 
 
     public RegistrazioneRistorante() throws Exception {
@@ -48,14 +46,15 @@ public class RegistrazioneRistorante {
         btnIscriviti.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                    if (checkAllInputs()) {
-                        try {
-                            ioEatAdvisor = new IOEatAdvisor();
-                            ioEatAdvisor.creaNuovoRistorante(1,cboxTipologia.getSelectedItem().toString(), getTfNomeRistorante(),
-                                    indirizzo, getTfTelefono(), getTfSito(), getTfImmagine());
-                            JOptionPane.showMessageDialog(null, "Account creato! Adesso effettua " +
-                                    "l'accesso", "Evviva", JOptionPane.PLAIN_MESSAGE);
-                        } catch (Exception exception) {/*
+                if (checkAllInputs()) {
+                    try {
+                        indirizzo = new Indirizzo(getTfVia(), getTfCivico(), getTfCitta(), getTfProvincia(), getTfCap());
+                        ioEatAdvisor = new IOEatAdvisor();
+                        ioEatAdvisor.creaNuovoRistorante(1, cboxTipologia.getSelectedItem().toString(), getTfNomeRistorante(),
+                                indirizzo, getTfTelefono(), getTfSito(), getTfImmagine());
+                        JOptionPane.showMessageDialog(null, "Account creato! Adesso effettua " +
+                                "l'accesso", "Evviva", JOptionPane.PLAIN_MESSAGE);
+                    } catch (Exception exception) {/*
                             if (Objects.equals(exception.getMessage(), "Email già utilizzata.")) {
                                 JOptionPane.showMessageDialog(null, "Questa email è già stata utilizzata",
                                         "Attenzione", JOptionPane.PLAIN_MESSAGE);
@@ -68,12 +67,13 @@ public class RegistrazioneRistorante {
                                 tfNickname.setText("");
                                 tfNickname.setVisible(true);
                             }
-                        */}
-                    } else {
-                        lblErrors.setFont(new Font("Default", Font.BOLD, 14));
-                        lblErrors.setForeground(Color.RED);
-                        lblErrors.setVisible(true);
+                        */
                     }
+                } else {
+                    lblErrors.setFont(new Font("Default", Font.BOLD, 14));
+                    lblErrors.setForeground(Color.RED);
+                    lblErrors.setVisible(true);
+                }
 
             }
         });
@@ -121,7 +121,7 @@ public class RegistrazioneRistorante {
     private boolean checkAllInputs() {
         boolean allFieldsValid = true;  // Tramite una variabile booleana, verifico se tutti i campi siano completi
 
-      //  allFieldsValid &= checkInput(getTfNome(), tfNome); // Per ogni TextField, verifico se è diverso da vuoto
+        //  allFieldsValid &= checkInput(getTfNome(), tfNome); // Per ogni TextField, verifico se è diverso da vuoto
         allFieldsValid &= checkInput(getTfNomeRistorante(), tfNomeRistorante);
         allFieldsValid &= checkInput(getTfVia(), tfVia);
         allFieldsValid &= checkInput(getTfCivico(), tfCivico);
@@ -152,7 +152,7 @@ public class RegistrazioneRistorante {
         BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoRistoratori.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
+
+        cboxTipologia = new JComboBox<String>(tipologia);
     }
-
-
 }

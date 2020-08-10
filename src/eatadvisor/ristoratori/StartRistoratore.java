@@ -11,7 +11,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-
 public class StartRistoratore {
     private IOUtenti ioUtenti = null;
     public JPanel panelStartRistoratore;
@@ -58,11 +57,10 @@ public class StartRistoratore {
                     JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione");
                     registrazioneFrame.setContentPane(new RegistrazioneRistoratore().panelRegistrazioneRistoratore);
                     ristoratori.initUI(registrazioneFrame);
-                    registrazioneFrame.setSize(500, 450);
-                    registrazioneFrame.setLocationRelativeTo(null);
-                    registrazioneFrame.pack();
-                    registrazioneFrame.setVisible(true);
                     registrazioneFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
+                    registrazioneFrame.pack();
+                    registrazioneFrame.setLocationRelativeTo(null);
+                    registrazioneFrame.setVisible(true);
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
@@ -76,11 +74,10 @@ public class StartRistoratore {
                     JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione Ristorante");
                     registrazioneFrame.setContentPane(new RegistrazioneRistorante().panelRegistrazioneRistorante);
                     ristoratori.initUI(registrazioneFrame);
-                    registrazioneFrame.setSize(500, 450);
-                    registrazioneFrame.setLocationRelativeTo(null);
-                    registrazioneFrame.pack();
-                    registrazioneFrame.setVisible(true);
                     registrazioneFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
+                    registrazioneFrame.pack();
+                    registrazioneFrame.setLocationRelativeTo(null);
+                    registrazioneFrame.setVisible(true);
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }

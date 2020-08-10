@@ -1,34 +1,48 @@
 package eatadvisor.ristoratori;
 
+import eatadvisor.global.Global;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class ristoratori {
+    public static JFrame mainFrame = new JFrame("EatAdvisor Ristoratori - Login");
 
-    public static void main(String[] args) {
-        JFrame mainFrame = new JFrame("EatAdvisor Ristoratori - Login");
+    public static void main(String[] args) throws Exception, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         mainFrame.setContentPane(new StartRistoratore().panelStartRistoratore);
         initUI(mainFrame);
 
-        JMenuBar myBar = new JMenuBar();
-        mainFrame.setJMenuBar(myBar);
-        //setMenuAccount(myBar); // TODO: mostrare solo se l'utente è loggato
-        setMenuInfo(myBar);
-
         mainFrame.pack();
+        mainFrame.setLocationRelativeTo(null);
         mainFrame.setVisible(true);
     }
 
-    public static void initUI(JFrame frame) {
+    public static void initUI(JFrame frame) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         ImageIcon imageIcon = new ImageIcon("media/EatAdvisroIcon.png");
         Image image = imageIcon.getImage();
         frame.setIconImage(image);
-        frame.setSize(500, 300);
-        frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Definisce il comportamento della finestra
+
         if (System.getProperty("os.name").toLowerCase().contains("mac")) {
-            System.setProperty("apple.laf.useScreenMenuBar", "true"); // Posiziona il menu bar in stile macOS
+            System.setProperty("apple.awt.brushMetalLook", "true");
+            // use the mac system menu bar
+            System.setProperty("apple.laf.useScreenMenuBar", "true");
+            // set the "About" menu item name
+            System.setProperty("com.apple.mrj.application.apple.menu.about.name", "EatAdvisor Clienti");
+            // use smoother fonts
+            System.setProperty("apple.awt.textantialiasing", "true");
+            // ref: http://developer.apple.com/releasenotes/Java/Java142RNTiger/1_NewFeatures/chapter_2_section_3.html
+            System.setProperty("apple.awt.graphics.EnableQ2DX", "true");
+            // use the system look and feel
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         }
+
+        JMenuBar myBar = new JMenuBar();
+        frame.setJMenuBar(myBar);
+        if (Global.utenteLoggato != null) {
+            setMenuAccount(myBar);
+        }
+        setMenuInfo(myBar);
     }
 
     private static void setMenuAccount(JMenuBar myMenuBar) { // Creazione del JMenu account
@@ -47,5 +61,10 @@ public class ristoratori {
         JMenuItem f1 = new JMenuItem("Versione");
         f.add(f1);
         myMenuBar.add(f);
+    }
+
+    public static void closePreviousWindow(JFrame finestra) {
+        finestra.setVisible(false);
+        finestra.dispose();
     }
 }

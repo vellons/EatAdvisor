@@ -53,8 +53,8 @@ public class RegistrazioneRistorante {
                         ioEatAdvisor = new IOEatAdvisor();
                         ioEatAdvisor.creaNuovoRistorante(1, Objects.requireNonNull(cboxTipologia.getSelectedItem()).toString(), getTfNomeRistorante(),
                                 indirizzo, getTfTelefono(), getTfSito(), getTfImmagine());
-                        JOptionPane.showMessageDialog(null, "Account creato! Adesso effettua " +
-                                "l'accesso", "Evviva", JOptionPane.PLAIN_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Ristorante creato! Adesso effettua " +
+                                "l'accesso", "Registrazione effettuata", JOptionPane.PLAIN_MESSAGE);
                     } catch (Exception exception) {
                         JOptionPane.showMessageDialog(null, "Abbiamo riscontrato problemi durante la fase di creazione, prova a riavviare l'app",
                                 "Attenzione", JOptionPane.PLAIN_MESSAGE);

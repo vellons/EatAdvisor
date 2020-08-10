@@ -48,7 +48,7 @@ public class RegistrazioneRistoratore {
                                     getTfPassword(), getTfNome(), getTfCognome(),
                                     getTfComune(), getTfSiglaProvincia());
                             JOptionPane.showMessageDialog(null, "Account creato! Adesso effettua " +
-                                    "l'accesso", "Evviva", JOptionPane.PLAIN_MESSAGE);
+                                    "l'accesso", "Registrazione effettuate", JOptionPane.PLAIN_MESSAGE);
                         } catch (Exception exception) {
                             if (Objects.equals(exception.getMessage(), "Email già utilizzata.")) {
                                 JOptionPane.showMessageDialog(null, "Questa email è già stata utilizzata",

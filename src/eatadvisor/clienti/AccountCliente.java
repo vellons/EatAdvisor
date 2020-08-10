@@ -35,16 +35,21 @@ public class AccountCliente {
         btnChangeAccount.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                    btnChangeAccount.setText("Conferma modifiche");
-                    setTrueEditable();
-                    btnChangeAccount.addActionListener(new ActionListener() {
-                        @Override
-                        public void actionPerformed(ActionEvent e) {
-                            try {
-                                aggiornaUtenti = new IOUtenti();
+                btnChangeAccount.setText("Conferma modifiche");
+                setTrueEditable();
+                btnChangeAccount.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        try {
+                            aggiornaUtenti = new IOUtenti();
+                            if (!checkAllInputs()){
+                                JOptionPane.showMessageDialog(null, "Attenzione, tutti i " +
+                                        "campi devono essere completati!", "Errore", JOptionPane.ERROR_MESSAGE);
+                            }
+                            else{
                                 if (JOptionPane.showOptionDialog(null, "Confermi di voler modificare il tuo account?",
                                         "Conferma modifica", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
-                                        null, null, null)== JOptionPane.YES_OPTION)
+                                        null, null, null) == JOptionPane.YES_OPTION){
                                     aggiornaUtenti.aggiornaUtenteById(Global.utenteLoggato.getId(), tfNome.getText(),
                                             tfCognome.getText(), tfComune.getText(), tfSiglaProvincia.getText());
 
@@ -54,43 +59,27 @@ public class AccountCliente {
                                     Global.utenteLoggato.setSiglaProvincia(tfSiglaProvincia.getText());
 
                                     JOptionPane.showMessageDialog(null, "Modifica account eseguto con " +
-                                                    "successo", "Modifica eseguita", JOptionPane.PLAIN_MESSAGE);
+                                            "successo", "Modifica eseguita", JOptionPane.PLAIN_MESSAGE);
                                     clienti.closePreviousWindow(MenuListener.mofidyAccount);
+                                }
 
-                            } catch (Exception exception) {
-                                exception.printStackTrace();
                             }
-                           // setFalseEditable();
-                           //btnChangeAccount.setText("Modifica account");
+                        } catch (Exception exception) {
+                            exception.printStackTrace();
                         }
-                    });
+                    }
+                });
             }
         });
     }
+
+
 
     private void setTrueEditable() {
         tfNome.setEditable(true);  // impostando a true, ho la possibilità di modificare il campo di testo
         tfCognome.setEditable(true);
         tfComune.setEditable(true);
         tfSiglaProvincia.setEditable(true);
-        //tfEmail.setEditable(true);
-        //tfNickname.setEditable(true);
-    }
-    private void setFalseEditable(){
-        tfNome.setEditable(false);  // impostando a true, ho la possibilità di modificare il campo di testo
-        //tfNome.setVisible(true);
-
-        tfCognome.setEditable(false);
-       // tfCognome.setVisible(true);
-
-        tfComune.setEditable(false);
-       // tfComune.setVisible(true);
-
-        tfSiglaProvincia.setEditable(false);
-      //  tfSiglaProvincia.setVisible(true);
-        //tfEmail.setEditable(true);
-        //tfNickname.setEditable(true);
-
     }
 
     private void setAllTextField() {
@@ -118,6 +107,29 @@ public class AccountCliente {
         tfNickname.setEditable(false);
         tfNickname.setVisible(true);
     }
+    private boolean checkAllInputs() {
+        boolean allFieldsValid = true;  // Tramite una variabile booleana, verifico se tutti i campi siano completi
+
+        allFieldsValid &= checkInput(tfNome.getText()); // Per ogni TextField, verifico se è diverso da vuoto
+        allFieldsValid &= checkInput(tfCognome.getText());
+        allFieldsValid &= checkInput(tfComune.getText());
+        allFieldsValid &= checkInput(tfSiglaProvincia.getText());
+
+        return allFieldsValid; // Restituisco il risultato booleano proveniente da CheckInput
+    }
+
+    private boolean checkInput(String input) { // Funzione per la verifica del textfield
+        boolean res;
+        String tmp = "";
+        tmp += input;
+        if (tmp.equals("")) { // Se il campo e vuoto, visualizzo una scritta
+            res = false;
+        } else {
+            res = true;
+        }
+        return res;
+    }
+
 
     private void createUIComponents() throws IOException {
         panelLogo = new JPanel();

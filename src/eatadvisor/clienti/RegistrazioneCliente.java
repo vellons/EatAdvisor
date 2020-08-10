@@ -53,7 +53,7 @@ public class RegistrazioneCliente {
                                     null, null, null)== JOptionPane.YES_OPTION){
                                 clienti.closePreviousWindow(StartClienti.registrazioneFrame);
                                 JOptionPane.showMessageDialog(null, "Account creato con successo, ora effettua il" +
-                                                " login.", "Evviva", JOptionPane.PLAIN_MESSAGE);
+                                                " login.", "Registrazione effettuata", JOptionPane.PLAIN_MESSAGE);
                             }
 
                         } catch (Exception exception) {

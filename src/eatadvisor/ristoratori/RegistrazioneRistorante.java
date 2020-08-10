@@ -10,10 +10,11 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 public class RegistrazioneRistorante {
     private IOEatAdvisor ioEatAdvisor = null;
-    String[] tipologia = new String[]{"Italiano", "Etnico", "Fusion"};
+    String[] tipologia = new String[]{"ITALIANO", "ETNICO", "FUSION"};
     public JPanel panelRegistrazioneRistorante;
     private JLabel lblErrors;
     private JLabel lblTipologia;
@@ -50,24 +51,13 @@ public class RegistrazioneRistorante {
                     try {
                         indirizzo = new Indirizzo(getTfVia(), getTfCivico(), getTfCitta(), getTfProvincia(), getTfCap());
                         ioEatAdvisor = new IOEatAdvisor();
-                        ioEatAdvisor.creaNuovoRistorante(1, cboxTipologia.getSelectedItem().toString(), getTfNomeRistorante(),
+                        ioEatAdvisor.creaNuovoRistorante(1, Objects.requireNonNull(cboxTipologia.getSelectedItem()).toString(), getTfNomeRistorante(),
                                 indirizzo, getTfTelefono(), getTfSito(), getTfImmagine());
                         JOptionPane.showMessageDialog(null, "Account creato! Adesso effettua " +
                                 "l'accesso", "Evviva", JOptionPane.PLAIN_MESSAGE);
-                    } catch (Exception exception) {/*
-                            if (Objects.equals(exception.getMessage(), "Email già utilizzata.")) {
-                                JOptionPane.showMessageDialog(null, "Questa email è già stata utilizzata",
-                                        "Attenzione", JOptionPane.PLAIN_MESSAGE);
-                                tfEmail.setText("");
-                                tfEmail.setVisible(true);
-                            }
-                            if (Objects.equals(exception.getMessage(), "Nickanme già utilizzato.")) {
-                                JOptionPane.showMessageDialog(null, "Questo nickname è già stato utilizzato",
-                                        "Attenzione", JOptionPane.PLAIN_MESSAGE);
-                                tfNickname.setText("");
-                                tfNickname.setVisible(true);
-                            }
-                        */
+                    } catch (Exception exception) {
+                        JOptionPane.showMessageDialog(null, "Abbiamo riscontrato problemi durante la fase di creazione, prova a riavviare l'app",
+                                "Attenzione", JOptionPane.PLAIN_MESSAGE);
                     }
                 } else {
                     lblErrors.setFont(new Font("Default", Font.BOLD, 14));
@@ -116,7 +106,6 @@ public class RegistrazioneRistorante {
     public String getTfImmagine() {
         return tfUrlImmagine.getText();
     }
-
 
     private boolean checkAllInputs() {
         boolean allFieldsValid = true;  // Tramite una variabile booleana, verifico se tutti i campi siano completi

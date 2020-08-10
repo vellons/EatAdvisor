@@ -22,6 +22,7 @@ public class StartRistoratore {
     private JLabel lblPassword;
     private JPasswordField tfPassword;
     private JPanel panelLogo;
+    private JButton btnCreaRistorante;
 
     public StartRistoratore() {
         btnAccedi.addActionListener(new ActionListener() {
@@ -32,12 +33,13 @@ public class StartRistoratore {
                     ioUtenti = new IOUtenti();
                     System.out.println("Email: " + tfEmail.getText());
                     //System.out.println("Password: " + String.valueOf(tfPassword.getPassword()));
+                    ioUtenti.filtraPerTipo("RIST");
                     ioUtenti.filtraPerEmail(tfEmail.getText());
                     ioUtenti.filtraPerPassword(String.valueOf(tfPassword.getPassword()));
                     if (ioUtenti.getListaUtenti().size() == 1) {
                         Global.utenteLoggato = ioUtenti.getListaUtenti().get(0); // prendo l'unico utente nella lista
                         //System.out.println(Global.utenteLoggato);
-                        JOptionPane.showMessageDialog(null, "Benvenuto/a " + Global.utenteLoggato.getNickname(),
+                        JOptionPane.showMessageDialog(null, "Benvenuto/a " + Global.utenteLoggato.getNome(),
                                 "Accesso eseguito", JOptionPane.PLAIN_MESSAGE);
                     } else {
                         JOptionPane.showMessageDialog(null, "Username e/o password errati",
@@ -52,9 +54,9 @@ public class StartRistoratore {
         btnIscriviti.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*try {
+                try {
                     JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione");
-                    registrazioneFrame.setContentPane(new RegistrazioneRistorante().panelRegistrazioneRistoratore);
+                    registrazioneFrame.setContentPane(new RegistrazioneRistoratore().panelRegistrazioneRistoratore);
                     ristoratori.initUI(registrazioneFrame);
                     registrazioneFrame.setSize(500, 450);
                     registrazioneFrame.setLocationRelativeTo(null);
@@ -63,9 +65,28 @@ public class StartRistoratore {
                     registrazioneFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
                 } catch (Exception exception) {
                     exception.printStackTrace();
-                }*/
+                }
             }
         });
+
+        btnCreaRistorante.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione Ristorante");
+                    registrazioneFrame.setContentPane(new RegistrazioneRistorante().panelRegistrazioneRistorante);
+                    ristoratori.initUI(registrazioneFrame);
+                    registrazioneFrame.setSize(500, 450);
+                    registrazioneFrame.setLocationRelativeTo(null);
+                    registrazioneFrame.pack();
+                    registrazioneFrame.setVisible(true);
+                    registrazioneFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+        });
+
     }
 
     private void createUIComponents() throws IOException {

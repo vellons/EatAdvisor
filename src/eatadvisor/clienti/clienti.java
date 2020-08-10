@@ -4,7 +4,6 @@ import eatadvisor.global.Global;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowEvent;
 
 public class clienti {
     public static JFrame mainFrame = new JFrame("EatAdvisor Clienti - Login");
@@ -14,6 +13,7 @@ public class clienti {
         initUI(mainFrame);
 
         mainFrame.pack();
+        mainFrame.setLocationRelativeTo(null); // Mette la finestra al centro (da richiamare dopo .pack())
         mainFrame.setVisible(true);
     }
 
@@ -22,8 +22,6 @@ public class clienti {
         ImageIcon imageIcon = new ImageIcon("media/EatAdvisroIcon.png");
         Image image = imageIcon.getImage();
         frame.setIconImage(image);
-        frame.setSize(500, 300);
-        frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Definisce il comportamento della finestra
 
         if (System.getProperty("os.name").toLowerCase().contains("mac")) {
@@ -31,11 +29,11 @@ public class clienti {
             // use the mac system menu bar
             System.setProperty("apple.laf.useScreenMenuBar", "true");
             // set the "About" menu item name
-            System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Clienti");
+            System.setProperty("com.apple.mrj.application.apple.menu.about.name", "EatAdvisor Clienti");
             // use smoother fonts
             System.setProperty("apple.awt.textantialiasing", "true");
             // ref: http://developer.apple.com/releasenotes/Java/Java142RNTiger/1_NewFeatures/chapter_2_section_3.html
-            System.setProperty("apple.awt.graphics.EnableQ2DX","true");
+            System.setProperty("apple.awt.graphics.EnableQ2DX", "true");
             // use the system look and feel
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         }
@@ -54,8 +52,8 @@ public class clienti {
         JMenuItem f1 = new JMenuItem("Modifica account");
         JMenuItem f2 = new JMenuItem("Logout");
 
-        f2.addActionListener(mL);
         f1.addActionListener(mL);
+        f2.addActionListener(mL);
 
         f.add(f1);
         f.add(f2);
@@ -68,7 +66,8 @@ public class clienti {
         f.add(f1);
         myMenuBar.add(f);
     }
-    public static void closePreviousWindow(JFrame finestra){
+
+    public static void closePreviousWindow(JFrame finestra) {
         finestra.setVisible(false);
         finestra.dispose();
     }

@@ -44,16 +44,16 @@ public class RegistrazioneCliente {
                 } else {
                     if (checkAllInputs()) {
                         try {
-                            ioUtenti = new IOUtenti();
-                            ioUtenti.creaNuovoUtente("CLIE", getTfEmail(), getTfNickname(),
-                                    getTfPassword(), getTfNome(), getTfCognome(),
-                                    getTfComune(), getTfSiglaProvincia());
                             if (JOptionPane.showOptionDialog(null, "Confermi di voler creare un account?",
                                     "Conferma iscrizione", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
-                                    null, null, null)== JOptionPane.YES_OPTION){
+                                    null, null, null) == JOptionPane.YES_OPTION) {
+                                ioUtenti = new IOUtenti();
+                                ioUtenti.creaNuovoUtente("CLIE", getTfEmail(), getTfNickname(),
+                                        getTfPassword(), getTfNome(), getTfCognome(),
+                                        getTfComune(), getTfSiglaProvincia());
                                 clienti.closePreviousWindow(StartClienti.registrazioneFrame);
                                 JOptionPane.showMessageDialog(null, "Account creato con successo, ora effettua il" +
-                                                " login.", "Registrazione effettuata", JOptionPane.PLAIN_MESSAGE);
+                                        " login.", "Registrazione effettuata", JOptionPane.PLAIN_MESSAGE);
                             }
 
                         } catch (Exception exception) {
@@ -61,13 +61,11 @@ public class RegistrazioneCliente {
                                 JOptionPane.showMessageDialog(null, "Questa email è già stata utilizzata",
                                         "Attenzione", JOptionPane.PLAIN_MESSAGE);
                                 tfEmail.setText("");
-                                tfEmail.setVisible(true);
                             }
                             if (Objects.equals(exception.getMessage(), "Nickanme già utilizzato.")) {
                                 JOptionPane.showMessageDialog(null, "Questo nickname è già stato utilizzato",
                                         "Attenzione", JOptionPane.PLAIN_MESSAGE);
                                 tfNickname.setText("");
-                                tfNickname.setVisible(true);
                             }
                         }
                     } else {

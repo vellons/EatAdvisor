@@ -52,15 +52,10 @@ public class AccountCliente {
                                         "Conferma modifica", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
                                         null, null, null) == JOptionPane.YES_OPTION) { // chiedo all'utente se vuole aggiornare i dati inseriti
                                     //Se conferma, invoco il metodo aggiornaUtenteById
-                                    aggiornaUtenti.aggiornaUtenteById(Global.utenteLoggato.getId(), tfNome.getText(),
+                                    Global.utenteLoggato = aggiornaUtenti.aggiornaUtenteById(Global.utenteLoggato.getId(), tfNome.getText(),
                                             tfCognome.getText(), tfComune.getText(), tfSiglaProvincia.getText());
 
-                                    Global.utenteLoggato.setNome(tfNome.getText()); // Modifico la variabile globale, con i nuovi dati
-                                    Global.utenteLoggato.setCognome(tfCognome.getText());
-                                    Global.utenteLoggato.setComune(tfComune.getText());
-                                    Global.utenteLoggato.setSiglaProvincia(tfSiglaProvincia.getText());
-
-                                    JOptionPane.showMessageDialog(null, "Modifica account eseguto con " +
+                                    JOptionPane.showMessageDialog(null, "Modifica account eseguta con " +
                                             "successo", "Modifica eseguita", JOptionPane.PLAIN_MESSAGE);
                                     clienti.closePreviousWindow(MenuListener.mofidyAccount); //chiudo la finestra di modifica
                                 } else { //se l'utente non conferma le modifiche
@@ -74,6 +69,7 @@ public class AccountCliente {
                 });
             }
         });
+
         btnChangePsw.addActionListener(new ActionListener() {
 
             @Override

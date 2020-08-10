@@ -47,9 +47,16 @@ public class AccountCliente {
                                         null, null, null)== JOptionPane.YES_OPTION)
                                     aggiornaUtenti.aggiornaUtenteById(Global.utenteLoggato.getId(), tfNome.getText(),
                                             tfCognome.getText(), tfComune.getText(), tfSiglaProvincia.getText());
+
+                                    Global.utenteLoggato.setNome(tfNome.getText());
+                                    Global.utenteLoggato.setCognome(tfCognome.getText());
+                                    Global.utenteLoggato.setComune(tfComune.getText());
+                                    Global.utenteLoggato.setSiglaProvincia(tfSiglaProvincia.getText());
+
                                     JOptionPane.showMessageDialog(null, "Modifica account eseguto con " +
                                                     "successo", "Modifica eseguita", JOptionPane.PLAIN_MESSAGE);
                                     clienti.closePreviousWindow(MenuListener.mofidyAccount);
+
                             } catch (Exception exception) {
                                 exception.printStackTrace();
                             }

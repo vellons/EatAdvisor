@@ -31,38 +31,41 @@ public class AccountCliente {
     IOUtenti aggiornaUtenti = null;
 
     public AccountCliente() {
-        setAllTextField(); //"settaggio" dei campi
+        setAllTextField(); // "settaggio" iniziale dei textfiled
         btnChangeAccount.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                btnChangeAccount.setText("Conferma modifiche");
-                setTrueEditable();
+                btnChangeAccount.setText("Conferma modifiche"); // cambio il nome del bottone
+                setTrueEditable(); // cambio la proprietà dei textfield
                 btnChangeAccount.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         try {
                             aggiornaUtenti = new IOUtenti();
-                            if (!checkAllInputs()){
+                            if (!checkAllInputs()) { // verifico che tutti i campi siamo completi
                                 JOptionPane.showMessageDialog(null, "Attenzione, tutti i " +
                                         "campi devono essere completati!", "Errore", JOptionPane.ERROR_MESSAGE);
-                            }
-                            else{
-                                if (JOptionPane.showOptionDialog(null, "Confermi di voler modificare il tuo account?",
+                            } else {
+                                if (JOptionPane.showOptionDialog(null, "Confermi di voler modificare modificare i tuoi dati?\n" +
+                                                "(Qualora non volessi effetuare, modifiche la pagina si chiuderà e i dati non " +
+                                                "validati, saranno ripristinati).",
                                         "Conferma modifica", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
-                                        null, null, null) == JOptionPane.YES_OPTION){
+                                        null, null, null) == JOptionPane.YES_OPTION) { // chiedo all'utente se vuole aggiornare i dati inseriti
+                                    //Se conferma, invoco il metodo aggiornaUtenteById
                                     aggiornaUtenti.aggiornaUtenteById(Global.utenteLoggato.getId(), tfNome.getText(),
                                             tfCognome.getText(), tfComune.getText(), tfSiglaProvincia.getText());
 
-                                    Global.utenteLoggato.setNome(tfNome.getText());
+                                    Global.utenteLoggato.setNome(tfNome.getText()); // Modifico la variabile globale, con i nuovi dati
                                     Global.utenteLoggato.setCognome(tfCognome.getText());
                                     Global.utenteLoggato.setComune(tfComune.getText());
                                     Global.utenteLoggato.setSiglaProvincia(tfSiglaProvincia.getText());
 
                                     JOptionPane.showMessageDialog(null, "Modifica account eseguto con " +
                                             "successo", "Modifica eseguita", JOptionPane.PLAIN_MESSAGE);
-                                    clienti.closePreviousWindow(MenuListener.mofidyAccount);
+                                    clienti.closePreviousWindow(MenuListener.mofidyAccount); //chiudo la finestra di modifica
+                                } else { //se l'utente non conferma le modifiche
+                                    clienti.closePreviousWindow(MenuListener.mofidyAccount); // chiudo la finestra
                                 }
-
                             }
                         } catch (Exception exception) {
                             exception.printStackTrace();
@@ -71,19 +74,26 @@ public class AccountCliente {
                 });
             }
         });
+        btnChangePsw.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) { //Funzione da implementare
+                JOptionPane.showMessageDialog(null, "Funzione non ancora disponibile",
+                        "", JOptionPane.PLAIN_MESSAGE);
+            }
+        });
     }
 
 
-
-    private void setTrueEditable() {
+    private void setTrueEditable() { // metodo per l'abilitazione dei textfield
         tfNome.setEditable(true);  // impostando a true, ho la possibilità di modificare il campo di testo
         tfCognome.setEditable(true);
         tfComune.setEditable(true);
         tfSiglaProvincia.setEditable(true);
     }
 
-    private void setAllTextField() {
-        tfNome.setText(Global.utenteLoggato.getNome()); //prelevo il nome dell utemte loggato
+    private void setAllTextField() { // settaggio iniziale
+        tfNome.setText(Global.utenteLoggato.getNome()); // prelevo il nome dell'utente loggato in questo momento
         tfNome.setEditable(false);  // impostando a false, non ho la possibilità di modificare il campo di testo
         tfNome.setVisible(true);    // impostando a true, posso visualizzare il testo presente nel textfield
 
@@ -107,7 +117,8 @@ public class AccountCliente {
         tfNickname.setEditable(false);
         tfNickname.setVisible(true);
     }
-    private boolean checkAllInputs() {
+
+    private boolean checkAllInputs() { // Metodo per la verifica di tutti i campi
         boolean allFieldsValid = true;  // Tramite una variabile booleana, verifico se tutti i campi siano completi
 
         allFieldsValid &= checkInput(tfNome.getText()); // Per ogni TextField, verifico se è diverso da vuoto
@@ -118,7 +129,7 @@ public class AccountCliente {
         return allFieldsValid; // Restituisco il risultato booleano proveniente da CheckInput
     }
 
-    private boolean checkInput(String input) { // Funzione per la verifica del textfield
+    private boolean checkInput(String input) { // Metodo per la verifica del textfield
         boolean res;
         String tmp = "";
         tmp += input;
@@ -130,10 +141,9 @@ public class AccountCliente {
         return res;
     }
 
-
     private void createUIComponents() throws IOException {
         panelLogo = new JPanel();
-        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoClienti.png"));
+        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoClientiIlMioAccount.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
     }

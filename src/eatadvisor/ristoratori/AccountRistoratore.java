@@ -139,7 +139,7 @@ public class AccountRistoratore {
 
     private void createUIComponents() throws IOException { //Logo
         panelLogo = new JPanel();
-        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoRistoratoriilMioAccount.png"));
+        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoRistoratoriIlMioAccount.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
     }

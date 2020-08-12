@@ -72,6 +72,7 @@ public class AccountRistoratore {
                 });
             }
         });
+
         btnChangePswRistoratore.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) { //Funzione da implementare
@@ -138,7 +139,7 @@ public class AccountRistoratore {
 
     private void createUIComponents() throws IOException { //Logo
         panelLogo = new JPanel();
-        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoClientiIlMioAccount.png"));
+        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoRistoratoriilMioAccount.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
     }

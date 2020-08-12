@@ -70,6 +70,7 @@ public class StartRistoratore {
             }
         });
 
+
         btnCreaRistorante.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -90,8 +91,10 @@ public class StartRistoratore {
     }
     private void openModificaAccount(){ //questa parte è da cancellare: serve solo per verificare se funziona il modifica account
         try{
+            //AccountRistoratore ar = new AccountRistoratore();
+            //modifyAccount.setContentPane(ar.panelAccountRistoratore);
             modifyAccount.setContentPane(new AccountRistoratore().panelAccountRistoratore);
-            clienti.initUI(modifyAccount);
+            ristoratori.initUI(modifyAccount);
             modifyAccount.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
             modifyAccount.pack();
             modifyAccount.setLocationRelativeTo(null);

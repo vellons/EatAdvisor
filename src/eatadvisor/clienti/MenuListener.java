@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MenuListener implements ActionListener {
+
     public static JFrame mofidyAccount = new JFrame("EatAdvisor Clienti - Il mio account");
 
     @Override

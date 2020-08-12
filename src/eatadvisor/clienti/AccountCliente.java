@@ -144,5 +144,3 @@ public class AccountCliente {
         panelLogo.add(picLabel);
     }
 }
-
-

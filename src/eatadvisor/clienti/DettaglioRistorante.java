@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class DettaglioRistorante {
+    private Ristorante ristorante;
     public JPanel panelDettaglioRistorante;
     private JPanel panelLogo;
     private JLabel lbNomeRistorante;
@@ -16,9 +17,13 @@ public class DettaglioRistorante {
     private JLabel lbValutazioni;
     private JPanel panelPicRistorante;
     private JLabel lbNumeroRecensioni;
+    private JLabel lbDescrizione;
+    private JLabel lbDescrizioneRist;
+    private JPanel panelRecensioni;
 
     public DettaglioRistorante(Ristorante ristorante) {
-        setLabels(ristorante);
+        this.ristorante = ristorante;
+        setLabels(this.ristorante);
 
     }
 
@@ -27,15 +32,16 @@ public class DettaglioRistorante {
         lbIndirizzo.setText(String.valueOf(ristorante.getIndirizzo()));
         lbValutazioni.setText("Valutazione media: "+String.valueOf(ristorante.getRecensioniValutazioneMedia()));
         lbNumeroRecensioni.setText(String.valueOf(ristorante.getRecensioni().size())+" valutazioni");
-
     }
 
-
-    private void createUIComponents() throws IOException {
+    private void createUIComponents() throws Exception {
         panelLogo = new JPanel();
-        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoRistoratoriDettaglio.png"));
+        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoClientiDettaglio.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
-    }
 
+        panelRecensioni = new JPanel();
+        panelRecensioni.add(new ListaRecensioniPanel(this.ristorante)); // Aggiungo la lista dei ristoranti
+
+    }
 }

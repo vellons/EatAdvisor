@@ -52,7 +52,7 @@ public class RegistrazioneRistorante {
                         indirizzo = new Indirizzo(getTfVia(), getTfCivico(), getTfCitta(), getTfProvincia(), getTfCap());
                         ioEatAdvisor = new IOEatAdvisor();
                         ioEatAdvisor.creaNuovoRistorante(1, Objects.requireNonNull(cboxTipologia.getSelectedItem()).toString(), getTfNomeRistorante(),
-                                indirizzo, getTfTelefono(), getTfSito(), getTfImmagine());
+                                "TODO: aggiungere descrizione durante la registrazione @Mahdi", indirizzo, getTfTelefono(), getTfSito(), getTfImmagine());
                         JOptionPane.showMessageDialog(null, "Ristorante creato! Adesso effettua " +
                                 "l'accesso", "Registrazione effettuata", JOptionPane.PLAIN_MESSAGE);
                     } catch (Exception exception) {

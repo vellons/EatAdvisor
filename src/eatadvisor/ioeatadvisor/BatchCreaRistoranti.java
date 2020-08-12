@@ -20,6 +20,7 @@ public class BatchCreaRistoranti {
                     i,
                     "ITALIANO",
                     "Pizza Buona " + i,
+                    "Piccola descrizione di Pizza Buona " + i + ".\n.Ottima pizzeria con forno a legna",
                     new Indirizzo("Via le dita dal Naso", String.valueOf(i), "Verbania", "VB", "28922"),
                     "333333333" + i,
                     "https://pizzabuona.it",

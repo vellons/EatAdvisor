@@ -10,18 +10,20 @@ public class Ristorante implements Serializable {
     private int proprietarioId;
     private String tipologia;
     private String nomeRistorante;
+    private String descrizione;
     private Indirizzo indirizzo;
     private String numeroTelefono;
     private String sitoWeb;
     private String urlImmagine;
     private ArrayList<Recensione> recensioni;
 
-    public Ristorante(int id, int proprietarioId, String tipologia, String nomeRistorante, Indirizzo indirizzo,
-                      String numeroTelefono, String sitoWeb, String urlImmagine) {
+    public Ristorante(int id, int proprietarioId, String tipologia, String nomeRistorante, String descrizione,
+                      Indirizzo indirizzo, String numeroTelefono, String sitoWeb, String urlImmagine) {
         this.id = id;
         this.proprietarioId = proprietarioId;
         this.tipologia = tipologia;
         this.nomeRistorante = nomeRistorante;
+        this.descrizione = descrizione;
         this.indirizzo = indirizzo;
         this.numeroTelefono = numeroTelefono;
         this.sitoWeb = sitoWeb;
@@ -59,6 +61,14 @@ public class Ristorante implements Serializable {
 
     public void setNomeRistorante(String nomeRistorante) {
         this.nomeRistorante = nomeRistorante;
+    }
+
+    public String getDescrizione() {
+        return this.descrizione;
+    }
+
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
     }
 
     public Indirizzo getIndirizzo() {
@@ -108,6 +118,14 @@ public class Ristorante implements Serializable {
         }
         if (recensioni.size() > 0) return media / recensioni.size();
         else return 0;
+    }
+
+    public int contaValutazioniConValore(int valore) {
+        int cont = 0;
+        for (Recensione r : recensioni) {
+            if (r.getValutazione() == valore) cont++;
+        }
+        return cont;
     }
 
     public void aggiungiRecensione(Recensione recensione) {

@@ -56,12 +56,13 @@ public class IOEatAdvisor {
         System.out.println("File " + FILE_EAT_ADVISOR + " aggiornato con " + ristoranti.size() + " ristoranti.");
     }
 
-    public Ristorante creaNuovoRistorante(int proprietarioId, String tipologia, String nomeRistorante, Indirizzo indirizzo,
-                                          String numeroTelefono, String sitoWeb, String urlImmagine) throws Exception {
+    public Ristorante creaNuovoRistorante(int proprietarioId, String tipologia, String nomeRistorante,
+                                          String descrizione, Indirizzo indirizzo, String numeroTelefono,
+                                          String sitoWeb, String urlImmagine) throws Exception {
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti i ristoranti
         int idSuccessivo = ristoranti.size() + 1;
-        Ristorante nuovo = new Ristorante(idSuccessivo, proprietarioId, tipologia, nomeRistorante, indirizzo,
-                numeroTelefono, sitoWeb, urlImmagine);
+        Ristorante nuovo = new Ristorante(idSuccessivo, proprietarioId, tipologia, nomeRistorante, descrizione,
+                indirizzo, numeroTelefono, sitoWeb, urlImmagine);
         ristoranti.add(nuovo); // Aggiungo nuovo ristorante alla lista
         aggiornaSuFile();
         System.out.println("Creazione ristorante avvenuta con successo. Assegnato Id: " + nuovo.getId() + ", " +
@@ -69,7 +70,7 @@ public class IOEatAdvisor {
         return nuovo;
     }
 
-    public Ristorante aggiornaRistoranteById(int id, String tipologia, String nomeRistorante,
+    public Ristorante aggiornaRistoranteById(int id, String tipologia, String nomeRistorante, String descrizione,
                                              Indirizzo indirizzo, String numeroTelefono, String sitoWeb,
                                              String urlImmagine) throws Exception {
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti i ristoranti
@@ -80,6 +81,7 @@ public class IOEatAdvisor {
                 ristoranteDaAggiornare = ristoranti.get(i);
                 ristoranteDaAggiornare.setTipologia(tipologia);
                 ristoranteDaAggiornare.setNomeRistorante(nomeRistorante);
+                ristoranteDaAggiornare.setDescrizione(descrizione);
                 ristoranteDaAggiornare.setIndirizzo(indirizzo);
                 ristoranteDaAggiornare.setNumeroTelefono(numeroTelefono);
                 ristoranteDaAggiornare.setSitoWeb(sitoWeb);

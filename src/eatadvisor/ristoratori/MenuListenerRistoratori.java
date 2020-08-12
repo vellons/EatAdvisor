@@ -19,7 +19,7 @@ public class MenuListenerRistoratori implements ActionListener{
 
         if (scelta.equals("Modifica account")){
             try {
-                modifyAccount.setContentPane((Container) new AccountRistoratore().panelAccountRistoratore);
+                modifyAccount.setContentPane(new AccountRistoratore().panelAccountRistoratore); //niente cast
                 //mofidyAccount.setContentPane(new AccountCliente().panelAccountCliente);
                 clienti.initUI(modifyAccount);
                 modifyAccount.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra

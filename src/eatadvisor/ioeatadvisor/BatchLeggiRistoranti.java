@@ -27,6 +27,10 @@ public class BatchLeggiRistoranti {
         // Blocco di codice per stampare i ristoranti
         for (Ristorante r : ioEatAdvisor.getListaRistoranti()) {
             System.out.println(r.toString());
+            r.aggiungiRecensione(new Recensione(1,3, "Ristorante non eccellente"));
+            for (Recensione rec : r.getRecensioni()) {
+                System.out.println("\t -> " + rec.toString());
+            }
         }
         System.out.println("Filtrati " + ioEatAdvisor.getListaRistoranti().size() + " ristoranti su un totale di " +
                 totaleRistoranti + ".");
@@ -34,7 +38,7 @@ public class BatchLeggiRistoranti {
 
         // Blocco di codice per creare un ristorante
         /*try {
-            ioEatAdvisor.creaNuovoRistorante(1, "ITALIANO", "Pizza Buona 4",
+            ioEatAdvisor.creaNuovoRistorante(1, "ITALIANO", "Pizza Buona 4", "Breve descrizione",
                     new Indirizzo("Via le dita dal Naso", "4", "Verbania", "VB", "28922"),
                     "3333333334", "https://pizzabuona.it",
                     "https://i2.wp.com/www.pizzerialapacesancarlo.it/wp-content/uploads/2015/12/slideshow-1.jpg?resize=480%2C280");
@@ -50,7 +54,7 @@ public class BatchLeggiRistoranti {
         /*try {
             Ristorante daAggiornare = ioEatAdvisor.getRistoranteById(4);
             Ristorante aggiornato = ioEatAdvisor.aggiornaRistoranteById(4, "ITALIANO",
-                    "Pizza MOLTO Buona 4", daAggiornare.getIndirizzo(),
+                    "Pizza MOLTO Buona 4", "Nuova descrizione", daAggiornare.getIndirizzo(),
                     daAggiornare.getNumeroTelefono(), daAggiornare.getSitoWeb(), daAggiornare.getUrlImmagine());
             System.out.println(aggiornato);
         } catch (Exception e) {

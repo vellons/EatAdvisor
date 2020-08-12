@@ -70,7 +70,7 @@ public class IOEatAdvisor {
         return nuovo;
     }
 
-    public Ristorante aggiornaRistoranteById(int id, String tipologia, String nomeRistorante,
+    public Ristorante aggiornaRistoranteById(int id, String tipologia, String nomeRistorante, String descrizione,
                                              Indirizzo indirizzo, String numeroTelefono, String sitoWeb,
                                              String urlImmagine) throws Exception {
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti i ristoranti
@@ -81,6 +81,7 @@ public class IOEatAdvisor {
                 ristoranteDaAggiornare = ristoranti.get(i);
                 ristoranteDaAggiornare.setTipologia(tipologia);
                 ristoranteDaAggiornare.setNomeRistorante(nomeRistorante);
+                ristoranteDaAggiornare.setDescrizione(descrizione);
                 ristoranteDaAggiornare.setIndirizzo(indirizzo);
                 ristoranteDaAggiornare.setNumeroTelefono(numeroTelefono);
                 ristoranteDaAggiornare.setSitoWeb(sitoWeb);

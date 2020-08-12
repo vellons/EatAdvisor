@@ -136,6 +136,7 @@ public class Ristorante implements Serializable {
     @Override
     public String toString() {
         return "Ristorante<" + id + ", proprietario: " + proprietarioId + ">: nome=" + nomeRistorante
-                + ", tipologia=" + tipologia + ", media valurazioni: " + getRecensioniValutazioneMedia();
+                + ", tipologia=" + tipologia + ", numero valutazioni: " + recensioni.size()
+                + ", media valutazioni: " + getRecensioniValutazioneMedia();
     }
 }

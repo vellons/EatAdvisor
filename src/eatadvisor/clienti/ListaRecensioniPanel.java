@@ -30,15 +30,9 @@ public class ListaRecensioniPanel extends JPanel{
         repaint();
 
         //caricamento recensioni
-
         for (Recensione rec: ristorante.getRecensioni()){
             aggiungiRecensione(rec);
         }
-
-
-
-
-
     }
 
     public Dimension getPreferredSize() {
@@ -51,9 +45,9 @@ public class ListaRecensioniPanel extends JPanel{
         repaint();
     }
 
-    private void aggiungiRecensione(Recensione rec) {
+    private void aggiungiRecensione(Recensione rec) throws Exception {
         JPanel panel = new JPanel();
-        //panel.add(new (rec).);
+        panel.add(new RecensioniPerRistorante(rec).panelRecensionePerRistorante);
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1;

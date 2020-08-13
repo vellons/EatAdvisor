@@ -30,14 +30,14 @@ public class RistorantePerLista extends JPanel {
         btnDettaglio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try{
+                try {
                     dettaglioFrame.setContentPane(new DettaglioRistorante(ristorante).panelDettaglioRistorante);
                     clienti.initUI(dettaglioFrame);
                     dettaglioFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
                     dettaglioFrame.pack();
                     dettaglioFrame.setLocationRelativeTo(null);
                     dettaglioFrame.setVisible(true);
-                }catch (Exception exception){
+                } catch (Exception exception) {
                     exception.printStackTrace();
                 }
             }

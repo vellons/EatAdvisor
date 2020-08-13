@@ -27,12 +27,12 @@ public class DettaglioRistorante {
         setLabels(this.ristorante);
     }
 
-    private void setLabels(Ristorante ristorante){
+    private void setLabels(Ristorante ristorante) {
         DecimalFormat dec = new DecimalFormat("#0.00");
         lbNomeRistorante.setText(ristorante.getNomeRistorante());
         lbIndirizzo.setText(String.valueOf(ristorante.getIndirizzo()));
-        lbValutazioni.setText("Valutazione media: "+dec.format(ristorante.getRecensioniValutazioneMedia()));
-        lbNumeroRecensioni.setText(ristorante.getRecensioni().size()+" valutazioni");
+        lbValutazioni.setText("Valutazione media: " + dec.format(ristorante.getRecensioniValutazioneMedia()));
+        lbNumeroRecensioni.setText(ristorante.getRecensioni().size() + " valutazioni");
 
         setTextAreaDescr();
         txtDescrizione.setText(ristorante.getDescrizione());

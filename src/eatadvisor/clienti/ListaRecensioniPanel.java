@@ -10,10 +10,10 @@ import java.util.ArrayList;
 
 import static javax.swing.BorderFactory.createEmptyBorder;
 
-public class ListaRecensioniPanel extends JPanel{
+public class ListaRecensioniPanel extends JPanel {
     public JPanel mainList;
 
-    public ListaRecensioniPanel(Ristorante ristorante) throws Exception{
+    public ListaRecensioniPanel(Ristorante ristorante) throws Exception {
         //ArrayList<Recensione> recensioni = ristorante.getRecensioni();
         setLayout(new BorderLayout());
 
@@ -30,7 +30,7 @@ public class ListaRecensioniPanel extends JPanel{
         repaint();
 
         //caricamento recensioni
-        for (Recensione rec: ristorante.getRecensioni()){
+        for (Recensione rec : ristorante.getRecensioni()) {
             aggiungiRecensione(rec);
         }
     }

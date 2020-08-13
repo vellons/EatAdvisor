@@ -16,13 +16,23 @@ public class DashboardRistoratori extends JFrame{
     private JButton btnElimina;
 
     public DashboardRistoratori() throws Exception{
-/*        btnAggiungi.addActionListener(new ActionListener() {
+       btnAggiungi.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                try {
+                    JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione Ristorante");
+                    registrazioneFrame.setContentPane(new RegistrazioneRistorante().panelRegistrazioneRistorante);
+                    ristoratori.initUI(registrazioneFrame);
+                    registrazioneFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
+                    registrazioneFrame.pack();
+                    registrazioneFrame.setLocationRelativeTo(null);
+                    registrazioneFrame.setVisible(true);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
             }
         });
-        btnElimina.addActionListener(new ActionListener() {
+  /*      btnElimina.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -37,7 +47,7 @@ public class DashboardRistoratori extends JFrame{
         panelLogo.add(picLabel);
 
         panelListaRistoranti = new JPanel();
- //       panelListaRistoranti.add(new ListaMieiRistorantiPanel());
+        panelListaRistoranti.add(new ListaMieiRistorantiPanel());
 
     }
 }

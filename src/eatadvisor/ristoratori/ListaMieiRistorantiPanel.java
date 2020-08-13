@@ -35,9 +35,8 @@ public class ListaMieiRistorantiPanel extends JPanel{
         // Caricamento ristoranti
         IOEatAdvisor ioEatAdvisor = new IOEatAdvisor();
         int id = Global.utenteLoggato.getId();
-        ArrayList<Ristorante> listarist = new ArrayList<>();
-        listarist.removeIf(rist -> rist.getProprietarioId() != id);
-        for (Ristorante rist : listarist){
+        ioEatAdvisor.filtraPerProprietarioId(id);
+        for (Ristorante rist : ioEatAdvisor.getListaRistoranti()){
             aggiungiRistorante(rist);
         }
     }

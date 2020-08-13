@@ -22,7 +22,6 @@ public class StartRistoratore {
     private JLabel lblPassword;
     private JPasswordField tfPassword;
     private JPanel panelLogo;
-    private JButton btnCreaRistorante;
 
     public static JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione");
 
@@ -71,22 +70,6 @@ public class StartRistoratore {
             }
         });
 
- /*       btnCreaRistorante.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione Ristorante");
-                    registrazioneFrame.setContentPane(new RegistrazioneRistorante().panelRegistrazioneRistorante);
-                    ristoratori.initUI(registrazioneFrame);
-                    registrazioneFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
-                    registrazioneFrame.pack();
-                    registrazioneFrame.setLocationRelativeTo(null);
-                    registrazioneFrame.setVisible(true);
-                } catch (Exception exception) {
-                    exception.printStackTrace();
-                }
-            }
-        });*/
 
     }
 

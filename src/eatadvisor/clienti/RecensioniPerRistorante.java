@@ -11,11 +11,24 @@ public class RecensioniPerRistorante {
     public JPanel panelRecensionePerRistorante;
     private JLabel lbNickname;
     private JLabel lbRate;
-    private JLabel lbTxtRecensione;
+    private JTextArea txtRecensione;
 
     public RecensioniPerRistorante(Recensione rec) throws Exception {
         lbNickname.setText("Nickname: "+ioutenti.getUtenteById(rec.getUtenteId()).getNickname());
         lbRate.setText("Valutazione utente:" + rec.getValutazione());
-        lbTxtRecensione.setText(rec.getCommento());
+        txtRecensione.setText(rec.getCommento());
+        setTextAreaRec(); // metodo per il "settaggio" della textArea
+
+
+    }
+
+    private void setTextAreaRec() {
+        txtRecensione.setEditable(false); // impostando a false, non posso scrivere nella textarea
+        //txtRecensione.setCursor(null); //
+        txtRecensione.setOpaque(true);
+        //txtRecensione.setOpaque(false);
+        txtRecensione.setFocusable(false);
+        txtRecensione.setLineWrap(true);
+        txtRecensione.setWrapStyleWord(true);
     }
 }

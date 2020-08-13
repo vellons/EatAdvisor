@@ -25,7 +25,6 @@ public class DettaglioRistorante {
     public DettaglioRistorante(Ristorante ristorante) {
         this.ristorante = ristorante;
         setLabels(this.ristorante);
-
     }
 
     private void setLabels(Ristorante ristorante){
@@ -33,7 +32,8 @@ public class DettaglioRistorante {
         lbNomeRistorante.setText(ristorante.getNomeRistorante());
         lbIndirizzo.setText(String.valueOf(ristorante.getIndirizzo()));
         lbValutazioni.setText("Valutazione media: "+dec.format(ristorante.getRecensioniValutazioneMedia()));
-        lbNumeroRecensioni.setText(String.valueOf(ristorante.getRecensioni().size())+" valutazioni");
+        lbNumeroRecensioni.setText(ristorante.getRecensioni().size()+" valutazioni");
+        lbDescrizioneRist.setText(ristorante.getDescrizione());
     }
 
     private void createUIComponents() throws Exception {

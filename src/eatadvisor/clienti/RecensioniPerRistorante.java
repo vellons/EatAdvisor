@@ -14,8 +14,8 @@ public class RecensioniPerRistorante {
     private JLabel lbTxtRecensione;
 
     public RecensioniPerRistorante(Recensione rec) throws Exception {
-        lbNickname.setText(ioutenti.getUtenteById(rec.getUtenteId()).getNickname());
-        lbRate.setText(String.valueOf(rec.getValutazione()));
+        lbNickname.setText("Nickname: "+ioutenti.getUtenteById(rec.getUtenteId()).getNickname());
+        lbRate.setText("Valutazione utente:" + rec.getValutazione());
         lbTxtRecensione.setText(rec.getCommento());
     }
 }

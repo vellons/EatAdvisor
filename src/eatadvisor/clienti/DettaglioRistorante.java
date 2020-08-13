@@ -19,8 +19,8 @@ public class DettaglioRistorante {
     private JPanel panelPicRistorante;
     private JLabel lbNumeroRecensioni;
     private JLabel lbDescrizione;
-    private JLabel lbDescrizioneRist;
     private JPanel panelRecensioni;
+    private JTextArea txtDescrizione;
 
     public DettaglioRistorante(Ristorante ristorante) {
         this.ristorante = ristorante;
@@ -33,7 +33,19 @@ public class DettaglioRistorante {
         lbIndirizzo.setText(String.valueOf(ristorante.getIndirizzo()));
         lbValutazioni.setText("Valutazione media: "+dec.format(ristorante.getRecensioniValutazioneMedia()));
         lbNumeroRecensioni.setText(ristorante.getRecensioni().size()+" valutazioni");
-        lbDescrizioneRist.setText(ristorante.getDescrizione());
+
+        setTextAreaDescr();
+        txtDescrizione.setText(ristorante.getDescrizione());
+    }
+
+    private void setTextAreaDescr() {
+        txtDescrizione.setEditable(false); // impostando a false, non posso scrivere nella textarea
+        //txtDescrizione.setCursor(null); //
+        txtDescrizione.setOpaque(true);
+        //txtDescrizione.setOpaque(false);
+        txtDescrizione.setFocusable(false);
+        txtDescrizione.setLineWrap(true);
+        txtDescrizione.setWrapStyleWord(true);
     }
 
     private void createUIComponents() throws Exception {

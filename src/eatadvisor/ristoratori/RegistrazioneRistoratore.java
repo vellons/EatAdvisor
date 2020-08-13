@@ -1,5 +1,7 @@
 package eatadvisor.ristoratori;
 
+import eatadvisor.clienti.StartClienti;
+import eatadvisor.clienti.clienti;
 import eatadvisor.ioutenti.IOUtenti;
 
 import javax.imageio.ImageIO;
@@ -43,12 +45,17 @@ public class RegistrazioneRistoratore {
                 } else {
                     if (checkAllInputs()) {
                         try {
-                            ioUtenti = new IOUtenti();
-                            ioUtenti.creaNuovoUtente("RIST", getTfEmail(),getTfEmail(),
-                                    getTfPassword(), getTfNome(), getTfCognome(),
-                                    getTfComune(), getTfSiglaProvincia());
-                            JOptionPane.showMessageDialog(null, "Account creato! Adesso effettua " +
-                                    "l'accesso", "Registrazione effettuate", JOptionPane.PLAIN_MESSAGE);
+                            if(JOptionPane.showOptionDialog(null,"Confermi di voler creare un account?",
+                                    "Conferma iscrizione",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,
+                                    null,null,null) == JOptionPane.YES_OPTION) {
+                                ioUtenti = new IOUtenti();
+                                ioUtenti.creaNuovoUtente("RIST", getTfEmail(), getTfEmail(),
+                                        getTfPassword(), getTfNome(), getTfCognome(),
+                                        getTfComune(), getTfSiglaProvincia());
+                                ristoratori.closePreviousWindow(StartRistoratore.registrazioneFrame);
+                                JOptionPane.showMessageDialog(null, "Account creato! Adesso effettua " +
+                                        "l'accesso", "Registrazione effettuate", JOptionPane.PLAIN_MESSAGE);
+                            }
                         } catch (Exception exception) {
                             if (Objects.equals(exception.getMessage(), "Email già utilizzata.")) {
                                 JOptionPane.showMessageDialog(null, "Questa email è già stata utilizzata",

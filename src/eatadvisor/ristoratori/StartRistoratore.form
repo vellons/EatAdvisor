@@ -77,11 +77,12 @@
                   <borderPainted value="false"/>
                   <contentAreaFilled value="true"/>
                   <defaultCapable value="true"/>
-                  <enabled value="true"/>
+                  <enabled value="false"/>
                   <focusPainted value="true"/>
                   <foreground color="-1"/>
                   <opaque value="true"/>
                   <text value="Crea Ristorante - Demo"/>
+                  <visible value="false"/>
                 </properties>
               </component>
             </children>

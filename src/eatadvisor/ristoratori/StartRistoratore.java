@@ -5,6 +5,7 @@ import eatadvisor.ioutenti.IOUtenti;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -23,7 +24,11 @@ public class StartRistoratore {
     private JPanel panelLogo;
     private JButton btnCreaRistorante;
 
-    public StartRistoratore() {
+    public static JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione");
+
+    static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0]; // Usato per mettere a tutto schermo
+
+    public StartRistoratore()  throws Exception{
         btnAccedi.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -37,9 +42,8 @@ public class StartRistoratore {
                     ioUtenti.filtraPerPassword(String.valueOf(tfPassword.getPassword()));
                     if (ioUtenti.getListaUtenti().size() == 1) {
                         Global.utenteLoggato = ioUtenti.getListaUtenti().get(0); // prendo l'unico utente nella lista
-                        //System.out.println(Global.utenteLoggato);
-                        JOptionPane.showMessageDialog(null, "Benvenuto/a " + Global.utenteLoggato.getNome(),
-                                "Accesso eseguito", JOptionPane.PLAIN_MESSAGE);
+                        System.out.println(Global.utenteLoggato);
+                        openDashBoardRistoratori();
                     } else {
                         JOptionPane.showMessageDialog(null, "Username e/o password errati",
                                 "Attenzione", JOptionPane.PLAIN_MESSAGE);
@@ -54,7 +58,7 @@ public class StartRistoratore {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione");
+                    Global.utenteLoggato = null;
                     registrazioneFrame.setContentPane(new RegistrazioneRistoratore().panelRegistrazioneRistoratore);
                     ristoratori.initUI(registrazioneFrame);
                     registrazioneFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
@@ -67,7 +71,7 @@ public class StartRistoratore {
             }
         });
 
-        btnCreaRistorante.addActionListener(new ActionListener() {
+ /*       btnCreaRistorante.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -82,7 +86,7 @@ public class StartRistoratore {
                     exception.printStackTrace();
                 }
             }
-        });
+        });*/
 
     }
 
@@ -92,5 +96,24 @@ public class StartRistoratore {
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
     }
+
+    private void openDashBoardRistoratori(){
+
+        try{
+            ristoratori.closePreviousWindow(ristoratori.mainFrame);
+            JFrame listaRistoranti = new JFrame("EatAdvisor Ristoratori - I tuoi ristoranti");
+            listaRistoranti.setContentPane(new DashboardRistoratori().panelDashboardRistoratori);
+            ristoratori.initUI(listaRistoranti);
+            listaRistoranti.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            listaRistoranti.pack();
+            listaRistoranti.setLocationRelativeTo(null);
+            listaRistoranti.setVisible(true);
+            //device.setFullScreenWindow(listaRistoranti); // Imposto la pagina a tutto schermo
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+    }
+
 }
 

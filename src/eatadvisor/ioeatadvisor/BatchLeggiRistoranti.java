@@ -27,7 +27,6 @@ public class BatchLeggiRistoranti {
         // Blocco di codice per stampare i ristoranti
         for (Ristorante r : ioEatAdvisor.getListaRistoranti()) {
             System.out.println(r.toString());
-            r.aggiungiRecensione(new Recensione(1,3, "Ristorante non eccellente"));
             for (Recensione rec : r.getRecensioni()) {
                 System.out.println("\t -> " + rec.toString());
             }

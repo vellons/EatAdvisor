@@ -56,11 +56,9 @@ public class AccountRistoratore { //Contiene il JPanel principale
 
                                     JOptionPane.showMessageDialog(null, "Modifica account eseguta con " +
                                             "successo", "Modifica eseguita", JOptionPane.PLAIN_MESSAGE);
-                                    // ristoratori.closePreviousWindow(MenuListener.mofidyAccount); //Chiusura della finestra di modifica
-                                    ristoratori.closePreviousWindow(StartRistoratore.modifyAccount); //Chiusura della finestra di modifica. (da Manuel, test di verifica. cancellare questa parte e rispistinare la parte commentata)
+                                     ristoratori.closePreviousWindow(MenuListenerRistoratori.modifyAccount); //Chiusura della finestra di modifica
                                 } else { //Se l'utente non conferma le modifiche
-                                    //ristoratori.closePreviousWindow(MenuListener.mofidyAccount); //Chiusura della finestra
-                                    ristoratori.closePreviousWindow(StartRistoratore.modifyAccount); //Chiusura della finestra di modifica. (da Manuel, test di verifica. cancellare questa parte e rispistinare la parte commentata)
+                                    ristoratori.closePreviousWindow(MenuListenerRistoratori.modifyAccount); //Chiusura della finestra
 
                                 }
                             }

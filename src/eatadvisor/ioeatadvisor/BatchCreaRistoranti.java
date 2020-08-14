@@ -17,10 +17,10 @@ public class BatchCreaRistoranti {
         int[] recensioneValutazione = new int[]{4, 1, 5, 3, 4, 5};
         String[] recensioneTesto = new String[]{
                 "Buono ma non eccellente, ho dato 4 stelle",
-                "Uno schifo... sicuramente non ci tornerò. \nPrezzi carissimi e personale scortese",
+                "Uno schifo... sicuramente non ci tornerò. Prezzi carissimi e personale scortese",
                 "Cena fantastica, ristorante TOP! Sicuramente ci tornerò",
-                "Nel complesso il cibo era ok, però ho dato 3 \nstelle perchè ci hanno servito dopo più di un'ora...",
-                "Ristorante carino ma forse un pelo caro. \nComunque lo consiglio",
+                "Nel complesso il cibo era ok, però ho dato 3 stelle perchè ci hanno servito dopo più di un'ora...",
+                "Ristorante carino ma forse un pelo caro. Comunque lo consiglio",
                 "Ristorante bellissimo, camerieri top e prezzi onesti!"
         };
 

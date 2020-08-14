@@ -51,10 +51,8 @@ public class clienti {
         JMenu f = new JMenu("Account");
         JMenuItem f1 = new JMenuItem("Modifica account");
         JMenuItem f2 = new JMenuItem("Logout");
-
         f1.addActionListener(mL);
         f2.addActionListener(mL);
-
         f.add(f1);
         f.add(f2);
         myMenuBar.add(f);

@@ -1,12 +1,10 @@
 package eatadvisor.clienti;
 
-import eatadvisor.ioeatadvisor.IOEatAdvisor;
 import eatadvisor.ioeatadvisor.Recensione;
 import eatadvisor.ioeatadvisor.Ristorante;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 import static javax.swing.BorderFactory.createEmptyBorder;
 
@@ -14,7 +12,6 @@ public class ListaRecensioniPanel extends JPanel {
     public JPanel mainList;
 
     public ListaRecensioniPanel(Ristorante ristorante) throws Exception {
-        //ArrayList<Recensione> recensioni = ristorante.getRecensioni();
         setLayout(new BorderLayout());
 
         mainList = new JPanel(new GridBagLayout());

@@ -1,6 +1,5 @@
 package eatadvisor.ristoratori;
 
-import eatadvisor.clienti.MenuListener;
 import eatadvisor.global.Global;
 import eatadvisor.ioutenti.IOUtenti;
 
@@ -56,9 +55,9 @@ public class AccountRistoratore { //Contiene il JPanel principale
 
                                     JOptionPane.showMessageDialog(null, "Modifica account eseguta con " +
                                             "successo", "Modifica eseguita", JOptionPane.PLAIN_MESSAGE);
-                                     ristoratori.closePreviousWindow(MenuListenerRistoratori.modifyAccount); //Chiusura della finestra di modifica
+                                     ristoratori.closePreviousWindow(MenuListener.modifyAccount); //Chiusura della finestra di modifica
                                 } else { //Se l'utente non conferma le modifiche
-                                    ristoratori.closePreviousWindow(MenuListenerRistoratori.modifyAccount); //Chiusura della finestra
+                                    ristoratori.closePreviousWindow(MenuListener.modifyAccount); //Chiusura della finestra
 
                                 }
                             }

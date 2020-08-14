@@ -13,15 +13,7 @@ public class MenuListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String scelta = ((JMenuItem) e.getSource()).getText();
-        if (scelta.equals("Logout")) {
-            if (JOptionPane.showOptionDialog(null, "Sei sicuro di voler effettuare il logout?",
-                    "Effettuare Logout?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
-                    null, null, null) == JOptionPane.YES_OPTION) {
-
-                Global.utenteLoggato = null;
-                System.exit(0);
-            }
-        } else if (scelta.equals("Modifica account")) {
+        if (scelta.equals("Modifica account")) {
             try {
                 mofidyAccount.setContentPane(new AccountCliente().panelAccountCliente);
                 clienti.initUI(mofidyAccount);
@@ -31,6 +23,14 @@ public class MenuListener implements ActionListener {
                 mofidyAccount.setVisible(true);
             } catch (Exception exception) {
                 exception.printStackTrace();
+            }
+        } else if (scelta.equals("Logout")) {
+            if (JOptionPane.showOptionDialog(null, "Sei sicuro di voler effettuare il logout?",
+                    "Effettuare Logout?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
+                    null, null, null) == JOptionPane.YES_OPTION) {
+
+                Global.utenteLoggato = null;
+                System.exit(0);
             }
         }
     }

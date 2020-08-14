@@ -8,7 +8,7 @@ import java.awt.*;
 public class ristoratori {
     public static JFrame mainFrame = new JFrame("EatAdvisor Ristoratori - Login");
 
-    public static void main(String[] args) throws Exception, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
+    public static void main(String[] args) throws Exception {
         mainFrame.setContentPane(new StartRistoratore().panelStartRistoratore);
         initUI(mainFrame);
 
@@ -46,7 +46,7 @@ public class ristoratori {
     }
 
     private static void setMenuAccount(JMenuBar myMenuBar) { // Creazione del JMenu account
-        MenuListenerRistoratori mLR = new MenuListenerRistoratori();
+        MenuListener mLR = new MenuListener();
         JMenu f = new JMenu("Account");
         JMenuItem f1 = new JMenuItem("Logout");
         JMenuItem f2 = new JMenuItem("Modifica account");

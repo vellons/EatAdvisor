@@ -139,7 +139,7 @@ public class AccountCliente {
 
     private void createUIComponents() throws IOException {
         panelLogo = new JPanel();
-        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoClientiIlMioAccount.png"));
+        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisorLogoClientiIlMioAccount.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
     }

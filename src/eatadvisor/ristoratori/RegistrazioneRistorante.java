@@ -145,7 +145,7 @@ public class RegistrazioneRistorante {
 
     private void createUIComponents() throws IOException{
         panelLogo = new JPanel();
-        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoRistoratori.png"));
+        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisorLogoRistoratori.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
 

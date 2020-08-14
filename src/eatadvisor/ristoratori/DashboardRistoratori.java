@@ -42,7 +42,7 @@ public class DashboardRistoratori extends JFrame {
 
     private void createUIComponents() throws Exception {
         panelLogo = new JPanel();
-        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoRistoratoriImieiRistoranti.png"));
+        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisorLogoRistoratoriImieiRistoranti.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
 

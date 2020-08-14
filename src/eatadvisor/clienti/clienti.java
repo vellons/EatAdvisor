@@ -19,7 +19,7 @@ public class clienti {
 
     public static void initUI(JFrame frame) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         // Queste impostazioni vengo applicate al frame passato
-        ImageIcon imageIcon = new ImageIcon("media/EatAdvisroIcon.png");
+        ImageIcon imageIcon = new ImageIcon("media/EatAdvisorIcon.png");
         Image image = imageIcon.getImage();
         frame.setIconImage(image);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Definisce il comportamento della finestra

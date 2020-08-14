@@ -138,7 +138,7 @@ public class AccountRistoratore { //Contiene il JPanel principale
 
     private void createUIComponents() throws IOException { //Logo
         panelLogo = new JPanel();
-        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoRistoratoriIlMioAccount.png"));
+        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisorLogoRistoratoriIlMioAccount.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
     }

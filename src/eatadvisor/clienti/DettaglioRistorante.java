@@ -50,7 +50,7 @@ public class DettaglioRistorante {
 
     private void createUIComponents() throws Exception {
         panelLogo = new JPanel();
-        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoClientiDettaglio.png"));
+        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisorLogoClientiDettaglio.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
 

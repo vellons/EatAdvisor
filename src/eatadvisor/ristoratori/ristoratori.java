@@ -18,7 +18,7 @@ public class ristoratori {
     }
 
     public static void initUI(JFrame frame) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
-        ImageIcon imageIcon = new ImageIcon("media/EatAdvisroIcon.png");
+        ImageIcon imageIcon = new ImageIcon("media/EatAdvisorIcon.png");
         Image image = imageIcon.getImage();
         frame.setIconImage(image);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Definisce il comportamento della finestra

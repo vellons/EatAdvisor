@@ -17,7 +17,7 @@ public class DashboardRistoranti extends JFrame {
 
     private void createUIComponents() throws Exception {
         panelLogo = new JPanel();
-        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoClientiListaRistoranti.png"));
+        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisorLogoClientiListaRistoranti.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
 

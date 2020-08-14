@@ -12,7 +12,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class AccountRistoratore {
+public class AccountRistoratore { //Contiene il JPanel principale
     public JPanel panelAccountRistoratore; //Mostro informazioni ristoratore. (da Manuel, JPanel non Object)
     private JLabel lblNome;
     private JLabel lblCognome;
@@ -29,8 +29,8 @@ public class AccountRistoratore {
     private JPanel panelLogo;
     IOUtenti aggiornaRistoratori = null;
 
-    public AccountRistoratore(){ //Modifica
-        setAllTextField(); // "settaggio" iniziale dei textfiled (da Manuel questo è fondamentale!!)
+    public AccountRistoratore() { //Modifica
+        setAllTextField(); // "settaggio" iniziale dei textfield (da Manuel questo è fondamentale!!)
         btnChangeAccountRistoratore.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -56,7 +56,7 @@ public class AccountRistoratore {
 
                                     JOptionPane.showMessageDialog(null, "Modifica account eseguta con " +
                                             "successo", "Modifica eseguita", JOptionPane.PLAIN_MESSAGE);
-                                   // ristoratori.closePreviousWindow(MenuListener.mofidyAccount); //Chiusura della finestra di modifica
+                                    // ristoratori.closePreviousWindow(MenuListener.mofidyAccount); //Chiusura della finestra di modifica
                                     ristoratori.closePreviousWindow(StartRistoratore.modifyAccount); //Chiusura della finestra di modifica. (da Manuel, test di verifica. cancellare questa parte e rispistinare la parte commentata)
                                 } else { //Se l'utente non conferma le modifiche
                                     //ristoratori.closePreviousWindow(MenuListener.mofidyAccount); //Chiusura della finestra
@@ -82,24 +82,25 @@ public class AccountRistoratore {
         });
 
     }
-    private void setAllTextField() { // settaggio iniziale
-        tfNome.setText(Global.utenteLoggato.getNome()); // prelevo il nome dell'utente loggato in questo momento
-        tfNome.setEditable(false);  // impostando a false, non ho la possibilità di modificare il campo di testo
-        tfNome.setVisible(true);    // impostando a true, posso visualizzare il testo presente nel textfield
 
-        tfCognome.setText(Global.utenteLoggato.getCognome());
+    private void setAllTextField() { // Settaggio iniziale
+        tfNome.setText(Global.utenteLoggato.getNome()); // Prelevo il nome dell'utente loggato in questo momento
+        tfNome.setEditable(false);  // Impostando a false, non ho la possibilità di modificare il campo di testo
+        tfNome.setVisible(true);    // Impostando a true, posso visualizzare il testo presente nel textfield
+
+        tfCognome.setText(Global.utenteLoggato.getCognome()); //Prelevo il cognome dell'utente loggato in questo momento
         tfCognome.setEditable(false);
         tfCognome.setVisible(true);
 
-        tfComune.setText(Global.utenteLoggato.getComune());
+        tfComune.setText(Global.utenteLoggato.getComune()); //Prelevo il comune dell'utente loggato in questo momento
         tfComune.setEditable(false);
         tfComune.setVisible(true);
 
-        tfSiglaProvincia.setText(Global.utenteLoggato.getSiglaProvincia());
+        tfSiglaProvincia.setText(Global.utenteLoggato.getSiglaProvincia()); //Prelevo la provincia dell'utente loggato in questo momento
         tfSiglaProvincia.setEditable(false);
         tfSiglaProvincia.setVisible(true);
 
-        tfEmail.setText(Global.utenteLoggato.getEmail());
+        tfEmail.setText(Global.utenteLoggato.getEmail()); //Prelevo l'email dell'utente loggato in questo momento
         tfEmail.setEditable(false);
         tfEmail.setVisible(true);
 
@@ -134,7 +135,7 @@ public class AccountRistoratore {
             res = true;
         }
 
-        return res;
+        return res; //Restituisco il risultato booleano a seguito del confronto
     }
 
     private void createUIComponents() throws IOException { //Logo

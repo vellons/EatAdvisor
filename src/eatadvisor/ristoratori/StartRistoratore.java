@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class StartRistoratore {
+
     public static JFrame modifyAccount = new JFrame("EatAdvisor Ristoratori - Login"); //Frame per verifica funzionamento modifica account (da Manuel, questo è da cancellare)
 
     private IOUtenti ioUtenti = null;
@@ -77,7 +78,7 @@ public class StartRistoratore {
                 try {
                     JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione Ristorante");
                     registrazioneFrame.setContentPane(new RegistrazioneRistorante().panelRegistrazioneRistorante);
-                    ristoratori.initUI(registrazioneFrame);
+                    ristoratori.initUI(registrazioneFrame); //Logo immagine e Menu Bar
                     registrazioneFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
                     registrazioneFrame.pack();
                     registrazioneFrame.setLocationRelativeTo(null);
@@ -89,8 +90,9 @@ public class StartRistoratore {
         });
 
     }
-    private void openModificaAccount(){ //questa parte è da cancellare: serve solo per verificare se funziona il modifica account
-        try{
+
+    private void openModificaAccount() { //questa parte è da cancellare: serve solo per verificare se funziona il modifica account
+        try {
             //AccountRistoratore ar = new AccountRistoratore();
             //modifyAccount.setContentPane(ar.panelAccountRistoratore);
             modifyAccount.setContentPane(new AccountRistoratore().panelAccountRistoratore);
@@ -99,7 +101,7 @@ public class StartRistoratore {
             modifyAccount.pack();
             modifyAccount.setLocationRelativeTo(null);
             modifyAccount.setVisible(true);
-        }catch (Exception exception){
+        } catch (Exception exception) {
             exception.printStackTrace();
         }
 

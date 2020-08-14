@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 
 public class RistorantePerLista extends JPanel {
-    private Ristorante ristorante;
     public static JFrame dettaglioFrame = new JFrame();
     public JPanel panelRistorantePerLista;
     private JLabel lblNome;
@@ -20,7 +19,6 @@ public class RistorantePerLista extends JPanel {
 
 
     public RistorantePerLista(Ristorante ristorante) {
-        //this.ristorante = ristorante;
         DecimalFormat dec = new DecimalFormat("#0.00");
         lblNome.setText(ristorante.getNomeRistorante());
         lblIndirizzo.setText(ristorante.getIndirizzo().toString());

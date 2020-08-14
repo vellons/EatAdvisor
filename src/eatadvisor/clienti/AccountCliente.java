@@ -41,17 +41,15 @@ public class AccountCliente {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         try {
-                            aggiornaUtenti = new IOUtenti();
                             if (!checkAllInputs()) { // verifico che tutti i campi siamo completi
                                 JOptionPane.showMessageDialog(null, "Attenzione, tutti i " +
                                         "campi devono essere completati!", "Errore", JOptionPane.ERROR_MESSAGE);
                             } else {
-                                if (JOptionPane.showOptionDialog(null, "Confermi di voler modificare modificare i tuoi dati?\n" +
-                                                "(Qualora non volessi effetuare, modifiche la pagina si chiuderà e i dati non " +
-                                                "validati, saranno ripristinati).",
+                                if (JOptionPane.showOptionDialog(null, "Confermi di voler modificare modificare i tuoi dati?",
                                         "Conferma modifica", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
                                         null, null, null) == JOptionPane.YES_OPTION) { // chiedo all'utente se vuole aggiornare i dati inseriti
                                     //Se conferma, invoco il metodo aggiornaUtenteById
+                                    aggiornaUtenti = new IOUtenti();
                                     Global.utenteLoggato = aggiornaUtenti.aggiornaUtenteById(Global.utenteLoggato.getId(), tfNome.getText(),
                                             tfCognome.getText(), tfComune.getText(), tfSiglaProvincia.getText());
 
@@ -71,7 +69,6 @@ public class AccountCliente {
         });
 
         btnChangePsw.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) { //Funzione da implementare
                 JOptionPane.showMessageDialog(null, "Funzione non ancora disponibile",

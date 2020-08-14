@@ -6,7 +6,6 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 import java.text.DecimalFormat;
 
 public class DettaglioRistorante {
@@ -40,9 +39,7 @@ public class DettaglioRistorante {
 
     private void setTextAreaDescr() {
         txtDescrizione.setEditable(false); // impostando a false, non posso scrivere nella textarea
-        //txtDescrizione.setCursor(null); //
         txtDescrizione.setOpaque(true);
-        //txtDescrizione.setOpaque(false);
         txtDescrizione.setFocusable(false);
         txtDescrizione.setLineWrap(true);
         txtDescrizione.setWrapStyleWord(true);

@@ -70,8 +70,6 @@ public class StartRistoratore {
                 }
             }
         });
-
-
     }
 
     private void createUIComponents() throws IOException {

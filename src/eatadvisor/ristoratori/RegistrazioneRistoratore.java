@@ -59,7 +59,13 @@ public class RegistrazioneRistoratore {
                                 JOptionPane.showMessageDialog(null, "Questa email è già stata utilizzata",
                                         "Attenzione", JOptionPane.PLAIN_MESSAGE);
                                 tfEmail.setText("");
-                                tfEmail.setVisible(true);
+                            }
+                            else if (Objects.equals(exception.getMessage(), "Nickanme già utilizzato.")) { // Impossibile per il risotratore in teoria
+                                JOptionPane.showMessageDialog(null, "Questo nickname è già stato utilizzato",
+                                        "Attenzione", JOptionPane.PLAIN_MESSAGE);
+                            } else {
+                                JOptionPane.showMessageDialog(null, "C'è stato un problema. Prova a riavviare l'app",
+                                        "Attenzione", JOptionPane.PLAIN_MESSAGE);
                             }
                         }
                     } else {

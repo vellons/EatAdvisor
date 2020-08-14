@@ -48,8 +48,8 @@ public class ristoratori {
     private static void setMenuAccount(JMenuBar myMenuBar) { // Creazione del JMenu account
         MenuListener mLR = new MenuListener();
         JMenu f = new JMenu("Account");
-        JMenuItem f1 = new JMenuItem("Logout");
-        JMenuItem f2 = new JMenuItem("Modifica account");
+        JMenuItem f1 = new JMenuItem("Modifica account");
+        JMenuItem f2 = new JMenuItem("Logout");
         f1.addActionListener(mLR);
         f2.addActionListener(mLR);
         f.add(f1);

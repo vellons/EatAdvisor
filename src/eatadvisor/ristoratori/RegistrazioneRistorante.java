@@ -50,7 +50,7 @@ public class RegistrazioneRistorante {
             public void actionPerformed(ActionEvent e) {
                 if (checkAllInputs()) {
                     try {
-                        int id= Global.utenteLoggato.getId();
+                        int id = Global.utenteLoggato.getId();
                         indirizzo = new Indirizzo(getTfVia(), getTfCivico(), getTfCitta(), getTfProvincia(), getTfCap());
                         ioEatAdvisor = new IOEatAdvisor();
                         ioEatAdvisor.creaNuovoRistorante(id, Objects.requireNonNull(cboxTipologia.getSelectedItem()).toString(), getTfNomeRistorante(),
@@ -80,7 +80,9 @@ public class RegistrazioneRistorante {
         return tfNomeRistorante.getText();
     }
 
-    public String getTareaDescrizione(){ return tareaDescrizione.getText();}
+    public String getTareaDescrizione() {
+        return tareaDescrizione.getText();
+    }
 
     public String getTfVia() {
         return tfVia.getText();
@@ -143,7 +145,7 @@ public class RegistrazioneRistorante {
         return res;
     }
 
-    private void createUIComponents() throws IOException{
+    private void createUIComponents() throws IOException {
         panelLogo = new JPanel();
         BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisorLogoRistoratori.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));

@@ -32,12 +32,6 @@ public class DashboardRistoratori extends JFrame {
                 }
             }
         });
-  /*      btnElimina.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });*/
     }
 
     private void createUIComponents() throws Exception {

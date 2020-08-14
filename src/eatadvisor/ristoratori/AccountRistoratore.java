@@ -39,26 +39,23 @@ public class AccountRistoratore { //Contiene il JPanel principale
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         try {
-                            aggiornaRistoratori = new IOUtenti();
                             if (!checkAllInputs()) { // Verifico che tutti i campi siano completi
                                 JOptionPane.showMessageDialog(null, "Attenzione, tutti i " +
                                         "campi devono essere completati!", "Errore", JOptionPane.ERROR_MESSAGE);
                             } else {
-                                if (JOptionPane.showOptionDialog(null, "Confermi di voler modificare modificare i tuoi dati?\n" +
-                                                "(Qualora non volessi effetuare modifiche la pagina si chiuderà e i dati non " +
-                                                "validati, saranno ripristinati).",
+                                if (JOptionPane.showOptionDialog(null, "Confermi di voler modificare modificare i tuoi dati?",
                                         "Conferma modifica", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
                                         null, null, null) == JOptionPane.YES_OPTION) { // chiedo all'utente se vuole aggiornare i dati inseriti
                                     //Se conferma, invoco il metodo aggiornaUtenteById
+                                    aggiornaRistoratori = new IOUtenti();
                                     Global.utenteLoggato = aggiornaRistoratori.aggiornaUtenteById(Global.utenteLoggato.getId(), tfNome.getText(),
                                             tfCognome.getText(), tfComune.getText(), tfSiglaProvincia.getText());
 
                                     JOptionPane.showMessageDialog(null, "Modifica account eseguta con " +
                                             "successo", "Modifica eseguita", JOptionPane.PLAIN_MESSAGE);
-                                     ristoratori.closePreviousWindow(MenuListener.modifyAccount); //Chiusura della finestra di modifica
+                                    ristoratori.closePreviousWindow(MenuListener.modifyAccount); //Chiusura della finestra di modifica
                                 } else { //Se l'utente non conferma le modifiche
                                     ristoratori.closePreviousWindow(MenuListener.modifyAccount); //Chiusura della finestra
-
                                 }
                             }
                         } catch (Exception exception) {

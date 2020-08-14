@@ -55,17 +55,19 @@ public class RegistrazioneCliente {
                                 JOptionPane.showMessageDialog(null, "Account creato con successo, ora effettua il" +
                                         " login.", "Registrazione effettuata", JOptionPane.PLAIN_MESSAGE);
                             }
-
                         } catch (Exception exception) {
                             if (Objects.equals(exception.getMessage(), "Email già utilizzata.")) {
                                 JOptionPane.showMessageDialog(null, "Questa email è già stata utilizzata",
                                         "Attenzione", JOptionPane.PLAIN_MESSAGE);
                                 tfEmail.setText("");
                             }
-                            if (Objects.equals(exception.getMessage(), "Nickanme già utilizzato.")) {
+                            else if (Objects.equals(exception.getMessage(), "Nickanme già utilizzato.")) {
                                 JOptionPane.showMessageDialog(null, "Questo nickname è già stato utilizzato",
                                         "Attenzione", JOptionPane.PLAIN_MESSAGE);
                                 tfNickname.setText("");
+                            } else {
+                                JOptionPane.showMessageDialog(null, "C'è stato un problema. Prova a riavviare l'app",
+                                        "Attenzione", JOptionPane.PLAIN_MESSAGE);
                             }
                         }
                     } else {

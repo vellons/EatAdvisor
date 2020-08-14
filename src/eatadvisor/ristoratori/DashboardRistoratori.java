@@ -7,20 +7,20 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-public class DashboardRistoratori extends JFrame{
+public class DashboardRistoratori extends JFrame {
     public JPanel panelDashboardRistoratori;
     private JPanel panelLogo;
     private JPanel panelListaRistoranti;
     private JPanel panelFunzioni;
     private JButton btnAggiungi;
     private JButton btnElimina;
+    public static JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione Ristorante");
 
-    public DashboardRistoratori() throws Exception{
-       btnAggiungi.addActionListener(new ActionListener() {
+    public DashboardRistoratori() throws Exception {
+        btnAggiungi.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione Ristorante");
                     registrazioneFrame.setContentPane(new RegistrazioneRistorante().panelRegistrazioneRistorante);
                     ristoratori.initUI(registrazioneFrame);
                     registrazioneFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
@@ -40,7 +40,7 @@ public class DashboardRistoratori extends JFrame{
         });*/
     }
 
-    private void createUIComponents() throws Exception{
+    private void createUIComponents() throws Exception {
         panelLogo = new JPanel();
         BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoRistoratoriImieiRistoranti.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));

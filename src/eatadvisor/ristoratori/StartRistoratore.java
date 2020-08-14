@@ -27,7 +27,7 @@ public class StartRistoratore {
 
     static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0]; // Usato per mettere a tutto schermo
 
-    public StartRistoratore()  throws Exception{
+    public StartRistoratore() throws Exception {
         btnAccedi.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -80,9 +80,9 @@ public class StartRistoratore {
         panelLogo.add(picLabel);
     }
 
-    private void openDashBoardRistoratori(){
+    private void openDashBoardRistoratori() {
 
-        try{
+        try {
             ristoratori.closePreviousWindow(ristoratori.mainFrame);
             JFrame listaRistoranti = new JFrame("EatAdvisor Ristoratori - I tuoi ristoranti");
             listaRistoranti.setContentPane(new DashboardRistoratori().panelDashboardRistoratori);

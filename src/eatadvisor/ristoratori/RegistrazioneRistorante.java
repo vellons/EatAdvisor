@@ -1,5 +1,6 @@
 package eatadvisor.ristoratori;
 
+import eatadvisor.global.Global;
 import eatadvisor.ioeatadvisor.IOEatAdvisor;
 import eatadvisor.ioeatadvisor.Indirizzo;
 
@@ -16,45 +17,48 @@ public class RegistrazioneRistorante {
     private IOEatAdvisor ioEatAdvisor = null;
     String[] tipologia = new String[]{"ITALIANO", "ETNICO", "FUSION"};
     public JPanel panelRegistrazioneRistorante;
-    private JLabel lblErrors;
-    private JLabel lblTipologia;
-    private JLabel lblNomeRistorante;
-    private JTextField tfNomeRistorante;
-    private JLabel lblVia;
-    private JTextField tfVia;
-    private JLabel lblTelefono;
-    private JTextField tfTelefono;
-    private JLabel lblSitoWeb;
-    private JTextField tfSitoWeb;
-    private JLabel lblUrlImmagine;
-    private JTextField tfUrlImmagine;
-    public JComboBox<String> cboxTipologia;
     private JPanel panelLogo;
+    private JLabel lblErrors;
     private JButton btnIscriviti;
+    public JComboBox<String> cboxTipologia;
+    private JTextField tfNomeRistorante;
+    private JTextField tfVia;
     private JTextField tfCivico;
     private JTextField tfCitta;
     private JTextField tfProvincia;
     private JTextField tfCap;
+    private JTextArea tareaDescrizione;
+    private JLabel lblTipologia;
+    private JLabel lblNomeRistorante;
+    private JLabel lblVia;
     private JLabel lblCivico;
     private JLabel lblCitta;
     private JLabel lblProvincia;
     private JLabel lblCap;
+    private JLabel lblTelefono;
+    private JLabel lblSitoWeb;
+    private JLabel lblUrlImmagine;
+    private JLabel lblDescrizione;
+    private JTextField tfTelefono;
+    private JTextField tfUrlImmagine;
+    private JTextField tfSitoWeb;
     private Indirizzo indirizzo;
 
-
     public RegistrazioneRistorante() throws Exception {
-
         btnIscriviti.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (checkAllInputs()) {
                     try {
+                        int id= Global.utenteLoggato.getId();
                         indirizzo = new Indirizzo(getTfVia(), getTfCivico(), getTfCitta(), getTfProvincia(), getTfCap());
                         ioEatAdvisor = new IOEatAdvisor();
-                        ioEatAdvisor.creaNuovoRistorante(1, Objects.requireNonNull(cboxTipologia.getSelectedItem()).toString(), getTfNomeRistorante(),
-                                indirizzo, getTfTelefono(), getTfSito(), getTfImmagine());
-                        JOptionPane.showMessageDialog(null, "Ristorante creato! Adesso effettua " +
-                                "l'accesso", "Registrazione effettuata", JOptionPane.PLAIN_MESSAGE);
+                        ioEatAdvisor.creaNuovoRistorante(id, Objects.requireNonNull(cboxTipologia.getSelectedItem()).toString(), getTfNomeRistorante(),
+                                getTareaDescrizione(), indirizzo, getTfTelefono(), getTfSito(), getTfImmagine());
+                        ristoratori.closePreviousWindow(DashboardRistoratori.registrazioneFrame);
+
+                        JOptionPane.showMessageDialog(null, "Ristorante creato! Ricarica la " +
+                                "dashboard effettuando nuovamente l'accesso per vederlo nella lista", "Registrazione effettuata", JOptionPane.PLAIN_MESSAGE);
                     } catch (Exception exception) {
                         JOptionPane.showMessageDialog(null, "Abbiamo riscontrato problemi durante la fase di creazione, prova a riavviare l'app",
                                 "Attenzione", JOptionPane.PLAIN_MESSAGE);
@@ -69,11 +73,14 @@ public class RegistrazioneRistorante {
         });
     }
 
+
     // Metodi GETTERS
 
     public String getTfNomeRistorante() {
         return tfNomeRistorante.getText();
     }
+
+    public String getTareaDescrizione(){ return tareaDescrizione.getText();}
 
     public String getTfVia() {
         return tfVia.getText();
@@ -136,7 +143,7 @@ public class RegistrazioneRistorante {
         return res;
     }
 
-    private void createUIComponents() throws IOException {
+    private void createUIComponents() throws IOException{
         panelLogo = new JPanel();
         BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisroLogoRistoratori.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));

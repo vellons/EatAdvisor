@@ -1,7 +1,5 @@
 package eatadvisor.ristoratori;
 
-import eatadvisor.clienti.StartClienti;
-import eatadvisor.clienti.clienti;
 import eatadvisor.ioutenti.IOUtenti;
 
 import javax.imageio.ImageIO;
@@ -45,9 +43,9 @@ public class RegistrazioneRistoratore {
                 } else {
                     if (checkAllInputs()) {
                         try {
-                            if(JOptionPane.showOptionDialog(null,"Confermi di voler creare un account?",
-                                    "Conferma iscrizione",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,
-                                    null,null,null) == JOptionPane.YES_OPTION) {
+                            if (JOptionPane.showOptionDialog(null, "Confermi di voler creare un account?",
+                                    "Conferma iscrizione", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
+                                    null, null, null) == JOptionPane.YES_OPTION) {
                                 ioUtenti = new IOUtenti();
                                 ioUtenti.creaNuovoUtente("RIST", getTfEmail(), getTfEmail(),
                                         getTfPassword(), getTfNome(), getTfCognome(),

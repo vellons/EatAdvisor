@@ -46,7 +46,9 @@
           <background color="-2876"/>
           <foreground color="-2876"/>
         </properties>
-        <border type="none"/>
+        <border type="line">
+          <color color="-4473925"/>
+        </border>
         <children>
           <component id="a7f90" class="javax.swing.JButton" binding="btnAggiungi">
             <constraints>

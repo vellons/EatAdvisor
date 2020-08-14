@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class BatchCreaUtenti {
 
-    final private static int TEST_RIST = 3;
-    final private static int TEST_CLIE = 7;
+    final private static int TEST_RIST = 10;
+    final private static int TEST_CLIE = 20;
 
     public static void main(String[] args) throws IOException {
         ArrayList<Utente> utenti = new ArrayList<>();

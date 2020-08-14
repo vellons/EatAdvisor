@@ -41,6 +41,6 @@ public class Recensione implements Serializable {
 
     @Override
     public String toString() {
-        return "Recensione<" + valutazione + ", utente id: " + utenteId +">: " + commento;
+        return "Recensione<" + valutazione + ", utente id: " + utenteId + ">: " + commento;
     }
 }

@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class BatchCreaRistoranti {
 
-    final private static int TEST_RISTORANTI = 3;
-    final private static int TEST_RECENSIONI_PER_RISTORANTE = 6;
+    final private static int TEST_RISTORANTI = 10;
+    final private static int TEST_RECENSIONI_PER_RISTORANTE = 8;
 
     public static void main(String[] args) throws IOException {
         ArrayList<Ristorante> ristoranti = new ArrayList<>();
@@ -30,15 +30,15 @@ public class BatchCreaRistoranti {
                     i,
                     i,
                     tipologia[i % 3], // Creo ristoranti in tutte le categorie
-                    "Pizza Buona " + i,
-                    "Piccola descrizione di Pizza Buona " + i + ".\n.Ottima pizzeria con forno a legna",
+                    "Ristorante " + i,
+                    "La fantasia dei nostri chef non vi annoierà mai proponendo piatti sempre diversi e sfiziosi.\\nLa cura e la scelta degli ingredienti nostrani e genuini vi delizierà.\\nIl servizio accurato, l'eleganza delle nostre sale vi faranno sentire a vostro agio.\\nLa disponibilità e la cordialità del personale vi coccoleranno.\\n\\nAvrete sempre a disposizione un'ampia scelta di verdure sul nostro buffet da condire con il rinomato olio della nostra terra.\\n\\nPotrete sempre scegliere tra un piatto di terra, di mare o uno dei nostri terzi piatti sfiziosi, una minestra o un piatto freddo.\\n\\nCome ultima portata avrete sempre la scelta tra la frutta di stagione, una macedonia di frutta fresca condita, un gelato o uno dei dessert preparati dal nostro chef pasticcere.",
                     new Indirizzo("Via le dita dal Naso", String.valueOf(i), "Verbania", "VB", "28922"),
                     "333333333" + i,
                     "https://pizzabuona.it",
-                    "https://i2.wp.com/www.pizzerialapacesancarlo.it/wp-content/uploads/2015/12/slideshow-1.jpg?resize=480%2C280"
+                    "https://www.peck.it/sites/default/files/image/al_peck_1_ver.jpg"
             );
             for (int j = 0; j < TEST_RECENSIONI_PER_RISTORANTE; j++) {
-                rist.aggiungiRecensione(new Recensione(5, recensioneValutazione[(i + j) % 6], recensioneTesto[(i + j) % 6]));
+                rist.aggiungiRecensione(new Recensione(TEST_RISTORANTI + j, recensioneValutazione[(i + j) % 6], recensioneTesto[(i + j) % 6]));
             }
             ristoranti.add(rist);
             System.out.println(rist.toString());

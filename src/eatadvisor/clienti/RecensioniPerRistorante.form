@@ -7,6 +7,10 @@
     </constraints>
     <properties>
       <background color="-723724"/>
+      <maximumSize width="400" height="500"/>
+      <minimumSize width="300" height="100"/>
+      <opaque value="false"/>
+      <preferredSize width="335" height="120"/>
     </properties>
     <border type="none"/>
     <children>

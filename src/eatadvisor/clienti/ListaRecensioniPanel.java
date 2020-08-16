@@ -33,7 +33,7 @@ public class ListaRecensioniPanel extends JPanel {
     }
 
     public Dimension getPreferredSize() {
-        return new Dimension(500, 500);
+        return new Dimension(365, 365);
     }
 
     private void resetMainList() {

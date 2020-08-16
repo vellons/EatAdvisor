@@ -4,6 +4,8 @@ import eatadvisor.ioeatadvisor.Ristorante;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.text.DecimalFormat;
@@ -20,10 +22,17 @@ public class DettaglioRistorante {
     private JLabel lbDescrizione;
     private JPanel panelRecensioni;
     private JTextArea txtDescrizione;
+    private JButton btnCreaRecensione;
 
     public DettaglioRistorante(Ristorante ristorante) {
         this.ristorante = ristorante;
         setLabels(this.ristorante);
+        btnCreaRecensione.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
     private void setLabels(Ristorante ristorante) {

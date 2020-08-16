@@ -13,7 +13,6 @@ public class DashboardRistoratori extends JFrame {
     private JPanel panelListaRistoranti;
     private JPanel panelFunzioni;
     private JButton btnAggiungi;
-    private JButton btnElimina;
     public static JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione Ristorante");
 
     public DashboardRistoratori() throws Exception {

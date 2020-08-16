@@ -13,9 +13,10 @@ public class RecensioniPerRistorante {
     private JTextArea txtRecensione;
 
     public RecensioniPerRistorante(Recensione rec) throws Exception {
-        lbNickname.setText("Nick: " + ioutenti.getUtenteById(rec.getUtenteId()).getNickname());
+        String nickname =  ioutenti.getUtenteById(rec.getUtenteId()).getNickname();
+        lbNickname.setText("Nick: " + nickname.substring(0, Math.min(nickname.length(), 12)));
         lbRate.setText("Valutazione: " + rec.getValutazione());
-        txtRecensione.setText(rec.getCommento());
+        txtRecensione.setText(rec.getCommento().substring(0, Math.min(rec.getCommento().length(), 256)));
         setTextAreaRec(); // metodo per il "settaggio" della textArea
     }
 

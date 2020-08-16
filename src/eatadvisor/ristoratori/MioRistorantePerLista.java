@@ -19,7 +19,7 @@ public class MioRistorantePerLista {
     public MioRistorantePerLista(Ristorante ristorante) {
         DecimalFormat dec = new DecimalFormat("#0.00");
         lblNome.setText(ristorante.getNomeRistorante().substring(0, Math.min(ristorante.getNomeRistorante().length(), 30)));
-        lblIndirizzo.setText(ristorante.getIndirizzo().toString());
+        lblIndirizzo.setText(ristorante.getIndirizzo().toString().substring(0, Math.min(ristorante.getIndirizzo().toString().length(), 45)));
         lblStelle.setText(String.valueOf(dec.format(ristorante.getRecensioniValutazioneMedia())));
         lblValutazioni.setText(String.valueOf(ristorante.getRecensioni().size()) + " valutazioni");
 

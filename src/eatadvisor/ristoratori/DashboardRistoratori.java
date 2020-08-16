@@ -41,6 +41,5 @@ public class DashboardRistoratori extends JFrame {
 
         panelListaRistoranti = new JPanel();
         panelListaRistoranti.add(new ListaMieiRistorantiPanel());
-
     }
 }

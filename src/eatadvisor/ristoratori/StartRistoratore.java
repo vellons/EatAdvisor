@@ -25,6 +25,7 @@ public class StartRistoratore {
     private JPanel panelLogo;
 
     public static JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione");
+    public static JFrame dashboardRistoratore = new JFrame("EatAdvisor Ristoratori - I tuoi ristoranti");
 
     static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0]; // Usato per mettere a tutto schermo
 
@@ -83,13 +84,12 @@ public class StartRistoratore {
 
         try {
             ristoratori.closePreviousWindow(ristoratori.mainFrame);
-            JFrame listaRistoranti = new JFrame("EatAdvisor Ristoratori - I tuoi ristoranti");
-            listaRistoranti.setContentPane(new DashboardRistoratori().panelDashboardRistoratori);
-            ristoratori.initUI(listaRistoranti);
-            listaRistoranti.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            listaRistoranti.pack();
-            listaRistoranti.setLocationRelativeTo(null);
-            listaRistoranti.setVisible(true);
+            dashboardRistoratore.setContentPane(new DashboardRistoratori().panelDashboardRistoratori);
+            ristoratori.initUI(dashboardRistoratore);
+            dashboardRistoratore.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            dashboardRistoratore.pack();
+            dashboardRistoratore.setLocationRelativeTo(null);
+            dashboardRistoratore.setVisible(true);
             //device.setFullScreenWindow(listaRistoranti); // Imposto la pagina a tutto schermo
         } catch (Exception exception) {
             exception.printStackTrace();

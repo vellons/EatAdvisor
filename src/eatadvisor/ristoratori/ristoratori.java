@@ -68,4 +68,16 @@ public class ristoratori {
         finestra.setVisible(false);
         finestra.dispose();
     }
+
+    public static void reloadDashboardRistoranti(JFrame finestra) throws Exception {
+        finestra.setVisible(false);
+        finestra.dispose();
+        finestra.invalidate();
+        finestra.setContentPane(new DashboardRistoratori().panelDashboardRistoratori);
+        initUI(finestra);
+        finestra.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        finestra.pack();
+        finestra.setLocationRelativeTo(null);
+        finestra.setVisible(true);
+    }
 }

@@ -57,8 +57,10 @@ public class RegistrazioneRistorante {
                                 getTareaDescrizione(), indirizzo, getTfTelefono(), getTfSito(), getTfImmagine());
                         ristoratori.closePreviousWindow(DashboardRistoratori.registrazioneFrame);
 
-                        JOptionPane.showMessageDialog(null, "Ristorante creato! Ricarica la " +
-                                "dashboard effettuando nuovamente l'accesso per vederlo nella lista", "Registrazione effettuata", JOptionPane.PLAIN_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Ristorante creato!\n" +
+                                "La dashboard verrà ricaricata per mostrarti il nuovo ristorante", "Ristorante creato", JOptionPane.PLAIN_MESSAGE);
+
+                        ristoratori.reloadDashboardRistoranti(StartRistoratore.dashboardRistoratore);
                     } catch (Exception exception) {
                         JOptionPane.showMessageDialog(null, "Abbiamo riscontrato problemi durante la fase di creazione, prova a riavviare l'app",
                                 "Attenzione", JOptionPane.PLAIN_MESSAGE);

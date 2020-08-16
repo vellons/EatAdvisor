@@ -27,8 +27,20 @@ public class ListaRecensioniPanel extends JPanel {
         repaint();
 
         //caricamento recensioni
-        for (Recensione rec : ristorante.getRecensioni()) {
-            aggiungiRecensione(rec);
+        if (ristorante.getRecensioni().size() > 0) {
+            for (Recensione rec : ristorante.getRecensioni()) {
+                aggiungiRecensione(rec);
+            }
+        } else {
+            JPanel panel = new JPanel();
+            panel.add(new JLabel("<html><center>Non ci sono ancora recensioni per questo ristorante.<br/>Aggiungi la prima!!</center></html>"));
+            GridBagConstraints gbc = new GridBagConstraints();
+            gbc.gridwidth = GridBagConstraints.REMAINDER;
+            gbc.weightx = 1;
+            gbc.fill = GridBagConstraints.HORIZONTAL;
+            mainList.add(panel, gbc, 0);
+            validate();
+            repaint();
         }
     }
 

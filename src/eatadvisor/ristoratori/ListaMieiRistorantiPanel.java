@@ -35,8 +35,20 @@ public class ListaMieiRistorantiPanel extends JPanel {
         IOEatAdvisor ioEatAdvisor = new IOEatAdvisor();
         int id = Global.utenteLoggato.getId();
         ioEatAdvisor.filtraPerProprietarioId(id);
-        for (Ristorante rist : ioEatAdvisor.getListaRistoranti()) {
-            aggiungiRistorante(rist);
+        if (ioEatAdvisor.getListaRistoranti().size() > 0) {
+            for (Ristorante rist : ioEatAdvisor.getListaRistoranti()) {
+                aggiungiRistorante(rist);
+            }
+        } else {
+            JPanel panel = new JPanel();
+            panel.add(new JLabel("<html><center>Non hai ancora ristoranti.<br/>Aggiungi il primo!!</center></html>"));
+            GridBagConstraints gbc = new GridBagConstraints();
+            gbc.gridwidth = GridBagConstraints.REMAINDER;
+            gbc.weightx = 1;
+            gbc.fill = GridBagConstraints.HORIZONTAL;
+            mainList.add(panel, gbc, 0);
+            validate();
+            repaint();
         }
     }
 
@@ -62,6 +74,5 @@ public class ListaMieiRistorantiPanel extends JPanel {
         mainList.add(panel, gbc, 0);
         validate();
         repaint();
-
     }
 }

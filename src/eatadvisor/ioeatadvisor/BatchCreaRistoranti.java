@@ -38,7 +38,7 @@ public class BatchCreaRistoranti {
                     "https://www.peck.it/sites/default/files/image/al_peck_1_ver.jpg"
             );
             for (int j = 0; j < TEST_RECENSIONI_PER_RISTORANTE; j++) {
-                rist.aggiungiRecensione(new Recensione(TEST_RISTORANTI + j, recensioneValutazione[(i + j) % 6], recensioneTesto[(i + j) % 6]));
+                rist.aggiungiRecensione(new Recensione(TEST_RISTORANTI + 1  + j, recensioneValutazione[(i + j) % 6], recensioneTesto[(i + j) % 6]));
             }
             ristoranti.add(rist);
             System.out.println(rist.toString());

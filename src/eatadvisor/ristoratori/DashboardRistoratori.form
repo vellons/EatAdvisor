@@ -58,7 +58,7 @@
             </constraints>
             <properties>
               <background color="-3727837"/>
-              <borderPainted value="true"/>
+              <borderPainted value="false"/>
               <contentAreaFilled value="true"/>
               <defaultCapable value="true"/>
               <enabled value="true"/>

@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class AccountCliente {
+    public static JFrame modifyPassword = new JFrame("Cambio Password"); //Creazione della finestra
     public JPanel panelAccountCliente;
     private JPanel panelLogo;
     private JLabel lblNickname;
@@ -71,12 +72,19 @@ public class AccountCliente {
         btnChangePsw.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) { //Funzione da implementare
-                JOptionPane.showMessageDialog(null, "Funzione non ancora disponibile",
-                        "", JOptionPane.PLAIN_MESSAGE);
+                try {
+                    modifyPassword.setContentPane(new ModificaPassword().panelChangePassword);
+                    clienti.initUI(modifyPassword); //Icona
+                    modifyPassword.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestraregistrazioneFrame.pack();
+                    modifyPassword.pack();
+                    modifyPassword.setLocationRelativeTo(null);
+                    modifyPassword.setVisible(true);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
             }
         });
     }
-
 
     private void setTrueEditable() { // metodo per l'abilitazione dei textfield
         tfNome.setEditable(true);  // impostando a true, ho la possibilità di modificare il campo di testo

@@ -6,7 +6,7 @@ public class Utente implements Serializable {
 
     private static final long serialVersionUID = -489957051202126151L;
     private int id;
-    private String tipo; // CLIE/RIST/NULL
+    public String tipo; // CLIE/RIST/NULL
     private String email;
     private String nickname;
     private String hashPassword;
@@ -26,6 +26,10 @@ public class Utente implements Serializable {
         this.comune = comune;
         this.siglaProvincia = siglaProvincia;
         this.setPasswordAndHash(plaintextPassword);
+    }
+
+    public Utente() {
+
     }
 
     public int getId() {

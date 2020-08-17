@@ -109,6 +109,9 @@ public class IOUtenti {
         for (int i = 0; i < utenti.size(); i++) { // Scorro la lista degli utenti
             if (utenti.get(i).getId() == id) { // Ho trovato l'utente
                 utenteDaAggiornare = utenti.get(i);
+                if (oldPassword.toLowerCase().equals(newPassword.toLowerCase())) {
+                    throw new Exception("Le due password risultano uguali.");
+                }
                 if (Sha1.sha1(oldPassword).equals(utenteDaAggiornare.getHashPassword())) {
                     utenteDaAggiornare.setPasswordAndHash(newPassword); // Imposto nuova password
                     utenti.set(i, utenteDaAggiornare); // Aggiorno l'utente sulla lista
@@ -116,6 +119,7 @@ public class IOUtenti {
                 } else {
                     throw new Exception("La vecchia password non corrisponde.");
                 }
+
             }
         }
         if (!aggiornato) {

@@ -1,6 +1,8 @@
 package eatadvisor.clienti;
 
 import eatadvisor.global.Global;
+import eatadvisor.ioeatadvisor.Ristorante;
+import eatadvisor.ristoratori.DashboardRistoratori;
 
 import javax.swing.*;
 import java.awt.*;
@@ -68,5 +70,17 @@ public class clienti {
     public static void closePreviousWindow(JFrame finestra) {
         finestra.setVisible(false);
         finestra.dispose();
+    }
+    public static void reloadDettaglioRistorante(JFrame dettaglioFrame, Ristorante rist) throws Exception {
+        dettaglioFrame.setVisible(false);
+        dettaglioFrame.dispose();
+        dettaglioFrame.invalidate();
+        dettaglioFrame.setContentPane(new DettaglioRistorante(rist).panelDettaglioRistorante);
+        initUI(dettaglioFrame);
+        dettaglioFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        dettaglioFrame.pack();
+        dettaglioFrame.setLocationRelativeTo(null);
+        dettaglioFrame.setVisible(true);
+
     }
 }

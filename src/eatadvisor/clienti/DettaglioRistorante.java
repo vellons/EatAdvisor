@@ -1,5 +1,6 @@
 package eatadvisor.clienti;
 
+import eatadvisor.global.Global;
 import eatadvisor.ioeatadvisor.Ristorante;
 
 import javax.imageio.ImageIO;
@@ -24,13 +25,30 @@ public class DettaglioRistorante {
     private JTextArea txtDescrizione;
     private JButton btnCreaRecensione;
 
+    public static JFrame frameRewiew = new JFrame("EatAdvisor Cliente - Nuova recensione");
+
     public DettaglioRistorante(Ristorante ristorante) {
         this.ristorante = ristorante;
         setLabels(this.ristorante);
         btnCreaRecensione.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                if (Global.utenteLoggato == null) {
+                    JOptionPane.showMessageDialog(null, "" +
+                                    "Funzionalità non disponibile per gli utenti non loggati.\n" +
+                                    "Per commentare, accedi ad EatAvisor.",
+                            "Funzione commento non disponibile", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    try {
+                        frameRewiew.setContentPane(new CreaRecensione(ristorante).panelCreaRecensione);
+                        frameRewiew.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
+                        frameRewiew.pack();
+                        frameRewiew.setLocationRelativeTo(null);
+                        frameRewiew.setVisible(true);
+                    } catch (Exception exception) {
+                        exception.printStackTrace();
+                    }
+                }
             }
         });
     }

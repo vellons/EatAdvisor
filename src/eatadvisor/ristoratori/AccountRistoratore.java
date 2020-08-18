@@ -74,7 +74,7 @@ public class AccountRistoratore { //Contiene il JPanel principale
             @Override
             public void actionPerformed(ActionEvent e) { //Funzione da implementare
                 try {
-                    modifyPassword.setContentPane(new ModificaPassword().panelChangePassword);
+                    modifyPassword.setContentPane(new ModificaPasswordRistoratore().panelModificaPasswordRistoratore);
                     ristoratori.initUI(modifyPassword); //Icona
                     modifyPassword.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestraregistrazioneFrame.pack();
                     modifyPassword.pack();

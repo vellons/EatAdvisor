@@ -1,8 +1,9 @@
-package eatadvisor.clienti;
+package eatadvisor.ristoratori;
 
+import eatadvisor.clienti.AccountCliente;
+import eatadvisor.clienti.clienti;
 import eatadvisor.global.Global;
 import eatadvisor.ioutenti.IOUtenti;
-import eatadvisor.ioutenti.Utente;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -13,16 +14,16 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
-public class ModificaPassword {
-    public JPanel panelChangePassword;
+public class ModificaPasswordRistoratore {
+    public JPanel panelModificaPasswordRistoratore;
+    private JLabel lbVecchiaPassword;
     private JPasswordField tfVecchiaPassword;
     private JPasswordField tfNuovaPassword;
-    private JLabel lbVecchiaPassword;
-    private JButton btnCambiaPassword;
     private JLabel lbNuovaPassword;
     private JPanel panelLogo;
+    private JButton btnCambiaPassword;
 
-    public ModificaPassword() throws Exception {
+    public ModificaPasswordRistoratore() throws Exception {
         IOUtenti ioUtenti = new IOUtenti();
         btnCambiaPassword.addActionListener(new ActionListener() {
             @Override
@@ -47,7 +48,7 @@ public class ModificaPassword {
                                     "Attenzione", JOptionPane.PLAIN_MESSAGE);
                         }
                     } finally {
-                        clienti.closePreviousWindow(AccountCliente.modifyPassword);
+                        ristoratori.closePreviousWindow(AccountRistoratore.modifyPassword);
                     }
                 }
             }
@@ -56,7 +57,7 @@ public class ModificaPassword {
 
     private void createUIComponents() throws IOException {
         panelLogo = new JPanel();
-        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisorLogoClientiCambioPassword.png"));
+        BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisorLogoRistoratoriCambioPassword.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
     }

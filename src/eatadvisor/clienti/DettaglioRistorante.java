@@ -1,6 +1,7 @@
 package eatadvisor.clienti;
 
 import eatadvisor.global.Global;
+import eatadvisor.ioeatadvisor.IOEatAdvisor;
 import eatadvisor.ioeatadvisor.Ristorante;
 
 import javax.imageio.ImageIO;
@@ -79,6 +80,13 @@ public class DettaglioRistorante {
         panelLogo.add(picLabel);
 
         panelRecensioni = new JPanel();
+        System.out.println(this.ristorante); // TODO: remove
+        // Tutte le informazioni del ristorante mi sono già state passate,
+        // però se la pagina è stata refreshata dopo l'aggiunta di un commento devo aggiornare le info (recensioni)
+        // del ristorante che sto visualizzando nella schermata!
+        IOEatAdvisor ioEatAdvisor = new IOEatAdvisor();
+        this.ristorante = ioEatAdvisor.getRistoranteById(this.ristorante.getId());
+        System.out.println(this.ristorante); // TODO: remove
         panelRecensioni.add(new ListaRecensioniPanel(this.ristorante)); // Aggiungo la lista dei ristoranti
     }
 }

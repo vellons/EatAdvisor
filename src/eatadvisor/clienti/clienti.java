@@ -26,9 +26,6 @@ public class clienti {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Definisce il comportamento della finestra
 
         if (System.getProperty("os.name").toLowerCase().contains("mac")) {
-            if (clienti.exists("com.apple.eawt.Application")) {
-                com.apple.eawt.Application.getApplication().setDockIconImage(image); //tramite questa funzione, posso inserire l'icona nella dock di MacOS, non dovrebbe interferire con Windows
-            }
             System.setProperty("apple.awt.brushMetalLook", "true");
             // use the mac system menu bar
             System.setProperty("apple.laf.useScreenMenuBar", "true");
@@ -93,6 +90,5 @@ public class clienti {
         dettaglioFrame.pack();
         dettaglioFrame.setLocationRelativeTo(null);
         dettaglioFrame.setVisible(true);
-
     }
 }

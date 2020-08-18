@@ -71,6 +71,7 @@ public class clienti {
         finestra.setVisible(false);
         finestra.dispose();
     }
+
     public static void reloadDettaglioRistorante(JFrame dettaglioFrame, Ristorante rist) throws Exception {
         dettaglioFrame.setVisible(false);
         dettaglioFrame.dispose();

@@ -28,7 +28,7 @@ public class CreaRecensione {
     private JLabel lbCounterCharacter;
     private int count = 0;
 
-    public CreaRecensione(Ristorante rist) throws Exception{
+    public CreaRecensione(Ristorante rist) throws Exception {
         lbCounterCharacter.setText("Caratteri: " + count + "/256");
 
         btnAddCommento.addActionListener(new ActionListener() {

@@ -8,9 +8,9 @@
     <properties>
       <background color="-723724"/>
       <maximumSize width="400" height="500"/>
-      <minimumSize width="300" height="100"/>
+      <minimumSize width="300" height="120"/>
       <opaque value="false"/>
-      <preferredSize width="335" height="120"/>
+      <preferredSize width="335" height="150"/>
     </properties>
     <border type="line">
       <color color="-4473925"/>

@@ -34,7 +34,6 @@ public class CreaRecensione {
         btnAddCommento.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //String regex = "[\\w\\[\\]`!@#$%\\^&*()={}:;<>+'-]*";
                 try {
                     IOEatAdvisor ioEatAdvisor = new IOEatAdvisor();
                     if (txtCommento.getText().length() != 0) {
@@ -71,14 +70,16 @@ public class CreaRecensione {
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
 
-
-                if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE) {
-                    if (count > 0) {
-                        count--;
+                if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE) { // se pigio il tasto backspace, entro nell'if
+                    if (txtCommento.getText() == "") { //qualora un utente decidesse di selezionare tutto il commento e cancellarlo tamite il backspace, azzeero il contatore
+                        count = 0;
+                        lbCounterCharacter.setText("Caratteri: " + count + "/256");
+                    } else { //se seleziono una parte del testo
+                        count = txtCommento.getText().length();
                         lbCounterCharacter.setText("Caratteri: " + count + "/256");
                     }
                 } else {
-                    count = txtCommento.getText().length() + 1;
+                    count = txtCommento.getText().length() + 1; // incremento il contatore, da momento che sto aggiungendo caratteri
                     lbCounterCharacter.setText("Caratteri: " + count + "/256");
                 }
             }

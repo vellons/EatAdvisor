@@ -31,6 +31,8 @@ public class RistorantePerLista extends JPanel {
                 try {
                     dettaglioFrame.setContentPane(new DettaglioRistorante(ristorante).panelDettaglioRistorante);
                     clienti.initUI(dettaglioFrame);
+                    dettaglioFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                    dettaglioFrame.setUndecorated(false);
                     dettaglioFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
                     dettaglioFrame.pack();
                     dettaglioFrame.setLocationRelativeTo(null);

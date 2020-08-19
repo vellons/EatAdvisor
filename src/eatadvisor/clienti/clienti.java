@@ -66,15 +66,6 @@ public class clienti {
         myMenuBar.add(f);
     }
 
-    public static boolean exists(String className) {
-        try {
-            Class.forName(className, false, null);
-            return true;
-        } catch (ClassNotFoundException exception) {
-            return false;
-        }
-    }
-
     public static void closePreviousWindow(JFrame finestra) {
         finestra.setVisible(false);
         finestra.dispose();

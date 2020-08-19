@@ -94,6 +94,8 @@ public class StartClienti {
             JFrame listaRistoranti = new JFrame("EatAdvisor Clienti - Lista ristoranti");
             listaRistoranti.setContentPane(new DashboardRistoranti().panelDashboardRistoranti);
             clienti.initUI(listaRistoranti);
+            listaRistoranti.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            listaRistoranti.setUndecorated(false);
             listaRistoranti.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
             listaRistoranti.pack();
             listaRistoranti.setLocationRelativeTo(null);

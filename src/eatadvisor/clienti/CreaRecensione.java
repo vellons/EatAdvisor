@@ -47,10 +47,9 @@ public class CreaRecensione {
                                     new Recensione(Global.utenteLoggato.getId(), sliValutazione.getValue(),
                                             txtCommento.getText()));
                             JOptionPane.showMessageDialog(null, "Il commento è stato " +
-                                    "inviato correttamente.\n La finestra del dettaglio verrà  ricaricata per mostrare la" +
+                                    "inviato correttamente.\nLa finestra del dettaglio verrà  ricaricata per mostrare " +
                                     "il commento", "Commento e giudizio inviato", JOptionPane.PLAIN_MESSAGE);
                             clienti.closePreviousWindow(DettaglioRistorante.frameRewiew);
-                            //clienti.closePreviousWindow(RistorantePerLista.dettaglioFrame);
                             clienti.reloadDettaglioRistorante(RistorantePerLista.dettaglioFrame, rist);
                         }
 

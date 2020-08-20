@@ -18,23 +18,20 @@ public class DashboardRistoranti extends JFrame {
     private String[] tipologia = new String[]{"TUTTI", "ITALIANO", "ETNICO", "FUSION"};
 
     private String initialFiltroNome = "";
-    private String initialFiltroComune = "";
+    private String initialFiltroComune = "verb";
     private String initialFiltroTipologia = "";
 
     public DashboardRistoranti(String filtroNome, String filtroComune, String filtroTipologia) throws Exception {
-        System.out.println("DashfiltroNome: " + filtroNome);
-        System.out.println("DashfiltroComune: " + filtroComune);
-        System.out.println("DashfiltroTipologia: " + filtroTipologia);
         // Prendo i valori dei 3 filtri precedenti e li popolo all'interno dei filtri
         // Questo succede perchè faccio il reload di questo oggetto
-        initialFiltroNome = filtroNome;
-        if (!filtroNome.equals("")) {
-            tfFiltroNomeRistorante.setText(initialFiltroNome);
-        }
-        initialFiltroComune = filtroComune;
-        if (!filtroComune.equals("")) {
-            tfFiltroComune.setText(initialFiltroComune);
-        }
+        initialFiltroNome = "filtroNome";
+//        //if (!filtroNome.equals("")) {
+//            tfFiltroNomeRistorante.setText(initialFiltroNome);
+//        //}
+        initialFiltroComune = "filtroComune";
+        //if (!filtroComune.equals("")) {
+        //   tfFiltroComune.setText(initialFiltroComune);
+        //}
         initialFiltroTipologia = filtroTipologia;
         if (!filtroTipologia.equals("")) {
             cboxTipologia.setSelectedItem(initialFiltroTipologia);

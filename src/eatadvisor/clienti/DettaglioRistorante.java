@@ -32,6 +32,8 @@ public class DettaglioRistorante {
     private JLabel lb2Stelle;
     private JLabel lb1Stella;
     private JPanel panelNumValutazioni;
+    private JPanel panelInformazioni;
+
 
     public static JFrame frameRewiew = new JFrame("EatAdvisor Cliente - Nuova recensione");
 
@@ -93,16 +95,23 @@ public class DettaglioRistorante {
         IOEatAdvisor ioEatAdvisor = new IOEatAdvisor();
         this.ristorante = ioEatAdvisor.getRistoranteById(this.ristorante.getId());
         panelRecensioni.add(new ListaRecensioniPanel(this.ristorante)); // Aggiungo la lista dei ristoranti
+
         panelNumValutazioni = new JPanel();
         lb2Stelle = new JLabel();
         lb4Stelle = new JLabel();
         lb1Stella = new JLabel();
         lb5Stelle = new JLabel();
         lb3Stelle = new JLabel();
+
+        panelInformazioni = new JPanel();
+        lbValutazioni = new JLabel();
+
         setPanelNumValutazioni();
     }
 
     private void setPanelNumValutazioni() {
+        DecimalFormat dec = new DecimalFormat("#0.00");
+
         int fiveStars = 0;
         int fourStars = 0;
         int threeStars = 0;
@@ -131,5 +140,6 @@ public class DettaglioRistorante {
         } else { // se le recensioni non sono presenti, le label non le mostro
             panelNumValutazioni.setVisible(false);
         }
+        lbValutazioni.setText("Valutazione media: " + dec.format(this.ristorante.getRecensioniValutazioneMedia()));
     }
 }

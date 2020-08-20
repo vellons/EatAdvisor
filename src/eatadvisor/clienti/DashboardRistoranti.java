@@ -24,19 +24,9 @@ public class DashboardRistoranti extends JFrame {
     public DashboardRistoranti(String filtroNome, String filtroComune, String filtroTipologia) throws Exception {
         // Prendo i valori dei 3 filtri precedenti e li popolo all'interno dei filtri
         // Questo succede perchè faccio il reload di questo oggetto
-        initialFiltroNome = "filtroNome";
-//        //if (!filtroNome.equals("")) {
-//            tfFiltroNomeRistorante.setText(initialFiltroNome);
-//        //}
-        initialFiltroComune = "filtroComune";
-        //if (!filtroComune.equals("")) {
-        //   tfFiltroComune.setText(initialFiltroComune);
-        //}
+        initialFiltroNome = filtroNome;
+        initialFiltroComune = filtroComune;
         initialFiltroTipologia = filtroTipologia;
-        if (!filtroTipologia.equals("")) {
-            cboxTipologia.setSelectedItem(initialFiltroTipologia);
-        }
-
 
         btnApplicaFiltri.addActionListener(new ActionListener() {
             @Override
@@ -85,6 +75,15 @@ public class DashboardRistoranti extends JFrame {
         panelListaRistoranti = new JPanel();
         panelListaRistoranti.add(new ListaRistorantiPanel(initialFiltroNome, initialFiltroComune, initialFiltroTipologia));
 
+
+
+        tfFiltroNomeRistorante = new JTextField();
+        tfFiltroComune = new JTextField();
+
+        tfFiltroNomeRistorante.setText(initialFiltroNome);
+        tfFiltroComune.setText(initialFiltroComune);
+
         cboxTipologia = new JComboBox<String>(tipologia);
+        cboxTipologia.setSelectedItem(initialFiltroTipologia);
     }
 }

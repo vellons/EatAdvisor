@@ -71,6 +71,21 @@ public class clienti {
         finestra.dispose();
     }
 
+    public static void reloadDashBoardConFiltri(JFrame dashboardFrame, String filtroNome, String filtroComune, String filtroTipologia) throws Exception {
+        System.out.println("ReloadfiltroNome: " + filtroNome);
+        System.out.println("ReloadfiltroComune: " + filtroComune);
+        System.out.println("ReloadfiltroTipologia: " + filtroTipologia);
+        dashboardFrame.setVisible(false);
+        dashboardFrame.dispose();
+        dashboardFrame.invalidate();
+        dashboardFrame.setContentPane(new DashboardRistoranti(filtroNome, filtroComune, filtroTipologia).panelDashboardRistoranti);
+        initUI(dashboardFrame);
+        dashboardFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        dashboardFrame.pack();
+        dashboardFrame.setLocationRelativeTo(null);
+        dashboardFrame.setVisible(true);
+    }
+
     public static void reloadDettaglioRistorante(JFrame dettaglioFrame, Ristorante rist) throws Exception {
         dettaglioFrame.setVisible(false);
         dettaglioFrame.dispose();

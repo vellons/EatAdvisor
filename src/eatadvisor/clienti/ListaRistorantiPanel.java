@@ -11,7 +11,10 @@ import static javax.swing.BorderFactory.createEmptyBorder;
 public class ListaRistorantiPanel extends JPanel {
     public JPanel mainList;
 
-    public ListaRistorantiPanel() throws Exception {
+    public ListaRistorantiPanel(String filtroNome, String filtroComune, String filtroTipologia) throws Exception {
+        System.out.println("filtroNome: " + filtroNome);
+        System.out.println("filtroComune: " + filtroComune);
+        System.out.println("filtroTipologia: " + filtroTipologia);
         setLayout(new BorderLayout());
 
         // Inizializzazione panel
@@ -27,22 +30,44 @@ public class ListaRistorantiPanel extends JPanel {
         validate();
         repaint();
 
-        // Caricamento ristoranti
+        // Caricamento ristoranti, se i filtri sono presenti li applico
         IOEatAdvisor ioEatAdvisor = new IOEatAdvisor();
-        for (Ristorante rist : ioEatAdvisor.getListaRistoranti()) {
-            aggiungiRistorante(rist);
+        if (!filtroNome.equals("")) {
+            System.out.println("Applico filtro filtroNome: " + filtroNome);
+            ioEatAdvisor.filtraPerNomeRistorante(filtroNome);
+        }
+        if (!filtroComune.equals("")) {
+            System.out.println("Applico filtro filtroComune: " + filtroComune);
+            ioEatAdvisor.filtraPerCitta(filtroComune);
+        }
+        if (!filtroTipologia.equals("") && !filtroTipologia.equals("TUTTI")) {
+            System.out.println("Applico filtro filtroTipologia: " + filtroTipologia);
+            ioEatAdvisor.filtraPerTipo(filtroTipologia);
+        }
+
+        // Controllo se dopo aver applicato i filtri ci sono ancora ristoranti
+        if (ioEatAdvisor.getListaRistoranti().size() > 0) {
+            // Scorro la lista rimasta dei ristoranti
+            for (Ristorante rist : ioEatAdvisor.getListaRistoranti()) {
+                aggiungiRistorante(rist);
+            }
+        } else {
+            JPanel panel = new JPanel();
+            panel.add(new JLabel("<html><center>Non ci sono ristoranti corrispondenti a questi criteri di recerca." +
+                    "<br/>Prova rimuovere i filtri e schiaccia il tasto \"Applica filtri\"</center></html>"));
+            GridBagConstraints gbc = new GridBagConstraints();
+            gbc.gridwidth = GridBagConstraints.REMAINDER;
+            gbc.weightx = 1;
+            gbc.fill = GridBagConstraints.HORIZONTAL;
+            mainList.add(panel, gbc, 0);
+            validate();
+            repaint();
         }
     }
 
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(800, 500);
-    }
-
-    private void resetMainList() {
-        mainList.removeAll();
-        revalidate();
-        repaint();
     }
 
     private void aggiungiRistorante(Ristorante rist) {

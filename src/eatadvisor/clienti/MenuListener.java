@@ -3,6 +3,7 @@ package eatadvisor.clienti;
 import eatadvisor.global.Global;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -34,6 +35,9 @@ public class MenuListener implements ActionListener {
             }
         } else if (scelta.equals("Versione")) {
             JFrame infoFrame = new JFrame("EatAdvisor clienti - Versione");
+            ImageIcon imageIcon = new ImageIcon("media/EatAdvisorIcon.png");
+            Image image = imageIcon.getImage();
+            infoFrame.setIconImage(image);
             infoFrame.setContentPane(new InfoCliente().panelInfo);
             infoFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
             infoFrame.pack();

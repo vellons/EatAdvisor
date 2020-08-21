@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 
 public class RistorantePerLista extends JPanel {
-    public static JFrame dettaglioFrame = new JFrame();
+    public static JFrame dettaglioFrame = new JFrame("EatAdvisor Cliente - Dettaglio ristorante");
     public JPanel panelRistorantePerLista;
     private JLabel lblNome;
     private JLabel lblIndirizzo;

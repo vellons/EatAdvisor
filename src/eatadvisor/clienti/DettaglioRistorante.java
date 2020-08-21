@@ -1,8 +1,6 @@
 package eatadvisor.clienti;
 
 import eatadvisor.global.Global;
-import eatadvisor.ioeatadvisor.IOEatAdvisor;
-import eatadvisor.ioeatadvisor.Recensione;
 import eatadvisor.ioeatadvisor.Ristorante;
 
 import javax.imageio.ImageIO;
@@ -26,14 +24,6 @@ public class DettaglioRistorante {
     private JPanel panelRecensioni;
     private JTextArea txtDescrizione;
     private JButton btnCreaRecensione;
-    private JLabel lb5Stelle;
-    private JLabel lb4Stelle;
-    private JLabel lb3Stelle;
-    private JLabel lb2Stelle;
-    private JLabel lb1Stella;
-    private JPanel panelNumValutazioni;
-    private JPanel panelInformazioni;
-
 
     public static JFrame frameRewiew = new JFrame("EatAdvisor Cliente - Nuova recensione");
 
@@ -69,7 +59,7 @@ public class DettaglioRistorante {
         lbIndirizzo.setText(String.valueOf(ristorante.getIndirizzo()));
         lbValutazioni.setText("Valutazione media: " + dec.format(ristorante.getRecensioniValutazioneMedia()));
         lbNumeroRecensioni.setText(ristorante.getRecensioni().size() + " valutazioni");
-        setPanelNumValutazioni();
+        //setPanelNumValutazioni();
         setTextAreaDescr();
         txtDescrizione.setText(ristorante.getDescrizione());
     }
@@ -89,57 +79,6 @@ public class DettaglioRistorante {
         panelLogo.add(picLabel);
 
         panelRecensioni = new JPanel();
-        // Tutte le informazioni del ristorante mi sono già state passate,
-        // però se la pagina è stata refreshata dopo l'aggiunta di un commento devo aggiornare le info (recensioni)
-        // del ristorante che sto visualizzando nella schermata!
-        IOEatAdvisor ioEatAdvisor = new IOEatAdvisor();
-        this.ristorante = ioEatAdvisor.getRistoranteById(this.ristorante.getId());
         panelRecensioni.add(new ListaRecensioniPanel(this.ristorante)); // Aggiungo la lista dei ristoranti
-
-        panelNumValutazioni = new JPanel();
-        lb2Stelle = new JLabel();
-        lb4Stelle = new JLabel();
-        lb1Stella = new JLabel();
-        lb5Stelle = new JLabel();
-        lb3Stelle = new JLabel();
-
-        panelInformazioni = new JPanel();
-        lbValutazioni = new JLabel();
-
-        setPanelNumValutazioni();
-    }
-
-    private void setPanelNumValutazioni() {
-        DecimalFormat dec = new DecimalFormat("#0.00");
-
-        int fiveStars = 0;
-        int fourStars = 0;
-        int threeStars = 0;
-        int twoStars = 0;
-        int oneStar = 0;
-
-        if (ristorante.getRecensioni().size() > 0) { //se son presenti delle recensioni
-            for (Recensione rec : ristorante.getRecensioni()) { //avvio il conteggio delle valutazioni
-                if (rec.getValutazione() == 5) {
-                    fiveStars++;
-                    lb5Stelle.setText("Valutazioni 5 stelle: " + fiveStars);
-                } else if (rec.getValutazione() == 4) {
-                    fourStars++;
-                    lb4Stelle.setText("Valutazioni 4 stelle: " + fourStars);
-                } else if (rec.getValutazione() == 3) {
-                    threeStars++;
-                    lb3Stelle.setText("Valutazioni 3 stelle: " + threeStars);
-                } else if (rec.getValutazione() == 2) {
-                    twoStars++;
-                    lb2Stelle.setText("Valutazioni 2 stelle: " + twoStars);
-                } else {
-                    oneStar++;
-                    lb1Stella.setText("Valutazioni 1 stella: " + oneStar);
-                }
-            }
-        } else { // se le recensioni non sono presenti, le label non le mostro
-            panelNumValutazioni.setVisible(false);
-        }
-        lbValutazioni.setText("Valutazione media: " + dec.format(this.ristorante.getRecensioniValutazioneMedia()));
     }
 }

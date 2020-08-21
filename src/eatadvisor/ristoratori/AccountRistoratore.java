@@ -1,7 +1,5 @@
 package eatadvisor.ristoratori;
 
-import eatadvisor.clienti.ModificaPassword;
-import eatadvisor.clienti.clienti;
 import eatadvisor.global.Global;
 import eatadvisor.ioutenti.IOUtenti;
 

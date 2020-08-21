@@ -8,9 +8,9 @@ import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 
 public class MioRistorantePerLista {
+    public static JFrame dettaglioFrame = new JFrame("EatAdvisor Ristoratore - Dettaglio mio ristorante");
     public JPanel panelMioRistorantePerLista;
     private JLabel lblNome;
-    private JPanel panelRistImage;
     private JLabel lblIndirizzo;
     private JLabel lblStelle;
     private JLabel lblValutazioni;
@@ -26,7 +26,16 @@ public class MioRistorantePerLista {
         btnDettaglio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                try {
+                    dettaglioFrame.setContentPane(new DettaglioMioRistorante(ristorante).panelDettaglioRistorante);
+                    ristoratori.initUI(dettaglioFrame);;
+                    dettaglioFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
+                    dettaglioFrame.pack();
+                    dettaglioFrame.setLocationRelativeTo(null);
+                    dettaglioFrame.setVisible(true);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
             }
         });
     }

@@ -25,7 +25,7 @@ public class StartRistoratore {
     private JPanel panelLogo;
 
     public static JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione");
-    public static JFrame dashboardRistoratore = new JFrame("EatAdvisor Ristoratori - I tuoi ristoranti");
+    public static JFrame dashboardRistoratore = new JFrame("EatAdvisor Ristoratori - I miei ristoranti");
 
     static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0]; // Usato per mettere a tutto schermo
 

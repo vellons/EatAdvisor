@@ -1,6 +1,7 @@
 package eatadvisor.clienti;
 
 import eatadvisor.global.Global;
+import eatadvisor.ioeatadvisor.IOEatAdvisor;
 import eatadvisor.ioeatadvisor.Recensione;
 import eatadvisor.ioeatadvisor.Ristorante;
 
@@ -31,6 +32,7 @@ public class DettaglioRistorante {
     private JLabel lb2Stelle;
     private JLabel lb1Stella;
     private JPanel panelNumValutazioni;
+    private JLabel lblTipologia;
 
     public static JFrame frameRewiew = new JFrame("EatAdvisor Cliente - Nuova recensione");
 
@@ -64,6 +66,7 @@ public class DettaglioRistorante {
         DecimalFormat dec = new DecimalFormat("#0.00");
         lbNomeRistorante.setText(ristorante.getNomeRistorante());
         lbIndirizzo.setText(String.valueOf(ristorante.getIndirizzo()));
+        lblTipologia.setText("Tipologia: " + ristorante.getTipologia());
         setPanelNumValutazioni();
         setTextAreaDescr();
         txtDescrizione.setText(ristorante.getDescrizione());
@@ -120,6 +123,23 @@ public class DettaglioRistorante {
         panelLogo.add(picLabel);
 
         panelRecensioni = new JPanel();
+        // Tutte le informazioni del ristorante mi sono già state passate,
+        // però se la pagina è stata refreshata dopo l'aggiunta di un commento devo aggiornare le info (recensioni)
+        // del ristorante che sto visualizzando nella schermata!
+        IOEatAdvisor ioEatAdvisor = new IOEatAdvisor();
+        this.ristorante = ioEatAdvisor.getRistoranteById(this.ristorante.getId());
         panelRecensioni.add(new ListaRecensioniPanel(this.ristorante)); // Aggiungo la lista dei ristoranti
+
+        panelNumValutazioni = new JPanel();
+        lb2Stelle = new JLabel();
+        lb4Stelle = new JLabel();
+        lb1Stella = new JLabel();
+        lb5Stelle = new JLabel();
+        lb3Stelle = new JLabel();
+
+        lbValutazioni = new JLabel();
+        lbNumeroRecensioni = new JLabel();
+
+        setPanelNumValutazioni(); // Reimposto il valore delle valutazioni
     }
 }

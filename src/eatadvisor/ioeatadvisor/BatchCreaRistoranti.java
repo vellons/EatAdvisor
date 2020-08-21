@@ -36,7 +36,7 @@ public class BatchCreaRistoranti {
      * Main della classe
      *
      * @param args &egrave; nome dell'array di stringhe
-     * @throws <IOException> &egrave; un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
+     * @throws IOException &egrave; un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
      */
     public static void main(String[] args) throws IOException {
         ArrayList<Ristorante> ristoranti = new ArrayList<>();

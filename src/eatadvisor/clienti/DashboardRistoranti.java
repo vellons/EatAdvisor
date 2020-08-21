@@ -15,10 +15,14 @@ public class DashboardRistoranti extends JFrame {
     private JComboBox cboxTipologia;
     private JTextField tfFiltroNomeRistorante;
     private JTextField tfFiltroComune;
+    private JPanel JPanelFiltri;
+    private JLabel lblNomeRistorante;
+    private JLabel lblComune;
+    private JLabel lblTipologia;
     private String[] tipologia = new String[]{"TUTTI", "ITALIANO", "ETNICO", "FUSION"};
 
     private String initialFiltroNome = "";
-    private String initialFiltroComune = "verb";
+    private String initialFiltroComune = "";
     private String initialFiltroTipologia = "";
 
     public DashboardRistoranti(String filtroNome, String filtroComune, String filtroTipologia) throws Exception {
@@ -31,7 +35,7 @@ public class DashboardRistoranti extends JFrame {
         btnApplicaFiltri.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                // Ricarico la dashboard dei ristoranti passando i 3 filtri
                 try {
                     clienti.reloadDashBoardConFiltri(
                             StartClienti.dashboardRistoranti,
@@ -41,26 +45,6 @@ public class DashboardRistoranti extends JFrame {
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
-
-//                panelListaRistoranti.removeAll();
-//                panelListaRistoranti.validate();
-//                panelListaRistoranti.repaint();
-//                validate();
-//                repaint();
-//
-//                panelListaRistoranti = new JPanel();
-//                try {
-//                    panelListaRistoranti.add(new ListaRistorantiPanel(filtroTipologia)); // Aggiungo la lista dei ristoranti
-//                } catch (Exception exception) {
-//                    exception.printStackTrace();
-//                }
-//
-//                validate();
-//                repaint();
-//                panelListaRistoranti.updateUI();
-//                panelListaRistoranti.setVisible(true);
-//                setVisible(true);
-
             }
         });
     }
@@ -75,8 +59,7 @@ public class DashboardRistoranti extends JFrame {
         panelListaRistoranti = new JPanel();
         panelListaRistoranti.add(new ListaRistorantiPanel(initialFiltroNome, initialFiltroComune, initialFiltroTipologia));
 
-
-
+        // Inizialitto e popolo i valori dei 3 filtri
         tfFiltroNomeRistorante = new JTextField();
         tfFiltroComune = new JTextField();
 

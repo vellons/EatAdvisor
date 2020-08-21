@@ -12,9 +12,6 @@ public class ListaRistorantiPanel extends JPanel {
     public JPanel mainList;
 
     public ListaRistorantiPanel(String filtroNome, String filtroComune, String filtroTipologia) throws Exception {
-        System.out.println("filtroNome: " + filtroNome);
-        System.out.println("filtroComune: " + filtroComune);
-        System.out.println("filtroTipologia: " + filtroTipologia);
         setLayout(new BorderLayout());
 
         // Inizializzazione panel
@@ -33,15 +30,15 @@ public class ListaRistorantiPanel extends JPanel {
         // Caricamento ristoranti, se i filtri sono presenti li applico
         IOEatAdvisor ioEatAdvisor = new IOEatAdvisor();
         if (!filtroNome.equals("")) {
-            System.out.println("Applico filtro filtroNome: " + filtroNome);
+            System.out.println("Applico filtro per nome: " + filtroNome);
             ioEatAdvisor.filtraPerNomeRistorante(filtroNome);
         }
         if (!filtroComune.equals("")) {
-            System.out.println("Applico filtro filtroComune: " + filtroComune);
+            System.out.println("Applico filtro per comune: " + filtroComune);
             ioEatAdvisor.filtraPerCitta(filtroComune);
         }
         if (!filtroTipologia.equals("") && !filtroTipologia.equals("TUTTI")) {
-            System.out.println("Applico filtro filtroTipologia: " + filtroTipologia);
+            System.out.println("Applico filtro per tipologia: " + filtroTipologia);
             ioEatAdvisor.filtraPerTipo(filtroTipologia);
         }
 

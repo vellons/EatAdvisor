@@ -48,12 +48,6 @@ public class ListaRecensioniPanel extends JPanel {
         return new Dimension(365, 365);
     }
 
-    private void resetMainList() {
-        mainList.removeAll();
-        revalidate();
-        repaint();
-    }
-
     private void aggiungiRecensione(Recensione rec) throws Exception {
         JPanel panel = new JPanel();
         panel.add(new RecensioniPerRistorante(rec).panelRecensionePerRistorante);

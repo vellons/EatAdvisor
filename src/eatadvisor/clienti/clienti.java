@@ -72,9 +72,6 @@ public class clienti {
     }
 
     public static void reloadDashBoardConFiltri(JFrame dashboardFrame, String filtroNome, String filtroComune, String filtroTipologia) throws Exception {
-        System.out.println("ReloadfiltroNome: " + filtroNome);
-        System.out.println("ReloadfiltroComune: " + filtroComune);
-        System.out.println("ReloadfiltroTipologia: " + filtroTipologia);
         dashboardFrame.setVisible(false);
         dashboardFrame.dispose();
         dashboardFrame.invalidate();

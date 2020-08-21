@@ -58,12 +58,6 @@ public class ListaMieiRistorantiPanel extends JPanel {
         return new Dimension(800, 500);
     }
 
-    private void resetMainList() {
-        mainList.removeAll();
-        revalidate();
-        repaint();
-    }
-
     private void aggiungiRistorante(Ristorante rist) {
         JPanel panel = new JPanel();
         panel.add(new MioRistorantePerLista(rist).panelMioRistorantePerLista);

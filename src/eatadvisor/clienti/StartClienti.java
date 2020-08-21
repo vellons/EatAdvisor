@@ -93,8 +93,6 @@ public class StartClienti {
             clienti.closePreviousWindow(clienti.mainFrame);
             dashboardRistoranti.setContentPane(new DashboardRistoranti("", "", "").panelDashboardRistoranti);
             clienti.initUI(dashboardRistoranti);
-            dashboardRistoranti.setExtendedState(JFrame.MAXIMIZED_BOTH);
-            dashboardRistoranti.setUndecorated(false);
             dashboardRistoranti.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
             dashboardRistoranti.pack();
             dashboardRistoranti.setLocationRelativeTo(null);

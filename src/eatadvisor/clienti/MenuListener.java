@@ -17,8 +17,6 @@ public class MenuListener implements ActionListener {
             try {
                 mofidyAccount.setContentPane(new AccountCliente().panelAccountCliente);
                 clienti.initUI(mofidyAccount);
-                mofidyAccount.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                mofidyAccount.setUndecorated(false);
                 mofidyAccount.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
                 mofidyAccount.pack();
                 mofidyAccount.setLocationRelativeTo(null);

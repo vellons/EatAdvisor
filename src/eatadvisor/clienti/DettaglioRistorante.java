@@ -7,10 +7,16 @@ import eatadvisor.ioeatadvisor.Ristorante;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.text.DecimalFormat;
 
 public class DettaglioRistorante {
@@ -34,6 +40,7 @@ public class DettaglioRistorante {
     private JLabel lblTipologia;
     private JPanel JPanelLeft;
     private JPanel JPanelRight;
+    private JLabel lblSitoWeb;
 
     public static JFrame frameRewiew = new JFrame("EatAdvisor Cliente - Nuova recensione");
 
@@ -70,6 +77,22 @@ public class DettaglioRistorante {
         setPanelNumValutazioni();
         setTextAreaDescr();
         txtDescrizione.setText(ristorante.getDescrizione());
+
+        lblSitoWeb.setText(ristorante.getSitoWeb());
+        lblSitoWeb.setForeground(Color.BLUE.darker());
+        lblSitoWeb.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        lblSitoWeb.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {        //Imposto la label per farla diventare un link cliccabile
+                super.mouseClicked(e);
+                try{
+                    Desktop.getDesktop().browse(new URI(lblSitoWeb.getText()));
+                }catch(IOException | URISyntaxException e1){
+                    e1.printStackTrace();
+                }
+            }
+        });
+
     }
 
     private void setTextAreaDescr() {

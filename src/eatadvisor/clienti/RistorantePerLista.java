@@ -15,6 +15,7 @@ public class RistorantePerLista extends JPanel {
     private JLabel lblStelle;
     private JLabel lblValutazioni;
     private JButton btnDettaglio;
+    private JLabel lblTipologia;
 
 
     public RistorantePerLista(Ristorante ristorante) {
@@ -23,6 +24,7 @@ public class RistorantePerLista extends JPanel {
         lblIndirizzo.setText(ristorante.getIndirizzo().toString().substring(0, Math.min(ristorante.getIndirizzo().toString().length(), 45)));
         lblStelle.setText(String.valueOf(dec.format(ristorante.getRecensioniValutazioneMedia())));
         lblValutazioni.setText(String.valueOf(ristorante.getRecensioni().size()) + " valutazioni");
+        lblTipologia.setText("Tipologia: " + ristorante.getTipologia());
 
         btnDettaglio.addActionListener(new ActionListener() {
             @Override

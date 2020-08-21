@@ -2,9 +2,16 @@ package eatadvisor.clienti;
 
 import eatadvisor.ioeatadvisor.Ristorante;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.DecimalFormat;
 
 public class RistorantePerLista extends JPanel {
@@ -42,5 +49,23 @@ public class RistorantePerLista extends JPanel {
                 }
             }
         });
+    }
+
+    private void createUIComponents() {
+        panelRistImage = new JPanel();
+        Image image = null;
+        URL url = null;
+        JLabel label = new JLabel("Impossibile caricare l'immagine");
+        try {
+            url = new URL("https://www.itagnol.com/wp-content/uploads/2019/01/CIAO.jpg");
+            image = ImageIO.read(url);
+            image = image.getScaledInstance(147, 110,  java.awt.Image.SCALE_SMOOTH); // Scalo immagine in 4/3
+            label = new JLabel(new ImageIcon(image));
+        } catch (MalformedURLException ex) {
+            System.out.println("Indirizzo non corretto");
+        } catch (IOException iox) {
+            System.out.println("Caricamento immagine fallito");
+        }
+        panelRistImage.add(label, BorderLayout.CENTER);
     }
 }

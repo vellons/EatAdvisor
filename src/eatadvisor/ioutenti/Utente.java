@@ -28,6 +28,10 @@ public class Utente implements Serializable {
         this.setPasswordAndHash(plaintextPassword);
     }
 
+    public Utente() {
+
+    }
+
     public int getId() {
         return this.id;
     }

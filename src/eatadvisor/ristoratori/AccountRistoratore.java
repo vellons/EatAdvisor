@@ -1,5 +1,7 @@
 package eatadvisor.ristoratori;
 
+import eatadvisor.clienti.ModificaPassword;
+import eatadvisor.clienti.clienti;
 import eatadvisor.global.Global;
 import eatadvisor.ioutenti.IOUtenti;
 
@@ -12,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class AccountRistoratore { //Contiene il JPanel principale
+    public static JFrame modifyPassword = new JFrame("Cambio Password"); //Creazione della finestra
     public JPanel panelAccountRistoratore; //Mostro informazioni ristoratore. (da Manuel, JPanel non Object)
     private JLabel lblNome;
     private JLabel lblCognome;
@@ -70,11 +73,18 @@ public class AccountRistoratore { //Contiene il JPanel principale
         btnChangePswRistoratore.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) { //Funzione da implementare
-                JOptionPane.showMessageDialog(null, "Funzione non ancora disponibile",
-                        "", JOptionPane.PLAIN_MESSAGE);
+                try {
+                    modifyPassword.setContentPane(new ModificaPasswordRistoratore().panelModificaPasswordRistoratore);
+                    ristoratori.initUI(modifyPassword); //Icona
+                    modifyPassword.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestraregistrazioneFrame.pack();
+                    modifyPassword.pack();
+                    modifyPassword.setLocationRelativeTo(null);
+                    modifyPassword.setVisible(true);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
             }
         });
-
     }
 
     private void setAllTextField() { // Settaggio iniziale

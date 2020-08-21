@@ -1,5 +1,6 @@
 package eatadvisor.ristoratori;
 
+import eatadvisor.clienti.InfoCliente;
 import eatadvisor.global.Global;
 
 import javax.swing.*;
@@ -34,6 +35,13 @@ public class MenuListener implements ActionListener {
                 Global.utenteLoggato = null;
                 System.exit(0);
             }
+        } else if (scelta.equals("Versione")) {
+            JFrame infoFrame = new JFrame("EatAdvisor ristoratori - Versione");
+            infoFrame.setContentPane(new InfoRistoratore().panelInfo);
+            infoFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
+            infoFrame.pack();
+            infoFrame.setLocationRelativeTo(null);
+            infoFrame.setVisible(true);
         }
     }
 }

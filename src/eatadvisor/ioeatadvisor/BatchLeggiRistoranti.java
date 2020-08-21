@@ -1,7 +1,17 @@
 package eatadvisor.ioeatadvisor;
 
+/**
+ * La classe BatchLeggiRistoranti permette la lettura dei ristoranti, prelevandoli dal file
+ *
+ * @author Alex Vellone
+ */
 public class BatchLeggiRistoranti {
 
+    /**
+     * Main della classe
+     *
+     * @param args &egrave; nome dell'array di stringhe
+     */
     public static void main(String[] args) {
         // Blocco di codice per leggere gli utenti
         IOEatAdvisor ioEatAdvisor = null;

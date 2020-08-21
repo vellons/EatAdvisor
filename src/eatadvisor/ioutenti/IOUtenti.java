@@ -3,19 +3,36 @@ package eatadvisor.ioutenti;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * La classe IOUtenti permette...
+ *
+ * @author Alex Vellone
+ */
 public class IOUtenti {
 
     public static final String FILE_UTENTI = "data/Utenti.dati";
     private ArrayList<Utente> utenti = new ArrayList<>();
 
+    /**
+     * Costrutore della classe
+     */
     public IOUtenti() throws Exception {
         prelevaDaFile();
     }
 
+    /**
+     * @return la lista degli utenti
+     */
     public ArrayList<Utente> getListaUtenti() {
         return utenti;
     }
 
+    /**
+     * @param id &grave;
+     * @return l'id degli utenti
+     * @throws <Exception> &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
+     *                     essere sollevata durante l'esecuzione del programma
+     */
     public Utente getUtenteById(int id) throws Exception {
         prelevaDaFile();
         for (int i = 0; i < utenti.size(); i++) { // Scorro la lista degli utenti
@@ -26,6 +43,10 @@ public class IOUtenti {
         throw new Exception("IOUTENTI: utente non trovato.");
     }
 
+    /**
+     * @throws <Exception> &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
+     *                     essere sollevata durante l'esecuzione del programma
+     */
     public void prelevaDaFile() throws Exception {
         // Prendo tutti gli utenti salvati nel file e li carico all'interno di ArrayList<Utente>
         File f = new File(FILE_UTENTI);
@@ -42,6 +63,10 @@ public class IOUtenti {
         }
     }
 
+    /**
+     * @throws <Exception> &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
+     *                     essere sollevata durante l'esecuzione del programma
+     */
     private void aggiornaSuFile() throws Exception {
         // Sovrascrive gli utenti esistenti nel file con quelli all'interno di ArrayList<Utente>
         File f = new File(FILE_UTENTI);
@@ -56,6 +81,19 @@ public class IOUtenti {
         System.out.println("File " + FILE_UTENTI + " aggiornato con " + utenti.size() + " utenti.");
     }
 
+    /**
+     * @param tipo              &grave; il tipo di utente
+     * @param email             &grave; l'email dell'utente
+     * @param nickname          &grave; il nickname dell'utente
+     * @param plaintextPassword &grave; la password dell'utente
+     * @param nome              &grave; il nome dell'utente
+     * @param cognome           &grave; il cognome dell'utente
+     * @param comune            &grave; il comune dell'utente
+     * @param siglaProvincia    &grave; la sigla della provincia dell'utente
+     * @return la creazione di un nuovo utente
+     * @throws <Exception> &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
+     *                     essere sollevata durante l'esecuzione del programma
+     */
     public Utente creaNuovoUtente(String tipo, String email, String nickname, String plaintextPassword,
                                   String nome, String cognome, String comune, String siglaProvincia) throws Exception {
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
@@ -78,6 +116,16 @@ public class IOUtenti {
         return nuovo;
     }
 
+    /**
+     * @param id             &grave; l'id dell'utente
+     * @param nome           &grave; il nome dell'utente
+     * @param cognome        &grave; il cognome dell'utente
+     * @param comune         &grave; il comune dell'utente
+     * @param siglaProvincia &grave; la sigla della provincia dell'utente
+     * @return le informazioni aggiornate di un utente
+     * @throws <Exception> &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
+     *                     essere sollevata durante l'esecuzione del programma
+     */
     public Utente aggiornaUtenteById(int id, String nome, String cognome, String comune, String siglaProvincia)
             throws Exception {
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
@@ -102,6 +150,14 @@ public class IOUtenti {
         return utenteDaAggiornare;
     }
 
+    /**
+     * @param id          &grave; l'id dell'utente
+     * @param oldPassword &grave; la vecchia password utilizzata dall'utente
+     *                    param newPassword    &grave; la nuova password utilizzata dall'utente
+     * @return la password aggiornata di un utente
+     * @throws <Exception> &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
+     *                     essere sollevata durante l'esecuzione del programma
+     */
     public Utente aggiornaPasswordById(int id, String oldPassword, String newPassword) throws Exception {
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
         Utente utenteDaAggiornare = null;
@@ -109,7 +165,7 @@ public class IOUtenti {
         for (int i = 0; i < utenti.size(); i++) { // Scorro la lista degli utenti
             if (utenti.get(i).getId() == id) { // Ho trovato l'utente
                 utenteDaAggiornare = utenti.get(i);
-                if (oldPassword.toLowerCase().equals(newPassword.toLowerCase())) {
+                if (oldPassword.equals(newPassword)) {
                     throw new Exception("Le due password risultano uguali.");
                 }
                 if (Sha1.sha1(oldPassword).equals(utenteDaAggiornare.getHashPassword())) {

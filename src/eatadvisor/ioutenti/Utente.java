@@ -2,6 +2,11 @@ package eatadvisor.ioutenti;
 
 import java.io.Serializable;
 
+/**
+ * La classe Utente permette di settare/prelevare le informazioni inerenti a un utente
+ *
+ * @author Alex Vellone
+ */
 public class Utente implements Serializable {
 
     private static final long serialVersionUID = -489957051202126151L;
@@ -15,6 +20,19 @@ public class Utente implements Serializable {
     private String comune;
     private String siglaProvincia;
 
+    /**
+     * Costrutore della classe
+     *
+     * @param id                &egrave; l'id dell'utente
+     * @param tipo              &egrave; il tipo di utente
+     * @param email             &egrave; l'email dell'utente
+     * @param nickname          &egrave; il nickname dell'utente
+     * @param plaintextPassword &egrave; la password dell'utente
+     * @param nome              &egrave; il nome dell'utente
+     * @param cognome           &egrave; il cognome dell'utente
+     * @param comune            &egrave; il comune dell'utente
+     * @param siglaProvincia    &egrave; la sigla della provincia dell'utente
+     */
     public Utente(int id, String tipo, String email, String nickname, String plaintextPassword, String nome,
                   String cognome, String comune, String siglaProvincia) {
         this.id = id;
@@ -28,82 +46,135 @@ public class Utente implements Serializable {
         this.setPasswordAndHash(plaintextPassword);
     }
 
-    public Utente() {
-
-    }
-
+    /**
+     * @return l'id dell'utente
+     */
     public int getId() {
         return this.id;
     }
 
+    /**
+     * @param id &grave; l'id dell'utente
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * @return il tipo di utente
+     */
     public String getTipo() {
         return this.tipo;
     }
 
+    /**
+     * @param tipo &grave; il tipo di utente
+     */
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
+    /**
+     * @return l'email dell'utente
+     */
     public String getEmail() {
         return this.email;
     }
 
+    /**
+     * @param email &grave; l'email dell'utente
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * @return il nickname dell'utente
+     */
     public String getNickname() {
         return this.nickname;
     }
 
+    /**
+     * @param nickname &grave; il nickname dell'utente
+     */
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
 
+    /**
+     * @return la password dell'utente crittografata
+     */
     public String getHashPassword() {
         return this.hashPassword;
     }
 
+    /**
+     * @param plaintextPassword &grave; la password in chiaro dell'utente
+     */
     public void setPasswordAndHash(String plaintextPassword) {
         this.hashPassword = Sha1.sha1(plaintextPassword);
     }
 
+    /**
+     * @return il nome dell'utente
+     */
     public String getNome() {
         return this.nome;
     }
 
+    /**
+     * @param nome &grave; il nome dell'utente
+     */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    /**
+     * @return il cognome dell'utente
+     */
     public String getCognome() {
         return this.cognome;
     }
 
+    /**
+     * @param cognome &grave; il cognome dell'utente
+     */
     public void setCognome(String cognome) {
         this.cognome = cognome;
     }
 
+    /**
+     * @return il comune dell'utente
+     */
     public String getComune() {
         return this.comune;
     }
 
+    /**
+     * @param comune &grave; il comune dell'utente
+     */
     public void setComune(String comune) {
         this.comune = comune;
     }
 
+    /**
+     * @return la sigla della provincia dell'utente
+     */
     public String getSiglaProvincia() {
         return this.siglaProvincia;
     }
 
+    /**
+     * @param siglaProvincia &grave; la sigla della provincia dell'utente
+     */
     public void setSiglaProvincia(String siglaProvincia) {
         this.siglaProvincia = siglaProvincia;
     }
 
+    /**
+     * @return le informazioni relative a un utente in formato stringa
+     */
     @Override
     public String toString() {
         return "Utente<" + id + ", " + tipo + ">: email=" + email + ", nickname=" + nickname

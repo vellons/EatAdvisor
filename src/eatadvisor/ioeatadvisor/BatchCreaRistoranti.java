@@ -6,11 +6,38 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
+/**
+ * La classe BatchCreaRistoranti permette la creazione dei ristoranti, aggiungendo anche le
+ * relative recensioni
+ *
+ * @author Alex Vellone
+ */
 public class BatchCreaRistoranti {
 
+    /**
+     * <code>TEST_RISTORANTI</code> &egrave; un valore che rappresenta il numero di ristoranti.
+     * <p>
+     * &Egrave; dichiarato <strong>final</strong> perchè difatto rappresenta una costante
+     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &Egrave; dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     */
     final private static int TEST_RISTORANTI = 10;
+    /**
+     * <code>TEST_RECENSIONI_PER_RISTORANTE</code> &egrave; un valore che rappresenta il numero di recensioni
+     * per ristorante.
+     * <p>
+     * &Egrave; dichiarato <strong>final</strong> perchè difatto rappresenta una costante
+     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &Egrave; dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     */
     final private static int TEST_RECENSIONI_PER_RISTORANTE = 8;
 
+    /**
+     * Main della classe
+     *
+     * @param args &egrave; nome dell'array di stringhe
+     * @throws <IOException> &egrave; un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
+     */
     public static void main(String[] args) throws IOException {
         ArrayList<Ristorante> ristoranti = new ArrayList<>();
         String[] tipologia = new String[]{"ITALIANO", "ETNICO", "FUSION"};
@@ -43,7 +70,6 @@ public class BatchCreaRistoranti {
             ristoranti.add(rist);
             System.out.println(rist.toString());
         }
-
 
         // Sovrascrivo nuovi utenti
         File f = new File(IOEatAdvisor.FILE_EAT_ADVISOR);

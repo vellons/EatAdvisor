@@ -15,28 +15,28 @@ import java.util.ArrayList;
 public class BatchCreaRistoranti {
 
     /**
-     * <code>TEST_RISTORANTI</code> &egrave; un valore che rappresenta il numero di ristoranti.
+     * <code>TEST_RISTORANTI</code> è un valore che rappresenta il numero di ristoranti.
      * <p>
-     * &Egrave; dichiarato <strong>final</strong> perchè difatto rappresenta una costante
-     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * &Egrave; dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     * è dichiarato <strong>final</strong> perchè difatto rappresenta una costante
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
      */
     final private static int TEST_RISTORANTI = 10;
     /**
-     * <code>TEST_RECENSIONI_PER_RISTORANTE</code> &egrave; un valore che rappresenta il numero di recensioni
+     * <code>TEST_RECENSIONI_PER_RISTORANTE</code> è un valore che rappresenta il numero di recensioni
      * per ristorante.
      * <p>
-     * &Egrave; dichiarato <strong>final</strong> perchè difatto rappresenta una costante
-     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * &Egrave; dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     * è dichiarato <strong>final</strong> perchè difatto rappresenta una costante
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
      */
     final private static int TEST_RECENSIONI_PER_RISTORANTE = 8;
 
     /**
      * Main della classe
      *
-     * @param args &egrave; nome dell'array di stringhe
-     * @throws IOException &egrave; un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
+     * @param args è nome dell'array di stringhe
+     * @throws IOException è un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
      */
     public static void main(String[] args) throws IOException {
         ArrayList<Ristorante> ristoranti = new ArrayList<>();
@@ -61,8 +61,7 @@ public class BatchCreaRistoranti {
                     "La fantasia dei nostri chef non vi annoierà mai proponendo piatti sempre diversi e sfiziosi.\\nLa cura e la scelta degli ingredienti nostrani e genuini vi delizierà.\\nIl servizio accurato, l'eleganza delle nostre sale vi faranno sentire a vostro agio.\\nLa disponibilità e la cordialità del personale vi coccoleranno.\\n\\nAvrete sempre a disposizione un'ampia scelta di verdure sul nostro buffet da condire con il rinomato olio della nostra terra.\\n\\nPotrete sempre scegliere tra un piatto di terra, di mare o uno dei nostri terzi piatti sfiziosi, una minestra o un piatto freddo.\\n\\nCome ultima portata avrete sempre la scelta tra la frutta di stagione, una macedonia di frutta fresca condita, un gelato o uno dei dessert preparati dal nostro chef pasticcere.",
                     new Indirizzo("Via le dita dal Naso", String.valueOf(i), "Verbania", "VB", "28922"),
                     "333333333" + i,
-                    "https://pizzabuona.it",
-                    "https://www.peck.it/sites/default/files/image/al_peck_1_ver.jpg"
+                    "https://pizzabuona.it"
             );
             for (int j = 0; j < TEST_RECENSIONI_PER_RISTORANTE; j++) {
                 rist.aggiungiRecensione(new Recensione(TEST_RISTORANTI + 1  + j, recensioneValutazione[(i + j) % 6], recensioneTesto[(i + j) % 6]));

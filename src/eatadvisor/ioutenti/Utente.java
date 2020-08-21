@@ -23,15 +23,15 @@ public class Utente implements Serializable {
     /**
      * Costrutore della classe
      *
-     * @param id                &egrave; l'id dell'utente
-     * @param tipo              &egrave; il tipo di utente
-     * @param email             &egrave; l'email dell'utente
-     * @param nickname          &egrave; il nickname dell'utente
-     * @param plaintextPassword &egrave; la password dell'utente
-     * @param nome              &egrave; il nome dell'utente
-     * @param cognome           &egrave; il cognome dell'utente
-     * @param comune            &egrave; il comune dell'utente
-     * @param siglaProvincia    &egrave; la sigla della provincia dell'utente
+     * @param id                è l'id dell'utente
+     * @param tipo              è il tipo di utente
+     * @param email             è l'email dell'utente
+     * @param nickname          è il nickname dell'utente
+     * @param plaintextPassword è la password dell'utente
+     * @param nome              è il nome dell'utente
+     * @param cognome           è il cognome dell'utente
+     * @param comune            è il comune dell'utente
+     * @param siglaProvincia    è la sigla della provincia dell'utente
      */
     public Utente(int id, String tipo, String email, String nickname, String plaintextPassword, String nome,
                   String cognome, String comune, String siglaProvincia) {

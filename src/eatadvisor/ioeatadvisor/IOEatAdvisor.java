@@ -58,11 +58,11 @@ public class IOEatAdvisor {
 
     public Ristorante creaNuovoRistorante(int proprietarioId, String tipologia, String nomeRistorante,
                                           String descrizione, Indirizzo indirizzo, String numeroTelefono,
-                                          String sitoWeb, String urlImmagine) throws Exception {
+                                          String sitoWeb) throws Exception {
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti i ristoranti
         int idSuccessivo = ristoranti.size() + 1;
         Ristorante nuovo = new Ristorante(idSuccessivo, proprietarioId, tipologia, nomeRistorante, descrizione,
-                indirizzo, numeroTelefono, sitoWeb, urlImmagine);
+                indirizzo, numeroTelefono, sitoWeb);
         ristoranti.add(nuovo); // Aggiungo nuovo ristorante alla lista
         aggiornaSuFile();
         System.out.println("Creazione ristorante avvenuta con successo. Assegnato Id: " + nuovo.getId() + ", " +
@@ -71,8 +71,7 @@ public class IOEatAdvisor {
     }
 
     public Ristorante aggiornaRistoranteById(int id, String tipologia, String nomeRistorante, String descrizione,
-                                             Indirizzo indirizzo, String numeroTelefono, String sitoWeb,
-                                             String urlImmagine) throws Exception {
+                                             Indirizzo indirizzo, String numeroTelefono, String sitoWeb) throws Exception {
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti i ristoranti
         Ristorante ristoranteDaAggiornare = null;
         boolean aggiornato = false;
@@ -85,7 +84,6 @@ public class IOEatAdvisor {
                 ristoranteDaAggiornare.setIndirizzo(indirizzo);
                 ristoranteDaAggiornare.setNumeroTelefono(numeroTelefono);
                 ristoranteDaAggiornare.setSitoWeb(sitoWeb);
-                ristoranteDaAggiornare.setUrlImmagine(urlImmagine);
                 ristoranti.set(i, ristoranteDaAggiornare); // Aggiorno il ristorante sulla lista
                 aggiornato = true;
             }

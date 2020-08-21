@@ -10,42 +10,42 @@ import java.io.Serializable;
 public class Indirizzo implements Serializable {
 
     /**
-     * <code>serialVersionUID</code> &egrave; .
+     * <code>serialVersionUID</code> è .
      * <p>
-     * &Egrave; dichiarato <strong>final</strong> perchè difatto rappresenta una costante
-     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * &Egrave; dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
-     * &Egrave; dichiarato <strong>long</strong> permette di scrivere dati di lunghezza fino a 64 bit
+     * è dichiarato <strong>final</strong> perchè difatto rappresenta una costante
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     * è dichiarato <strong>long</strong> permette di scrivere dati di lunghezza fino a 64 bit
      */
     private static final long serialVersionUID = -7527859265672246970L;
     /**
-     * <code>via</code> &egrave; .
+     * <code>via</code> è .
      * <p>
-     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      */
     private String via;
     /**
-     * <code>civico</code> &egrave; .
+     * <code>civico</code> è .
      * <p>
-     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      */
     private String civico;
     /**
-     * <code>citta</code> &egrave; .
+     * <code>citta</code> è .
      * <p>
-     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      */
     private String citta;
     /**
-     * <code>siglaProvincia</code> &egrave; .
+     * <code>siglaProvincia</code> è .
      * <p>
-     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      */
     private String siglaProvincia;
     /**
-     * <code>cap</code> &egrave; .
+     * <code>cap</code> è .
      * <p>
-     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      */
     private String cap;
 

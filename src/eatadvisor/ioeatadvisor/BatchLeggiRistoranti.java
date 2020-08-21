@@ -10,7 +10,7 @@ public class BatchLeggiRistoranti {
     /**
      * Main della classe
      *
-     * @param args &egrave; nome dell'array di stringhe
+     * @param args è nome dell'array di stringhe
      */
     public static void main(String[] args) {
         // Blocco di codice per leggere gli utenti

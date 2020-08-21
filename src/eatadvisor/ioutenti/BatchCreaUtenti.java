@@ -15,26 +15,26 @@ import java.util.ArrayList;
 public class BatchCreaUtenti {
 
     /**
-     * <code>TEST_RIST</code> &egrave; un valore che rappresenta il numero di ristoratori.
+     * <code>TEST_RIST</code> è un valore che rappresenta il numero di ristoratori.
      * <p>
-     * &Egrave; dichiarato <strong>final</strong> perchè difatto rappresenta una costante
-     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * &Egrave; dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     * è dichiarato <strong>final</strong> perchè difatto rappresenta una costante
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
      */
     final private static int TEST_RIST = 10;
     /**
-     * <code>TEST_CLIE</code> &egrave; un valore che rappresenta il numero di clienti.
+     * <code>TEST_CLIE</code> è un valore che rappresenta il numero di clienti.
      * <p>
-     * &Egrave; dichiarato <strong>final</strong> perchè difatto rappresenta una costante
-     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * &Egrave; dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     * è dichiarato <strong>final</strong> perchè difatto rappresenta una costante
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
      */
     final private static int TEST_CLIE = 20;
 
     /**
      * Main della classe
-     * @param args &egrave; nome dell'array di stringhe
-     * @throws IOException &egrave; un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
+     * @param args è nome dell'array di stringhe
+     * @throws IOException è un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
      */
     public static void main(String[] args) throws IOException {
         ArrayList<Utente> utenti = new ArrayList<>();

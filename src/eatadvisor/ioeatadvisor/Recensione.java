@@ -10,33 +10,33 @@ import java.io.Serializable;
 public class Recensione implements Serializable {
 
     /**
-     * <code>serialVersionUID</code> &egrave;.
+     * <code>serialVersionUID</code> è.
      * <p>
-     * &Egrave; dichiarato <strong>final</strong> perchè difatto rappresenta una costante
-     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * &Egrave; dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
-     * &Egrave; dichiarato <strong>long</strong> permette di scrivere dati di lunghezza fino a 64 bit
+     * è dichiarato <strong>final</strong> perchè difatto rappresenta una costante
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     * è dichiarato <strong>long</strong> permette di scrivere dati di lunghezza fino a 64 bit
      */
     private static final long serialVersionUID = 5702291095524603496L;
     /**
-     * <code>utenteId</code> &egrave; l'id dell'utente
+     * <code>utenteId</code> è l'id dell'utente
      * <p>
-     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * &Egrave; dichiarato <strong>int</strong> permette di scrivere dati di lunghezza fino a 32 bit
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * è dichiarato <strong>int</strong> permette di scrivere dati di lunghezza fino a 32 bit
      */
     private int utenteId;
     /**
-     * <code>valutazione</code> &egrave; la valutazione dell'utente
+     * <code>valutazione</code> è la valutazione dell'utente
      * <p>
-     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * &Egrave; dichiarato <strong>int</strong> permette di scrivere dati di lunghezza fino a 32 bit
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * è dichiarato <strong>int</strong> permette di scrivere dati di lunghezza fino a 32 bit
      */
     private int valutazione; // 1:5
     /**
-     * <code>commento</code> &egrave; l'id dell'utente
+     * <code>commento</code> è l'id dell'utente
      * <p>
-     * &Egrave; dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * &Egrave; dichiarato <strong>String</strong> permette di scrivere stringhe
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * è dichiarato <strong>String</strong> permette di scrivere stringhe
      */
     private String commento;
 

@@ -37,10 +37,8 @@ public class RegistrazioneRistorante {
     private JLabel lblCap;
     private JLabel lblTelefono;
     private JLabel lblSitoWeb;
-    private JLabel lblUrlImmagine;
     private JLabel lblDescrizione;
     private JTextField tfTelefono;
-    private JTextField tfUrlImmagine;
     private JTextField tfSitoWeb;
     private Indirizzo indirizzo;
 
@@ -54,7 +52,7 @@ public class RegistrazioneRistorante {
                         indirizzo = new Indirizzo(getTfVia(), getTfCivico(), getTfCitta(), getTfProvincia(), getTfCap());
                         ioEatAdvisor = new IOEatAdvisor();
                         ioEatAdvisor.creaNuovoRistorante(id, Objects.requireNonNull(cboxTipologia.getSelectedItem()).toString(), getTfNomeRistorante(),
-                                getTareaDescrizione(), indirizzo, getTfTelefono(), getTfSito(), getTfImmagine());
+                                getTareaDescrizione(), indirizzo, getTfTelefono(), getTfSito());
                         ristoratori.closePreviousWindow(DashboardRistoratori.registrazioneFrame);
 
                         JOptionPane.showMessageDialog(null, "Ristorante creato!\n" +
@@ -114,9 +112,6 @@ public class RegistrazioneRistorante {
         return tfSitoWeb.getText();
     }
 
-    public String getTfImmagine() {
-        return tfUrlImmagine.getText();
-    }
 
     private boolean checkAllInputs() {
         boolean allFieldsValid = true;  // Tramite una variabile booleana, verifico se tutti i campi siano completi
@@ -130,7 +125,6 @@ public class RegistrazioneRistorante {
         allFieldsValid &= checkInput(getTfCap(), tfCap);
         allFieldsValid &= checkInput(getTfTelefono(), tfTelefono);
         allFieldsValid &= checkInput(getTfSito(), tfSitoWeb);
-        allFieldsValid &= checkInput(getTfImmagine(), tfUrlImmagine);
 
         return allFieldsValid; // Restituisco il risultato booleano proveniente da CheckInput
     }

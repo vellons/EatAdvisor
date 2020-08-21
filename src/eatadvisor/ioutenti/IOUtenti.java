@@ -30,7 +30,7 @@ public class IOUtenti {
     /**
      * @param id &grave;
      * @return l'id degli utenti
-     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
      *                     essere sollevata durante l'esecuzione del programma
      */
     public Utente getUtenteById(int id) throws Exception {
@@ -44,7 +44,7 @@ public class IOUtenti {
     }
 
     /**
-     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
      *                     essere sollevata durante l'esecuzione del programma
      */
     public void prelevaDaFile() throws Exception {
@@ -64,7 +64,7 @@ public class IOUtenti {
     }
 
     /**
-     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
      *                     essere sollevata durante l'esecuzione del programma
      */
     private void aggiornaSuFile() throws Exception {
@@ -91,7 +91,7 @@ public class IOUtenti {
      * @param comune            &grave; il comune dell'utente
      * @param siglaProvincia    &grave; la sigla della provincia dell'utente
      * @return la creazione di un nuovo utente
-     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
      *                     essere sollevata durante l'esecuzione del programma
      */
     public Utente creaNuovoUtente(String tipo, String email, String nickname, String plaintextPassword,
@@ -123,7 +123,7 @@ public class IOUtenti {
      * @param comune         &grave; il comune dell'utente
      * @param siglaProvincia &grave; la sigla della provincia dell'utente
      * @return le informazioni aggiornate di un utente
-     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
      *                     essere sollevata durante l'esecuzione del programma
      */
     public Utente aggiornaUtenteById(int id, String nome, String cognome, String comune, String siglaProvincia)
@@ -155,7 +155,7 @@ public class IOUtenti {
      * @param oldPassword &grave; la vecchia password utilizzata dall'utente
      *                    param newPassword    &grave; la nuova password utilizzata dall'utente
      * @return la password aggiornata di un utente
-     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
      *                     essere sollevata durante l'esecuzione del programma
      */
     public Utente aggiornaPasswordById(int id, String oldPassword, String newPassword) throws Exception {

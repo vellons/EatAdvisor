@@ -20,6 +20,7 @@ import java.net.URISyntaxException;
 import java.text.DecimalFormat;
 
 public class DettaglioMioRistorante {
+    public static JFrame modificaFrame = new JFrame("EatAdvisor Ristoratori - Modifica Ristorante");
     private Ristorante ristorante;
     public JPanel panelDettaglioRistorante;
     private JPanel panelLogo;
@@ -50,7 +51,17 @@ public class DettaglioMioRistorante {
         btnModificaRistorante.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                try {
+                    modificaFrame.setContentPane(new ModificaRistorante(ristorante).panelModificaRistorante); //niente cast
+                    ristoratori.initUI(modificaFrame);
+                    modificaFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
+                    modificaFrame.pack();
+                    modificaFrame.setLocationRelativeTo(null);
+                    modificaFrame.setVisible(true);
+                    ristoratori.closePreviousWindow(MioRistorantePerLista.dettaglioFrame);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
             }
         });
     }
@@ -70,9 +81,9 @@ public class DettaglioMioRistorante {
             @Override
             public void mouseClicked(MouseEvent e) {        //Imposto la label per farla diventare un link cliccabile
                 super.mouseClicked(e);
-                try{
+                try {
                     Desktop.getDesktop().browse(new URI(lblSitoWeb.getText()));
-                }catch(IOException | URISyntaxException e1){
+                } catch (IOException | URISyntaxException e1) {
                     e1.printStackTrace();
                 }
             }
@@ -92,7 +103,7 @@ public class DettaglioMioRistorante {
         DecimalFormat dec = new DecimalFormat("#0.00");
 
         lbValutazioni.setText("Valutazione media: " + dec.format(ristorante.getRecensioniValutazioneMedia()));
-        lbNumeroRecensioni.setText("Totale valutazioni:  "+ ristorante.getRecensioni().size());
+        lbNumeroRecensioni.setText("Totale valutazioni:  " + ristorante.getRecensioni().size());
 
         int fiveStars = 0;
         int fourStars = 0;

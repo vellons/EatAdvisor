@@ -20,7 +20,6 @@ public class DettaglioRistorante {
     private JLabel lbNomeRistorante;
     private JLabel lbIndirizzo;
     private JLabel lbValutazioni;
-    private JPanel panelPicRistorante;
     private JLabel lbNumeroRecensioni;
     private JLabel lbDescrizione;
     private JPanel panelRecensioni;
@@ -33,6 +32,8 @@ public class DettaglioRistorante {
     private JLabel lb1Stella;
     private JPanel panelNumValutazioni;
     private JLabel lblTipologia;
+    private JPanel JPanelLeft;
+    private JPanel JPanelRight;
 
     public static JFrame frameRewiew = new JFrame("EatAdvisor Cliente - Nuova recensione");
 
@@ -63,9 +64,8 @@ public class DettaglioRistorante {
     }
 
     private void setLabels(Ristorante ristorante) {
-        DecimalFormat dec = new DecimalFormat("#0.00");
-        lbNomeRistorante.setText(ristorante.getNomeRistorante());
-        lbIndirizzo.setText(String.valueOf(ristorante.getIndirizzo()));
+        lbNomeRistorante.setText(ristorante.getNomeRistorante().substring(0, Math.min(ristorante.getNomeRistorante().length(), 40)));
+        lbIndirizzo.setText(ristorante.getIndirizzo().toString().substring(0, Math.min(ristorante.getIndirizzo().toString().length(), 60)));
         lblTipologia.setText("Tipologia: " + ristorante.getTipologia());
         setPanelNumValutazioni();
         setTextAreaDescr();

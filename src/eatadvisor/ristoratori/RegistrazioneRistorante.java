@@ -40,6 +40,7 @@ public class RegistrazioneRistorante {
     private JLabel lblDescrizione;
     private JTextField tfTelefono;
     private JTextField tfSitoWeb;
+    private JPanel panelDescrizione;
     private Indirizzo indirizzo;
 
     public RegistrazioneRistorante() throws Exception {
@@ -125,6 +126,7 @@ public class RegistrazioneRistorante {
         allFieldsValid &= checkInput(getTfCap(), tfCap);
         allFieldsValid &= checkInput(getTfTelefono(), tfTelefono);
         allFieldsValid &= checkInput(getTfSito(), tfSitoWeb);
+        allFieldsValid &= !getTareaDescrizione().equals("");
 
         return allFieldsValid; // Restituisco il risultato booleano proveniente da CheckInput
     }

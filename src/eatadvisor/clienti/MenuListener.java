@@ -32,6 +32,13 @@ public class MenuListener implements ActionListener {
                 Global.utenteLoggato = null;
                 System.exit(0);
             }
+        } else if (scelta.equals("Versione")) {
+            JFrame infoFrame = new JFrame("EatAdvisor clienti - Versione");
+            infoFrame.setContentPane(new InfoCliente().panelInfo);
+            infoFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
+            infoFrame.pack();
+            infoFrame.setLocationRelativeTo(null);
+            infoFrame.setVisible(true);
         }
     }
 }

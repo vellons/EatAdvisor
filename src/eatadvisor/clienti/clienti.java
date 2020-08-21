@@ -60,8 +60,10 @@ public class clienti {
     }
 
     private static void setMenuInfo(JMenuBar myMenuBar) { // Creazione del JMenu info
+        MenuListener ml = new MenuListener();
         JMenu f = new JMenu("Info");
         JMenuItem f1 = new JMenuItem("Versione");
+        f1.addActionListener(ml);
         f.add(f1);
         myMenuBar.add(f);
     }

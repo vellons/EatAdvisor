@@ -3,6 +3,12 @@ package eatadvisor.ioutenti;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * La classe Sha1 permette la criptazione di una stringa in
+ * input di grandezza arbitraria, producendo in uscita una stringa hash di lunghezza fissa
+ *
+ * @author Alex Vellone
+ */
 public class Sha1 {
 
     /**

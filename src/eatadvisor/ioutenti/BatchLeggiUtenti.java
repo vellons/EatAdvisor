@@ -1,7 +1,16 @@
 package eatadvisor.ioutenti;
 
+/**
+ * La classe BatchLeggiUtenti permette la lettura degli utenti, prelevandoli dal file in cui sono salvati.
+ *
+ * @author Alex Vellone
+ */
 public class BatchLeggiUtenti {
 
+    /**
+     * Main della classe
+     * @param args &egrave; nome dell'array di stringhe
+     */
     public static void main(String[] args) {
         // Blocco di codice per leggere gli utenti
         IOUtenti ioUtenti = null;

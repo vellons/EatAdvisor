@@ -80,11 +80,12 @@
                 </constraints>
                 <properties>
                   <autoscrolls value="true"/>
-                  <background color="-723724"/>
+                  <background color="-1"/>
                   <columns value="0"/>
                   <disabledTextColor color="-8355712"/>
                   <font name="Arial" size="11" style="0"/>
                   <lineWrap value="true"/>
+                  <text value=""/>
                   <wrapStyleWord value="true"/>
                 </properties>
               </component>

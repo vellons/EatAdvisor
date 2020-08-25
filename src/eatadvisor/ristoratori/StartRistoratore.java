@@ -79,8 +79,7 @@ public class StartRistoratore {
 
     /**
      * <code>panelLogo</code> è un pannello Swing che compone
-     * l'interfaccia grafica, nella fattispecie la finestra di benvenuto
-     * del lato ristoratore dell'applicazione.
+     * l'interfaccia grafica, nella fattispecie il logo dell'appicazione.
      * <p>
      * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      */

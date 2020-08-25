@@ -54,6 +54,7 @@ public class RegistrazioneRistoratore {
      * <p>
      * <code>lblPassword</code> è un'etichetta Swing dedicata al campo password
      * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
      * <code>lblCognome</code> è un'etichetta Swing dedicata al campo cognome
      * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      * <p>
@@ -62,6 +63,7 @@ public class RegistrazioneRistoratore {
      * <p>
      * <code>lblSiglaProvincia</code> è un'etichetta Swing dedicata al campo sigla provincia
      * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
      * <code>lblEmail</code> è un'etichetta Swing dedicata al campo email
      * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      */
@@ -102,8 +104,7 @@ public class RegistrazioneRistoratore {
 
     /**
      * <code>panelLogo</code> è un pannello Swing che compone
-     * l'interfaccia grafica, nella fattispecie la finestra di benvenuto
-     * del lato ristoratore dell'applicazione.
+     * l'interfaccia grafica, nella fattispecie il logo dell'applicazione
      * <p>
      * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      */
@@ -111,7 +112,7 @@ public class RegistrazioneRistoratore {
     private JPanel panelLogo;
 
     /**
-    <code>lblErrors</code> è un'etichetta Swing dedicata al campo di controllo errori
+     * <code>lblErrors</code> è un'etichetta Swing dedicata al campo di controllo errori
      * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      */
 
@@ -176,7 +177,7 @@ public class RegistrazioneRistoratore {
     /**
      * <code>getTfPassword</code> è un metodo getter
      * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
-     @return il valore della password dal campo di testo
+     * @return il valore della password dal campo di testo
      */
 
     public String getTfPassword() {
@@ -186,7 +187,7 @@ public class RegistrazioneRistoratore {
     /**
      * <code>getTfNome</code> è un metodo getter
      * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
-     @return il valore del nome dal campo di testo
+     * @return il valore del nome dal campo di testo
      */
 
     public String getTfNome() {
@@ -196,7 +197,7 @@ public class RegistrazioneRistoratore {
     /**
      * <code>getTfCognome</code> è un metodo getter
      * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
-     @return il valore del cognome dal campo di testo
+     * @return il valore del cognome dal campo di testo
      */
 
     public String getTfCognome() {
@@ -206,7 +207,7 @@ public class RegistrazioneRistoratore {
     /**
      * <code>getTfComune</code> è un metodo getter
      * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
-     @return il valore del comune dal campo di testo
+     * @return il valore del comune dal campo di testo
      */
 
     public String getTfComune() {
@@ -216,7 +217,7 @@ public class RegistrazioneRistoratore {
     /**
      * <code>getTfSiglaProvincia</code> è un metodo getter
      * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
-     @return il valore della sigla provincia dal campo di testo
+     * @return il valore della sigla provincia dal campo di testo
      */
 
     public String getTfSiglaProvincia() {
@@ -226,7 +227,7 @@ public class RegistrazioneRistoratore {
     /**
      * <code>getTfPassword</code> è un metodo getter
      * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
-     @return il valore dell'email dal campo di testo
+     * @return il valore dell'email dal campo di testo
      */
 
     public String getTfEmail() {
@@ -236,7 +237,7 @@ public class RegistrazioneRistoratore {
     /**
      * <code>checkAllInputs</code> è un metodo per controllare il contenuto dei textfield
      * è dichiarato <strong>private</strong> in quanto il metodo è utilizzabile all'interno della classe
-     @return valore booleano che indica se sono stati inseriti i dati in tutti i textfield
+     * @return valore booleano che indica se sono stati inseriti i dati in tutti i textfield
      */
 
     private boolean checkAllInputs() {
@@ -257,7 +258,7 @@ public class RegistrazioneRistoratore {
      * è dichiarato <strong>private</strong> in quanto il metodo è utilizzabile all'interno della classe
      * @param input è una stringa rappresentante il contenuto del campo da analizzare
      * @param textField è il textfield di riferimento dell'input
-     @return valore booleano che indica se il dato è inserito nel textfield
+     * @return valore booleano che indica se il dato è inserito nel textfield
      */
 
     private boolean checkInput(String input, JTextField textField) { // Funzione per la verifica del textfield

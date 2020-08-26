@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 
 /**
- * La classe MioRistorantePerLista permette il caricamento dei singoli ristotanti
+ * La classe MioRistorantePerLista permette il caricamento dei singoli risrotanti
  * da caricare sulla dashboard
  *
  * @author Mahdi Said
@@ -59,7 +59,7 @@ public class MioRistorantePerLista {
 
     /**
      * <code>btnDettaglio</code> è un bottone Swing che attiva visualizzazione
-     * delle informazioni dettagliate di un ristorante a scelta
+     * delle informazioni dettagliate di un proprio ristorante a scelta
      * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      */
 

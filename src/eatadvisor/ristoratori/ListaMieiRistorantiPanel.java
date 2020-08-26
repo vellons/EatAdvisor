@@ -9,6 +9,12 @@ import java.awt.*;
 
 import static javax.swing.BorderFactory.createEmptyBorder;
 
+/**
+ * La classe ListaMieiRistorantiPanel funge da contenitore per i ristoranti
+ * visibili sulla dashboard
+ *
+ * @author Mahdi Said
+ */
 
 public class ListaMieiRistorantiPanel extends JPanel {
 

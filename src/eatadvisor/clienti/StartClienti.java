@@ -2,6 +2,8 @@ package eatadvisor.clienti;
 
 import eatadvisor.global.Global;
 import eatadvisor.ioutenti.IOUtenti;
+import eatadvisor.ristoratori.DashboardRistoratori;
+import eatadvisor.ristoratori.RegistrazioneRistoratore;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -12,22 +14,121 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * La classe StartClienti permette l'inizializzazione dell'account di
+ * un utente impostato come cliente
+ *
+ * @author Manuel Macaj
+ */
+
 public class StartClienti {
+
+    /**
+     * <code>ioUtenti</code> è un'istanza della classe IOUtenti che
+     * permette di usare le funzionalità per la gestione degli utenti.
+     * @see IOUtenti
+     * <p>
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private IOUtenti ioUtenti = null;
+
+    /**
+     * <code>panelStartClienti</code> è un pannello Swing che compone
+     * l'interfaccia grafica, nella fattispecie la finestra di benvenuto
+     * del lato cliente dell'applicazione
+     * <p>
+     * è dichiarato <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     */
+
     public JPanel panelStartClienti;
+
+    /**
+     * <code>btnAccedi</code> è un bottone Swing che attiva la procedura
+     * di inizializzazione di un cliente
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>btnIscriviti</code> è un bottone Swing che attiva la procedura
+     * di iscrizione alla piattaforma come cliente
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     <p>
+     * <code>btnNoLogin</code> è un bottone Swing che attiva la procedura
+     * di iscrizione alla piattaforma come utente non registrato
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private JButton btnAccedi;
     private JButton btnIscriviti;
     private JButton btnNoLogin;
+
+    /**
+     * <code>tfNickname</code> è un campo di testo Swing dedicato al campo nickname
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>tfPassword</code> è un campo di testo Swing dedicato al campo password
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private JTextField tfNickname;
     private JPasswordField tfPassword;
+
+    /**
+     * <code>lblNickname</code> è un'etichetta Swing dedicata al campo nickname
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lblPassword</code> è un'etichetta Swing dedicata al campo password
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private JLabel lblPassword;
     private JLabel lblNickname;
+
+    /**
+     * <code>panelLogo</code> è un pannello Swing che compone
+     * l'interfaccia grafica, nella fattispecie il logo dell'appicazione.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private JPanel panelLogo;
 
+    /**
+     * <code>registrazioneFrame</code> è una cornice Swing attivata nel momento nel
+     * quale è richiesta la registrazione di un cliente
+     * @see RegistrazioneCliente
+     * <p>
+     * è dichiarata <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     */
+
     public static JFrame registrazioneFrame = new JFrame("EatAdvisor Clienti - Registrazione");
+
+    /**
+     * <code>dashboardRistoranti</code> è una cornice Swing attivata nel momento nel
+     * quale un cliente effettua l'accesso
+     * @see DashboardRistoranti
+     * <p>
+     * è dichiarata <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     */
+
     public static JFrame dashboardRistoranti = new JFrame("EatAdvisor Clienti - Lista ristoranti");
 
+    /**
+     * <code>GraphicsDevice</code> è un oggetto grafico utilizzato per
+     * impostare lo schermo intero
+     * <p>
+     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     */
+
     static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0]; // Usato per mettere a tutto schermo
+
+    /**
+     * Main della classe
+     *
+     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * essere sollevata durante l'esecuzione del programma
+     */
 
     public StartClienti() throws Exception {
         btnAccedi.addActionListener(new ActionListener() {
@@ -81,12 +182,27 @@ public class StartClienti {
         });
     }
 
+    /**
+     * <code>createUIComponents</code> è una procedura per impostare la grafica
+     * quando viene caricato il frame
+     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     *
+     * @throws IOException è un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
+     */
+
     private void createUIComponents() throws IOException {
         panelLogo = new JPanel();
         BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisorLogoClienti.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         panelLogo.add(picLabel);
     }
+
+    /**
+     * <code>openDashBoardClienti</code> è una procedura aprire il pannello
+     * dashboard quando un cliente effettua l'accesso
+     * @see DashboardRistoranti
+     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore*
+     */
 
     private void openDashBoardClienti() {
         try {

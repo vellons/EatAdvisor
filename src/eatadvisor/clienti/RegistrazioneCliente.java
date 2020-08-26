@@ -11,26 +11,127 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * La classe RegistrazioneCliente permette la registrazione di
+ * un utente impostato come ristoratore
+ *
+ * @author Manuel Macaj
+ */
+
 public class RegistrazioneCliente {
+
+    /**
+     * <code>ioUtenti</code> è un'istanza della classe IOUtenti che
+     * permette di usare le funzionalità per la gestione degli utenti.
+     * @see IOUtenti
+     * <p>
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private IOUtenti ioUtenti = null;
+
+    /**
+     * <code>panelRegistrazioneCliente</code> è un pannello Swing che compone
+     * l'interfaccia grafica, nella fattispecie la finestra di registrazione di
+     * un utente cliente
+     * <p>
+     * è dichiarato <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     */
+
     public JPanel panelRegistrazioneCliente;
+
+    /**
+     * <code>btnIscriviti</code> è un bottone Swing che attiva la procedura
+     * di registrazione come cliente
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private JButton btnIscriviti;
+
+    /**
+     * <code>tfEmail</code> è un campo di testo Swing dedicato al campo email
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>tfPassword</code> è un campo di testo Swing dedicato al campo password
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>tfNome</code> è un campo di testo Swing dedicato al campo nome
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>tfCognome</code> è un campo di testo Swing dedicato al campo cognome
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>tfComune</code> è un campo di testo Swing dedicato al campo comune
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>tfSiglaProvincia</code> è un campo di testo Swing dedicato al campo sigla provincia
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     <p>
+     * <code>tfNickname</code> è un campo di testo Swing dedicato al campo nickname
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private JTextField tfNickname;
     private JPasswordField tfPassword;
+
+    /**
+     * <code>lblNome</code> è un'etichetta Swing dedicata al campo nome
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lblPassword</code> è un'etichetta Swing dedicata al campo password
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lblCognome</code> è un'etichetta Swing dedicata al campo cognome
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lblComune</code> è un'etichetta Swing dedicata al campo comune
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lblSiglaProvincia</code> è un'etichetta Swing dedicata al campo sigla provincia
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lblEmail</code> è un'etichetta Swing dedicata al campo email
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     <p>
+     * <code>lblNickname</code> è un'etichetta Swing dedicata al campo nickname
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private JLabel lblPassword;
     private JLabel lblNickname;
+
+    /**
+     * <code>panelLogo</code> è un pannello Swing che compone
+     * l'interfaccia grafica, nella fattispecie il logo dell'applicazione
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private JPanel panelLogo;
     private JLabel lblNome;
     private JLabel lblCognome;
     private JLabel lblComune;
     private JLabel lblSiglaProvincia;
     private JLabel lblEmail;
+
+    /**
+     * <code>lblErrors</code> è un'etichetta Swing dedicata al campo di controllo errori
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private JLabel lblErrors;
     private JTextField tfNome;
     private JTextField tfCognome;
     private JTextField tfComune;
     private JTextField tfSiglaProvincia;
     private JTextField tfEmail;
+
+    /**
+     * Main della classe
+     *
+     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * essere sollevata durante l'esecuzione del programma
+     */
 
     public RegistrazioneCliente() throws Exception {
 
@@ -81,33 +182,82 @@ public class RegistrazioneCliente {
     }
 
     // Metodi GETTERS
+
+    /**
+     * <code>getTfNickname</code> è un metodo getter
+     * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
+     * @return il valore del nickname dal campo di testo
+     */
+
     public String getTfNickname() {
         return tfNickname.getText();
     }
+
+    /**
+     * <code>getTfPassword</code> è un metodo getter
+     * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
+     * @return il valore della password dal campo di testo
+     */
 
     public String getTfPassword() {
         return String.valueOf(tfPassword.getPassword());
     }
 
+    /**
+     * <code>getTfNome</code> è un metodo getter
+     * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
+     * @return il valore del nome dal campo di testo
+     */
+
     public String getTfNome() {
         return tfNome.getText();
     }
+
+    /**
+     * <code>getTfCognome</code> è un metodo getter
+     * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
+     * @return il valore del cognome dal campo di testo
+     */
 
     public String getTfCognome() {
         return tfCognome.getText();
     }
 
+    /**
+     * <code>getTfComune</code> è un metodo getter
+     * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
+     * @return il valore del comune dal campo di testo
+     */
+
     public String getTfComune() {
         return tfComune.getText();
     }
+
+    /**
+     * <code>getTfSiglaProvincia</code> è un metodo getter
+     * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
+     * @return il valore della sigla provincia dal campo di testo
+     */
 
     public String getTfSiglaProvincia() {
         return tfSiglaProvincia.getText();
     }
 
+    /**
+     * <code>getTfEmail</code> è un metodo getter
+     * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
+     * @return il valore dell'email dal campo di testo
+     */
+
     public String getTfEmail() {
         return tfEmail.getText();
     }
+
+    /**
+     * <code>checkAllInputs</code> è un metodo per controllare il contenuto dei textfield
+     * è dichiarato <strong>private</strong> in quanto il metodo è utilizzabile all'interno della classe
+     * @return valore booleano che indica se sono stati inseriti i dati in tutti i textfield
+     */
 
     private boolean checkAllInputs() {
         boolean allFieldsValid = true;  // Tramite una variabile booleana, verifico se tutti i campi siano completi
@@ -123,6 +273,14 @@ public class RegistrazioneCliente {
         return allFieldsValid; // Restituisco il risultato booleano proveniente da CheckInput
     }
 
+    /**
+     * <code>checkInput</code> è un metodo per controllare l'input di un textfield
+     * è dichiarato <strong>private</strong> in quanto il metodo è utilizzabile all'interno della classe
+     * @param input è una stringa rappresentante il contenuto del campo da analizzare
+     * @param textField è il textfield di riferimento dell'input
+     * @return valore booleano che indica se il dato è inserito nel textfield
+     */
+
     private boolean checkInput(String input, JTextField textField) { // Funzione per la verifica del textfield
         boolean res;
         String tmp = "";
@@ -134,6 +292,14 @@ public class RegistrazioneCliente {
         }
         return res;
     }
+
+    /**
+     * <code>createUIComponents</code> è una procedura per impostare la grafica
+     * quando viene caricato il frame
+     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     *
+     * @throws IOException è un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
+     */
 
     private void createUIComponents() throws IOException {
         panelLogo = new JPanel();

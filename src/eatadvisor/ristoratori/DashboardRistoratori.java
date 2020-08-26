@@ -105,7 +105,7 @@ public class DashboardRistoratori extends JFrame {
      *
      * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
      * essere sollevata durante l'esecuzione del programma
-     * */
+     */
 
     private void createUIComponents() throws Exception {
         panelLogo = new JPanel();

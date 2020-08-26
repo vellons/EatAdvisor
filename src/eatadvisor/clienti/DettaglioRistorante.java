@@ -4,6 +4,7 @@ import eatadvisor.global.Global;
 import eatadvisor.ioeatadvisor.IOEatAdvisor;
 import eatadvisor.ioeatadvisor.Recensione;
 import eatadvisor.ioeatadvisor.Ristorante;
+import eatadvisor.ristoratori.ModificaRistorante;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -19,30 +20,158 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.text.DecimalFormat;
 
+/**
+ * La classe DettaglioRistorante permette di visualizzare
+ * le informazioni dettagliate di un ristorante
+ * @author Manuel Macaj
+ */
+
 public class DettaglioRistorante {
+
+    /**
+     * <code>ristorante</code> è un'istanza della classe Ristorante che descrive
+     * il comportamento dell'oggetto ristorante
+     * @see Ristorante
+     * <p>
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private Ristorante ristorante;
+
+    /**
+     * <code>panelDettaglioRistoratore</code> è un pannello Swing che compone
+     * l'interfaccia grafica, nella fattispecie la finestra di dettaglio di
+     * un ristorante a scelta
+     * <p>
+     * è dichiarato <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     */
+
     public JPanel panelDettaglioRistorante;
+
+    /**
+     * <code>panelLogo</code> è un pannello Swing che compone
+     * l'interfaccia grafica, nella fattispecie il logo dell'appicazione.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private JPanel panelLogo;
+
+    /**
+     * <code>lbIndirizzo</code> è un'etichetta Swing dedicata al campo indirizzo
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lbNomeRistorante</code> è un'etichetta Swing dedicata al campo nome ristorante
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lbValutazioni</code> è un'etichetta Swing dedicata al campo valutazioni
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lbNumeroRecensioni</code> è un'etichetta Swing dedicata al campo numero di recensioni
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lb5Stelle</code> è un'etichetta Swing dedicata al campo 5 stelle
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lb4Stelle</code> è un'etichetta Swing dedicata al campo 4 stelle
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lb3Stelle</code> è un'etichetta Swing dedicata al campo 3 stelle
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lb2Stelle</code> è un'etichetta Swing dedicata al campo 2 stelle
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lb1Stella</code> è un'etichetta Swing dedicata al campo 1 stella
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lbDescrizione</code> è un'etichetta Swing dedicata al campo descrizione
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lblSitoWeb</code> è un'etichetta Swing dedicata al campo sito web
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     * <code>lblTipologia</code> è un'etichetta Swing dedicata al campo tipologia
+     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private JLabel lbNomeRistorante;
     private JLabel lbIndirizzo;
     private JLabel lbValutazioni;
     private JLabel lbNumeroRecensioni;
     private JLabel lbDescrizione;
+
+    /**
+     * <code>panelRecensioni</code> è un pannello Swing che compone
+     * l'interfaccia grafica, nella fattispecie la parte dedicata alle recensioni
+     * per una specifico valore
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private JPanel panelRecensioni;
     private JTextArea txtDescrizione;
+
+    /**
+     * <code>btnCreaRecensione</code> è un bottone Swing che attiva la procedura
+     * di creazione di una nuova recensione
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <p>
+     */
+
     private JButton btnCreaRecensione;
     private JLabel lb5Stelle;
     private JLabel lb4Stelle;
     private JLabel lb3Stelle;
     private JLabel lb2Stelle;
     private JLabel lb1Stella;
+
+    /**
+     * <code>panelNumValutazioni</code> è un pannello Swing che compone
+     * l'interfaccia grafica, nella fattispecie il numero di valutazioni
+     * per una specifico valore
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private JPanel panelNumValutazioni;
     private JLabel lblTipologia;
+
+    /**
+     * <code>panelLeft</code> è un pannello Swing che compone
+     * l'interfaccia grafica, nella fattispecie la parte sinistra del frame.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private JPanel JPanelLeft;
+
+    /**
+     * <code>panelRight</code> è un pannello Swing che compone
+     * l'interfaccia grafica, nella fattispecie la parte destra del frame.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
+
     private JPanel JPanelRight;
     private JLabel lblSitoWeb;
 
-    public static JFrame frameRewiew = new JFrame("EatAdvisor Cliente - Nuova recensione");
+    /**
+     * <code>frameRewiew</code> è una cornice Swing attivata nel momento nel
+     * quale è richiesta l'aggiunta di una nuova recensione
+     * @see CreaRecensione
+     * <p>
+     * è dichiarata <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     */
+
+    public static JFrame frameReview = new JFrame("EatAdvisor Cliente - Nuova recensione");
+
+    /**
+     * Main della classe
+     *
+     * @param ristorante insieme di dati relativi al ristorante da visualizzare
+     */
 
     public DettaglioRistorante(Ristorante ristorante) {
         this.ristorante = ristorante;
@@ -57,11 +186,11 @@ public class DettaglioRistorante {
                             "Funzione commento non disponibile", JOptionPane.ERROR_MESSAGE);
                 } else {
                     try {
-                        frameRewiew.setContentPane(new CreaRecensione(ristorante).panelCreaRecensione);
-                        frameRewiew.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
-                        frameRewiew.pack();
-                        frameRewiew.setLocationRelativeTo(null);
-                        frameRewiew.setVisible(true);
+                        frameReview.setContentPane(new CreaRecensione(ristorante).panelCreaRecensione);
+                        frameReview.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
+                        frameReview.pack();
+                        frameReview.setLocationRelativeTo(null);
+                        frameReview.setVisible(true);
                     } catch (Exception exception) {
                         exception.printStackTrace();
                     }
@@ -69,6 +198,12 @@ public class DettaglioRistorante {
             }
         });
     }
+
+    /**
+     * <code>setLabels</code> è una procedura per impostare i valori delle etichette del frame
+     * è dichiarato <strong>private</strong> in quanto il metodo è utilizzabile all'interno della classe
+     * @param ristorante è l'insieme di dati relativi al ristorante da visualizzare
+     */
 
     private void setLabels(Ristorante ristorante) {
         lbNomeRistorante.setText(ristorante.getNomeRistorante().substring(0, Math.min(ristorante.getNomeRistorante().length(), 40)));
@@ -95,6 +230,12 @@ public class DettaglioRistorante {
 
     }
 
+    /**
+     * <code>setTextAreaDescr</code> è una procedura per impostare la descrizione
+     * del ristorante quando viene caricato il frame
+     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     */
+
     private void setTextAreaDescr() {
         txtDescrizione.setEditable(false); // impostando a false, non posso scrivere nella textarea
         txtDescrizione.setOpaque(true);
@@ -102,6 +243,13 @@ public class DettaglioRistorante {
         txtDescrizione.setLineWrap(true);
         txtDescrizione.setWrapStyleWord(true);
     }
+
+    /**
+     * <code>setPanelNumValutazioni</code> è una procedura per impostare
+     * il pannello sulle valutazoni e sul loro numero quando
+     * viene caricato il frame
+     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     */
 
     private void setPanelNumValutazioni() {
         DecimalFormat dec = new DecimalFormat("#0.00");
@@ -138,6 +286,15 @@ public class DettaglioRistorante {
             panelNumValutazioni.setVisible(false);
         }
     }
+
+    /**
+     * <code>createUIComponents</code> è una procedura per impostare la grafica
+     * quando viene caricato il frame
+     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     *
+     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * essere sollevata durante l'esecuzione del programma
+     */
 
     private void createUIComponents() throws Exception {
         panelLogo = new JPanel();

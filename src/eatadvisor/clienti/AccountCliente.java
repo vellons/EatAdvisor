@@ -13,7 +13,7 @@ import java.io.IOException;
 
 /**
  * La classe AccountCliente permette la visualizzazione delle informazioni relative al
- * cliente, oltre alla possibilità di modificare le informazioni del proprio account e
+ * cliente, oltre alla possibilit&agrave; di modificare le informazioni del proprio account e
  * la propria password d'accesso
  *
  * @author Manuel Macaj
@@ -22,104 +22,104 @@ public class AccountCliente {
     /**
      * <code>modifyPassword</code> rappresenta una finestra.
      * <p>
-     * è dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
-     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     * &egrave; dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
+     * &egrave; dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
      */
     public static JFrame modifyPassword = new JFrame("Cambio Password"); //Creazione della finestra
     /**
      * <code>panelAccountCliente</code> rappresenta un pannello.
      * <p>
-     * è dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
+     * &egrave; dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
      */
     public JPanel panelAccountCliente;
     /**
      * <code>panelLogo</code> rappresenta un pannello.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JPanel panelLogo;
     /**
      * <code>lblNickname</code> rappresenta un etichetta.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JLabel lblNickname;
     /**
      * <code>tfNickname</code> rappresenta un campo di testo.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JTextField tfNickname;
     /**
      * <code>lblNome</code> rappresenta un etichetta.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JLabel lblNome;
     /**
      * <code>lblCognome</code> rappresenta un etichetta.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JLabel lblCognome;
     /**
      * <code>lblComune</code> rappresenta un etichetta.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JLabel lblComune;
     /**
      * <code>lblSiglaProvincia</code> rappresenta un etichetta.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JLabel lblSiglaProvincia;
     /**
      * <code>lblEmail</code> rappresenta un etichetta.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JLabel lblEmail;
     /**
      * <code>tfNome</code> rappresenta un campo di testo.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JTextField tfNome;
     /**
      * <code>tfCognome</code> rappresenta un campo di testo.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JTextField tfCognome;
     /**
      * <code>tfComune</code> rappresenta un campo di testo.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JTextField tfComune;
     /**
      * <code>tfSiglaProvincia</code> rappresenta un campo di testo.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JTextField tfSiglaProvincia;
     /**
      * <code>tfEmail</code> rappresenta un campo di testo.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JTextField tfEmail;
     /**
      * <code>btnChangeAccount</code> rappresenta un bottone.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JButton btnChangeAccount;
     /**
      * <code>btnChangePsw</code> rappresenta un bottone.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JButton btnChangePsw;
     /**
@@ -236,19 +236,19 @@ public class AccountCliente {
 
     /**
      * @param input stringa da controllare
-     * @return boolean per indicare se la stringa è vuota
+     * @return boolean per indicare se la stringa &egrave; vuota
      */
     private boolean checkInput(String input) { // Metodo per la verifica del textfield
         boolean res;
         String tmp = "";
         tmp += input;
-        // Se il campo è vuoto, visualizzo una scritta
+        // Se il campo &egrave; vuoto, visualizzo una scritta
         res = !tmp.equals("");
         return res;
     }
 
     /**
-     * @throws IOException èè un eccezione che viene lanciata quando il programma non
+     * @throws IOException &egrave;&egrave; un eccezione che viene lanciata quando il programma non
      *                     trova il file che si vuole utilizzare
      */
     private void createUIComponents() throws IOException {

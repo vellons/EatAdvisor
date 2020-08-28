@@ -19,8 +19,8 @@ public class ListaRecensioniPanel extends JPanel {
     /**
      * Costrutore della classe
      *
-     * @param ristorante è un ristorante che viene passato al costruttore
-     * @throws Exception è un eccezione che viene lanciata quando il programma
+     * @param ristorante &egrave; un ristorante che viene passato al costruttore
+     * @throws Exception &egrave; un eccezione che viene lanciata quando il programma
      *                   non trova il file che si vuole utilizzare
      */
     public ListaRecensioniPanel(Ristorante ristorante) throws Exception {
@@ -64,8 +64,8 @@ public class ListaRecensioniPanel extends JPanel {
     }
 
     /**
-     * @param rec è la recensione che viene passata
-     * @throws Exception è un eccezione che viene lanciata quando il programma
+     * @param rec &egrave; la recensione che viene passata
+     * @throws Exception &egrave; un eccezione che viene lanciata quando il programma
      *                   non trova il file che si vuole utilizzare
      */
     private void aggiungiRecensione(Recensione rec) throws Exception {

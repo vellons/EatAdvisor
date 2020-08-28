@@ -16,24 +16,24 @@ public class InfoRistoratore {
     /**
      * <code>panelInfo</code> rappresenta un pannello.
      * <p>
-     * è dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
+     * &egrave; dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
      */
     public JPanel panelInfo;
     /**
      * <code>panelLogo</code> rappresenta un pannello.
      * <p>
-     * è dichiarato <strong>private</strong> così da non poter essere visibile all'esterno della classe
+     * &egrave; dichiarato <strong>private</strong> così da non poter essere visibile all'esterno della classe
      */
     private JPanel panelLogo;
     /**
      * <code>lbVersione</code> rappresenta un etichetta.
      * <p>
-     * è dichiarato <strong>private</strong> così da non poter essere visibile all'esterno della classe
+     * &egrave; dichiarato <strong>private</strong> così da non poter essere visibile all'esterno della classe
      */
     private JLabel lbVersione;
 
     /**
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      *                   essere sollevata durante l'esecuzione del programma
      */
     private void createUIComponents() throws Exception {

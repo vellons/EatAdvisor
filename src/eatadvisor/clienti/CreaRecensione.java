@@ -27,64 +27,64 @@ public class CreaRecensione {
     /**
      * <code>panelCreaRecensione</code> rappresenta un pannello.
      * <p>
-     * è dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
+     * &egrave; dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
      */
     public JPanel panelCreaRecensione;
 
     /**
      * <code>sliValutazione</code> rappresenta una barra scorrevole.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JSlider sliValutazione;
 
     /**
      * <code>lbSliderValutazione</code> rappresenta un etichetta.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JLabel lbSliderValutazione;
 
     /**
      * <code>lbScriviCommento</code> rappresenta un etichetta.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JLabel lbScriviCommento;
 
     /**
      * <code>txtCommento</code> rappresenta un area di testo.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JTextArea txtCommento;
 
     /**
      * <code>panelLogo</code> rappresenta un pannello.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JPanel panelLogo;
 
     /**
      * <code>btnAddCommento</code> rappresenta un bottone.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JButton btnAddCommento;
 
     /**
      * <code>lbCounterCharacter</code> rappresenta un etichetta.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private JLabel lbCounterCharacter;
 
     /**
      * Costrutore della classe
      *
-     * @param rist è un ristorante che viene passato al costruttore
-     * @throws Exception è un eccezione che viene lanciata quando il programma
+     * @param rist &egrave; un ristorante che viene passato al costruttore
+     * @throws Exception &egrave; un eccezione che viene lanciata quando il programma
      *                   non trova il file che si vuole utilizzare
      */
     public CreaRecensione(Ristorante rist) throws Exception {

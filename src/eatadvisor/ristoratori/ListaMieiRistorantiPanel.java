@@ -23,7 +23,7 @@ public class ListaMieiRistorantiPanel extends JPanel {
     /**
      * Costrutore della classe
      *
-     * @throws Exception è un eccezione che viene lanciata quando il programma
+     * @throws Exception &egrave; un eccezione che viene lanciata quando il programma
      *                   non trova il file che si vuole utilizzare
      */
     public ListaMieiRistorantiPanel() throws Exception {
@@ -73,7 +73,7 @@ public class ListaMieiRistorantiPanel extends JPanel {
     }
 
     /**
-     * @param rist è il ristorante che viene passato
+     * @param rist &egrave; il ristorante che viene passato
      */
     private void aggiungiRistorante(Ristorante rist) {
         JPanel panel = new JPanel();

@@ -19,10 +19,10 @@ public class ListaRistorantiPanel extends JPanel {
     /**
      * Costrutore della classe
      *
-     * @param filtroNome      è il filtro per il nome del ristorante
-     * @param filtroComune    è il filtro per il comune del ristorante
-     * @param filtroTipologia è il filtro per la tipologia del ristorante
-     * @throws Exception è un eccezione che viene lanciata quando il programma
+     * @param filtroNome      &egrave; il filtro per il nome del ristorante
+     * @param filtroComune    &egrave; il filtro per il comune del ristorante
+     * @param filtroTipologia &egrave; il filtro per la tipologia del ristorante
+     * @throws Exception &egrave; un eccezione che viene lanciata quando il programma
      *                   non trova il file che si vuole utilizzare
      */
     public ListaRistorantiPanel(String filtroNome, String filtroComune, String filtroTipologia) throws Exception {
@@ -86,7 +86,7 @@ public class ListaRistorantiPanel extends JPanel {
     }
 
     /**
-     * @param rist è il ristorante che viene passato
+     * @param rist &egrave; il ristorante che viene passato
      */
     private void aggiungiRistorante(Ristorante rist) {
         JPanel panel = new JPanel();

@@ -19,7 +19,7 @@ public class MenuListener implements ActionListener {
     public static JFrame mofidyAccount = new JFrame("EatAdvisor Clienti - Il mio account");
 
     /**
-     * @param e è l'evento che deve essere processato
+     * @param e &egrave; l'evento che deve essere processato
      */
     @Override
     public void actionPerformed(ActionEvent e) {

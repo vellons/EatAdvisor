@@ -18,8 +18,8 @@ public class clienti {
     /**
      * Main della classe
      *
-     * @param args è nome dell'array di stringhe
-     * @throws IOException è un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
+     * @param args &egrave; nome dell'array di stringhe
+     * @throws IOException &egrave; un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
      */
     public static void main(String[] args) throws Exception {
         mainFrame.setContentPane(new StartClienti().panelStartClienti);
@@ -102,11 +102,11 @@ public class clienti {
     }
 
     /**
-     * @param dashboardFrame  è la dashboard che contiene i filtri
-     * @param filtroNome      è il filtro per il nome del ristorante
-     * @param filtroComune    è il filtro per il comune del risorante
-     * @param filtroTipologia è il filtro per la tipologia del ristorante
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @param dashboardFrame  &egrave; la dashboard che contiene i filtri
+     * @param filtroNome      &egrave; il filtro per il nome del ristorante
+     * @param filtroComune    &egrave; il filtro per il comune del risorante
+     * @param filtroTipologia &egrave; il filtro per la tipologia del ristorante
+     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      *                   essere sollevata durante l'esecuzione del programma
      */
     public static void reloadDashBoardConFiltri(JFrame dashboardFrame, String filtroNome, String filtroComune, String filtroTipologia) throws Exception {
@@ -124,7 +124,7 @@ public class clienti {
     /**
      * @param dettaglioFrame ???
      * @param rist           rappresenta un ristorante
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      *                   essere sollevata durante l'esecuzione del programma
      */
     public static void reloadDettaglioRistorante(JFrame dettaglioFrame, Ristorante rist) throws Exception {

@@ -49,7 +49,7 @@ public class CreaRecensione {
                             JOptionPane.showMessageDialog(null, "Il commento è stato " +
                                     "inviato correttamente.\nLa finestra del dettaglio verrà  ricaricata per mostrare " +
                                     "il commento", "Commento e giudizio inviato", JOptionPane.PLAIN_MESSAGE);
-                            clienti.closePreviousWindow(DettaglioRistorante.frameRewiew);
+                            clienti.closePreviousWindow(DettaglioRistorante.frameReview);
                             clienti.reloadDettaglioRistorante(RistorantePerLista.dettaglioFrame, rist);
                         }
 

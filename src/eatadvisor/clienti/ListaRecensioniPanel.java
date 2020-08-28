@@ -1,5 +1,6 @@
 package eatadvisor.clienti;
 
+import eatadvisor.global.Global;
 import eatadvisor.ioeatadvisor.Recensione;
 import eatadvisor.ioeatadvisor.Ristorante;
 
@@ -45,7 +46,14 @@ public class ListaRecensioniPanel extends JPanel {
             }
         } else {
             JPanel panel = new JPanel();
-            panel.add(new JLabel("<html><center>Non ci sono ancora recensioni per questo ristorante.<br/>Aggiungi la prima!!</center></html>"));
+            if (Global.utenteLoggato != null && Global.utenteLoggato.getTipo().equals("RIST")) {
+                panel.add(new JLabel("<html><center>Non ci sono ancora recensioni." +
+                        "<br/>Suggerisci ai tuoi clienti di<br/> utilizzare EatAdvisor per consigliare<br/>il " +
+                        "tuo ristorante!</center></html>"));
+            } else {
+                panel.add(new JLabel("<html><center>Non ci sono ancora recensioni per questo ristorante." +
+                        "<br/>Aggiungi la prima!!</center></html>"));
+            }
             GridBagConstraints gbc = new GridBagConstraints();
             gbc.gridwidth = GridBagConstraints.REMAINDER;
             gbc.weightx = 1;

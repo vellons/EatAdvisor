@@ -134,7 +134,7 @@ public class RegistrazioneRistoratore {
             public void actionPerformed(ActionEvent e) {
                 String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
                 if (!getTfEmail().matches(EMAIL_REGEX)) {
-                    JOptionPane.showMessageDialog(null, "L'email inserita non &egrave; valida." +
+                    JOptionPane.showMessageDialog(null, "L'email inserita non è valida." +
                             "\nRiprovare", "Attenzione", JOptionPane.ERROR_MESSAGE);
                 } else {
                     if (checkAllInputs()) {

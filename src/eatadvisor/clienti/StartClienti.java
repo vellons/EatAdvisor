@@ -2,8 +2,6 @@ package eatadvisor.clienti;
 
 import eatadvisor.global.Global;
 import eatadvisor.ioutenti.IOUtenti;
-import eatadvisor.ristoratori.DashboardRistoratori;
-import eatadvisor.ristoratori.RegistrazioneRistoratore;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -26,6 +24,7 @@ public class StartClienti {
     /**
      * <code>ioUtenti</code> &egrave; un'istanza della classe IOUtenti che
      * permette di usare le funzionalit&agrave; per la gestione degli utenti.
+     *
      * @see IOUtenti
      * <p>
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
@@ -51,7 +50,7 @@ public class StartClienti {
      * <code>btnIscriviti</code> &egrave; un bottone Swing che attiva la procedura
      * di iscrizione alla piattaforma come cliente
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     <p>
+     * <p>
      * <code>btnNoLogin</code> &egrave; un bottone Swing che attiva la procedura
      * di iscrizione alla piattaforma come utente non registrato
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
@@ -95,6 +94,7 @@ public class StartClienti {
     /**
      * <code>registrazioneFrame</code> &egrave; una cornice Swing attivata nel momento nel
      * quale &egrave; richiesta la registrazione di un cliente
+     *
      * @see RegistrazioneCliente
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
@@ -106,6 +106,7 @@ public class StartClienti {
     /**
      * <code>dashboardRistoranti</code> &egrave; una cornice Swing attivata nel momento nel
      * quale un cliente effettua l'accesso
+     *
      * @see DashboardRistoranti
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
@@ -127,7 +128,7 @@ public class StartClienti {
      * Main della classe
      *
      * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
-     * essere sollevata durante l'esecuzione del programma
+     *                   essere sollevata durante l'esecuzione del programma
      */
 
     public StartClienti() throws Exception {
@@ -200,6 +201,7 @@ public class StartClienti {
     /**
      * <code>openDashBoardClienti</code> &egrave; una procedura aprire il pannello
      * dashboard quando un cliente effettua l'accesso
+     *
      * @see DashboardRistoranti
      * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore*
      */

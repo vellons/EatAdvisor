@@ -84,7 +84,7 @@ public class DashboardRistoranti extends JFrame {
      * <p>
      * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      */
-    private String[] tipologia = new String[]{"TUTTI", "ITALIANO", "ETNICO", "FUSION"};
+    private final String[] tipologia = new String[]{"TUTTI", "ITALIANO", "ETNICO", "FUSION"};
     /**
      * <code>initialFiltroNome</code> rappresenta il filtro per il nome del ristorante.
      * <p>

@@ -8,6 +8,7 @@ import javax.swing.*;
 /**
  * La classe RecensioniPerRistorante permette la gestione delle
  * recensioni rilasciate per un ristorante
+ *
  * @author Manuel Macaj
  */
 
@@ -16,12 +17,13 @@ public class RecensioniPerRistorante {
     /**
      * <code>ioUtenti</code> &egrave; un'istanza della classe IOUtenti che
      * permette di usare le funzionalit&agrave; per la gestione degli utenti.
+     *
      * @see IOUtenti
      * <p>
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
-    private IOUtenti ioutenti = new IOUtenti();
+    private final IOUtenti ioutenti = new IOUtenti();
 
     /**
      * <code>panelRecensioniPerRistorante</code> &egrave; un pannello Swing che compone
@@ -42,9 +44,9 @@ public class RecensioniPerRistorante {
      * <p>
      * <code>txtRecensione</code> &egrave; un'area di testo Swing dedicata al campo recensione
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-    */
+     */
 
-     private JLabel lbNickname;
+    private JLabel lbNickname;
     private JLabel lbRate;
     private JTextArea txtRecensione;
 
@@ -53,11 +55,11 @@ public class RecensioniPerRistorante {
      *
      * @param rec insieme di dati relativi alla recensione rilasciata
      * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
-     * essere sollevata durante l'esecuzione del programma
+     *                   essere sollevata durante l'esecuzione del programma
      */
 
     public RecensioniPerRistorante(Recensione rec) throws Exception {
-        String nickname =  ioutenti.getUtenteById(rec.getUtenteId()).getNickname();
+        String nickname = ioutenti.getUtenteById(rec.getUtenteId()).getNickname();
         lbNickname.setText("Nick: " + nickname.substring(0, Math.min(nickname.length(), 12)));
         lbRate.setText("Valutazione: " + rec.getValutazione());
         txtRecensione.setText(rec.getCommento().substring(0, Math.min(rec.getCommento().length(), 256)));

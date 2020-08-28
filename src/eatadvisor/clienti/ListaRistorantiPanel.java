@@ -19,8 +19,8 @@ public class ListaRistorantiPanel extends JPanel {
     /**
      * Costrutore della classe
      *
-     * @param filtroNome è il filtro per il nome del ristorante
-     * @param filtroComune è il filtro per il comune del ristorante
+     * @param filtroNome      è il filtro per il nome del ristorante
+     * @param filtroComune    è il filtro per il comune del ristorante
      * @param filtroTipologia è il filtro per la tipologia del ristorante
      * @throws Exception è un eccezione che viene lanciata quando il programma
      *                   non trova il file che si vuole utilizzare
@@ -76,10 +76,11 @@ public class ListaRistorantiPanel extends JPanel {
         }
     }
 
-    @Override
+
     /**
-     * @return le dimensioni
+     * @return oggetto Dimension con le dimensioni della finestra
      */
+    @Override
     public Dimension getPreferredSize() {
         return new Dimension(800, 500);
     }

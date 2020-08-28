@@ -23,6 +23,7 @@ import java.text.DecimalFormat;
  * La classe DettaglioMioRistorante permette di visualizzare
  * le informazioni dettagliate di un ristorante di
  * propriet&agrave; del ristoratore loggato
+ *
  * @author Mahdi Said
  */
 
@@ -31,6 +32,7 @@ public class DettaglioMioRistorante {
     /**
      * <code>modificaFrame</code> &egrave; una cornice Swing attivata nel momento nel
      * quale &egrave; richiesta la modifica di un ristoratore
+     *
      * @see ModificaRistorante
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
@@ -42,6 +44,7 @@ public class DettaglioMioRistorante {
     /**
      * <code>ristorante</code> &egrave; un'istanza della classe Ristorante che descrive
      * il comportamento dell'oggetto ristorante
+     *
      * @see Ristorante
      * <p>
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
@@ -125,7 +128,7 @@ public class DettaglioMioRistorante {
     /**
      * <code>txtDescrizione</code> &egrave; un'area di testo Swing dedicata al campo descrizione
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-    */
+     */
 
     private JTextArea txtDescrizione;
 
@@ -133,7 +136,7 @@ public class DettaglioMioRistorante {
      * <code>btnModificaRistorante</code> &egrave; un bottone Swing che attiva la procedura
      * di modifica di un ristoratore
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-    */
+     */
 
     private JButton btnModificaRistorante;
     private JLabel lb5Stelle;
@@ -203,6 +206,7 @@ public class DettaglioMioRistorante {
     /**
      * <code>setLabels</code> &egrave; una procedura per impostare i valori delle etichette del frame
      * &egrave; dichiarato <strong>private</strong> in quanto il metodo &egrave; utilizzabile all'interno della classe
+     *
      * @param ristorante &egrave; l'insieme di dati relativi al ristorante da visualizzare
      */
 
@@ -294,7 +298,7 @@ public class DettaglioMioRistorante {
      * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
      *
      * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
-     * essere sollevata durante l'esecuzione del programma
+     *                   essere sollevata durante l'esecuzione del programma
      */
 
     private void createUIComponents() throws Exception {

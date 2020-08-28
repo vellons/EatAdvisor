@@ -1,7 +1,6 @@
 package eatadvisor.clienti;
 
 import eatadvisor.ioeatadvisor.Ristorante;
-import eatadvisor.ristoratori.DettaglioMioRistorante;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -21,6 +20,7 @@ public class RistorantePerLista extends JPanel {
      * <code>dettaglioFrame</code> &egrave; una cornice Swing attivata nel momento nel
      * quale si vuole visualizzare le informazioni dettagliate di un singolo
      * ristorante
+     *
      * @see DettaglioRistorante
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
@@ -84,7 +84,7 @@ public class RistorantePerLista extends JPanel {
         lblNome.setText(ristorante.getNomeRistorante().substring(0, Math.min(ristorante.getNomeRistorante().length(), 30)));
         lblIndirizzo.setText(ristorante.getIndirizzo().toString().substring(0, Math.min(ristorante.getIndirizzo().toString().length(), 45)));
         lblStelle.setText(String.valueOf(dec.format(ristorante.getRecensioniValutazioneMedia())));
-        lblValutazioni.setText(String.valueOf(ristorante.getRecensioni().size()) + " valutazioni");
+        lblValutazioni.setText(ristorante.getRecensioni().size() + " valutazioni");
         lblTipologia.setText("Tipologia: " + ristorante.getTipologia());
 
         btnDettaglio.addActionListener(new ActionListener() {
@@ -92,7 +92,7 @@ public class RistorantePerLista extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 try {
                     dettaglioFrame.setContentPane(new DettaglioRistorante(ristorante).panelDettaglioRistorante);
-                    clienti.initUI(dettaglioFrame);;
+                    clienti.initUI(dettaglioFrame);
                     dettaglioFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
                     dettaglioFrame.pack();
                     dettaglioFrame.setLocationRelativeTo(null);

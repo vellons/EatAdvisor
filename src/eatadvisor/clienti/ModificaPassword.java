@@ -2,7 +2,6 @@ package eatadvisor.clienti;
 
 import eatadvisor.global.Global;
 import eatadvisor.ioutenti.IOUtenti;
-import eatadvisor.ioutenti.Utente;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -16,6 +15,7 @@ import java.util.Objects;
 /**
  * La classe ModificaPassword permette la modifica della
  * password dell'account di un utente
+ *
  * @author Manuel Macaj
  * @author Silvio Pazienza
  */
@@ -75,7 +75,7 @@ public class ModificaPassword {
      * Main della classe
      *
      * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
-     * essere sollevata durante l'esecuzione del programma
+     *                   essere sollevata durante l'esecuzione del programma
      */
 
     public ModificaPassword() throws Exception {

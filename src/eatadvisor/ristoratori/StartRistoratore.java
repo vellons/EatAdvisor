@@ -22,9 +22,10 @@ import java.io.IOException;
 
 public class StartRistoratore {
 
-     /**
+    /**
      * <code>ioUtenti</code> &egrave; un'istanza della classe IOUtenti che
      * permette di usare le funzionalit&agrave; per la gestione degli utenti.
+     *
      * @see IOUtenti
      * <p>
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
@@ -89,6 +90,7 @@ public class StartRistoratore {
     /**
      * <code>registrazioneFrame</code> &egrave; una cornice Swing attivata nel momento nel
      * quale &egrave; richiesta la registrazione di un ristoratore
+     *
      * @see RegistrazioneRistoratore
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
@@ -100,6 +102,7 @@ public class StartRistoratore {
     /**
      * <code>dashboardRistoratore</code> &egrave; una cornice Swing attivata nel momento nel
      * quale un ristoratore effettua l'accesso
+     *
      * @see DashboardRistoratori
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
@@ -121,7 +124,7 @@ public class StartRistoratore {
      * Main della classe
      *
      * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
-     * essere sollevata durante l'esecuzione del programma
+     *                   essere sollevata durante l'esecuzione del programma
      */
 
     public StartRistoratore() throws Exception {
@@ -185,6 +188,7 @@ public class StartRistoratore {
     /**
      * <code>openDashBoardRistoratori</code> &egrave; una procedura aprire il pannello
      * dashboard quando un ristoratore effettua l'accesso
+     *
      * @see DashboardRistoratori
      * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore*
      */

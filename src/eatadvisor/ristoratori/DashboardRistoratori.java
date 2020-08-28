@@ -64,6 +64,7 @@ public class DashboardRistoratori extends JFrame {
     /**
      * <code>registrazioneFrame</code> &egrave; una cornice Swing attivata nel momento nel
      * quale un nuovo ristorante viene creato
+     *
      * @see RegistrazioneRistorante
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
@@ -77,7 +78,7 @@ public class DashboardRistoratori extends JFrame {
      * Main della classe
      *
      * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
-     * essere sollevata durante l'esecuzione del programma
+     *                   essere sollevata durante l'esecuzione del programma
      */
 
     public DashboardRistoratori() throws Exception {
@@ -104,7 +105,7 @@ public class DashboardRistoratori extends JFrame {
      * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
      *
      * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
-     * essere sollevata durante l'esecuzione del programma
+     *                   essere sollevata durante l'esecuzione del programma
      */
 
     private void createUIComponents() throws Exception {

@@ -226,18 +226,15 @@ public class AccountRistoratore { //Contiene il JPanel principale
         boolean res;
         String tmp = "";
         tmp += input;
-        if (tmp.equals("")) { //Se il campo &egrave; vuoto, visualizzo una scritta
-            res = false;
-        } else {
-            res = true;
-        }
+        //Se il campo &egrave; vuoto, visualizzo una scritta
+        res = !tmp.equals("");
 
         return res; //Restituisco il risultato booleano a seguito del confronto
     }
 
     /**
      * @throws IOException èè un eccezione che viene lanciata quando il programma non
-     * trova il file che si vuole utilizzare
+     *                     trova il file che si vuole utilizzare
      */
     private void createUIComponents() throws IOException { //Logo
         panelLogo = new JPanel();

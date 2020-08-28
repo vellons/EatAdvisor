@@ -32,10 +32,10 @@ public class clienti {
 
     /**
      * @param frame contiene il riferimento della finestra principale
-     * @throws ClassNotFoundException ???
+     * @throws ClassNotFoundException          ???
      * @throws UnsupportedLookAndFeelException ???
-     * @throws InstantiationException ???
-     * @throws IllegalAccessException ???
+     * @throws InstantiationException          ???
+     * @throws IllegalAccessException          ???
      */
     public static void initUI(JFrame frame) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         // Queste impostazioni vengo applicate al frame passato

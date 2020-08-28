@@ -2,7 +2,6 @@ package eatadvisor.ristoratori;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -37,7 +36,7 @@ public class InfoRistoratore {
      * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
      *                   essere sollevata durante l'esecuzione del programma
      */
-    private void createUIComponents() throws Exception{
+    private void createUIComponents() throws Exception {
         panelLogo = new JPanel();
         BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisorLogoRistoratori.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));

@@ -4,11 +4,11 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 
 /**
  * La classe InfoClienti permette la gestione della parte della
  * barra superiore dedicata alla versione dell'applicazione
+ *
  * @author Silvio Pazienza
  */
 
@@ -36,7 +36,7 @@ public class InfoCliente {
     /**
      * <code>lblVersione</code> &egrave; un'etichetta Swing dedicata al campo versione
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-    */
+     */
 
     private JLabel lbVersione;
 
@@ -46,10 +46,10 @@ public class InfoCliente {
      * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
      *
      * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
-     * essere sollevata durante l'esecuzione del programma
+     *                   essere sollevata durante l'esecuzione del programma
      */
 
-    private void createUIComponents() throws Exception{
+    private void createUIComponents() throws Exception {
         panelLogo = new JPanel();
         BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisorLogoClienti.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));

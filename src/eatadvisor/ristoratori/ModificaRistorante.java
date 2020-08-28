@@ -7,7 +7,8 @@ import eatadvisor.ioeatadvisor.Ristorante;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -25,6 +26,7 @@ public class ModificaRistorante {
     /**
      * <code>ioEatAdvisor</code> &egrave; un'istanza della classe IOEatAdvisor che
      * permette di usare le funzionalit&agrave; per la gestione dei ristoranti e dei ristoratori.
+     *
      * @see IOEatAdvisor
      * <p>
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
@@ -35,12 +37,13 @@ public class ModificaRistorante {
     /**
      * <code>ristorante</code> &egrave; un'istanza della classe Ristorante che descrive
      * il comportamento dell'oggetto ristorante
+     *
      * @see Ristorante
      * <p>
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
-    private Ristorante ristorante;
+    private final Ristorante ristorante;
 
     /**
      * <code>tipologia</code> &egrave; un array di stringhe che contiene i tre
@@ -186,6 +189,7 @@ public class ModificaRistorante {
     /**
      * <code>indirizzo</code> &egrave; un'istanza della classe Indirizzo che
      * &egrave; utizizzata per salvare i dati dell'indirizzo completo sull'applicazione
+     *
      * @see Indirizzo
      * <p>
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
@@ -231,9 +235,11 @@ public class ModificaRistorante {
             }
         });
     }
+
     /**
      * <code>setLabels</code> &egrave; una procedura per impostare i valori delle etichette del frame
      * &egrave; dichiarato <strong>private</strong> in quanto il metodo &egrave; utilizzabile all'interno della classe
+     *
      * @param ristorante &egrave; l'insieme di dati relativi al ristorante da modificare
      */
 
@@ -271,6 +277,7 @@ public class ModificaRistorante {
     /**
      * <code>getTfNomeRistorante</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore del nome del ristorante dal campo di testo
      */
 
@@ -281,6 +288,7 @@ public class ModificaRistorante {
     /**
      * <code>getTareaDescrizione</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore della descrizione dall'area di testo
      */
 
@@ -291,6 +299,7 @@ public class ModificaRistorante {
     /**
      * <code>getTfVia</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore della via dal campo di testo
      */
 
@@ -301,6 +310,7 @@ public class ModificaRistorante {
     /**
      * <code>getTfCivico</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore del numero civico dal campo di testo
      */
 
@@ -311,6 +321,7 @@ public class ModificaRistorante {
     /**
      * <code>getTfCitta</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore della citt&agrave; dal campo di testo
      */
 
@@ -321,6 +332,7 @@ public class ModificaRistorante {
     /**
      * <code>getTfProvincia</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore della provincia dal campo di testo
      */
 
@@ -331,6 +343,7 @@ public class ModificaRistorante {
     /**
      * <code>getTfCap</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore del cap dal campo di testo
      */
 
@@ -341,6 +354,7 @@ public class ModificaRistorante {
     /**
      * <code>getTfTelefono</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore del numero di telefono dal campo di testo
      */
 
@@ -351,6 +365,7 @@ public class ModificaRistorante {
     /**
      * <code>getTfSito</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore del sito web dal campo di testo
      */
 
@@ -361,6 +376,7 @@ public class ModificaRistorante {
     /**
      * <code>checkAllInputs</code> &egrave; un metodo per controllare il contenuto dei textfield
      * &egrave; dichiarato <strong>private</strong> in quanto il metodo &egrave; utilizzabile all'interno della classe
+     *
      * @return valore booleano che indica se sono stati inseriti i dati in tutti i textfield
      */
 
@@ -384,7 +400,8 @@ public class ModificaRistorante {
     /**
      * <code>checkInput</code> &egrave; un metodo per controllare l'input di un textfield
      * &egrave; dichiarato <strong>private</strong> in quanto il metodo &egrave; utilizzabile all'interno della classe
-     * @param input &egrave; una stringa rappresentante il contenuto del campo da analizzare
+     *
+     * @param input     &egrave; una stringa rappresentante il contenuto del campo da analizzare
      * @param textField &egrave; il textfield di riferimento dell'input
      * @return valore booleano che indica se il dato &egrave; inserito nel textfield
      */
@@ -393,11 +410,8 @@ public class ModificaRistorante {
         boolean res;
         String tmp = "";
         tmp += input;
-        if (tmp.equals("")) { // Se il campo e vuoto, visualizzo una scritta
-            res = false;
-        } else {
-            res = true;
-        }
+        // Se il campo e vuoto, visualizzo una scritta
+        res = !tmp.equals("");
         return res;
     }
 

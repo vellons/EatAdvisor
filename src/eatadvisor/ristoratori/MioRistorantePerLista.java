@@ -20,6 +20,7 @@ public class MioRistorantePerLista {
      * <code>dettaglioFrame</code> &egrave; una cornice Swing attivata nel momento nel
      * quale si vuole visualizzare le informazioni dettagliate di un singolo
      * ristorante
+     *
      * @see DettaglioMioRistorante
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
@@ -76,14 +77,14 @@ public class MioRistorantePerLista {
         lblNome.setText(ristorante.getNomeRistorante().substring(0, Math.min(ristorante.getNomeRistorante().length(), 30)));
         lblIndirizzo.setText(ristorante.getIndirizzo().toString().substring(0, Math.min(ristorante.getIndirizzo().toString().length(), 45)));
         lblStelle.setText(String.valueOf(dec.format(ristorante.getRecensioniValutazioneMedia())));
-        lblValutazioni.setText(String.valueOf(ristorante.getRecensioni().size()) + " valutazioni");
+        lblValutazioni.setText(ristorante.getRecensioni().size() + " valutazioni");
 
         btnDettaglio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
                     dettaglioFrame.setContentPane(new DettaglioMioRistorante(ristorante).panelDettaglioRistorante);
-                    ristoratori.initUI(dettaglioFrame);;
+                    ristoratori.initUI(dettaglioFrame);
                     dettaglioFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definisce il comportamento della finestra
                     dettaglioFrame.pack();
                     dettaglioFrame.setLocationRelativeTo(null);

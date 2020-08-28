@@ -240,17 +240,14 @@ public class AccountCliente {
         boolean res;
         String tmp = "";
         tmp += input;
-        if (tmp.equals("")) { // Se il campo e vuoto, visualizzo una scritta
-            res = false;
-        } else {
-            res = true;
-        }
+        // Se il campo e vuoto, visualizzo una scritta
+        res = !tmp.equals("");
         return res;
     }
 
     /**
      * @throws IOException èè un eccezione che viene lanciata quando il programma non
-     * trova il file che si vuole utilizzare
+     *                     trova il file che si vuole utilizzare
      */
     private void createUIComponents() throws IOException {
         panelLogo = new JPanel();

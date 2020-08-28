@@ -1,6 +1,5 @@
 package eatadvisor.ristoratori;
 
-import eatadvisor.clienti.InfoCliente;
 import eatadvisor.global.Global;
 
 import javax.swing.*;

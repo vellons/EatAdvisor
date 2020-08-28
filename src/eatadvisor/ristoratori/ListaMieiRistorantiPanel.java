@@ -65,7 +65,7 @@ public class ListaMieiRistorantiPanel extends JPanel {
     }
 
     /**
-     * @return le dimensioni
+     * @return oggetto Dimension con le dimensioni della finestra
      */
     @Override
     public Dimension getPreferredSize() {

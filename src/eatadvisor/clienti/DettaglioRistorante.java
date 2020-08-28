@@ -4,7 +4,6 @@ import eatadvisor.global.Global;
 import eatadvisor.ioeatadvisor.IOEatAdvisor;
 import eatadvisor.ioeatadvisor.Recensione;
 import eatadvisor.ioeatadvisor.Ristorante;
-import eatadvisor.ristoratori.ModificaRistorante;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -23,6 +22,7 @@ import java.text.DecimalFormat;
 /**
  * La classe DettaglioRistorante permette di visualizzare
  * le informazioni dettagliate di un ristorante
+ *
  * @author Manuel Macaj
  */
 
@@ -31,6 +31,7 @@ public class DettaglioRistorante {
     /**
      * <code>ristorante</code> &egrave; un'istanza della classe Ristorante che descrive
      * il comportamento dell'oggetto ristorante
+     *
      * @see Ristorante
      * <p>
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
@@ -158,6 +159,7 @@ public class DettaglioRistorante {
     /**
      * <code>frameRewiew</code> &egrave; una cornice Swing attivata nel momento nel
      * quale &egrave; richiesta l'aggiunta di una nuova recensione
+     *
      * @see CreaRecensione
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
@@ -201,6 +203,7 @@ public class DettaglioRistorante {
     /**
      * <code>setLabels</code> &egrave; una procedura per impostare i valori delle etichette del frame
      * &egrave; dichiarato <strong>private</strong> in quanto il metodo &egrave; utilizzabile all'interno della classe
+     *
      * @param ristorante &egrave; l'insieme di dati relativi al ristorante da visualizzare
      */
 
@@ -219,9 +222,9 @@ public class DettaglioRistorante {
             @Override
             public void mouseClicked(MouseEvent e) {        //Imposto la label per farla diventare un link cliccabile
                 super.mouseClicked(e);
-                try{
+                try {
                     Desktop.getDesktop().browse(new URI(lblSitoWeb.getText()));
-                }catch(IOException | URISyntaxException e1){
+                } catch (IOException | URISyntaxException e1) {
                     e1.printStackTrace();
                 }
             }
@@ -254,7 +257,7 @@ public class DettaglioRistorante {
         DecimalFormat dec = new DecimalFormat("#0.00");
 
         lbValutazioni.setText("Valutazione media: " + dec.format(ristorante.getRecensioniValutazioneMedia()));
-        lbNumeroRecensioni.setText("Totale valutazioni:  "+ ristorante.getRecensioni().size());
+        lbNumeroRecensioni.setText("Totale valutazioni:  " + ristorante.getRecensioni().size());
 
         int fiveStars = 0;
         int fourStars = 0;
@@ -292,7 +295,7 @@ public class DettaglioRistorante {
      * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
      *
      * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
-     * essere sollevata durante l'esecuzione del programma
+     *                   essere sollevata durante l'esecuzione del programma
      */
 
     private void createUIComponents() throws Exception {

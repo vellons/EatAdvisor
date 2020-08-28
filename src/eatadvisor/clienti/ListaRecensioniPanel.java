@@ -57,7 +57,7 @@ public class ListaRecensioniPanel extends JPanel {
     }
 
     /**
-     * @return le dimensioni
+     * @return oggetto Dimension con le dimensioni della finestra
      */
     public Dimension getPreferredSize() {
         return new Dimension(365, 475);

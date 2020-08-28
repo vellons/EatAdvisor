@@ -5,7 +5,8 @@ import eatadvisor.ioutenti.IOUtenti;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -23,6 +24,7 @@ public class RegistrazioneCliente {
     /**
      * <code>ioUtenti</code> &egrave; un'istanza della classe IOUtenti che
      * permette di usare le funzionalit&agrave; per la gestione degli utenti.
+     *
      * @see IOUtenti
      * <p>
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
@@ -66,7 +68,7 @@ public class RegistrazioneCliente {
      * <p>
      * <code>tfSiglaProvincia</code> &egrave; un campo di testo Swing dedicato al campo sigla provincia
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     <p>
+     * <p>
      * <code>tfNickname</code> &egrave; un campo di testo Swing dedicato al campo nickname
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
@@ -92,7 +94,7 @@ public class RegistrazioneCliente {
      * <p>
      * <code>lblEmail</code> &egrave; un'etichetta Swing dedicata al campo email
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     <p>
+     * <p>
      * <code>lblNickname</code> &egrave; un'etichetta Swing dedicata al campo nickname
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
@@ -130,7 +132,7 @@ public class RegistrazioneCliente {
      * Main della classe
      *
      * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
-     * essere sollevata durante l'esecuzione del programma
+     *                   essere sollevata durante l'esecuzione del programma
      */
 
     public RegistrazioneCliente() throws Exception {
@@ -161,8 +163,7 @@ public class RegistrazioneCliente {
                                 JOptionPane.showMessageDialog(null, "Questa email &egrave; già stata utilizzata",
                                         "Attenzione", JOptionPane.PLAIN_MESSAGE);
                                 tfEmail.setText("");
-                            }
-                            else if (Objects.equals(exception.getMessage(), "Nickanme già utilizzato.")) {
+                            } else if (Objects.equals(exception.getMessage(), "Nickanme già utilizzato.")) {
                                 JOptionPane.showMessageDialog(null, "Questo nickname &egrave; già stato utilizzato",
                                         "Attenzione", JOptionPane.PLAIN_MESSAGE);
                                 tfNickname.setText("");
@@ -186,6 +187,7 @@ public class RegistrazioneCliente {
     /**
      * <code>getTfNickname</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore del nickname dal campo di testo
      */
 
@@ -196,6 +198,7 @@ public class RegistrazioneCliente {
     /**
      * <code>getTfPassword</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore della password dal campo di testo
      */
 
@@ -206,6 +209,7 @@ public class RegistrazioneCliente {
     /**
      * <code>getTfNome</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore del nome dal campo di testo
      */
 
@@ -216,6 +220,7 @@ public class RegistrazioneCliente {
     /**
      * <code>getTfCognome</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore del cognome dal campo di testo
      */
 
@@ -226,6 +231,7 @@ public class RegistrazioneCliente {
     /**
      * <code>getTfComune</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore del comune dal campo di testo
      */
 
@@ -236,6 +242,7 @@ public class RegistrazioneCliente {
     /**
      * <code>getTfSiglaProvincia</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore della sigla provincia dal campo di testo
      */
 
@@ -246,6 +253,7 @@ public class RegistrazioneCliente {
     /**
      * <code>getTfEmail</code> &egrave; un metodo getter
      * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
+     *
      * @return il valore dell'email dal campo di testo
      */
 
@@ -256,6 +264,7 @@ public class RegistrazioneCliente {
     /**
      * <code>checkAllInputs</code> &egrave; un metodo per controllare il contenuto dei textfield
      * &egrave; dichiarato <strong>private</strong> in quanto il metodo &egrave; utilizzabile all'interno della classe
+     *
      * @return valore booleano che indica se sono stati inseriti i dati in tutti i textfield
      */
 
@@ -276,7 +285,8 @@ public class RegistrazioneCliente {
     /**
      * <code>checkInput</code> &egrave; un metodo per controllare l'input di un textfield
      * &egrave; dichiarato <strong>private</strong> in quanto il metodo &egrave; utilizzabile all'interno della classe
-     * @param input &egrave; una stringa rappresentante il contenuto del campo da analizzare
+     *
+     * @param input     &egrave; una stringa rappresentante il contenuto del campo da analizzare
      * @param textField &egrave; il textfield di riferimento dell'input
      * @return valore booleano che indica se il dato &egrave; inserito nel textfield
      */
@@ -285,11 +295,8 @@ public class RegistrazioneCliente {
         boolean res;
         String tmp = "";
         tmp += input;
-        if (tmp.equals("")) { // Se il campo e vuoto, visualizzo una scritta
-            res = false;
-        } else {
-            res = true;
-        }
+        // Se il campo e vuoto, visualizzo una scritta
+        res = !tmp.equals("");
         return res;
     }
 

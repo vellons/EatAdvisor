@@ -4,20 +4,16 @@ A university project, build with Java 13, to manage restaurant reviews.
 
 ![EatAdvisor](media/EatAdvisorLogo.png)
 
-The project consists of two applications: 
-- EatAdvisotRistoratori: with which restaurateurs will be able to manage their restaurants.
-- EatAdvisorClienti: with which customers will be able to consult the restaurants within the platform and leave reviews.
+The goal of the EatAdvisor project is to create an evaluation system for restaurants based on the opinions 
+expressed by customers. The ratings are expressed on a scale from 1 to 5 stars, where 5 stars represents 
+the maximum score.
+Together with the numerical judgment, each customer can also leave a textual comment of up to 256 characters.
 
+All data are stored in two files:
+- EatAdvisor.data: that contains all the information on restaurants, and the opinions expressed by customers
+- Users.data: in which all the users registered on EatAdvisor are saved.
 
-![EatAdvisor structure](media/UX/ProjectStructure.png)
+![EatAdvisor structure](media/doc/ProjectStructure.png)
 
-
-## Colors
-- Background: #f4f4f4
-- Background secondary: #fff4c4
-- Accent: #c71e23
-- Border: #9b9b9b
-- Stars: #ffca18
-- Text primary: #000000
-- Text secondary: #8f8f8f
-- Font: Arial
+## Structure
+![EatAdvisor diagram](media/doc/Diagram.png)

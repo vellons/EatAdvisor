@@ -17,57 +17,57 @@ import java.io.File;
 public class DashboardRistoratori extends JFrame {
 
     /**
-     * <code>panelDashboardRistoratori</code> è un pannello Swing che compone
+     * <code>panelDashboardRistoratori</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie la dahboard per i ristoratori
      * <p>
-     * è dichiarato <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     * &egrave; dichiarato <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
      */
 
     public JPanel panelDashboardRistoratori;
 
     /**
-     * <code>panelLogo</code> è un pannello Swing che compone
+     * <code>panelLogo</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie il logo dell'appicazione.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JPanel panelLogo;
 
     /**
-     * <code>panelListaRistoranti</code> è un pannello Swing che compone
+     * <code>panelListaRistoranti</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie la parte che si occupa di
      * ricevere dati dai ristoranti
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JPanel panelListaRistoranti;
 
     /**
-     * <code>panelFunzioni</code> è un pannello Swing che compone
+     * <code>panelFunzioni</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie la parte con il bottone di aggiunta.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JPanel panelFunzioni;
 
     /**
-     * <code>btnAggiungi</code> è un bottone Swing che attiva la procedura
-     * di aggiunta di un ristorante di proprietà del ristoratore loggato
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>btnAggiungi</code> &egrave; un bottone Swing che attiva la procedura
+     * di aggiunta di un ristorante di propriet&agrave; del ristoratore loggato
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JButton btnAggiungi;
 
     /**
-     * <code>registrazioneFrame</code> è una cornice Swing attivata nel momento nel
+     * <code>registrazioneFrame</code> &egrave; una cornice Swing attivata nel momento nel
      * quale un nuovo ristorante viene creato
      * @see RegistrazioneRistorante
      * <p>
-     * è dichiarata <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
-     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
+     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      */
 
 
@@ -76,7 +76,7 @@ public class DashboardRistoratori extends JFrame {
     /**
      * Main della classe
      *
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      * essere sollevata durante l'esecuzione del programma
      */
 
@@ -99,11 +99,11 @@ public class DashboardRistoratori extends JFrame {
     }
 
     /**
-     * <code>createUIComponents</code> è una procedura per impostare la grafica
+     * <code>createUIComponents</code> &egrave; una procedura per impostare la grafica
      * quando viene caricato il frame
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
      *
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      * essere sollevata durante l'esecuzione del programma
      */
 

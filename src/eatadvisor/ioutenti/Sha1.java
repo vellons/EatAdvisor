@@ -4,10 +4,11 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * La classe Sha1 permette la criptazione di una stringa in
- * input di grandezza arbitraria, producendo in uscita una stringa hash di lunghezza fissa
+ * La classe Sha1 permette di ottenere una firma univoca della stringa passata in ingresso.
+ * Ha in input una stringa di lunghezza arbitraria e in output la firma della string di 40 caratteri.
  *
  * @author Alex Vellone
+ * @see <a href="http://www.sha1-online.com/sha1-java/">sha1-java</a>
  */
 public class Sha1 {
 

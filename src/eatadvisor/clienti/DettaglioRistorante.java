@@ -29,70 +29,70 @@ import java.text.DecimalFormat;
 public class DettaglioRistorante {
 
     /**
-     * <code>ristorante</code> è un'istanza della classe Ristorante che descrive
+     * <code>ristorante</code> &egrave; un'istanza della classe Ristorante che descrive
      * il comportamento dell'oggetto ristorante
      * @see Ristorante
      * <p>
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private Ristorante ristorante;
 
     /**
-     * <code>panelDettaglioRistoratore</code> è un pannello Swing che compone
+     * <code>panelDettaglioRistoratore</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie la finestra di dettaglio di
      * un ristorante a scelta
      * <p>
-     * è dichiarato <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     * &egrave; dichiarato <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
      */
 
     public JPanel panelDettaglioRistorante;
 
     /**
-     * <code>panelLogo</code> è un pannello Swing che compone
+     * <code>panelLogo</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie il logo dell'appicazione.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JPanel panelLogo;
 
     /**
-     * <code>lbIndirizzo</code> è un'etichetta Swing dedicata al campo indirizzo
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lbIndirizzo</code> &egrave; un'etichetta Swing dedicata al campo indirizzo
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lbNomeRistorante</code> è un'etichetta Swing dedicata al campo nome ristorante
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lbNomeRistorante</code> &egrave; un'etichetta Swing dedicata al campo nome ristorante
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lbValutazioni</code> è un'etichetta Swing dedicata al campo valutazioni
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lbValutazioni</code> &egrave; un'etichetta Swing dedicata al campo valutazioni
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lbNumeroRecensioni</code> è un'etichetta Swing dedicata al campo numero di recensioni
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lbNumeroRecensioni</code> &egrave; un'etichetta Swing dedicata al campo numero di recensioni
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lb5Stelle</code> è un'etichetta Swing dedicata al campo 5 stelle
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lb5Stelle</code> &egrave; un'etichetta Swing dedicata al campo 5 stelle
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lb4Stelle</code> è un'etichetta Swing dedicata al campo 4 stelle
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lb4Stelle</code> &egrave; un'etichetta Swing dedicata al campo 4 stelle
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lb3Stelle</code> è un'etichetta Swing dedicata al campo 3 stelle
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lb3Stelle</code> &egrave; un'etichetta Swing dedicata al campo 3 stelle
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lb2Stelle</code> è un'etichetta Swing dedicata al campo 2 stelle
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lb2Stelle</code> &egrave; un'etichetta Swing dedicata al campo 2 stelle
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lb1Stella</code> è un'etichetta Swing dedicata al campo 1 stella
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lb1Stella</code> &egrave; un'etichetta Swing dedicata al campo 1 stella
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lbDescrizione</code> è un'etichetta Swing dedicata al campo descrizione
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lbDescrizione</code> &egrave; un'etichetta Swing dedicata al campo descrizione
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lblSitoWeb</code> è un'etichetta Swing dedicata al campo sito web
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblSitoWeb</code> &egrave; un'etichetta Swing dedicata al campo sito web
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lblTipologia</code> è un'etichetta Swing dedicata al campo tipologia
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblTipologia</code> &egrave; un'etichetta Swing dedicata al campo tipologia
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JLabel lbNomeRistorante;
@@ -102,21 +102,20 @@ public class DettaglioRistorante {
     private JLabel lbDescrizione;
 
     /**
-     * <code>panelRecensioni</code> è un pannello Swing che compone
+     * <code>panelRecensioni</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie la parte dedicata alle recensioni
      * per una specifico valore
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JPanel panelRecensioni;
     private JTextArea txtDescrizione;
 
     /**
-     * <code>btnCreaRecensione</code> è un bottone Swing che attiva la procedura
+     * <code>btnCreaRecensione</code> &egrave; un bottone Swing che attiva la procedura
      * di creazione di una nuova recensione
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * <p>
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JButton btnCreaRecensione;
@@ -127,42 +126,42 @@ public class DettaglioRistorante {
     private JLabel lb1Stella;
 
     /**
-     * <code>panelNumValutazioni</code> è un pannello Swing che compone
+     * <code>panelNumValutazioni</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie il numero di valutazioni
      * per una specifico valore
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JPanel panelNumValutazioni;
     private JLabel lblTipologia;
 
     /**
-     * <code>panelLeft</code> è un pannello Swing che compone
+     * <code>panelLeft</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie la parte sinistra del frame.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JPanel JPanelLeft;
 
     /**
-     * <code>panelRight</code> è un pannello Swing che compone
+     * <code>panelRight</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie la parte destra del frame.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JPanel JPanelRight;
     private JLabel lblSitoWeb;
 
     /**
-     * <code>frameRewiew</code> è una cornice Swing attivata nel momento nel
-     * quale è richiesta l'aggiunta di una nuova recensione
+     * <code>frameRewiew</code> &egrave; una cornice Swing attivata nel momento nel
+     * quale &egrave; richiesta l'aggiunta di una nuova recensione
      * @see CreaRecensione
      * <p>
-     * è dichiarata <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
-     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
+     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      */
 
     public static JFrame frameReview = new JFrame("EatAdvisor Cliente - Nuova recensione");
@@ -200,9 +199,9 @@ public class DettaglioRistorante {
     }
 
     /**
-     * <code>setLabels</code> è una procedura per impostare i valori delle etichette del frame
-     * è dichiarato <strong>private</strong> in quanto il metodo è utilizzabile all'interno della classe
-     * @param ristorante è l'insieme di dati relativi al ristorante da visualizzare
+     * <code>setLabels</code> &egrave; una procedura per impostare i valori delle etichette del frame
+     * &egrave; dichiarato <strong>private</strong> in quanto il metodo &egrave; utilizzabile all'interno della classe
+     * @param ristorante &egrave; l'insieme di dati relativi al ristorante da visualizzare
      */
 
     private void setLabels(Ristorante ristorante) {
@@ -231,9 +230,9 @@ public class DettaglioRistorante {
     }
 
     /**
-     * <code>setTextAreaDescr</code> è una procedura per impostare la descrizione
+     * <code>setTextAreaDescr</code> &egrave; una procedura per impostare la descrizione
      * del ristorante quando viene caricato il frame
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
      */
 
     private void setTextAreaDescr() {
@@ -245,10 +244,10 @@ public class DettaglioRistorante {
     }
 
     /**
-     * <code>setPanelNumValutazioni</code> è una procedura per impostare
+     * <code>setPanelNumValutazioni</code> &egrave; una procedura per impostare
      * il pannello sulle valutazoni e sul loro numero quando
      * viene caricato il frame
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
      */
 
     private void setPanelNumValutazioni() {
@@ -288,11 +287,11 @@ public class DettaglioRistorante {
     }
 
     /**
-     * <code>createUIComponents</code> è una procedura per impostare la grafica
+     * <code>createUIComponents</code> &egrave; una procedura per impostare la grafica
      * quando viene caricato il frame
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
      *
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      * essere sollevata durante l'esecuzione del programma
      */
 
@@ -304,7 +303,7 @@ public class DettaglioRistorante {
 
         panelRecensioni = new JPanel();
         // Tutte le informazioni del ristorante mi sono già state passate,
-        // però se la pagina è stata refreshata dopo l'aggiunta di un commento devo aggiornare le info (recensioni)
+        // però se la pagina &egrave; stata refreshata dopo l'aggiunta di un commento devo aggiornare le info (recensioni)
         // del ristorante che sto visualizzando nella schermata!
         IOEatAdvisor ioEatAdvisor = new IOEatAdvisor();
         this.ristorante = ioEatAdvisor.getRistoranteById(this.ristorante.getId());

@@ -23,54 +23,54 @@ import java.io.IOException;
 public class StartRistoratore {
 
      /**
-     * <code>ioUtenti</code> è un'istanza della classe IOUtenti che
-     * permette di usare le funzionalità per la gestione degli utenti.
+     * <code>ioUtenti</code> &egrave; un'istanza della classe IOUtenti che
+     * permette di usare le funzionalit&agrave; per la gestione degli utenti.
      * @see IOUtenti
      * <p>
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private IOUtenti ioUtenti = null;
 
     /**
-     * <code>panelStartRistoratore</code> è un pannello Swing che compone
+     * <code>panelStartRistoratore</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie la finestra di benvenuto
      * del lato ristoratore dell'applicazione
      * <p>
-     * è dichiarato <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     * &egrave; dichiarato <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
      */
 
     public JPanel panelStartRistoratore;
 
     /**
-     * <code>btnAccedi</code> è un bottone Swing che attiva la procedura
+     * <code>btnAccedi</code> &egrave; un bottone Swing che attiva la procedura
      * di inizializzazione di un ristoratore
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>btnIscriviti</code> è un bottone Swing che attiva la procedura
+     * <code>btnIscriviti</code> &egrave; un bottone Swing che attiva la procedura
      * di iscrizione alla piattaforma come ristoratore
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JButton btnAccedi;
     private JButton btnIscriviti;
 
     /**
-     * <code>lblEmail</code> è un'etichetta Swing dedicata al campo email
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblEmail</code> &egrave; un'etichetta Swing dedicata al campo email
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lblPassword</code> è un'etichetta Swing dedicata al campo password
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblPassword</code> &egrave; un'etichetta Swing dedicata al campo password
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JLabel lblEmail;
 
     /**
-     * <code>tfEmail</code> è un campo di testo Swing dedicato al campo email
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>tfEmail</code> &egrave; un campo di testo Swing dedicato al campo email
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>tfPassword</code> è un campo di testo Swing dedicato al campo password
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>tfPassword</code> &egrave; un campo di testo Swing dedicato al campo password
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JTextField tfEmail;
@@ -78,41 +78,41 @@ public class StartRistoratore {
     private JPasswordField tfPassword;
 
     /**
-     * <code>panelLogo</code> è un pannello Swing che compone
+     * <code>panelLogo</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie il logo dell'appicazione.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JPanel panelLogo;
 
     /**
-     * <code>registrazioneFrame</code> è una cornice Swing attivata nel momento nel
-     * quale è richiesta la registrazione di un ristoratore
+     * <code>registrazioneFrame</code> &egrave; una cornice Swing attivata nel momento nel
+     * quale &egrave; richiesta la registrazione di un ristoratore
      * @see RegistrazioneRistoratore
      * <p>
-     * è dichiarata <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
-     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
+     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      */
 
     public static JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione");
 
     /**
-     * <code>dashboardRistoratore</code> è una cornice Swing attivata nel momento nel
+     * <code>dashboardRistoratore</code> &egrave; una cornice Swing attivata nel momento nel
      * quale un ristoratore effettua l'accesso
      * @see DashboardRistoratori
      * <p>
-     * è dichiarata <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
-     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
+     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      */
 
     public static JFrame dashboardRistoratore = new JFrame("EatAdvisor Ristoratori - I miei ristoranti");
 
     /**
-     * <code>GraphicsDevice</code> è un oggetto grafico utilizzato per
+     * <code>GraphicsDevice</code> &egrave; un oggetto grafico utilizzato per
      * impostare lo schermo intero
      * <p>
-     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
      */
 
     static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0];
@@ -120,7 +120,7 @@ public class StartRistoratore {
     /**
      * Main della classe
      *
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      * essere sollevata durante l'esecuzione del programma
      */
 
@@ -169,11 +169,11 @@ public class StartRistoratore {
     }
 
     /**
-     * <code>createUIComponents</code> è una procedura per impostare la grafica
+     * <code>createUIComponents</code> &egrave; una procedura per impostare la grafica
      * quando viene caricato il frame
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
      *
-     * @throws IOException è un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
+     * @throws IOException &egrave; un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
      */
     private void createUIComponents() throws IOException {
         panelLogo = new JPanel();
@@ -183,10 +183,10 @@ public class StartRistoratore {
     }
 
     /**
-     * <code>openDashBoardRistoratori</code> è una procedura aprire il pannello
+     * <code>openDashBoardRistoratori</code> &egrave; una procedura aprire il pannello
      * dashboard quando un ristoratore effettua l'accesso
      * @see DashboardRistoratori
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore*
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore*
      */
 
     private void openDashBoardRistoratori() {

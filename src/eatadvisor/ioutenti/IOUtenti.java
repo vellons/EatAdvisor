@@ -4,17 +4,34 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
- * La classe IOUtenti permette...
+ * La classe IOUtenti permette di creare un middleware tra database e applicazioni
+ * per gestire le informazioni degli utenti.
  *
  * @author Alex Vellone
  */
 public class IOUtenti {
 
+    /**
+     * <code>FILE_UTENTI</code> &egrave; il percorso relativo del file sul quale sono salvate le informazioni degli utenti
+     * <p>
+     * &egrave; dichiarato <strong>final</strong> perch&egrave; difatto rappresenta una costante
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
+     */
     public static final String FILE_UTENTI = "data/Utenti.dati";
+
+    /**
+     * <code>utenti</code> &egrave; un ArrayList nel quale la classe esegue le operazioni base per
+     * manipolare la lista degli utenti
+     * <p>
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
     private ArrayList<Utente> utenti = new ArrayList<>();
 
     /**
-     * Costrutore della classe
+     * Costrutore della classe, che una volta istanziata preleva automaticamente tutte le informazioni dal file
+     *
+     * @throws Exception &egrave; sollevara quando si verificano problemi di lettura sul file
      */
     public IOUtenti() throws Exception {
         prelevaDaFile();
@@ -28,10 +45,9 @@ public class IOUtenti {
     }
 
     /**
-     * @param id &grave;
-     * @return l'id degli utenti
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
-     *                     essere sollevata durante l'esecuzione del programma
+     * @param id &egrave; l'id dell'utente da cercaare
+     * @return l'oggetto utente trovato
+     * @throws Exception &egrave; sollevata per informare che l'utente cercato non &egrave; stato trovato
      */
     public Utente getUtenteById(int id) throws Exception {
         prelevaDaFile();
@@ -44,8 +60,9 @@ public class IOUtenti {
     }
 
     /**
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
-     *                     essere sollevata durante l'esecuzione del programma
+     * Preleva tutte le informazioni salvate sui file e le salva nell'ArrayList interno
+     *
+     * @throws Exception &egrave; sollevara quando si verificano problemi di lettura sul file
      */
     public void prelevaDaFile() throws Exception {
         // Prendo tutti gli utenti salvati nel file e li carico all'interno di ArrayList<Utente>
@@ -64,8 +81,9 @@ public class IOUtenti {
     }
 
     /**
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
-     *                     essere sollevata durante l'esecuzione del programma
+     * Salva le informazini presenti nell'ArrayList interno sul file, sovrascrivendolo
+     *
+     * @throws Exception &egrave; sollevara quando si verificano problemi di accesso sul file
      */
     private void aggiornaSuFile() throws Exception {
         // Sovrascrive gli utenti esistenti nel file con quelli all'interno di ArrayList<Utente>
@@ -82,27 +100,29 @@ public class IOUtenti {
     }
 
     /**
-     * @param tipo              &grave; il tipo di utente
-     * @param email             &grave; l'email dell'utente
-     * @param nickname          &grave; il nickname dell'utente
-     * @param plaintextPassword &grave; la password dell'utente
-     * @param nome              &grave; il nome dell'utente
-     * @param cognome           &grave; il cognome dell'utente
-     * @param comune            &grave; il comune dell'utente
-     * @param siglaProvincia    &grave; la sigla della provincia dell'utente
-     * @return la creazione di un nuovo utente
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
-     *                     essere sollevata durante l'esecuzione del programma
+     * Crea un nuovo utente con le informazioni date
+     *
+     * @param tipo              &egrave; il tipo di utente
+     * @param email             &egrave; l'email dell'utente
+     * @param nickname          &egrave; il nickname dell'utente
+     * @param plaintextPassword &egrave; la password in chiaro dell'utente, verr&agrave; calcolata la firma prima di salvarla
+     * @param nome              &egrave; il nome dell'utente
+     * @param cognome           &egrave; il cognome dell'utente
+     * @param comune            &egrave; il comune dell'utente
+     * @param siglaProvincia    &egrave; la sigla della provincia dell'utente
+     * @return l'oggetto Utente creato
+     * @throws Exception &egrave; sollevara quando si verificano problemi di accesso sul file o
+     *                   alcune informazioni non sono univoche: tipo email o nickname
      */
     public Utente creaNuovoUtente(String tipo, String email, String nickname, String plaintextPassword,
                                   String nome, String cognome, String comune, String siglaProvincia) throws Exception {
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
-        filtraPerEmail(email); // Controllo se la email è già stata utilizzata
+        filtraPerEmail(email); // Controllo se la email &egrave; già stata utilizzata
         if (utenti.size() > 0) {
             throw new Exception("Email già utilizzata.");
         }
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
-        filtraPerNickname(nickname); // Controllo se il nickname è già stato utilizzato
+        filtraPerNickname(nickname); // Controllo se il nickname &egrave; già stato utilizzato
         if (utenti.size() > 0) {
             throw new Exception("Nickanme già utilizzato.");
         }
@@ -117,14 +137,16 @@ public class IOUtenti {
     }
 
     /**
-     * @param id             &grave; l'id dell'utente
-     * @param nome           &grave; il nome dell'utente
-     * @param cognome        &grave; il cognome dell'utente
-     * @param comune         &grave; il comune dell'utente
-     * @param siglaProvincia &grave; la sigla della provincia dell'utente
-     * @return le informazioni aggiornate di un utente
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
-     *                     essere sollevata durante l'esecuzione del programma
+     * Aggiorna le informazioni base di un utente
+     *
+     * @param id             &egrave; l'id dell'utente su cui voglio modificare le informazioni
+     * @param nome           &egrave; il nome dell'utente
+     * @param cognome        &egrave; il cognome dell'utente
+     * @param comune         &egrave; il comune dell'utente
+     * @param siglaProvincia &egrave; la sigla della provincia dell'utente
+     * @return l'oggetto utente aggiornato
+     * @throws Exception &egrave; sollevara quando si verificano problemi di accesso sul file o
+     *                   l'utente da aggiornare non &egrave; stato torvato
      */
     public Utente aggiornaUtenteById(int id, String nome, String cognome, String comune, String siglaProvincia)
             throws Exception {
@@ -151,12 +173,15 @@ public class IOUtenti {
     }
 
     /**
-     * @param id          &grave; l'id dell'utente
-     * @param oldPassword &grave; la vecchia password utilizzata dall'utente
-     *                    param newPassword    &grave; la nuova password utilizzata dall'utente
-     * @return la password aggiornata di un utente
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
-     *                     essere sollevata durante l'esecuzione del programma
+     * Aggiorna la password di un utente
+     *
+     * @param id          &egrave; l'id dell'utente su cui voglio cambiare la password
+     * @param oldPassword &egrave; la vecchia password utilizzata dall'utente
+     * @param newPassword &egrave; la nuova password utilizzata dall'utente
+     * @return l'oggetto utente aggiornato
+     * @throws Exception &egrave; sollevara quando si verificano problemi di accesso sul file o
+     *                   l'utente non ha inserito la vecchia password correttamente o
+     *                   le due password inserite sono uguali
      */
     public Utente aggiornaPasswordById(int id, String oldPassword, String newPassword) throws Exception {
         prelevaDaFile(); // Mi assicuro di avere nell'ArrayList tutti gli utenti
@@ -187,35 +212,39 @@ public class IOUtenti {
     }
 
 
+    /**
+     * Metodo per rimuovere dall'ArrayList intero gli utenti con tipo utente diverso da quello specificato
+     *
+     * @param filter filtro da applicare
+     */
     public void filtraPerTipo(String filter) {
         utenti.removeIf(utente -> !utente.getTipo().equals(filter));
     }
 
+    /**
+     * Metodo per rimuovere dall'ArrayList intero gli utenti con email diversa da quello specificata
+     *
+     * @param filter filtro da applicare
+     */
     public void filtraPerEmail(String filter) {
         utenti.removeIf(utente -> !utente.getEmail().equalsIgnoreCase(filter));
     }
 
+    /**
+     * Metodo per rimuovere dall'ArrayList intero gli utenti con password diversa da quello specificata
+     *
+     * @param filter filtro da applicare
+     */
     public void filtraPerPassword(String filter) {
         utenti.removeIf(utente -> !utente.getHashPassword().equals(Sha1.sha1(filter)));
     }
 
+    /**
+     * Metodo per rimuovere dall'ArrayList intero gli utenti con nickname diverso da quello specificato
+     *
+     * @param filter filtro da applicare
+     */
     public void filtraPerNickname(String filter) {
         utenti.removeIf(utente -> !utente.getNickname().equals(filter));
-    }
-
-    public void filtraPerNome(String filter) {
-        utenti.removeIf(utente -> !utente.getNome().toLowerCase().contains(filter.toLowerCase()));
-    }
-
-    public void filtraPerCognome(String filter) {
-        utenti.removeIf(utente -> !utente.getCognome().toLowerCase().contains(filter.toLowerCase()));
-    }
-
-    public void filtraPerComune(String filter) {
-        utenti.removeIf(utente -> !utente.getComune().equalsIgnoreCase(filter));
-    }
-
-    public void filtraPerSiglaProvincia(String filter) {
-        utenti.removeIf(utente -> !utente.getSiglaProvincia().equalsIgnoreCase(filter));
     }
 }

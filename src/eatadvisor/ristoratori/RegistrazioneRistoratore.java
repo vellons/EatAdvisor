@@ -21,73 +21,73 @@ import java.util.Objects;
 public class RegistrazioneRistoratore {
 
     /**
-     * <code>ioUtenti</code> è un'istanza della classe IOUtenti che
-     * permette di usare le funzionalità per la gestione degli utenti.
+     * <code>ioUtenti</code> &egrave; un'istanza della classe IOUtenti che
+     * permette di usare le funzionalit&agrave; per la gestione degli utenti.
      * @see IOUtenti
      * <p>
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private IOUtenti ioUtenti = null;
 
     /**
-     * <code>panelRegistrazioneRistoratore</code> è un pannello Swing che compone
+     * <code>panelRegistrazioneRistoratore</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie la finestra di registrazione di
      * un utente ristoratore
      * <p>
-     * è dichiarato <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     * &egrave; dichiarato <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
      */
 
     public JPanel panelRegistrazioneRistoratore;
 
     /**
-     * <code>btnIscriviti</code> è un bottone Swing che attiva la procedura
+     * <code>btnIscriviti</code> &egrave; un bottone Swing che attiva la procedura
      * di registrazione come ristoratore
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
     */
 
     private JButton btnIscriviti;
 
     /**
-     * <code>lblNome</code> è un'etichetta Swing dedicata al campo nome
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblNome</code> &egrave; un'etichetta Swing dedicata al campo nome
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lblPassword</code> è un'etichetta Swing dedicata al campo password
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblPassword</code> &egrave; un'etichetta Swing dedicata al campo password
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lblCognome</code> è un'etichetta Swing dedicata al campo cognome
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblCognome</code> &egrave; un'etichetta Swing dedicata al campo cognome
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lblComune</code> è un'etichetta Swing dedicata al campo comune
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblComune</code> &egrave; un'etichetta Swing dedicata al campo comune
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lblSiglaProvincia</code> è un'etichetta Swing dedicata al campo sigla provincia
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblSiglaProvincia</code> &egrave; un'etichetta Swing dedicata al campo sigla provincia
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lblEmail</code> è un'etichetta Swing dedicata al campo email
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblEmail</code> &egrave; un'etichetta Swing dedicata al campo email
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JLabel lblPassword;
 
     /**
-     * <code>tfEmail</code> è un campo di testo Swing dedicato al campo email
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>tfEmail</code> &egrave; un campo di testo Swing dedicato al campo email
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>tfPassword</code> è un campo di testo Swing dedicato al campo password
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>tfPassword</code> &egrave; un campo di testo Swing dedicato al campo password
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>tfNome</code> è un campo di testo Swing dedicato al campo nome
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>tfNome</code> &egrave; un campo di testo Swing dedicato al campo nome
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>tfCognome</code> è un campo di testo Swing dedicato al campo cognome
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>tfCognome</code> &egrave; un campo di testo Swing dedicato al campo cognome
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>tfComune</code> è un campo di testo Swing dedicato al campo comune
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>tfComune</code> &egrave; un campo di testo Swing dedicato al campo comune
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>tfSiglaProvincia</code> è un campo di testo Swing dedicato al campo sigla provincia
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>tfSiglaProvincia</code> &egrave; un campo di testo Swing dedicato al campo sigla provincia
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JPasswordField tfPassword;
@@ -103,17 +103,17 @@ public class RegistrazioneRistoratore {
     private JTextField tfEmail;
 
     /**
-     * <code>panelLogo</code> è un pannello Swing che compone
+     * <code>panelLogo</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie il logo dell'applicazione
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JPanel panelLogo;
 
     /**
-     * <code>lblErrors</code> è un'etichetta Swing dedicata al campo di controllo errori
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblErrors</code> &egrave; un'etichetta Swing dedicata al campo di controllo errori
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JLabel lblErrors;
@@ -121,7 +121,7 @@ public class RegistrazioneRistoratore {
     /**
      * Main della classe
      *
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      * essere sollevata durante l'esecuzione del programma
      */
 
@@ -132,7 +132,7 @@ public class RegistrazioneRistoratore {
             public void actionPerformed(ActionEvent e) {
                 String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
                 if (!getTfEmail().matches(EMAIL_REGEX)) {
-                    JOptionPane.showMessageDialog(null, "L'email inserita non è valida." +
+                    JOptionPane.showMessageDialog(null, "L'email inserita non &egrave; valida." +
                             "\nRiprovare", "Attenzione", JOptionPane.ERROR_MESSAGE);
                 } else {
                     if (checkAllInputs()) {
@@ -150,15 +150,15 @@ public class RegistrazioneRistoratore {
                             }
                         } catch (Exception exception) {
                             if (Objects.equals(exception.getMessage(), "Email già utilizzata.")) {
-                                JOptionPane.showMessageDialog(null, "Questa email è già stata utilizzata",
+                                JOptionPane.showMessageDialog(null, "Questa email &egrave; già stata utilizzata",
                                         "Attenzione", JOptionPane.PLAIN_MESSAGE);
                                 tfEmail.setText("");
                             }
                             else if (Objects.equals(exception.getMessage(), "Nickanme già utilizzato.")) { // Impossibile per il risotratore in teoria
-                                JOptionPane.showMessageDialog(null, "Questo nickname è già stato utilizzato",
+                                JOptionPane.showMessageDialog(null, "Questo nickname &egrave; già stato utilizzato",
                                         "Attenzione", JOptionPane.PLAIN_MESSAGE);
                             } else {
-                                JOptionPane.showMessageDialog(null, "C'è stato un problema. Prova a riavviare l'app",
+                                JOptionPane.showMessageDialog(null, "C'&egrave; stato un problema. Prova a riavviare l'app",
                                         "Attenzione", JOptionPane.PLAIN_MESSAGE);
                             }
                         }
@@ -175,8 +175,8 @@ public class RegistrazioneRistoratore {
     // Metodi GETTERS
 
     /**
-     * <code>getTfPassword</code> è un metodo getter
-     * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
+     * <code>getTfPassword</code> &egrave; un metodo getter
+     * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
      * @return il valore della password dal campo di testo
      */
 
@@ -185,8 +185,8 @@ public class RegistrazioneRistoratore {
     }
 
     /**
-     * <code>getTfNome</code> è un metodo getter
-     * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
+     * <code>getTfNome</code> &egrave; un metodo getter
+     * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
      * @return il valore del nome dal campo di testo
      */
 
@@ -195,8 +195,8 @@ public class RegistrazioneRistoratore {
     }
 
     /**
-     * <code>getTfCognome</code> è un metodo getter
-     * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
+     * <code>getTfCognome</code> &egrave; un metodo getter
+     * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
      * @return il valore del cognome dal campo di testo
      */
 
@@ -205,8 +205,8 @@ public class RegistrazioneRistoratore {
     }
 
     /**
-     * <code>getTfComune</code> è un metodo getter
-     * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
+     * <code>getTfComune</code> &egrave; un metodo getter
+     * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
      * @return il valore del comune dal campo di testo
      */
 
@@ -215,8 +215,8 @@ public class RegistrazioneRistoratore {
     }
 
     /**
-     * <code>getTfSiglaProvincia</code> è un metodo getter
-     * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
+     * <code>getTfSiglaProvincia</code> &egrave; un metodo getter
+     * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
      * @return il valore della sigla provincia dal campo di testo
      */
 
@@ -225,8 +225,8 @@ public class RegistrazioneRistoratore {
     }
 
     /**
-     * <code>getTfPassword</code> è un metodo getter
-     * è dichiarato <strong>public</strong> in quanto il metodo è utilizzabile all'esterno della classe
+     * <code>getTfPassword</code> &egrave; un metodo getter
+     * &egrave; dichiarato <strong>public</strong> in quanto il metodo &egrave; utilizzabile all'esterno della classe
      * @return il valore dell'email dal campo di testo
      */
 
@@ -235,15 +235,15 @@ public class RegistrazioneRistoratore {
     }
 
     /**
-     * <code>checkAllInputs</code> è un metodo per controllare il contenuto dei textfield
-     * è dichiarato <strong>private</strong> in quanto il metodo è utilizzabile all'interno della classe
+     * <code>checkAllInputs</code> &egrave; un metodo per controllare il contenuto dei textfield
+     * &egrave; dichiarato <strong>private</strong> in quanto il metodo &egrave; utilizzabile all'interno della classe
      * @return valore booleano che indica se sono stati inseriti i dati in tutti i textfield
      */
 
     private boolean checkAllInputs() {
         boolean allFieldsValid = true;  // Tramite una variabile booleana, verifico se tutti i campi siano completi
 
-        allFieldsValid &= checkInput(getTfNome(), tfNome); // Per ogni TextField, verifico se è diverso da vuoto
+        allFieldsValid &= checkInput(getTfNome(), tfNome); // Per ogni TextField, verifico se &egrave; diverso da vuoto
         allFieldsValid &= checkInput(getTfCognome(), tfCognome);
         allFieldsValid &= checkInput(getTfComune(), tfComune);
         allFieldsValid &= checkInput(getTfSiglaProvincia(), tfSiglaProvincia);
@@ -254,11 +254,11 @@ public class RegistrazioneRistoratore {
     }
 
     /**
-     * <code>checkInput</code> è un metodo per controllare l'input di un textfield
-     * è dichiarato <strong>private</strong> in quanto il metodo è utilizzabile all'interno della classe
-     * @param input è una stringa rappresentante il contenuto del campo da analizzare
-     * @param textField è il textfield di riferimento dell'input
-     * @return valore booleano che indica se il dato è inserito nel textfield
+     * <code>checkInput</code> &egrave; un metodo per controllare l'input di un textfield
+     * &egrave; dichiarato <strong>private</strong> in quanto il metodo &egrave; utilizzabile all'interno della classe
+     * @param input &egrave; una stringa rappresentante il contenuto del campo da analizzare
+     * @param textField &egrave; il textfield di riferimento dell'input
+     * @return valore booleano che indica se il dato &egrave; inserito nel textfield
      */
 
     private boolean checkInput(String input, JTextField textField) { // Funzione per la verifica del textfield
@@ -274,11 +274,11 @@ public class RegistrazioneRistoratore {
     }
 
     /**
-     * <code>createUIComponents</code> è una procedura per impostare la grafica
+     * <code>createUIComponents</code> &egrave; una procedura per impostare la grafica
      * quando viene caricato il frame
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
      *
-     * @throws IOException è un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
+     * @throws IOException &egrave; un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
      */
 
     private void createUIComponents() throws IOException {

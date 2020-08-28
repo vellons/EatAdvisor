@@ -7,36 +7,37 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
- * La classe BatchCreaRistoranti permette la creazione dei ristoranti, aggiungendo anche le
- * relative recensioni
+ * Questa classe viene usata esclusivamente per test o per ripristinare il contenuto del database.
+ * La classe BatchCreaRistoranti permette la creazione dei ristoranti, aggiungendo anche le relative recensioni.
  *
  * @author Alex Vellone
  */
 public class BatchCreaRistoranti {
 
     /**
-     * <code>TEST_RISTORANTI</code> è un valore che rappresenta il numero di ristoranti.
+     * <code>TEST_RISTORANTI</code> &egrave; un valore che rappresenta il numero di ristoranti da creare.
      * <p>
-     * è dichiarato <strong>final</strong> perchè difatto rappresenta una costante
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     * &egrave; dichiarato <strong>final</strong> perch&egrave; difatto rappresenta una costante
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
      */
     final private static int TEST_RISTORANTI = 10;
+
     /**
-     * <code>TEST_RECENSIONI_PER_RISTORANTE</code> è un valore che rappresenta il numero di recensioni
-     * per ristorante.
+     * <code>TEST_RECENSIONI_PER_RISTORANTE</code> &egrave; un valore che rappresenta il numero di recensioni
+     * per ristorante da creare.
      * <p>
-     * è dichiarato <strong>final</strong> perchè difatto rappresenta una costante
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     * &egrave; dichiarato <strong>final</strong> perch&egrave; difatto rappresenta una costante
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
      */
     final private static int TEST_RECENSIONI_PER_RISTORANTE = 8;
 
     /**
      * Main della classe
      *
-     * @param args è nome dell'array di stringhe
-     * @throws IOException è un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
+     * @param args &egrave; l'array di parametri passati durante l'avvio del programma
+     * @throws IOException &egrave; un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
      */
     public static void main(String[] args) throws IOException {
         ArrayList<Ristorante> ristoranti = new ArrayList<>();
@@ -46,7 +47,7 @@ public class BatchCreaRistoranti {
                 "Buono ma non eccellente, ho dato 4 stelle",
                 "Uno schifo... sicuramente non ci tornerò. Prezzi carissimi e personale scortese",
                 "Cena fantastica, ristorante TOP! Sicuramente ci tornerò",
-                "Nel complesso il cibo era ok, però ho dato 3 stelle perchè ci hanno servito dopo più di un'ora...",
+                "Nel complesso il cibo era ok, però ho dato 3 stelle perch&egrave; ci hanno servito dopo più di un'ora...",
                 "Ristorante carino ma forse un pelo caro. Comunque lo consiglio",
                 "Ristorante bellissimo, camerieri top e prezzi onesti!"
         };
@@ -64,7 +65,7 @@ public class BatchCreaRistoranti {
                     "https://pizzabuona.it"
             );
             for (int j = 0; j < TEST_RECENSIONI_PER_RISTORANTE; j++) {
-                rist.aggiungiRecensione(new Recensione(TEST_RISTORANTI + 1  + j, recensioneValutazione[(i + j) % 6], recensioneTesto[(i + j) % 6]));
+                rist.aggiungiRecensione(new Recensione(TEST_RISTORANTI + 1 + j, recensioneValutazione[(i + j) % 6], recensioneTesto[(i + j) % 6]));
             }
             ristoranti.add(rist);
             System.out.println(rist.toString());

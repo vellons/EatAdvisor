@@ -27,7 +27,7 @@ public class DashboardRistoranti extends JFrame {
 
     public DashboardRistoranti(String filtroNome, String filtroComune, String filtroTipologia) throws Exception {
         // Prendo i valori dei 3 filtri precedenti e li popolo all'interno dei filtri
-        // Questo succede perchè faccio il reload di questo oggetto
+        // Questo succede perch&egrave; faccio il reload di questo oggetto
         initialFiltroNome = filtroNome;
         initialFiltroComune = filtroComune;
         initialFiltroTipologia = filtroTipologia;

@@ -24,37 +24,37 @@ import java.io.IOException;
 public class StartClienti {
 
     /**
-     * <code>ioUtenti</code> è un'istanza della classe IOUtenti che
-     * permette di usare le funzionalità per la gestione degli utenti.
+     * <code>ioUtenti</code> &egrave; un'istanza della classe IOUtenti che
+     * permette di usare le funzionalit&agrave; per la gestione degli utenti.
      * @see IOUtenti
      * <p>
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private IOUtenti ioUtenti = null;
 
     /**
-     * <code>panelStartClienti</code> è un pannello Swing che compone
+     * <code>panelStartClienti</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie la finestra di benvenuto
      * del lato cliente dell'applicazione
      * <p>
-     * è dichiarato <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     * &egrave; dichiarato <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
      */
 
     public JPanel panelStartClienti;
 
     /**
-     * <code>btnAccedi</code> è un bottone Swing che attiva la procedura
+     * <code>btnAccedi</code> &egrave; un bottone Swing che attiva la procedura
      * di inizializzazione di un cliente
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>btnIscriviti</code> è un bottone Swing che attiva la procedura
+     * <code>btnIscriviti</code> &egrave; un bottone Swing che attiva la procedura
      * di iscrizione alla piattaforma come cliente
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      <p>
-     * <code>btnNoLogin</code> è un bottone Swing che attiva la procedura
+     * <code>btnNoLogin</code> &egrave; un bottone Swing che attiva la procedura
      * di iscrizione alla piattaforma come utente non registrato
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JButton btnAccedi;
@@ -62,63 +62,63 @@ public class StartClienti {
     private JButton btnNoLogin;
 
     /**
-     * <code>tfNickname</code> è un campo di testo Swing dedicato al campo nickname
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>tfNickname</code> &egrave; un campo di testo Swing dedicato al campo nickname
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>tfPassword</code> è un campo di testo Swing dedicato al campo password
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>tfPassword</code> &egrave; un campo di testo Swing dedicato al campo password
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JTextField tfNickname;
     private JPasswordField tfPassword;
 
     /**
-     * <code>lblNickname</code> è un'etichetta Swing dedicata al campo nickname
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblNickname</code> &egrave; un'etichetta Swing dedicata al campo nickname
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lblPassword</code> è un'etichetta Swing dedicata al campo password
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblPassword</code> &egrave; un'etichetta Swing dedicata al campo password
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JLabel lblPassword;
     private JLabel lblNickname;
 
     /**
-     * <code>panelLogo</code> è un pannello Swing che compone
+     * <code>panelLogo</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie il logo dell'appicazione.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JPanel panelLogo;
 
     /**
-     * <code>registrazioneFrame</code> è una cornice Swing attivata nel momento nel
-     * quale è richiesta la registrazione di un cliente
+     * <code>registrazioneFrame</code> &egrave; una cornice Swing attivata nel momento nel
+     * quale &egrave; richiesta la registrazione di un cliente
      * @see RegistrazioneCliente
      * <p>
-     * è dichiarata <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
-     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
+     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      */
 
     public static JFrame registrazioneFrame = new JFrame("EatAdvisor Clienti - Registrazione");
 
     /**
-     * <code>dashboardRistoranti</code> è una cornice Swing attivata nel momento nel
+     * <code>dashboardRistoranti</code> &egrave; una cornice Swing attivata nel momento nel
      * quale un cliente effettua l'accesso
      * @see DashboardRistoranti
      * <p>
-     * è dichiarata <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
-     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
+     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      */
 
     public static JFrame dashboardRistoranti = new JFrame("EatAdvisor Clienti - Lista ristoranti");
 
     /**
-     * <code>GraphicsDevice</code> è un oggetto grafico utilizzato per
+     * <code>GraphicsDevice</code> &egrave; un oggetto grafico utilizzato per
      * impostare lo schermo intero
      * <p>
-     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
      */
 
     static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0]; // Usato per mettere a tutto schermo
@@ -126,7 +126,7 @@ public class StartClienti {
     /**
      * Main della classe
      *
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      * essere sollevata durante l'esecuzione del programma
      */
 
@@ -183,11 +183,11 @@ public class StartClienti {
     }
 
     /**
-     * <code>createUIComponents</code> è una procedura per impostare la grafica
+     * <code>createUIComponents</code> &egrave; una procedura per impostare la grafica
      * quando viene caricato il frame
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
      *
-     * @throws IOException è un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
+     * @throws IOException &egrave; un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
      */
 
     private void createUIComponents() throws IOException {
@@ -198,10 +198,10 @@ public class StartClienti {
     }
 
     /**
-     * <code>openDashBoardClienti</code> è una procedura aprire il pannello
+     * <code>openDashBoardClienti</code> &egrave; una procedura aprire il pannello
      * dashboard quando un cliente effettua l'accesso
      * @see DashboardRistoranti
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore*
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore*
      */
 
     private void openDashBoardClienti() {

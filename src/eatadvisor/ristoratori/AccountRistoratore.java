@@ -30,7 +30,7 @@ public class AccountRistoratore { //Contiene il JPanel principale
     IOUtenti aggiornaRistoratori = null;
 
     public AccountRistoratore() { //Modifica
-        setAllTextField(); // "settaggio" iniziale dei textfield (da Manuel questo è fondamentale!!)
+        setAllTextField(); // "settaggio" iniziale dei textfield (da Manuel questo &egrave; fondamentale!!)
         btnChangeAccountRistoratore.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -119,7 +119,7 @@ public class AccountRistoratore { //Contiene il JPanel principale
 
         boolean allFieldsValid = true; //Tramite una variabile booleana, verifico se tutti i campi siano stati completati
 
-        allFieldsValid &= checkInput(tfNome.getText()); //Per ogni TextField, verifico se è diverso da vuoto
+        allFieldsValid &= checkInput(tfNome.getText()); //Per ogni TextField, verifico se &egrave; diverso da vuoto
         allFieldsValid &= checkInput(tfCognome.getText());
         allFieldsValid &= checkInput((tfComune.getText()));
         allFieldsValid &= checkInput(tfSiglaProvincia.getText());
@@ -131,7 +131,7 @@ public class AccountRistoratore { //Contiene il JPanel principale
         boolean res;
         String tmp = "";
         tmp += input;
-        if (tmp.equals("")) { //Se il campo è vuoto, visualizzo una scritta
+        if (tmp.equals("")) { //Se il campo &egrave; vuoto, visualizzo una scritta
             res = false;
         } else {
             res = true;

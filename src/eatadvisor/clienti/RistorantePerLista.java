@@ -18,39 +18,39 @@ import java.text.DecimalFormat;
 public class RistorantePerLista extends JPanel {
 
     /**
-     * <code>dettaglioFrame</code> è una cornice Swing attivata nel momento nel
+     * <code>dettaglioFrame</code> &egrave; una cornice Swing attivata nel momento nel
      * quale si vuole visualizzare le informazioni dettagliate di un singolo
      * ristorante
      * @see DettaglioRistorante
      * <p>
-     * è dichiarata <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
-     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
+     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      */
 
     public static JFrame dettaglioFrame = new JFrame("EatAdvisor Cliente - Dettaglio ristorante");
 
     /**
-     * <code>panelRistorantePerLista</code> è un pannello Swing che compone
+     * <code>panelRistorantePerLista</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie uno dei singoli ristoranti
      * caricati sulla dashboard
      * <p>
-     * è dichiarato <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     * &egrave; dichiarato <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
      */
 
     public JPanel panelRistorantePerLista;
 
     /**
-     * <code>lblNome</code> è un'etichetta Swing dedicata al campo nome
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblNome</code> &egrave; un'etichetta Swing dedicata al campo nome
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lblIndirizzo</code> è un'etichetta Swing dedicata al campo indirizzo
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblIndirizzo</code> &egrave; un'etichetta Swing dedicata al campo indirizzo
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lblStella</code> è un'etichetta Swing dedicata al campo stelle
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblStella</code> &egrave; un'etichetta Swing dedicata al campo stelle
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lblValutazioni</code> è un'etichetta Swing dedicata al campo valutazioni
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblValutazioni</code> &egrave; un'etichetta Swing dedicata al campo valutazioni
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JLabel lblNome;
@@ -59,16 +59,16 @@ public class RistorantePerLista extends JPanel {
     private JLabel lblValutazioni;
 
     /**
-     * <code>btnDettaglio</code> è un bottone Swing che attiva visualizzazione
+     * <code>btnDettaglio</code> &egrave; un bottone Swing che attiva visualizzazione
      * delle informazioni dettagliate di un ristorante a scelta
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JButton btnDettaglio;
 
     /**
-     * <code>lblTipologia</code> è un'etichetta Swing dedicata al campo tipologia
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lblTipologia</code> &egrave; un'etichetta Swing dedicata al campo tipologia
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JLabel lblTipologia;

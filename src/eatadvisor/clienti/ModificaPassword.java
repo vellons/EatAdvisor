@@ -35,19 +35,19 @@ public class ModificaPassword {
     /**
      * <code>tfVecchiaPassword</code> &egrave; un campo di testo Swing dedicato al campo vecchia password
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
+     */
+
+    private JPasswordField tfVecchiaPassword;
+
+    /**
      * <code>tfNuovaPassword</code> &egrave; un campo di testo Swing dedicato al campo nuova password
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
-    private JPasswordField tfVecchiaPassword;
     private JPasswordField tfNuovaPassword;
 
     /**
      * <code>lbVecchiaPassword</code> &egrave; un'etichetta Swing dedicata al campo vecchia password
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lbNuovaPassword</code> &egrave; un'etichetta Swing dedicata al campo nuova password
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
@@ -60,6 +60,12 @@ public class ModificaPassword {
      */
 
     private JButton btnCambiaPassword;
+
+    /**
+     * <code>lbNuovaPassword</code> &egrave; un'etichetta Swing dedicata al campo nuova password
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lbNuovaPassword;
 
     /**

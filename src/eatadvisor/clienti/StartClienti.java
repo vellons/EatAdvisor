@@ -46,40 +46,52 @@ public class StartClienti {
      * <code>btnAccedi</code> &egrave; un bottone Swing che attiva la procedura
      * di inizializzazione di un cliente
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
+     */
+
+    private JButton btnAccedi;
+
+    /**
      * <code>btnIscriviti</code> &egrave; un bottone Swing che attiva la procedura
      * di iscrizione alla piattaforma come cliente
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
+     */
+
+    private JButton btnIscriviti;
+
+    /**
      * <code>btnNoLogin</code> &egrave; un bottone Swing che attiva la procedura
      * di iscrizione alla piattaforma come utente non registrato
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
-    private JButton btnAccedi;
-    private JButton btnIscriviti;
     private JButton btnNoLogin;
 
     /**
      * <code>tfNickname</code> &egrave; un campo di testo Swing dedicato al campo nickname
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
+     */
+
+    private JTextField tfNickname;
+
+    /**
      * <code>tfPassword</code> &egrave; un campo di testo Swing dedicato al campo password
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
-    private JTextField tfNickname;
     private JPasswordField tfPassword;
 
     /**
-     * <code>lblNickname</code> &egrave; un'etichetta Swing dedicata al campo nickname
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
      * <code>lblPassword</code> &egrave; un'etichetta Swing dedicata al campo password
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JLabel lblPassword;
+
+    /**
+     * <code>lblNickname</code> &egrave; un'etichetta Swing dedicata al campo nickname
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lblNickname;
 
     /**

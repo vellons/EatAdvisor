@@ -38,16 +38,22 @@ public class RecensioniPerRistorante {
     /**
      * <code>lbNickname</code> &egrave; un'etichetta Swing dedicata al campo nickname
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
+     */
+
+    private JLabel lbNickname;
+
+    /**
      * <code>lbRate</code> &egrave; un'etichetta Swing dedicata al campo del valore della recensione
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
+     */
+
+    private JLabel lbRate;
+
+    /**
      * <code>txtRecensione</code> &egrave; un'area di testo Swing dedicata al campo recensione
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
-    private JLabel lbNickname;
-    private JLabel lbRate;
     private JTextArea txtRecensione;
 
     /**

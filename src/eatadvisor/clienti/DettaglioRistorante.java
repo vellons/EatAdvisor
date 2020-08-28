@@ -59,47 +59,38 @@ public class DettaglioRistorante {
     private JPanel panelLogo;
 
     /**
-     * <code>lbIndirizzo</code> &egrave; un'etichetta Swing dedicata al campo indirizzo
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
      * <code>lbNomeRistorante</code> &egrave; un'etichetta Swing dedicata al campo nome ristorante
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lbValutazioni</code> &egrave; un'etichetta Swing dedicata al campo valutazioni
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lbNumeroRecensioni</code> &egrave; un'etichetta Swing dedicata al campo numero di recensioni
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lb5Stelle</code> &egrave; un'etichetta Swing dedicata al campo 5 stelle
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lb4Stelle</code> &egrave; un'etichetta Swing dedicata al campo 4 stelle
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lb3Stelle</code> &egrave; un'etichetta Swing dedicata al campo 3 stelle
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lb2Stelle</code> &egrave; un'etichetta Swing dedicata al campo 2 stelle
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lb1Stella</code> &egrave; un'etichetta Swing dedicata al campo 1 stella
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lbDescrizione</code> &egrave; un'etichetta Swing dedicata al campo descrizione
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lblSitoWeb</code> &egrave; un'etichetta Swing dedicata al campo sito web
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lblTipologia</code> &egrave; un'etichetta Swing dedicata al campo tipologia
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JLabel lbNomeRistorante;
+
+    /**
+     * <code>lbIndirizzo</code> &egrave; un'etichetta Swing dedicata al campo indirizzo
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lbIndirizzo;
+
+    /**
+     * <code>lbValutazioni</code> &egrave; un'etichetta Swing dedicata al campo valutazioni
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lbValutazioni;
+
+    /**
+     * <code>lbNumeroRecensioni</code> &egrave; un'etichetta Swing dedicata al campo numero di recensioni
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lbNumeroRecensioni;
+
+    /**
+     * <code>lbDescrizione</code> &egrave; un'etichetta Swing dedicata al campo descrizione
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lbDescrizione;
 
     /**
@@ -111,6 +102,12 @@ public class DettaglioRistorante {
      */
 
     private JPanel panelRecensioni;
+
+    /**
+     * <code>txtDescrizione</code> &egrave; un'area di testo Swing dedicata al campo descrizione
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JTextArea txtDescrizione;
 
     /**
@@ -120,10 +117,40 @@ public class DettaglioRistorante {
      */
 
     private JButton btnCreaRecensione;
+
+    /**
+     * <code>lb5Stelle</code> &egrave; un'etichetta Swing dedicata al campo 5 stelle
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lb5Stelle;
+
+    /**
+     * <code>lb4Stelle</code> &egrave; un'etichetta Swing dedicata al campo 4 stelle
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lb4Stelle;
+
+    /**
+     * <code>lb3Stelle</code> &egrave; un'etichetta Swing dedicata al campo 3 stelle
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lb3Stelle;
+
+    /**
+     * <code>lb2Stelle</code> &egrave; un'etichetta Swing dedicata al campo 2 stelle
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lb2Stelle;
+
+     /**
+      * <code>lb1Stella</code> &egrave; un'etichetta Swing dedicata al campo 1 stella
+      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+      */
+
     private JLabel lb1Stella;
 
     /**
@@ -135,6 +162,12 @@ public class DettaglioRistorante {
      */
 
     private JPanel panelNumValutazioni;
+
+    /**
+     * <code>lblTipologia</code> &egrave; un'etichetta Swing dedicata al campo tipologia
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lblTipologia;
 
     /**
@@ -154,6 +187,12 @@ public class DettaglioRistorante {
      */
 
     private JPanel JPanelRight;
+
+    /**
+     * <code>lblSitoWeb</code> &egrave; un'etichetta Swing dedicata al campo sito web
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lblSitoWeb;
 
     /**

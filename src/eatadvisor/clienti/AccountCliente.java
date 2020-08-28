@@ -22,14 +22,14 @@ public class AccountCliente {
     /**
      * <code>modifyPassword</code> rappresenta una finestra.
      * <p>
-     * &egrave; dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
-     * &egrave; dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     * &egrave; dichiarato <strong>public</strong> cos&igrave; da poter essere visibile anche alle altre classi
+     * &egrave; dichiarato <strong>static</strong> cos&igrave; da non doverlo istanziare creando un oggetto
      */
     public static JFrame modifyPassword = new JFrame("Cambio Password"); //Creazione della finestra
     /**
      * <code>panelAccountCliente</code> rappresenta un pannello.
      * <p>
-     * &egrave; dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
+     * &egrave; dichiarato <strong>public</strong> cos&igrave; da poter essere visibile anche alle altre classi
      */
     public JPanel panelAccountCliente;
     /**

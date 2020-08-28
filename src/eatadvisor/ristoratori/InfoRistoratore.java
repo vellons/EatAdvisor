@@ -16,19 +16,19 @@ public class InfoRistoratore {
     /**
      * <code>panelInfo</code> rappresenta un pannello.
      * <p>
-     * &egrave; dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
+     * &egrave; dichiarato <strong>public</strong> cos&igrave; da poter essere visibile anche alle altre classi
      */
     public JPanel panelInfo;
     /**
      * <code>panelLogo</code> rappresenta un pannello.
      * <p>
-     * &egrave; dichiarato <strong>private</strong> così da non poter essere visibile all'esterno della classe
+     * &egrave; dichiarato <strong>private</strong> cos&igrave; da non poter essere visibile all'esterno della classe
      */
     private JPanel panelLogo;
     /**
      * <code>lbVersione</code> rappresenta un etichetta.
      * <p>
-     * &egrave; dichiarato <strong>private</strong> così da non poter essere visibile all'esterno della classe
+     * &egrave; dichiarato <strong>private</strong> cos&igrave; da non poter essere visibile all'esterno della classe
      */
     private JLabel lbVersione;
 

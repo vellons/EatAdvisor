@@ -16,7 +16,7 @@ public class IOUtenti {
      * <p>
      * &egrave; dichiarato <strong>final</strong> perch&egrave; difatto rappresenta una costante
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
+     * &egrave; dichiarato <strong>static</strong> cos&igrave; da poterlo utlizzare senza istanziare l'oggetto
      */
     public static final String FILE_UTENTI = "data/Utenti.dati";
 

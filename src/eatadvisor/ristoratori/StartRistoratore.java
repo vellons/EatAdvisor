@@ -103,7 +103,7 @@ public class StartRistoratore {
      * @see RegistrazioneRistoratore
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
-     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * &egrave; dichiarata <strong>static</strong> cos&igrave; da non doverla istanziare creando un oggetto
      */
 
     public static JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione");
@@ -115,7 +115,7 @@ public class StartRistoratore {
      * @see DashboardRistoratori
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
-     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * &egrave; dichiarata <strong>static</strong> cos&igrave; da non doverla istanziare creando un oggetto
      */
 
     public static JFrame dashboardRistoratore = new JFrame("EatAdvisor Ristoratori - I miei ristoranti");
@@ -124,7 +124,7 @@ public class StartRistoratore {
      * <code>GraphicsDevice</code> &egrave; un oggetto grafico utilizzato per
      * impostare lo schermo intero
      * <p>
-     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
+     * &egrave; dichiarato <strong>static</strong> cos&igrave; da poterlo utlizzare senza istanziare l'oggetto
      */
 
     static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0];

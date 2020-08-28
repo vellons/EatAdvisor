@@ -68,7 +68,7 @@ public class DashboardRistoratori extends JFrame {
      * @see RegistrazioneRistorante
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
-     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * &egrave; dichiarata <strong>static</strong> cos&igrave; da non doverla istanziare creando un oggetto
      */
 
 

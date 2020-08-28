@@ -27,7 +27,7 @@ public class BatchLeggiRistoranti {
         int totaleRistoranti = ioEatAdvisor.getListaRistoranti().size();
 
         // Blocco di codice per applicare i filtri
-        //ioEatAdvisor.prelevaDaFile(); // Rilegge dal file, i filtri non sono più validi
+        //ioEatAdvisor.prelevaDaFile(); // Rilegge dal file, i filtri non sono pi&igrave; validi
         //ioEatAdvisor.filtraPerTipo("ITALIANO");
         //ioEatAdvisor.filtraPerNomeRistorante("PiZzA BuOnA");
         //ioEatAdvisor.filtraPerCitta("Verb");

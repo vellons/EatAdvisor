@@ -14,7 +14,7 @@ public class Indirizzo implements Serializable {
      * <p>
      * &egrave; dichiarato <strong>final</strong> perch&egrave; difatto rappresenta una costante
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
+     * &egrave; dichiarato <strong>static</strong> cos&igrave; da poterlo utlizzare senza istanziare l'oggetto
      * &egrave; dichiarato <strong>long</strong> permette di scrivere dati di lunghezza fino a 64 bit
      */
     private static final long serialVersionUID = -7527859265672246970L;

@@ -110,7 +110,7 @@ public class StartClienti {
      * @see RegistrazioneCliente
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
-     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * &egrave; dichiarata <strong>static</strong> cos&igrave; da non doverla istanziare creando un oggetto
      */
 
     public static JFrame registrazioneFrame = new JFrame("EatAdvisor Clienti - Registrazione");
@@ -122,7 +122,7 @@ public class StartClienti {
      * @see DashboardRistoranti
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
-     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * &egrave; dichiarata <strong>static</strong> cos&igrave; da non doverla istanziare creando un oggetto
      */
 
     public static JFrame dashboardRistoranti = new JFrame("EatAdvisor Clienti - Lista ristoranti");
@@ -131,7 +131,7 @@ public class StartClienti {
      * <code>GraphicsDevice</code> &egrave; un oggetto grafico utilizzato per
      * impostare lo schermo intero
      * <p>
-     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
+     * &egrave; dichiarato <strong>static</strong> cos&igrave; da poterlo utlizzare senza istanziare l'oggetto
      */
 
     static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0]; // Usato per mettere a tutto schermo

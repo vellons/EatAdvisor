@@ -14,7 +14,7 @@ public class Global {
      * saranno presenti le sue informazioni
      * <p>
      * &egrave; dichiarato <strong>public</strong> in quanto l'attributo &egrave; utilizzabile ovunque
-     * &egrave; dichiarato <strong>static</strong> così da poterla utlizzare senza istanziare l'oggetto
+     * &egrave; dichiarato <strong>static</strong> cos&igrave; da poterla utlizzare senza istanziare l'oggetto
      */
     public static Utente utenteLoggato = null;
 }

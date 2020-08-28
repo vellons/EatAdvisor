@@ -35,10 +35,10 @@ public class clienti {
      *
      * @param frame &egrave; il frame sul quale applicare le impostazioni
      *              &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
-     *              &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     *              &egrave; dichiarata <strong>static</strong> cos&igrave; da non doverla istanziare creando un oggetto
      * @throws ClassNotFoundException          se non trova la classe da caricare
      * @throws UnsupportedLookAndFeelException e le classi look and feel richieste non sono presenti sul sistema
-     * @throws InstantiationException          se per qualche motivo la classe non può essere istanziata
+     * @throws InstantiationException          se per qualche motivo la classe non pu&ograve; essere istanziata
      * @throws IllegalAccessException          quando si cerca di effettuare l'accesso ad un campo laddove non &egrave; possibile
      */
     public static void initUI(JFrame frame) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {

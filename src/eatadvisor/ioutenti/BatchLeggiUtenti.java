@@ -35,7 +35,7 @@ public class BatchLeggiUtenti {
         //ioUtenti.filtraPerTipo("CLIE");
         //ioUtenti.filtraPerComune("Verbania");
         //ioUtenti.filtraPerSiglaProvincia("VB");
-        //ioUtenti.prelevaDaFile(); // Rilegge dal file, i filtri non sono più validi
+        //ioUtenti.prelevaDaFile(); // Rilegge dal file, i filtri non sono pi&igrave; validi
 
         // Blocco di codice per stampare gli utenti
         for (Utente u : ioUtenti.getListaUtenti()) {

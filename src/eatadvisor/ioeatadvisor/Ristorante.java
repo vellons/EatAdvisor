@@ -15,7 +15,7 @@ public class Ristorante implements Serializable {
      * <code>serialVersionUID</code> &egrave; utlizzare per identificare l'oggetto nella classe Serializable.
      * <p>
      * &egrave; dichiarato <strong>final</strong> perch&egrave; difatto rappresenta una costante
-     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
+     * &egrave; dichiarato <strong>static</strong> cos&igrave; da poterlo utlizzare senza istanziare l'oggetto
      * &egrave; dichiarato <strong>long</strong> permette di scrivere dati di lunghezza fino a 64 bit
      */
     private static final long serialVersionUID = -5595856615790298488L;

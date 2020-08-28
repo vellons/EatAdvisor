@@ -16,7 +16,7 @@ public class DashboardRistoranti extends JFrame {
     /**
      * <code>panelDashboardRistoranti</code> rappresenta un pannello.
      * <p>
-     * &egrave; dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
+     * &egrave; dichiarato <strong>public</strong> cos&igrave; da poter essere visibile anche alle altre classi
      */
     public JPanel panelDashboardRistoranti;
     /**

@@ -36,7 +36,7 @@ public class DettaglioMioRistorante {
      * @see ModificaRistorante
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
-     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * &egrave; dichiarata <strong>static</strong> cos&igrave; da non doverla istanziare creando un oggetto
      */
 
     public static JFrame modificaFrame = new JFrame("EatAdvisor Ristoratori - Modifica Ristorante");
@@ -343,7 +343,7 @@ public class DettaglioMioRistorante {
 
         panelRecensioni = new JPanel();
         // Tutte le informazioni del ristorante mi sono già state passate,
-        // però se la pagina &egrave; stata refreshata dopo l'aggiunta di un commento devo aggiornare le info (recensioni)
+        // per&igrave; se la pagina &egrave; stata refreshata dopo l'aggiunta di un commento devo aggiornare le info (recensioni)
         // del ristorante che sto visualizzando nella schermata!
         IOEatAdvisor ioEatAdvisor = new IOEatAdvisor();
         this.ristorante = ioEatAdvisor.getRistoranteById(this.ristorante.getId());

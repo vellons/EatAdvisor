@@ -14,7 +14,7 @@ public class Recensione implements Serializable {
      * <p>
      * &egrave; dichiarato <strong>final</strong> perch&egrave; difatto rappresenta una costante
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
+     * &egrave; dichiarato <strong>static</strong> cos&igrave; da poterlo utlizzare senza istanziare l'oggetto
      * &egrave; dichiarato <strong>long</strong> permette di scrivere dati di lunghezza fino a 64 bit
      */
     private static final long serialVersionUID = 5702291095524603496L;
@@ -37,7 +37,7 @@ public class Recensione implements Serializable {
 
     /**
      * <code>commento</code> &egrave; il commento inserito insieme alla valutazione dell'utente
-     * Può essere di massimo 256 caratteri
+     * Pu&ograve; essere di massimo 256 caratteri
      * <p>
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * &egrave; dichiarato <strong>String</strong> permette di scrivere stringhe

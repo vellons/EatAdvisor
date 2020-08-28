@@ -19,7 +19,7 @@ public class BatchCreaRistoranti {
      * <p>
      * &egrave; dichiarato <strong>final</strong> perch&egrave; difatto rappresenta una costante
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
+     * &egrave; dichiarato <strong>static</strong> cos&igrave; da poterlo utlizzare senza istanziare l'oggetto
      */
     final private static int TEST_RISTORANTI = 10;
 
@@ -29,7 +29,7 @@ public class BatchCreaRistoranti {
      * <p>
      * &egrave; dichiarato <strong>final</strong> perch&egrave; difatto rappresenta una costante
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
+     * &egrave; dichiarato <strong>static</strong> cos&igrave; da poterlo utlizzare senza istanziare l'oggetto
      */
     final private static int TEST_RECENSIONI_PER_RISTORANTE = 8;
 
@@ -45,9 +45,9 @@ public class BatchCreaRistoranti {
         int[] recensioneValutazione = new int[]{4, 1, 5, 3, 4, 5};
         String[] recensioneTesto = new String[]{
                 "Buono ma non eccellente, ho dato 4 stelle",
-                "Uno schifo... sicuramente non ci tornerò. Prezzi carissimi e personale scortese",
-                "Cena fantastica, ristorante TOP! Sicuramente ci tornerò",
-                "Nel complesso il cibo era ok, però ho dato 3 stelle perch&egrave; ci hanno servito dopo più di un'ora...",
+                "Uno schifo... sicuramente non ci torner&igrave;. Prezzi carissimi e personale scortese",
+                "Cena fantastica, ristorante TOP! Sicuramente ci torner&igrave;",
+                "Nel complesso il cibo era ok, per&igrave; ho dato 3 stelle perch&egrave; ci hanno servito dopo pi&igrave; di un'ora...",
                 "Ristorante carino ma forse un pelo caro. Comunque lo consiglio",
                 "Ristorante bellissimo, camerieri top e prezzi onesti!"
         };

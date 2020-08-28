@@ -17,7 +17,7 @@ public class ristoratori {
      * quale &egrave; richiesto il login come ristoratore
      * <p>
      * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
-     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * &egrave; dichiarata <strong>static</strong> cos&igrave; da non doverla istanziare creando un oggetto
      */
     public static JFrame mainFrame = new JFrame("EatAdvisor Ristoratori - Login");
 
@@ -43,10 +43,10 @@ public class ristoratori {
      *
      * @param frame &egrave; il frame sul quale applicare le impostazioni
      *              &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
-     *              &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     *              &egrave; dichiarata <strong>static</strong> cos&igrave; da non doverla istanziare creando un oggetto
      * @throws ClassNotFoundException          se non trova la classe da caricare
      * @throws UnsupportedLookAndFeelException e le classi look and feel richieste non sono presenti sul sistema
-     * @throws InstantiationException          se per qualche motivo la classe non può essere istanziata
+     * @throws InstantiationException          se per qualche motivo la classe non pu&ograve; essere istanziata
      * @throws IllegalAccessException          quando si cerca di effettuare l'accesso ad un campo laddove non &egrave; possibile
      */
     public static void initUI(JFrame frame) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
@@ -78,12 +78,12 @@ public class ristoratori {
     }
 
     /**
-     * <code>setMenuAccount</code> &egrave; una procedura per aggiungere il menù
+     * <code>setMenuAccount</code> &egrave; una procedura per aggiungere il men&ugrave;
      * a tendina dell'account alla barra superiore
      *
-     * @param myMenuBar &egrave; la barra alla quale aggiungere il menù a tendina
+     * @param myMenuBar &egrave; la barra alla quale aggiungere il men&ugrave; a tendina
      *                  &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
-     *                  &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     *                  &egrave; dichiarata <strong>static</strong> cos&igrave; da non doverla istanziare creando un oggetto
      */
     private static void setMenuAccount(JMenuBar myMenuBar) { // Creazione del JMenu account
         MenuListener mLR = new MenuListener();
@@ -98,12 +98,12 @@ public class ristoratori {
     }
 
     /**
-     * <code>setMenuInfo</code> &egrave; una procedura per aggiungere il menù
+     * <code>setMenuInfo</code> &egrave; una procedura per aggiungere il men&ugrave;
      * a tendina delle info alla barra superiore
      *
-     * @param myMenuBar &egrave; la barra alla quale aggiungere il menù a tendina
+     * @param myMenuBar &egrave; la barra alla quale aggiungere il men&ugrave; a tendina
      *                  &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
-     *                  &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     *                  &egrave; dichiarata <strong>static</strong> cos&igrave; da non doverla istanziare creando un oggetto
      */
     private static void setMenuInfo(JMenuBar myMenuBar) { // Creazione del JMenu info
         MenuListener ml = new MenuListener();
@@ -116,11 +116,11 @@ public class ristoratori {
 
     /**
      * <code>closePreviousWindow</code> &egrave; una procedura per chiudere una
-     * finestra non più utilizzata
+     * finestra non pi&ugrave; utilizzata
      *
      * @param finestra &egrave; la finestra da chiudere
      *                 &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
-     *                 &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     *                 &egrave; dichiarata <strong>static</strong> cos&igrave; da non doverla istanziare creando un oggetto
      */
     public static void closePreviousWindow(JFrame finestra) {
         finestra.setVisible(false);
@@ -133,7 +133,7 @@ public class ristoratori {
      *
      * @param finestra &egrave; la finestra da ricaricare
      *                 &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
-     *                 &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     *                 &egrave; dichiarata <strong>static</strong> cos&igrave; da non doverla istanziare creando un oggetto
      * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      *                   essere sollevata durante l'esecuzione del programma
      */

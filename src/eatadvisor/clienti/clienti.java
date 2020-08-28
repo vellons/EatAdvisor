@@ -5,12 +5,11 @@ import eatadvisor.ioeatadvisor.Ristorante;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 
 /**
- * La classe clienti permette
+ * La classe clienti permette di avviare l'applicazione Swing dei clienti.
  *
- * @author
+ * @author Alex Vellone, Manuel Macaj, Mahdi Said, Silvio Pazienza
  */
 public class clienti {
     public static JFrame mainFrame = new JFrame("EatAdvisor Clienti - Login");
@@ -18,8 +17,8 @@ public class clienti {
     /**
      * Main della classe
      *
-     * @param args &egrave; nome dell'array di stringhe
-     * @throws IOException &egrave; un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
+     * @param args &egrave; l'array di parametri passati durante l'avvio del programma
+     * @throws Exception &egrave; un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
      */
     public static void main(String[] args) throws Exception {
         mainFrame.setContentPane(new StartClienti().panelStartClienti);
@@ -31,11 +30,16 @@ public class clienti {
     }
 
     /**
-     * @param frame contiene il riferimento della finestra principale
-     * @throws ClassNotFoundException          ???
-     * @throws UnsupportedLookAndFeelException ???
-     * @throws InstantiationException          ???
-     * @throws IllegalAccessException          ???
+     * <code>initUI</code> &egrave; una procedura per inizializzare l'interfaccia
+     * utente su una finestra e per finalizzarne le impostazioni
+     *
+     * @param frame &egrave; il frame sul quale applicare le impostazioni
+     *              &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     *              &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * @throws ClassNotFoundException          se non trova la classe da caricare
+     * @throws UnsupportedLookAndFeelException e le classi look and feel richieste non sono presenti sul sistema
+     * @throws InstantiationException          se per qualche motivo la classe non può essere istanziata
+     * @throws IllegalAccessException          quando si cerca di effettuare l'accesso ad un campo laddove non &egrave; possibile
      */
     public static void initUI(JFrame frame) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         // Queste impostazioni vengo applicate al frame passato
@@ -122,7 +126,7 @@ public class clienti {
     }
 
     /**
-     * @param dettaglioFrame ???
+     * @param dettaglioFrame il frame di dettaglio sul quale eseguire il reload
      * @param rist           rappresenta un ristorante
      * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      *                   essere sollevata durante l'esecuzione del programma

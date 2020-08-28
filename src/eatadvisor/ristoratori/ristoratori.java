@@ -6,10 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * La classe ristoratori permette di settare le impostazioni
- * della parte ristoranti e ristoratori dell'applicazione
+ * La classe ristoratori permette di avviare l'applicazione Swing dei ristoratori.
  *
- * @author
+ * @author Alex Vellone, Manuel Macaj, Mahdi Said, Silvio Pazienza
  */
 public class ristoratori {
 
@@ -25,7 +24,7 @@ public class ristoratori {
     /**
      * Main della classe
      *
-     * @param args &egrave; nome dell'array di stringhe
+     * @param args &egrave; l'array di parametri passati durante l'avvio del programma
      * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      *                   essere sollevata durante l'esecuzione del programma
      */

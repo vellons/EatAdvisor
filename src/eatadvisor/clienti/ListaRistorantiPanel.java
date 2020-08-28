@@ -9,11 +9,17 @@ import java.awt.*;
 import static javax.swing.BorderFactory.createEmptyBorder;
 
 /**
- * La classe ListaRistorantiPanel... ???
+ * La classe ListaRistorantiPanel serve per mostrare all'interno di un JPanel la lista di tutti i ristoranti
  *
  * @author Manuel Macaj
  */
 public class ListaRistorantiPanel extends JPanel {
+
+    /**
+     * <code>mainList</code> &egrave; un pannello Swing che contiene l'elenco dei ristoranti
+     * <p>
+     * &egrave; dichiarato <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
+     */
     public JPanel mainList;
 
     /**

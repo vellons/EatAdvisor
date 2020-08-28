@@ -18,6 +18,11 @@ import static javax.swing.BorderFactory.createEmptyBorder;
 
 public class ListaMieiRistorantiPanel extends JPanel {
 
+    /**
+     * <code>mainList</code> &egrave; un pannello Swing che contiene l'elenco dei ristoranti
+     * <p>
+     * &egrave; dichiarato <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
+     */
     public JPanel mainList;
 
     /**

@@ -16,7 +16,7 @@ import java.io.IOException;
  * cliente, oltre alla possibilità di modificare le informazioni del proprio account e
  * la propria password d'accesso
  *
- * @author Alex Vellone
+ * @author Manuel Macaj
  */
 public class AccountCliente {
     /**
@@ -233,14 +233,16 @@ public class AccountCliente {
         return allFieldsValid; // Restituisco il risultato booleano proveniente da CheckInput
     }
 
+
     /**
-     * @return un risultato booleano
+     * @param input stringa da controllare
+     * @return boolean per indicare se la stringa è vuota
      */
     private boolean checkInput(String input) { // Metodo per la verifica del textfield
         boolean res;
         String tmp = "";
         tmp += input;
-        // Se il campo e vuoto, visualizzo una scritta
+        // Se il campo è vuoto, visualizzo una scritta
         res = !tmp.equals("");
         return res;
     }

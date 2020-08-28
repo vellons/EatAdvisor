@@ -11,7 +11,7 @@ import static javax.swing.BorderFactory.createEmptyBorder;
 /**
  * La classe ListaRecensioniPanel permette di visualizzare la lista delle recensioni lasciate dagli utenti
  *
- * @author Alex Vellone
+ * @author Manuel Macaj
  */
 public class ListaRecensioniPanel extends JPanel {
     public JPanel mainList;

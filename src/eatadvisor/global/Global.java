@@ -6,7 +6,7 @@ import eatadvisor.ioutenti.Utente;
 /**
  * La classe Global permette di gestire le variabili statiche disponibili globalmente all'interno delle applicazioni.
  *
- * @author Alex Vellone
+ * @author Alex Vellone, Manuel Macaj
  */
 public class Global {
     /**

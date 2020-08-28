@@ -11,7 +11,7 @@ import static javax.swing.BorderFactory.createEmptyBorder;
 /**
  * La classe ListaRistorantiPanel... ???
  *
- * @author Alex Vellone
+ * @author Manuel Macaj
  */
 public class ListaRistorantiPanel extends JPanel {
     public JPanel mainList;

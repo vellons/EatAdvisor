@@ -8,9 +8,9 @@ import java.awt.*;
 import java.io.IOException;
 
 /**
- * La classe clienti permette... ???
+ * La classe clienti permette
  *
- * @author Alex Vellone
+ * @author
  */
 public class clienti {
     public static JFrame mainFrame = new JFrame("EatAdvisor Clienti - Login");

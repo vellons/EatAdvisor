@@ -10,7 +10,7 @@ import java.io.File;
 /**
  * La classe DashboardRistoranti permette l'utilizzo dei filtri sui ristoranti
  *
- * @author Alex Vellone
+ * @author Manuel Macaj
  */
 public class DashboardRistoranti extends JFrame {
     /**

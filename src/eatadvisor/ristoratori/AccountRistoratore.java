@@ -16,7 +16,7 @@ import java.io.IOException;
  * ristoratore, oltre alla possibilità di modificare le informazioni del proprio account e
  * la propria password d'accesso
  *
- * @author Alex Vellone
+ * @author Mahdi Said
  */
 public class AccountRistoratore { //Contiene il JPanel principale
     /**
@@ -220,7 +220,8 @@ public class AccountRistoratore { //Contiene il JPanel principale
     }
 
     /**
-     * @return un risultato booleano
+     * @param input stringa da controllare
+     * @return boolean per indicare se la stringa è vuota
      */
     private boolean checkInput(String input) { //Metodo per la verifica del textfield
         boolean res;

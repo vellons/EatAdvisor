@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 /**
  * La classe MenuListener definisce un listener per gli eventi di menu
  *
- * @author Alex Vellone
+ * @author Mahdi Said
  */
 
 public class MenuListener implements ActionListener {

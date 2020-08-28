@@ -225,7 +225,7 @@ public class AccountCliente {
     private boolean checkAllInputs() { // Metodo per la verifica di tutti i campi
         boolean allFieldsValid = true;  // Tramite una variabile booleana, verifico se tutti i campi siano completi
 
-        allFieldsValid &= checkInput(tfNome.getText()); // Per ogni TextField, verifico se è diverso da vuoto
+        allFieldsValid &= checkInput(tfNome.getText()); // Per ogni TextField, verifico se &egrave; diverso da vuoto
         allFieldsValid &= checkInput(tfCognome.getText());
         allFieldsValid &= checkInput(tfComune.getText());
         allFieldsValid &= checkInput(tfSiglaProvincia.getText());

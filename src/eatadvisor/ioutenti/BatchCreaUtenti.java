@@ -7,35 +7,36 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
- * La classe BatchCreaUtenti permette la creazione di due tipologie di utenti, ristoratori
- * e clienti.
+ * Questa classe viene usata esclusivamente per test o per ripristinare il contenuto del database.
+ * La classe BatchCreaUtenti permette la creazione di due tipologie di utenti: ristoratori e clienti.
  *
  * @author Alex Vellone
  */
 public class BatchCreaUtenti {
 
     /**
-     * <code>TEST_RIST</code> è un valore che rappresenta il numero di ristoratori.
+     * <code>TEST_RIST</code> &egrave; un valore che rappresenta il numero di utenti di tipo ristoratore da creare.
      * <p>
-     * è dichiarato <strong>final</strong> perchè difatto rappresenta una costante
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     * &egrave; dichiarato <strong>final</strong> perch&egrave; difatto rappresenta una costante
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
      */
     final private static int TEST_RIST = 10;
+
     /**
-     * <code>TEST_CLIE</code> è un valore che rappresenta il numero di clienti.
+     * <code>TEST_CLIE</code> &egrave; un valore che rappresenta il numero di utenti di tipo cliente da creare.
      * <p>
-     * è dichiarato <strong>final</strong> perchè difatto rappresenta una costante
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     * &egrave; dichiarato <strong>final</strong> perch&egrave; difatto rappresenta una costante
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
      */
     final private static int TEST_CLIE = 20;
 
     /**
      * Main della classe
-     * @param args è nome dell'array di stringhe
-     * @throws IOException è un eccezione che viene lanciata quando il programma non
-     * trova il file che si vuole utilizzare
+     *
+     * @param args &egrave; l'array di parametri passati durante l'avvio del programma
+     * @throws IOException &egrave; un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
      */
     public static void main(String[] args) throws IOException {
         ArrayList<Utente> utenti = new ArrayList<>();

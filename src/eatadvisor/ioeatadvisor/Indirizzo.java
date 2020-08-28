@@ -3,60 +3,65 @@ package eatadvisor.ioeatadvisor;
 import java.io.Serializable;
 
 /**
- * La classe Indirizzo permette
+ * La classe Indirizzo permette di salvare in modo corretto le informazioni di un indirizzo
  *
  * @author Alex Vellone
  */
 public class Indirizzo implements Serializable {
 
     /**
-     * <code>serialVersionUID</code> è .
+     * <code>serialVersionUID</code> &egrave; utlizzare per identificare l'oggetto nella classe Serializable.
      * <p>
-     * è dichiarato <strong>final</strong> perchè difatto rappresenta una costante
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
-     * è dichiarato <strong>long</strong> permette di scrivere dati di lunghezza fino a 64 bit
+     * &egrave; dichiarato <strong>final</strong> perch&egrave; difatto rappresenta una costante
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
+     * &egrave; dichiarato <strong>long</strong> permette di scrivere dati di lunghezza fino a 64 bit
      */
     private static final long serialVersionUID = -7527859265672246970L;
+
     /**
-     * <code>via</code> è .
+     * <code>via</code> &egrave; la via
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private String via;
+
     /**
-     * <code>civico</code> è .
+     * <code>civico</code> &egrave; il numero civico
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private String civico;
+
     /**
-     * <code>citta</code> è .
+     * <code>citta</code> &egrave; la citt&agrave;
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private String citta;
+
     /**
-     * <code>siglaProvincia</code> è .
+     * <code>siglaProvincia</code> &egrave; la sigla di due catatteri della provincia
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private String siglaProvincia;
+
     /**
-     * <code>cap</code> è .
+     * <code>cap</code> &egrave; il CAP
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
     private String cap;
 
     /**
      * Costrutore della classe
      *
-     * @param via            &grave; la via in cui abita l'utente
-     * @param civico         &grave; il numero civico
-     * @param citta          &grave; la citta dell'utente
-     * @param siglaProvincia &grave; la sigla della provincia dell'utente
-     * @param cap            &grave; il cap dell'utente
+     * @param via            &egrave; la via
+     * @param civico         &egrave; il numero civico
+     * @param citta          &egrave; la citta
+     * @param siglaProvincia &egrave; la sigla della provincia
+     * @param cap            &egrave; il cap
      */
     public Indirizzo(String via, String civico, String citta, String siglaProvincia, String cap) {
         this.via = via;
@@ -74,72 +79,73 @@ public class Indirizzo implements Serializable {
     }
 
     /**
-     * @param via &grave; la via dell'utente
+     * @param via &egrave; la via
      */
     public void setVia(String via) {
         this.via = via;
     }
 
     /**
-     * @return il numero civico dell'utente
+     * @return il numero civico
      */
     public String getCivico() {
         return this.civico;
     }
 
     /**
-     * @param civico &grave; il numero civico dell'utente
+     * @param civico &egrave; il numero civico
      */
     public void setCivico(String civico) {
         this.civico = civico;
     }
 
     /**
-     * @return la città dell'utente
+     * @return la citt&agrave;
      */
     public String getCitta() {
         return this.citta;
     }
 
     /**
-     * @param citta &grave; la citta dell'utente
+     * @param citta &egrave; la citt&agrave;
      */
     public void setCitta(String citta) {
         this.citta = citta;
     }
 
     /**
-     * @return la sigla della provincia dell'utente
+     * @return la sigla della provincia
      */
     public String getSiglaProvincia() {
         return this.siglaProvincia;
     }
 
     /**
-     * @param siglaProvincia &grave; la sigla della provincia dell'utente
+     * @param siglaProvincia &egrave; la sigla della provincia
      */
     public void setSiglaProvincia(String siglaProvincia) {
         this.siglaProvincia = siglaProvincia;
     }
 
     /**
-     * @return il cap dell'utente
+     * @return il cap
      */
     public String getCap() {
         return this.cap;
     }
 
     /**
-     * @param cap &grave; il cap dell'utente
+     * @param cap &egrave; il cap
      */
     public void setCap(String cap) {
         this.cap = cap;
     }
 
-    @Override
+
     /**
-     * @return la via, il civico, la citta, la sigla della provincia e il cap dell'utente, in formato stringa
+     * @return le informazioni relative ad un indirizzo in formato stringa
      */
+    @Override
     public String toString() {
         return via + ", " + civico + ", " + citta + ", (" + siglaProvincia + "), " + cap;
     }

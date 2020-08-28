@@ -14,34 +14,34 @@ import javax.swing.*;
 public class RecensioniPerRistorante {
 
     /**
-     * <code>ioUtenti</code> è un'istanza della classe IOUtenti che
-     * permette di usare le funzionalità per la gestione degli utenti.
+     * <code>ioUtenti</code> &egrave; un'istanza della classe IOUtenti che
+     * permette di usare le funzionalit&agrave; per la gestione degli utenti.
      * @see IOUtenti
      * <p>
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private IOUtenti ioutenti = new IOUtenti();
 
     /**
-     * <code>panelRecensioniPerRistorante</code> è un pannello Swing che compone
+     * <code>panelRecensioniPerRistorante</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie la finestra dedicata alle
      * recensioni relative ad uno specifico ristorante
      * <p>
-     * è dichiarato <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     * &egrave; dichiarato <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
      */
 
     public JPanel panelRecensionePerRistorante;
 
     /**
-     * <code>lbNickname</code> è un'etichetta Swing dedicata al campo nickname
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lbNickname</code> &egrave; un'etichetta Swing dedicata al campo nickname
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lbRate</code> è un'etichetta Swing dedicata al campo del valore della recensione
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lbRate</code> &egrave; un'etichetta Swing dedicata al campo del valore della recensione
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>txtRecensione</code> è un'area di testo Swing dedicata al campo recensione
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>txtRecensione</code> &egrave; un'area di testo Swing dedicata al campo recensione
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
     */
 
      private JLabel lbNickname;
@@ -52,7 +52,7 @@ public class RecensioniPerRistorante {
      * Main della classe
      *
      * @param rec insieme di dati relativi alla recensione rilasciata
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      * essere sollevata durante l'esecuzione del programma
      */
 
@@ -65,9 +65,9 @@ public class RecensioniPerRistorante {
     }
 
     /**
-     * <code>setTextAreaRec</code> è una procedura per impostare la parte dedicata
+     * <code>setTextAreaRec</code> &egrave; una procedura per impostare la parte dedicata
      * alle recensioni del ristorante quando viene caricato il frame
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
      */
 
     private void setTextAreaRec() {

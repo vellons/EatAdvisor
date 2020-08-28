@@ -3,49 +3,53 @@ package eatadvisor.ioeatadvisor;
 import java.io.Serializable;
 
 /**
- * La classe Recensione permette...
+ * La classe Recensione permette di di salvare in modo corretto le informazioni di una recensione
  *
  * @author Alex Vellone
  */
 public class Recensione implements Serializable {
 
     /**
-     * <code>serialVersionUID</code> è.
+     * <code>serialVersionUID</code> &egrave; utlizzare per identificare l'oggetto nella classe Serializable.
      * <p>
-     * è dichiarato <strong>final</strong> perchè difatto rappresenta una costante
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
-     * è dichiarato <strong>long</strong> permette di scrivere dati di lunghezza fino a 64 bit
+     * &egrave; dichiarato <strong>final</strong> perch&egrave; difatto rappresenta una costante
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>static</strong> così da poterlo utlizzare senza istanziare l'oggetto
+     * &egrave; dichiarato <strong>long</strong> permette di scrivere dati di lunghezza fino a 64 bit
      */
     private static final long serialVersionUID = 5702291095524603496L;
+
     /**
-     * <code>utenteId</code> è l'id dell'utente
+     * <code>utenteId</code> &egrave; l'id dell'utente che ha creato la recensione
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * è dichiarato <strong>int</strong> permette di scrivere dati di lunghezza fino a 32 bit
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>int</strong> permette di scrivere dati di lunghezza fino a 32 bit
      */
     private int utenteId;
+
     /**
-     * <code>valutazione</code> è la valutazione dell'utente
+     * <code>valutazione</code> &egrave; la valutazione numerica dell'utente, da un minimo di 1 ad un massimo di 5
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * è dichiarato <strong>int</strong> permette di scrivere dati di lunghezza fino a 32 bit
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>int</strong> permette di scrivere dati di lunghezza fino a 32 bit
      */
     private int valutazione; // 1:5
+
     /**
-     * <code>commento</code> è l'id dell'utente
+     * <code>commento</code> &egrave; il commento inserito insieme alla valutazione dell'utente
+     * Può essere di massimo 256 caratteri
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
-     * è dichiarato <strong>String</strong> permette di scrivere stringhe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>String</strong> permette di scrivere stringhe
      */
     private String commento;
 
     /**
      * Costrutore della classe
      *
-     * @param utenteId    &grave; l'id dell'utente
-     * @param valutazione &grave; la valutazione lasciata dall'utente
-     * @param commento    &grave; il commento lasciato dall'utente
+     * @param utenteId    &egrave; l'id dell'utente che ha creato la recensione
+     * @param valutazione &egrave; la valutazione numerica lasciata dall'utente
+     * @param commento    &egrave; il commento lasciato dall'utente
      */
     public Recensione(int utenteId, int valutazione, String commento) {
         this.utenteId = utenteId;
@@ -54,28 +58,28 @@ public class Recensione implements Serializable {
     }
 
     /**
-     * @return l'id dell'utente
+     * @return l'id dell'utente che ha creato la recensione
      */
     public int getUtenteId() {
         return this.utenteId;
     }
 
     /**
-     * @param utenteId &grave; l'id dell'utente
+     * @param utenteId &egrave; l'id dell'utente che ha creato la recensione
      */
     public void setUtenteId(int utenteId) {
         this.utenteId = utenteId;
     }
 
     /**
-     * @return la valutazione dell'utente
+     * @return la valutazione numerica dell'utente
      */
     public int getValutazione() {
         return this.valutazione;
     }
 
     /**
-     * @param valutazione &grave; la valutazione dell'utente
+     * @param valutazione &egrave; la valutazione numerica  dell'utente
      */
     public void setValutazione(int valutazione) {
         this.valutazione = valutazione;
@@ -89,16 +93,16 @@ public class Recensione implements Serializable {
     }
 
     /**
-     * @param commento &grave; il commento dell'utente
+     * @param commento &egrave; il commento dell'utente
      */
     public void setCommento(String commento) {
         this.commento = commento;
     }
 
-    @Override
     /**
-     * @return la recensione e l'id dell'utente in formato stringa
+     * @return le informazioni relative ad una recensione in formato stringa
      */
+    @Override
     public String toString() {
         return "Recensione<" + valutazione + ", utente id: " + utenteId + ">: " + commento;
     }

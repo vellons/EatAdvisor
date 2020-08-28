@@ -14,11 +14,11 @@ import java.awt.*;
 public class ristoratori {
 
     /**
-     * <code>mainFrame</code> è una cornice Swing attivata nel momento nel
-     * quale è richiesto il login come ristoratore
+     * <code>mainFrame</code> &egrave; una cornice Swing attivata nel momento nel
+     * quale &egrave; richiesto il login come ristoratore
      * <p>
-     * è dichiarata <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
-     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * &egrave; dichiarata <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
+     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      */
     public static JFrame mainFrame = new JFrame("EatAdvisor Ristoratori - Login");
 
@@ -26,7 +26,7 @@ public class ristoratori {
      * Main della classe
      *
      * @param args &egrave; nome dell'array di stringhe
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      * essere sollevata durante l'esecuzione del programma
      * */
     public static void main(String[] args) throws Exception {
@@ -39,16 +39,16 @@ public class ristoratori {
     }
 
     /**
-     * <code>initUI</code> è una procedura per inizializzare l'interfaccia
+     * <code>initUI</code> &egrave; una procedura per inizializzare l'interfaccia
      * utente su una finestra e per finalizzarne le impostazioni
-     * @param frame è il frame sul quale applicare le impostazioni
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
-     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * @param frame &egrave; il frame sul quale applicare le impostazioni
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      *
      * @throws ClassNotFoundException se non trova la classe da caricare
      * @throws UnsupportedLookAndFeelException e le classi look and feel richieste non sono presenti sul sistema
      * @throws InstantiationException se per qualche motivo la classe non può essere istanziata
-     * @throws IllegalAccessException quando si cerca di effettuare l'accesso ad un campo laddove non è possibile
+     * @throws IllegalAccessException quando si cerca di effettuare l'accesso ad un campo laddove non &egrave; possibile
      */
     public static void initUI(JFrame frame) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         ImageIcon imageIcon = new ImageIcon("media/EatAdvisorIcon.png");
@@ -79,11 +79,11 @@ public class ristoratori {
     }
 
     /**
-     * <code>setMenuAccount</code> è una procedura per aggiungere il menù
+     * <code>setMenuAccount</code> &egrave; una procedura per aggiungere il menù
      * a tendina dell'account alla barra superiore
-     * @param myMenuBar è la barra alla quale aggiungere il menù a tendina
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
-     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * @param myMenuBar &egrave; la barra alla quale aggiungere il menù a tendina
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      */
     private static void setMenuAccount(JMenuBar myMenuBar) { // Creazione del JMenu account
         MenuListener mLR = new MenuListener();
@@ -98,11 +98,11 @@ public class ristoratori {
     }
 
     /**
-     * <code>setMenuInfo</code> è una procedura per aggiungere il menù
+     * <code>setMenuInfo</code> &egrave; una procedura per aggiungere il menù
      * a tendina delle info alla barra superiore
-     * @param myMenuBar è la barra alla quale aggiungere il menù a tendina
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
-     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * @param myMenuBar &egrave; la barra alla quale aggiungere il menù a tendina
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      */
     private static void setMenuInfo(JMenuBar myMenuBar) { // Creazione del JMenu info
         MenuListener ml = new MenuListener();
@@ -114,11 +114,11 @@ public class ristoratori {
     }
 
     /**
-     * <code>closePreviousWindow</code> è una procedura per chiudere una
+     * <code>closePreviousWindow</code> &egrave; una procedura per chiudere una
      * finestra non più utilizzata
-     * @param finestra è la finestra da chiudere
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
-     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * @param finestra &egrave; la finestra da chiudere
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      */
     public static void closePreviousWindow(JFrame finestra) {
         finestra.setVisible(false);
@@ -126,12 +126,12 @@ public class ristoratori {
     }
 
     /**
-     * <code>reloadDashboardRistoratori</code> è una procedura per ricaricare la
+     * <code>reloadDashboardRistoratori</code> &egrave; una procedura per ricaricare la
      * dashboard dei ristoranti dopo un'operazione importante
-     * @param finestra è la finestra da ricaricare
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
-     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @param finestra &egrave; la finestra da ricaricare
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * &egrave; dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      * essere sollevata durante l'esecuzione del programma
      */
     public static void reloadDashboardRistoranti(JFrame finestra) throws Exception {

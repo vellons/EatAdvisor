@@ -97,7 +97,7 @@ public class CreaRecensione {
                     IOEatAdvisor ioEatAdvisor = new IOEatAdvisor();
                     if (txtCommento.getText().length() != 0) {
                         if (txtCommento.getText().length() > 256) {
-                            JOptionPane.showMessageDialog(null, "Non è stato possibile inviare il " +
+                            JOptionPane.showMessageDialog(null, "Non &egrave; stato possibile inviare il " +
                                             "commento perché hai superato il limite massimo di caratteri.",
                                     "Commento troppo lungo", JOptionPane.ERROR_MESSAGE);
 
@@ -105,7 +105,7 @@ public class CreaRecensione {
                             ioEatAdvisor.aggiungiRecensioneByIdRistorante(rist.getId(),
                                     new Recensione(Global.utenteLoggato.getId(), sliValutazione.getValue(),
                                             txtCommento.getText()));
-                            JOptionPane.showMessageDialog(null, "Il commento è stato " +
+                            JOptionPane.showMessageDialog(null, "Il commento &egrave; stato " +
                                     "inviato correttamente.\nLa finestra del dettaglio verrà  ricaricata per mostrare " +
                                     "il commento", "Commento e giudizio inviato", JOptionPane.PLAIN_MESSAGE);
                             clienti.closePreviousWindow(DettaglioRistorante.frameReview);
@@ -113,8 +113,8 @@ public class CreaRecensione {
                         }
 
                     } else {
-                        JOptionPane.showMessageDialog(null, "Non è stato possibile inviare il " +
-                                        "commento perché l'area di testo è vuoto.",
+                        JOptionPane.showMessageDialog(null, "Non &egrave; stato possibile inviare il " +
+                                        "commento perché l'area di testo &egrave; vuoto.",
                                 "Commento non presente", JOptionPane.ERROR_MESSAGE);
                     }
                 } catch (Exception exception) {

@@ -24,31 +24,31 @@ import java.util.Objects;
 public class ModificaPasswordRistoratore {
 
     /**
-     * <code>panelModificaPasswordRistoratore</code> è un pannello Swing che compone
+     * <code>panelModificaPasswordRistoratore</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie la finestra di cambio
      * password per i ristoratori
      * <p>
-     * è dichiarato <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     * &egrave; dichiarato <strong>public</strong> in quanto l'attributo &egrave; utilizzabile all'esterno della classe
      */
 
     public JPanel panelModificaPasswordRistoratore;
 
     /**
-     * <code>lbVecchiaPassword</code> è un'etichetta Swing dedicata al campo vecchia password
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lbVecchiaPassword</code> &egrave; un'etichetta Swing dedicata al campo vecchia password
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>lbNuovaPassword</code> è un'etichetta Swing dedicata al campo nuova password
-     * è dichiarata <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>lbNuovaPassword</code> &egrave; un'etichetta Swing dedicata al campo nuova password
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JLabel lbVecchiaPassword;
 
     /**
-     * <code>tfVecchiaPassword</code> è un campo di testo Swing dedicato al campo vecchia password
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>tfVecchiaPassword</code> &egrave; un campo di testo Swing dedicato al campo vecchia password
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      * <p>
-     * <code>tfNuovaPassword</code> è un campo di testo Swing dedicato al campo nuova password
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * <code>tfNuovaPassword</code> &egrave; un campo di testo Swing dedicato al campo nuova password
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JPasswordField tfVecchiaPassword;
@@ -56,18 +56,18 @@ public class ModificaPasswordRistoratore {
     private JLabel lbNuovaPassword;
 
     /**
-     * <code>panelLogo</code> è un pannello Swing che compone
+     * <code>panelLogo</code> &egrave; un pannello Swing che compone
      * l'interfaccia grafica, nella fattispecie il logo dell'appicazione.
      * <p>
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JPanel panelLogo;
 
     /**
-     * <code>btnCambiaPassword</code> è un bottone Swing che attiva la procedura
+     * <code>btnCambiaPassword</code> &egrave; un bottone Swing che attiva la procedura
      * cambio password per un ristoratore
-     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JButton btnCambiaPassword;
@@ -75,7 +75,7 @@ public class ModificaPasswordRistoratore {
     /**
      * Main della classe
      *
-     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * @throws Exception &egrave; utilizzata quando non si sa che tipo di eccezione potrebbe
      * essere sollevata durante l'esecuzione del programma
      */
 
@@ -85,8 +85,8 @@ public class ModificaPasswordRistoratore {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (tfVecchiaPassword.getPassword().length == 0 || tfNuovaPassword.getPassword().length == 0) {
-                    JOptionPane.showMessageDialog(null, "Non è stato possibile modificare la password" +
-                            " perchè il campo risulta vuoto", "Cambio password non riuscito", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Non &egrave; stato possibile modificare la password" +
+                            " perch&egrave; il campo risulta vuoto", "Cambio password non riuscito", JOptionPane.ERROR_MESSAGE);
                 } else {
                     try {
                         ioUtenti.aggiornaPasswordById(Global.utenteLoggato.getId(),
@@ -112,11 +112,11 @@ public class ModificaPasswordRistoratore {
     }
 
     /**
-     * <code>createUIComponents</code> è una procedura per impostare la grafica
+     * <code>createUIComponents</code> &egrave; una procedura per impostare la grafica
      * quando viene caricato il frame
-     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * &egrave; dichiarato <strong>void</strong> in quanto non restituisce alcun valore
      *
-     * @throws IOException è un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
+     * @throws IOException &egrave; un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
      */
 
     private void createUIComponents() throws IOException {

@@ -1,7 +1,8 @@
 package eatadvisor.ioeatadvisor;
 
 /**
- * La classe BatchLeggiRistoranti permette la lettura dei ristoranti, prelevandoli dal file
+ * Questa classe viene usata esclusivamente per test per verificare che le informazioni siano salvate correttamente.
+ * La classe BatchLeggiRistoranti permette la lettura dei ristoranti, prelevandoli dal file.
  *
  * @author Alex Vellone
  */
@@ -10,7 +11,7 @@ public class BatchLeggiRistoranti {
     /**
      * Main della classe
      *
-     * @param args è nome dell'array di stringhe
+     * @param args &egrave; l'array di parametri passati durante l'avvio del programma
      */
     public static void main(String[] args) {
         // Blocco di codice per leggere gli utenti

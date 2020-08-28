@@ -8,56 +8,78 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 /**
- * La classe DashboardRistoratori permette l'aggiunta di un ristorante
+ * La classe DashboardRistoratori permette il caricamento della dashboard per il
+ * lato del ristoratore insieme alle sue relative funzioni
  *
- * @author Alex Vellone
+ * @author Mahdi Said
  */
 
 public class DashboardRistoratori extends JFrame {
+
     /**
-     * <code>panelDashboardRistoratori</code> rappresenta un pannello.
+     * <code>panelDashboardRistoratori</code> è un pannello Swing che compone
+     * l'interfaccia grafica, nella fattispecie la dahboard per i ristoratori
      * <p>
-     * è dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
+     * è dichiarato <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
      */
+
     public JPanel panelDashboardRistoratori;
+
     /**
-     * <code>panelLogo</code> rappresenta un pannello.
+     * <code>panelLogo</code> è un pannello Swing che compone
+     * l'interfaccia grafica, nella fattispecie il logo dell'appicazione.
      * <p>
-     * è dichiarato <strong>private</strong> così da non poter essere visibile dall'esterno della classe
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      */
+
     private JPanel panelLogo;
+
     /**
-     * <code>panelListaRistoranti</code> rappresenta un pannello.
+     * <code>panelListaRistoranti</code> è un pannello Swing che compone
+     * l'interfaccia grafica, nella fattispecie la parte che si occupa di
+     * ricevere dati dai ristoranti
      * <p>
-     * è dichiarato <strong>private</strong> così da non poter essere visibile dall'esterno della classe
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      */
+
     private JPanel panelListaRistoranti;
+
     /**
-     * <code>panelFunzioni</code> rappresenta un pannello.
+     * <code>panelFunzioni</code> è un pannello Swing che compone
+     * l'interfaccia grafica, nella fattispecie la parte con il bottone di aggiunta.
      * <p>
-     * è dichiarato <strong>private</strong> così da non poter essere visibile dall'esterno della classe
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      */
+
     private JPanel panelFunzioni;
+
     /**
-     * <code>btnAggiungi</code> rappresenta un bottone.
-     * <p>
-     * è dichiarato <strong>private</strong> così da non poter essere visibile dall'esterno della classe
+     * <code>btnAggiungi</code> è un bottone Swing che attiva la procedura
+     * di aggiunta di un ristorante di proprietà del ristoratore loggato
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
      */
+
     private JButton btnAggiungi;
+
     /**
-     * <code>registrazioneFrame</code> rappresenta una finestra.
+     * <code>registrazioneFrame</code> è una cornice Swing attivata nel momento nel
+     * quale un nuovo ristorante viene creato
+     * @see RegistrazioneRistorante
      * <p>
-     * è dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
-     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     * è dichiarata <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      */
+
+
     public static JFrame registrazioneFrame = new JFrame("EatAdvisor Ristoratori - Registrazione Ristorante");
 
     /**
-     * Costrutore della classe
+     * Main della classe
      *
-     * @throws Exception è un eccezione che viene lanciata quando il programma
-     *                   non trova il file che si vuole utilizzare
+     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * essere sollevata durante l'esecuzione del programma
      */
+
     public DashboardRistoratori() throws Exception {
         btnAggiungi.addActionListener(new ActionListener() {
             @Override
@@ -77,9 +99,14 @@ public class DashboardRistoratori extends JFrame {
     }
 
     /**
+     * <code>createUIComponents</code> è una procedura per impostare la grafica
+     * quando viene caricato il frame
+     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     *
      * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
-     *                   essere sollevata durante l'esecuzione del programma
+     * essere sollevata durante l'esecuzione del programma
      */
+
     private void createUIComponents() throws Exception {
         panelLogo = new JPanel();
         BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisorLogoRistoratoriImieiRistoranti.png"));

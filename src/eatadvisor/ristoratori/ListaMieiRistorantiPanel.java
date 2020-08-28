@@ -10,9 +10,10 @@ import java.awt.*;
 import static javax.swing.BorderFactory.createEmptyBorder;
 
 /**
- * La classe ListaMieiRistorantiPanel permette il caricamento dei ristoranti nel pannello
+ * La classe ListaMieiRistorantiPanel funge da contenitore per i ristoranti
+ * visibili sulla dashboard
  *
- * @author Alex Vellone
+ * @author Mahdi Said
  */
 
 public class ListaMieiRistorantiPanel extends JPanel {
@@ -63,11 +64,10 @@ public class ListaMieiRistorantiPanel extends JPanel {
         }
     }
 
-
-    @Override
     /**
      * @return le dimensioni
      */
+    @Override
     public Dimension getPreferredSize() {
         return new Dimension(800, 500);
     }

@@ -4,23 +4,31 @@ import eatadvisor.global.Global;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 
 /**
- * La classe ristoratori permette... ???
+ * La classe ristoratori permette di settare le impostazioni
+ * della parte ristoranti e ristoratori dell'applicazione
  *
- * @author Alex Vellone
+ * @author
  */
-
 public class ristoratori {
+
+    /**
+     * <code>mainFrame</code> è una cornice Swing attivata nel momento nel
+     * quale è richiesto il login come ristoratore
+     * <p>
+     * è dichiarata <strong>public</strong> in quanto l'attributo è utilizzabile all'esterno della classe
+     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     */
     public static JFrame mainFrame = new JFrame("EatAdvisor Ristoratori - Login");
 
     /**
      * Main della classe
      *
-     * @param args è nome dell'array di stringhe
-     * @throws IOException è un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
-     */
+     * @param args &egrave; nome dell'array di stringhe
+     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     * essere sollevata durante l'esecuzione del programma
+     * */
     public static void main(String[] args) throws Exception {
         mainFrame.setContentPane(new StartRistoratore().panelStartRistoratore);
         initUI(mainFrame);
@@ -31,11 +39,16 @@ public class ristoratori {
     }
 
     /**
-     * @param frame contiene il riferimento della finestra principale
-     * @throws ClassNotFoundException          ???
-     * @throws UnsupportedLookAndFeelException ???
-     * @throws InstantiationException          ???
-     * @throws IllegalAccessException          ???
+     * <code>initUI</code> è una procedura per inizializzare l'interfaccia
+     * utente su una finestra e per finalizzarne le impostazioni
+     * @param frame è il frame sul quale applicare le impostazioni
+     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
+     *
+     * @throws ClassNotFoundException se non trova la classe da caricare
+     * @throws UnsupportedLookAndFeelException e le classi look and feel richieste non sono presenti sul sistema
+     * @throws InstantiationException se per qualche motivo la classe non può essere istanziata
+     * @throws IllegalAccessException quando si cerca di effettuare l'accesso ad un campo laddove non è possibile
      */
     public static void initUI(JFrame frame) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         ImageIcon imageIcon = new ImageIcon("media/EatAdvisorIcon.png");
@@ -66,7 +79,11 @@ public class ristoratori {
     }
 
     /**
-     * @param myMenuBar contiene il riferimento a un JMenuBar
+     * <code>setMenuAccount</code> è una procedura per aggiungere il menù
+     * a tendina dell'account alla barra superiore
+     * @param myMenuBar è la barra alla quale aggiungere il menù a tendina
+     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      */
     private static void setMenuAccount(JMenuBar myMenuBar) { // Creazione del JMenu account
         MenuListener mLR = new MenuListener();
@@ -81,7 +98,11 @@ public class ristoratori {
     }
 
     /**
-     * @param myMenuBar contiene il riferimento a un JMenuBar
+     * <code>setMenuInfo</code> è una procedura per aggiungere il menù
+     * a tendina delle info alla barra superiore
+     * @param myMenuBar è la barra alla quale aggiungere il menù a tendina
+     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      */
     private static void setMenuInfo(JMenuBar myMenuBar) { // Creazione del JMenu info
         MenuListener ml = new MenuListener();
@@ -93,7 +114,11 @@ public class ristoratori {
     }
 
     /**
-     * @param finestra contiene il riferimento alla finestra principale
+     * <code>closePreviousWindow</code> è una procedura per chiudere una
+     * finestra non più utilizzata
+     * @param finestra è la finestra da chiudere
+     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      */
     public static void closePreviousWindow(JFrame finestra) {
         finestra.setVisible(false);
@@ -101,9 +126,13 @@ public class ristoratori {
     }
 
     /**
-     * @param finestra contiene il riferimento alla finestra principale
+     * <code>reloadDashboardRistoratori</code> è una procedura per ricaricare la
+     * dashboard dei ristoranti dopo un'operazione importante
+     * @param finestra è la finestra da ricaricare
+     * è dichiarato <strong>void</strong> in quanto non restituisce alcun valore
+     * è dichiarata <strong>static</strong> così da non doverla istanziare creando un oggetto
      * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
-     *                   essere sollevata durante l'esecuzione del programma
+     * essere sollevata durante l'esecuzione del programma
      */
     public static void reloadDashboardRistoranti(JFrame finestra) throws Exception {
         finestra.setVisible(false);

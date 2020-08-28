@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"eatadvisor.clienti"},{"l":"eatadvisor.global"},{"l":"eatadvisor.ioeatadvisor"},{"l":"eatadvisor.ioutenti"},{"l":"eatadvisor.ristoratori"}]

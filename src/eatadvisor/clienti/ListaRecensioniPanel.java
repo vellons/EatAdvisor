@@ -8,9 +8,21 @@ import java.awt.*;
 
 import static javax.swing.BorderFactory.createEmptyBorder;
 
+/**
+ * La classe ListaRecensioniPanel permette di visualizzare la lista delle recensioni lasciate dagli utenti
+ *
+ * @author Alex Vellone
+ */
 public class ListaRecensioniPanel extends JPanel {
     public JPanel mainList;
 
+    /**
+     * Costrutore della classe
+     *
+     * @param ristorante è un ristorante che viene passato al costruttore
+     * @throws Exception è un eccezione che viene lanciata quando il programma
+     *                   non trova il file che si vuole utilizzare
+     */
     public ListaRecensioniPanel(Ristorante ristorante) throws Exception {
         setLayout(new BorderLayout());
 
@@ -44,10 +56,18 @@ public class ListaRecensioniPanel extends JPanel {
         }
     }
 
+    /**
+     * @return le dimensioni
+     */
     public Dimension getPreferredSize() {
         return new Dimension(365, 475);
     }
 
+    /**
+     * @param rec è la recensione che viene passata
+     * @throws Exception è un eccezione che viene lanciata quando il programma
+     *                   non trova il file che si vuole utilizzare
+     */
     private void aggiungiRecensione(Recensione rec) throws Exception {
         JPanel panel = new JPanel();
         panel.add(new RecensioniPerRistorante(rec).panelRecensionePerRistorante);

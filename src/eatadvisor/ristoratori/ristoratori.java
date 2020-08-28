@@ -4,10 +4,23 @@ import eatadvisor.global.Global;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
+
+/**
+ * La classe ristoratori permette... ???
+ *
+ * @author Alex Vellone
+ */
 
 public class ristoratori {
     public static JFrame mainFrame = new JFrame("EatAdvisor Ristoratori - Login");
 
+    /**
+     * Main della classe
+     *
+     * @param args è nome dell'array di stringhe
+     * @throws IOException è un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
+     */
     public static void main(String[] args) throws Exception {
         mainFrame.setContentPane(new StartRistoratore().panelStartRistoratore);
         initUI(mainFrame);
@@ -17,6 +30,13 @@ public class ristoratori {
         mainFrame.setVisible(true);
     }
 
+    /**
+     * @param frame contiene il riferimento della finestra principale
+     * @throws ClassNotFoundException          ???
+     * @throws UnsupportedLookAndFeelException ???
+     * @throws InstantiationException          ???
+     * @throws IllegalAccessException          ???
+     */
     public static void initUI(JFrame frame) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         ImageIcon imageIcon = new ImageIcon("media/EatAdvisorIcon.png");
         Image image = imageIcon.getImage();
@@ -45,6 +65,9 @@ public class ristoratori {
         setMenuInfo(myBar);
     }
 
+    /**
+     * @param myMenuBar contiene il riferimento a un JMenuBar
+     */
     private static void setMenuAccount(JMenuBar myMenuBar) { // Creazione del JMenu account
         MenuListener mLR = new MenuListener();
         JMenu f = new JMenu("Account");
@@ -57,6 +80,9 @@ public class ristoratori {
         myMenuBar.add(f);
     }
 
+    /**
+     * @param myMenuBar contiene il riferimento a un JMenuBar
+     */
     private static void setMenuInfo(JMenuBar myMenuBar) { // Creazione del JMenu info
         MenuListener ml = new MenuListener();
         JMenu f = new JMenu("Info");
@@ -66,11 +92,19 @@ public class ristoratori {
         myMenuBar.add(f);
     }
 
+    /**
+     * @param finestra contiene il riferimento alla finestra principale
+     */
     public static void closePreviousWindow(JFrame finestra) {
         finestra.setVisible(false);
         finestra.dispose();
     }
 
+    /**
+     * @param finestra contiene il riferimento alla finestra principale
+     * @throws Exception è utilizzata quando non si sa che tipo di eccezione potrebbe
+     *                   essere sollevata durante l'esecuzione del programma
+     */
     public static void reloadDashboardRistoranti(JFrame finestra) throws Exception {
         finestra.setVisible(false);
         finestra.dispose();

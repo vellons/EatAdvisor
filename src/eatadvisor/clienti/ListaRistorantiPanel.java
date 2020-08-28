@@ -8,9 +8,23 @@ import java.awt.*;
 
 import static javax.swing.BorderFactory.createEmptyBorder;
 
+/**
+ * La classe ListaRistorantiPanel... ???
+ *
+ * @author Alex Vellone
+ */
 public class ListaRistorantiPanel extends JPanel {
     public JPanel mainList;
 
+    /**
+     * Costrutore della classe
+     *
+     * @param filtroNome è il filtro per il nome del ristorante
+     * @param filtroComune è il filtro per il comune del ristorante
+     * @param filtroTipologia è il filtro per la tipologia del ristorante
+     * @throws Exception è un eccezione che viene lanciata quando il programma
+     *                   non trova il file che si vuole utilizzare
+     */
     public ListaRistorantiPanel(String filtroNome, String filtroComune, String filtroTipologia) throws Exception {
         setLayout(new BorderLayout());
 
@@ -63,10 +77,16 @@ public class ListaRistorantiPanel extends JPanel {
     }
 
     @Override
+    /**
+     * @return le dimensioni
+     */
     public Dimension getPreferredSize() {
         return new Dimension(800, 500);
     }
 
+    /**
+     * @param rist è il ristorante che viene passato
+     */
     private void aggiungiRistorante(Ristorante rist) {
         JPanel panel = new JPanel();
         panel.add(new RistorantePerLista(rist).panelRistorantePerLista);

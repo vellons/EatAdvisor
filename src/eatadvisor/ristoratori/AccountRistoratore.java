@@ -11,24 +11,113 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * La classe AccountRistoratore permette la visualizzazione delle informazioni relative al
+ * ristoratore, oltre alla possibilità di modificare le informazioni del proprio account e
+ * la propria password d'accesso
+ *
+ * @author Alex Vellone
+ */
 public class AccountRistoratore { //Contiene il JPanel principale
+    /**
+     * <code>modifyPassword</code> rappresenta una finestra.
+     * <p>
+     * è dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
+     * è dichiarato <strong>static</strong> così da non doverlo istanziare creando un oggetto
+     */
     public static JFrame modifyPassword = new JFrame("Cambio Password"); //Creazione della finestra
-    public JPanel panelAccountRistoratore; //Mostro informazioni ristoratore. (da Manuel, JPanel non Object)
+    /**
+     * <code>panelAccountRistoratore</code> rappresenta un pannello.
+     * <p>
+     * è dichiarato <strong>public</strong> così da poter essere visibile anche alle altre classi
+     */
+    public JPanel panelAccountRistoratore; //Mostro informazioni ristoratore.
+    /**
+     * <code>lblNome</code> rappresenta un etichetta.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
     private JLabel lblNome;
+    /**
+     * <code>lblCognome</code> rappresenta un etichetta.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
     private JLabel lblCognome;
+    /**
+     * <code>lblComune</code> rappresenta un etichetta.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
     private JLabel lblComune;
+    /**
+     * <code>lblSiglaProvincia</code> rappresenta un etichetta.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
     private JLabel lblSiglaProvincia;
+    /**
+     * <code>lblEmail</code> rappresenta un etichetta.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
     private JLabel lblEmail;
+    /**
+     * <code>tfNome</code> rappresenta un campo di testo.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
     private JTextField tfNome;
+    /**
+     * <code>tfCognome</code> rappresenta un campo di testo.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
     private JTextField tfCognome;
+    /**
+     * <code>tfComune</code> rappresenta un campo di testo.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
     private JTextField tfComune;
+    /**
+     * <code>tfSiglaProvincia</code> rappresenta un campo di testo.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
     private JTextField tfSiglaProvincia;
+    /**
+     * <code>tfEmail</code> rappresenta un campo di testo.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
     private JTextField tfEmail;
+    /**
+     * <code>btnChangeAccountRistoratore</code> rappresenta un bottone.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
     private JButton btnChangeAccountRistoratore;
+    /**
+     * <code>btnChangePswRistoratore</code> rappresenta un bottone.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
     private JButton btnChangePswRistoratore;
+    /**
+     * <code>panelLogo</code> rappresenta un pannello.
+     * <p>
+     * è dichiarato <strong>private</strong> in quanto l'attributo è utilizzabile all'interno della classe
+     */
     private JPanel panelLogo;
+    /**
+     * <code>aggiornaRistoratori</code> rappresenta una variabile di tipo IOUtenti.
+     */
     IOUtenti aggiornaRistoratori = null;
 
+    /**
+     * Costrutore della classe
+     */
     public AccountRistoratore() { //Modifica
         setAllTextField(); // "settaggio" iniziale dei textfield (da Manuel questo è fondamentale!!)
         btnChangeAccountRistoratore.addActionListener(new ActionListener() {
@@ -115,6 +204,9 @@ public class AccountRistoratore { //Contiene il JPanel principale
         tfSiglaProvincia.setEditable(true);
     }
 
+    /**
+     * @return un risultato booleano
+     */
     private boolean checkAllInputs() { //Metodo per la verifica di tutti i campi
 
         boolean allFieldsValid = true; //Tramite una variabile booleana, verifico se tutti i campi siano stati completati
@@ -127,6 +219,9 @@ public class AccountRistoratore { //Contiene il JPanel principale
         return allFieldsValid; //Restituisco il risultato booleano proveniente da CheckInput
     }
 
+    /**
+     * @return un risultato booleano
+     */
     private boolean checkInput(String input) { //Metodo per la verifica del textfield
         boolean res;
         String tmp = "";
@@ -140,6 +235,10 @@ public class AccountRistoratore { //Contiene il JPanel principale
         return res; //Restituisco il risultato booleano a seguito del confronto
     }
 
+    /**
+     * @throws IOException èè un eccezione che viene lanciata quando il programma non
+     * trova il file che si vuole utilizzare
+     */
     private void createUIComponents() throws IOException { //Logo
         panelLogo = new JPanel();
         BufferedImage myPicture = ImageIO.read(new File("media/EatAdvisorLogoRistoratoriIlMioAccount.png"));

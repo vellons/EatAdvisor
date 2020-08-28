@@ -34,7 +34,8 @@ public class BatchCreaUtenti {
     /**
      * Main della classe
      * @param args è nome dell'array di stringhe
-     * @throws IOException è un eccezione che viene lanciata quando il programma non trova il file che si vuole utilizzare
+     * @throws IOException è un eccezione che viene lanciata quando il programma non
+     * trova il file che si vuole utilizzare
      */
     public static void main(String[] args) throws IOException {
         ArrayList<Utente> utenti = new ArrayList<>();

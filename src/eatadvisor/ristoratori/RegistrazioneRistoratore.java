@@ -51,57 +51,88 @@ public class RegistrazioneRistoratore {
     private JButton btnIscriviti;
 
     /**
-     * <code>lblNome</code> &egrave; un'etichetta Swing dedicata al campo nome
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
      * <code>lblPassword</code> &egrave; un'etichetta Swing dedicata al campo password
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lblCognome</code> &egrave; un'etichetta Swing dedicata al campo cognome
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lblComune</code> &egrave; un'etichetta Swing dedicata al campo comune
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lblSiglaProvincia</code> &egrave; un'etichetta Swing dedicata al campo sigla provincia
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lblEmail</code> &egrave; un'etichetta Swing dedicata al campo email
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     */
+    */
 
     private JLabel lblPassword;
 
     /**
-     * <code>tfEmail</code> &egrave; un campo di testo Swing dedicato al campo email
-     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
      * <code>tfPassword</code> &egrave; un campo di testo Swing dedicato al campo password
-     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>tfNome</code> &egrave; un campo di testo Swing dedicato al campo nome
-     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>tfCognome</code> &egrave; un campo di testo Swing dedicato al campo cognome
-     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>tfComune</code> &egrave; un campo di testo Swing dedicato al campo comune
-     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>tfSiglaProvincia</code> &egrave; un campo di testo Swing dedicato al campo sigla provincia
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
     private JPasswordField tfPassword;
+
+    /**
+     * <code>lblNome</code> &egrave; un'etichetta Swing dedicata al campo nome
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lblNome;
+
+    /**
+     * <code>lblCognome</code> &egrave; un'etichetta Swing dedicata al campo cognome
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lblCognome;
+
+    /**
+     * <code>lblComune</code> &egrave; un'etichetta Swing dedicata al campo comune
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lblComune;
+
+    /**
+     * <code>lblSiglaProvincia</code> &egrave; un'etichetta Swing dedicata al campo sigla provincia
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lblSiglaProvincia;
+
+    /**
+     * <code>lblEmail</code> &egrave; un'etichetta Swing dedicata al campo email
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JLabel lblEmail;
+
+    /**
+     * <code>tfNome</code> &egrave; un campo di testo Swing dedicato al campo nome
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JTextField tfNome;
+
+    /**
+     * <code>tfCognome</code> &egrave; un campo di testo Swing dedicato al campo cognome
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JTextField tfCognome;
+
+    /**
+     * <code>tfComune</code> &egrave; un campo di testo Swing dedicato al campo comune
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JTextField tfComune;
+
+
+    /**
+     * <code>tfSiglaProvincia</code> &egrave; un campo di testo Swing dedicato al campo sigla provincia
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+    */
+
     private JTextField tfSiglaProvincia;
+
+    /**
+     * <code>tfEmail</code> &egrave; un campo di testo Swing dedicato al campo email
+     * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
     private JTextField tfEmail;
 
     /**

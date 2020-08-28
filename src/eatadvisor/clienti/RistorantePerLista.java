@@ -42,20 +42,29 @@ public class RistorantePerLista extends JPanel {
     /**
      * <code>lblNome</code> &egrave; un'etichetta Swing dedicata al campo nome
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
+     */
+
+    private JLabel lblNome;
+
+    /**
      * <code>lblIndirizzo</code> &egrave; un'etichetta Swing dedicata al campo indirizzo
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lblStella</code> &egrave; un'etichetta Swing dedicata al campo stelle
+     */
+
+    private JLabel lblIndirizzo;
+
+    /**
+     * <code>lblStelle</code> &egrave; un'etichetta Swing dedicata al campo stelle
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
+     */
+
+    private JLabel lblStelle;
+
+    /**
      * <code>lblValutazioni</code> &egrave; un'etichetta Swing dedicata al campo valutazioni
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
-    private JLabel lblNome;
-    private JLabel lblIndirizzo;
-    private JLabel lblStelle;
     private JLabel lblValutazioni;
 
     /**

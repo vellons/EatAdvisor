@@ -47,20 +47,20 @@ public class StartRistoratore {
      * <code>btnAccedi</code> &egrave; un bottone Swing che attiva la procedura
      * di inizializzazione di un ristoratore
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
+     */
+
+    private JButton btnAccedi;
+
+    /**
      * <code>btnIscriviti</code> &egrave; un bottone Swing che attiva la procedura
      * di iscrizione alla piattaforma come ristoratore
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
-    private JButton btnAccedi;
     private JButton btnIscriviti;
 
     /**
      * <code>lblEmail</code> &egrave; un'etichetta Swing dedicata al campo email
-     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
-     * <code>lblPassword</code> &egrave; un'etichetta Swing dedicata al campo password
      * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
@@ -69,13 +69,22 @@ public class StartRistoratore {
     /**
      * <code>tfEmail</code> &egrave; un campo di testo Swing dedicato al campo email
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
-     * <p>
+     */
+
+    private JTextField tfEmail;
+
+    /**
+     * <code>lblPassword</code> &egrave; un'etichetta Swing dedicata al campo password
+     * &egrave; dichiarata <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
+     */
+
+    private JLabel lblPassword;
+
+    /**
      * <code>tfPassword</code> &egrave; un campo di testo Swing dedicato al campo password
      * &egrave; dichiarato <strong>private</strong> in quanto l'attributo &egrave; utilizzabile all'interno della classe
      */
 
-    private JTextField tfEmail;
-    private JLabel lblPassword;
     private JPasswordField tfPassword;
 
     /**

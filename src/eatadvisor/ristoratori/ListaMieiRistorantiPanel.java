@@ -9,11 +9,22 @@ import java.awt.*;
 
 import static javax.swing.BorderFactory.createEmptyBorder;
 
+/**
+ * La classe ListaMieiRistorantiPanel permette il caricamento dei ristoranti nel pannello
+ *
+ * @author Alex Vellone
+ */
 
 public class ListaMieiRistorantiPanel extends JPanel {
 
     public JPanel mainList;
 
+    /**
+     * Costrutore della classe
+     *
+     * @throws Exception è un eccezione che viene lanciata quando il programma
+     *                   non trova il file che si vuole utilizzare
+     */
     public ListaMieiRistorantiPanel() throws Exception {
         setLayout(new BorderLayout());
 
@@ -54,10 +65,16 @@ public class ListaMieiRistorantiPanel extends JPanel {
 
 
     @Override
+    /**
+     * @return le dimensioni
+     */
     public Dimension getPreferredSize() {
         return new Dimension(800, 500);
     }
 
+    /**
+     * @param rist è il ristorante che viene passato
+     */
     private void aggiungiRistorante(Ristorante rist) {
         JPanel panel = new JPanel();
         panel.add(new MioRistorantePerLista(rist).panelMioRistorantePerLista);

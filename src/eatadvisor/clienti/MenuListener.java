@@ -7,10 +7,20 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * La classe MenuListener definisce un listener per gli eventi di menu
+ *
+ * @author Alex Vellone
+ */
+
 public class MenuListener implements ActionListener {
+
 
     public static JFrame mofidyAccount = new JFrame("EatAdvisor Clienti - Il mio account");
 
+    /**
+     * @param e è l'evento che deve essere processato
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         String scelta = ((JMenuItem) e.getSource()).getText();

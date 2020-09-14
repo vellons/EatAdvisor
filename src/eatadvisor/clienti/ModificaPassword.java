@@ -90,8 +90,8 @@ public class ModificaPassword {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (tfVecchiaPassword.getPassword().length == 0 || tfNuovaPassword.getPassword().length == 0) {
-                    JOptionPane.showMessageDialog(null, "Non è; stato possibile modificare la password" +
-                            " perch&egrave; il campo risulta vuoto", "Cambio password non riuscito", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Non è stato possibile modificare la password" +
+                            " perchè il campo risulta vuoto", "Cambio password non riuscito", JOptionPane.ERROR_MESSAGE);
                 } else {
                     try {
                         ioUtenti.aggiornaPasswordById(Global.utenteLoggato.getId(),

@@ -153,7 +153,7 @@ public class AccountCliente {
                                     Global.utenteLoggato = aggiornaUtenti.aggiornaUtenteById(Global.utenteLoggato.getId(), tfNome.getText(),
                                             tfCognome.getText(), tfComune.getText(), tfSiglaProvincia.getText());
 
-                                    JOptionPane.showMessageDialog(null, "Modifica account eseguta con " +
+                                    JOptionPane.showMessageDialog(null, "Modifica account eseguita con " +
                                             "successo", "Modifica eseguita", JOptionPane.PLAIN_MESSAGE);
                                     clienti.closePreviousWindow(MenuListener.mofidyAccount); //chiudo la finestra di modifica
                                 } else { //se l'utente non conferma le modifiche

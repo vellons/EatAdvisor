@@ -13,7 +13,7 @@ import java.io.IOException;
 
 /**
  * La classe AccountRistoratore permette la visualizzazione delle informazioni relative al
- * ristoratore, oltre alla possibilit di modificare le informazioni del proprio account e
+ * ristoratore, oltre alla possibilità di modificare le informazioni del proprio account e
  * la propria password d'accesso
  *
  * @author Mahdi Said

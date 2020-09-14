@@ -1,6 +1,6 @@
 # EatAdvisor
 
-A university project, build with Java 13, to manage restaurant reviews.
+A boring university project, build with Java 13, to manage restaurant reviews.
 
 ![EatAdvisor](media/EatAdvisorLogo.png)
 
@@ -13,7 +13,15 @@ All data are stored in two files:
 - EatAdvisor.data: that contains all the information on restaurants, and the opinions expressed by customers
 - Users.data: in which all the users registered on EatAdvisor are saved.
 
-![EatAdvisor structure](media/doc/ProjectStructure.png)
-
 ## Structure
 ![EatAdvisor diagram](media/doc/Diagram.png)
+
+## Some screen
+#### EatAdvisor login
+![EatAdvisor Login](media/doc/Login.png)
+
+#### EatAdvisor restaurant list
+![EatAdvisor List](media/doc/List.png)
+
+#### EatAdvisor restaurant detail
+![EatAdvisor Login](media/doc/Detail.png)
